@@ -1,0 +1,5 @@
+<phpunit bootstrap="vendor/autoload.php">
+  <testsuite name="parser-Tests">
+    <directory>./tests/</directory>
+  </testsuite>
+</phpunit>

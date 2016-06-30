@@ -1,0 +1,12 @@
+{
+    "name": "his5/Common",
+    "autoload": {
+        "psr-4" : {
+            "HIS5\\lib\\Sc2repParser\\" : "lib/",
+            "Rogiel\\MPQ\\": "lib/php-mpq/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4" : {"HIS5\\lib\\Sc2repParser\\tests\\" : "tests/"}
+    }
+}
