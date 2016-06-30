@@ -19,10 +19,22 @@ use HIS5\lib\Sc2repParser as parser;
  * @package HIS5\lib\Sc2repParser\tests
  */
 class ReplayParserTest extends \PHPUnit_Framework_TestCase {
-	
+
+	/**
+	 * Contains hardcoded details about my replay files in order to test our code
+	 */
+    public function replayProvider() {
+        return [
+            'adding zeros'  => [0, 0, 0],
+            'zero plus one' => [0, 1, 1],
+            'one plus zero' => [1, 0, 1],
+            'one plus one'  => [1, 1, 3]
+        ];
+    }
+
 	/**
 	 * @covers \HIS5\lib\Sc2repParser\ReplayParser::__construct()
-	 * @uses   \Rogiel\MPQ\MPQFile::parse()
+	 * @uses   \Rogiel\MPQ\MPQFile::parseFile()
 	 */
 	public function testFileNotFoundException() {
 		$msg = null;
@@ -34,6 +46,17 @@ class ReplayParserTest extends \PHPUnit_Framework_TestCase {
 		}
 
 		$this->assertEquals($msg, "The replay file 'some file.sc2replay' could not be found/read");
+	}
+
+	/**
+	 * @covers \HIS5\lib\Sc2repParser\ReplayParser::__construct()
+	 * @uses   \Rogiel\MPQ\MPQFile::parseFile()
+     * @dataProvider replayProvider
+	 */
+	public function testHeaderDecode($path, $expected) {
+		$parser = new parser\ReplayParser(__DIR__.DIRECTORY_SEPARATOR."test_replays".DIRECTORY_SEPARATOR.$path);
+
+		$this->assertEquals($parser->replay, $expected);
 	}
 
 }

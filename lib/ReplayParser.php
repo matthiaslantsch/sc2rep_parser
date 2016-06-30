@@ -23,6 +23,22 @@ namespace HIS5\lib\Sc2repParser;
 class ReplayParser {
 
 	/**
+	 * property containing the mpq archive library object
+	 *
+	 * @access 	private
+	 * @var 	MPQFile object | object of the opened mpq archive
+	 */
+	private $archive;
+
+	/**
+	 * property containing the Replay object
+	 *
+	 * @access 	public
+	 * @var 	Replay object | object containing the parsed data
+	 */
+	public $replay;
+
+	/**
 	 * constructor method starting the replay parsing process
 	 * will always do the header decoding part (decode the replay header)
 	 *
@@ -30,9 +46,37 @@ class ReplayParser {
 	 * @param  string path | path to the replay to be parsed
 	 */
 	public function __construct($path) {
-		if(!file_exists($path) || is_readable($path)) {
+		if(!file_exists($path) || !is_readable($path)) {
 			throw new ParserException("The replay file '{$path}' could not be found/read", 10);
 		}
+
+		$this->archive = MPQFile::parseFile($path);
+		//decode the header file
+		$this->decodeHeader();
+	}
+
+	/**
+	 * method used to parse the information contained inside header of the replay file:
+	 *  - game version
+	 *  - game frame counter
+	 *
+	 * @access private
+	 */
+	private function decodeHeader() {
+		$header = $this->archive->getUserData()->getRawContent();
+		$decoder = new decoders\BitPackedDecoder($header);
+		$headerData = $decoder->parseSerializedData();
+		$verMajor = $headerData[1][1];
+		$versionString = sprintf(
+			"%d.%d.%d.%d", //major.minor.fix.build
+			$this->verMajor, //major version number
+			$headerData[1][2],//minor version number
+			$headerData[1][3],//fix version number
+			$headerData[1][4] //the build
+		);
+		$frames = $headerData[3];
+
+		$this->replay = new ressources\Replay($verMajor, $versionString, $frames);
 	}
 
 }
