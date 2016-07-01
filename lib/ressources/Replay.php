@@ -8,9 +8,6 @@
 
 namespace HIS5\lib\Sc2repParser\ressources;
 
-use Rogiel\MPQ\MPQFile;
-use HIS5\lib\Sc2repParser\decoders as decoders;
-
 /**
  * The Replay class is a wrapper around the MPQ archive object and oversees a lot of the decoding process
  *
@@ -43,5 +40,19 @@ class Replay {
 	 * @var 	integer frames | frames number for the entire game
 	 */
 	public $frames = "";
+
+	/**
+	 * constructor initialising the replay object with the inital data from the header
+	 *
+	 * @access public
+	 * @param  integer verMajor | the major version of the game
+	 * @param  string versionString | a string identifying the version and build of the game in detail
+	 * @param  integer frames | the counter of game frames inside the replay
+	 */
+	public function __construct($verMajor, $versionString, $frames) {
+		$this->verMajor = $verMajor;
+		$this->version = $versionString;
+		$this->frames = $frames;
+	}
 
 }

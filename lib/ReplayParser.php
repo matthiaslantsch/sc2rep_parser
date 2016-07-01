@@ -8,6 +8,9 @@
 
 namespace HIS5\lib\Sc2repParser;
 
+use Rogiel\MPQ\MPQFile;
+use HIS5\lib\Sc2repParser\decoders as decoders;
+
 /**
  * The ReplayParser class is used as a center piece for the replay parsing process
  * it executes four different routines that reveal different levels of data about the replay:
@@ -69,7 +72,7 @@ class ReplayParser {
 		$verMajor = $headerData[1][1];
 		$versionString = sprintf(
 			"%d.%d.%d.%d", //major.minor.fix.build
-			$this->verMajor, //major version number
+			$verMajor, //major version number
 			$headerData[1][2],//minor version number
 			$headerData[1][3],//fix version number
 			$headerData[1][4] //the build

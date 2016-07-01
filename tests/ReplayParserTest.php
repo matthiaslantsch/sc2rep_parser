@@ -23,14 +23,37 @@ class ReplayParserTest extends \PHPUnit_Framework_TestCase {
 	/**
 	 * Contains hardcoded details about my replay files in order to test our code
 	 */
-    public function replayProvider() {
-        return [
-            'adding zeros'  => [0, 0, 0],
-            'zero plus one' => [0, 1, 1],
-            'one plus zero' => [1, 0, 1],
-            'one plus one'  => [1, 1, 3]
-        ];
-    }
+	public function replayProvider() {
+		return [
+			'1.3.0.18092' => ['1.3.0.18092.SC2Replay', new parser\ressources\Replay(1, "1.3.0.18092", 13946)],
+			'1.3.1.18221' => ['1.3.1.18221.SC2Replay', new parser\ressources\Replay(1, "1.3.1.18221", 33970)],
+			'1.3.2.18317' => ['1.3.2.18317.SC2Replay', new parser\ressources\Replay(1, "1.3.2.18317", 36425)],
+			'1.3.3.18574' => ['1.3.3.18574.SC2Replay', new parser\ressources\Replay(1, "1.3.3.18574", 7437)],
+			'1.3.4.18701' => ['1.3.4.18701.SC2Replay', new parser\ressources\Replay(1, "1.3.4.18701", 8250)],
+			'1.3.5.19132' => ['1.3.5.19132.SC2Replay', new parser\ressources\Replay(1, "1.3.5.19132", 39280)],
+			'1.3.6.19269' => ['1.3.6.19269.SC2Replay', new parser\ressources\Replay(1, "1.3.6.19269", 24337)],
+			'1.4.0.19679' => ['1.4.0.19679.SC2Replay', new parser\ressources\Replay(1, "1.4.0.19679", 30421)],
+			'1.4.3.21029' => ['1.4.3.21029.SC2Replay', new parser\ressources\Replay(1, "1.4.3.21029", 30527)],
+			'1.5.3.23260' => ['1.5.3.23260.SC2Replay', new parser\ressources\Replay(1, "1.5.3.23260", 18340)],
+			'1.5.4.24540' => ['1.5.4.24540.SC2Replay', new parser\ressources\Replay(1, "1.5.4.24540", 26533)],
+			'2.0.0.23925' => ['2.0.0.23925.SC2Replay', new parser\ressources\Replay(2, "2.0.0.23925", 8225)],
+			'2.0.0.24247' => ['2.0.0.24247.SC2Replay', new parser\ressources\Replay(2, "2.0.0.24247", 14554)],
+			'2.0.3.24764' => ['2.0.3.24764.SC2Replay', new parser\ressources\Replay(2, "2.0.3.24764", 10465)],
+			'2.0.4.24944' => ['2.0.4.24944.SC2Replay', new parser\ressources\Replay(2, "2.0.4.24944", 27840)],
+			'2.0.5.25092' => ['2.0.5.25092.SC2Replay', new parser\ressources\Replay(2, "2.0.5.25092", 15780)],
+			'2.0.7.25293' => ['2.0.7.25293.SC2Replay', new parser\ressources\Replay(2, "2.0.7.25293", 24154)],
+			'2.0.8.25604' => ['2.0.8.25604.SC2Replay', new parser\ressources\Replay(2, "2.0.8.25604", 12166)],
+			'2.0.10.26490' => ['2.0.10.26490.SC2Replay', new parser\ressources\Replay(2, "2.0.10.26490", 15592)],
+			'2.0.11.26825' => ['2.0.11.26825.SC2Replay', new parser\ressources\Replay(2, "2.0.11.26825", 19924)],
+			'2.1.3.30508' => ['2.1.3.30508.SC2Replay', new parser\ressources\Replay(2, "2.1.3.30508", 3787)],
+			'2.1.4.32283' => ['2.1.4.32283.SC2Replay', new parser\ressources\Replay(2, "2.1.4.32283", 8569)],
+			'3.0.0.38215' => ['3.0.0.38215.SC2Replay', new parser\ressources\Replay(3, "3.0.0.38215", 21868)],
+			'3.0.4.38996' => ['3.0.4.38996.SC2Replay', new parser\ressources\Replay(3, "3.0.4.38996", 8805)],
+			'3.1.0.39576' => ['3.1.0.39576.SC2Replay', new parser\ressources\Replay(3, "3.1.0.39576", 9029)],
+			'3.2.2.42253' => ['3.2.2.42253.SC2Replay', new parser\ressources\Replay(3, "3.2.2.42253", 17735)],
+			'3.3.1.43199' => ['3.3.1.43199.SC2Replay', new parser\ressources\Replay(3, "3.3.1.43199", 19386)],
+		];
+	}
 
 	/**
 	 * @covers \HIS5\lib\Sc2repParser\ReplayParser::__construct()
@@ -51,12 +74,12 @@ class ReplayParserTest extends \PHPUnit_Framework_TestCase {
 	/**
 	 * @covers \HIS5\lib\Sc2repParser\ReplayParser::__construct()
 	 * @uses   \Rogiel\MPQ\MPQFile::parseFile()
-     * @dataProvider replayProvider
+	 * @dataProvider replayProvider
 	 */
 	public function testHeaderDecode($path, $expected) {
 		$parser = new parser\ReplayParser(__DIR__.DIRECTORY_SEPARATOR."test_replays".DIRECTORY_SEPARATOR.$path);
 
-		$this->assertEquals($parser->replay, $expected);
+		$this->assertEquals($expected, $parser->replay);
 	}
 
 }
