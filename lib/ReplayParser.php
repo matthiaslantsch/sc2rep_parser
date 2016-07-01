@@ -69,17 +69,80 @@ class ReplayParser {
 		$header = $this->archive->getUserData()->getRawContent();
 		$decoder = new decoders\BitPackedDecoder($header);
 		$headerData = $decoder->parseSerializedData();
-		$verMajor = $headerData[1][1];
+		$baseBuild = $headerData[1][5];
 		$versionString = sprintf(
 			"%d.%d.%d.%d", //major.minor.fix.build
-			$verMajor, //major version number
+			$headerData[1][1], //major version number
 			$headerData[1][2],//minor version number
 			$headerData[1][3],//fix version number
 			$headerData[1][4] //the build
 		);
 		$frames = $headerData[3];
 
-		$this->replay = new ressources\Replay($verMajor, $versionString, $frames);
+		$this->replay = new ressources\Replay($baseBuild, $versionString, $frames);
+	}
+
+	/**
+	 * method used to parse the information contained inside the replay.initdata file:
+	 *
+	 * @access private
+	 */
+	private function decodeInitData() {
+		$initdata = [];
+		$data = $this->archive->openStream('replay.initdata');
+		$playerCount = unpack("C", $data->readByte())[1];
+
+		for ($i=0; $i < $playerCount; $i++) {
+			//$nameLength = 
+			$initdata[$i]["name"] = [
+				utf8_decode($data->readBytes($data->readUint8()))
+			];
+
+			echo "Player $i";
+		}
+
+          /*  user_initial_data=[dict(
+                name=data.read_aligned_string(data.read_uint8()),
+                clan_tag=data.read_aligned_string(data.read_uint8()) if replay.base_build >= 24764 and data.read_bool() else None,
+                clan_logo=DepotFile(data.read_aligned_bytes(40)) if replay.base_build >= 27950 and data.read_bool() else None,
+                highest_league=data.read_uint8() if replay.base_build >= 24764 and data.read_bool() else None,
+                combined_race_levels=data.read_uint32() if replay.base_build >= 24764 and data.read_bool() else None,
+                random_seed=data.read_uint32(),
+                race_preference=data.read_uint8() if data.read_bool() else None,
+                team_preference=data.read_uint8() if replay.base_build >= 16561 and data.read_bool() else None,
+                test_map=data.read_bool(),
+                test_auto=data.read_bool(),
+                examine=data.read_bool() if replay.base_build >= 21955 else None,
+                custom_interface=data.read_bool() if replay.base_build >= 24764 else None,
+                test_type=data.read_uint32() if replay.base_build >= 34784 else None,
+                observe=data.read_bits(2),
+                hero=data.read_aligned_string(data.read_bits(9)) if replay.base_build >= 34784 else None,
+                skin=data.read_aligned_string(data.read_bits(9)) if replay.base_build >= 34784 else None,
+                mount=data.read_aligned_string(data.read_bits(9)) if replay.base_build >= 34784 else None,
+                toon_handle=data.read_aligned_string(data.read_bits(7)) if replay.base_build >= 34784 else None,
+            ) for i in range(data.read_bits(5))],*/
+		die(var_dump($playerCount));
+	}
+
+	/**
+	 * function used to increase the load level of the replay to an identify level
+	 * will decode init data and replay details
+	 *
+	 * @access public
+	 */
+	public function doIdentify() {
+		$this->decodeInitData();
+	}
+
+	/**
+	 * static interface method to identify a replay, will decode init data and replay details
+	 *
+	 * @access public
+	 * @param  string path | the path to the replay to identify
+	 */
+	public static function identify($path) {
+		$me = new static($path);
+		return $me->doIdentify();
 	}
 
 }

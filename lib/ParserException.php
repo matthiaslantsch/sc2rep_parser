@@ -16,7 +16,7 @@ namespace HIS5\lib\Sc2repParser;
  * @package HIS5\lib\Sc2repParser
  */
 class ParserException extends \Exception {
-	
+
 	/**
 	 * constructor method for the exception
 	 *

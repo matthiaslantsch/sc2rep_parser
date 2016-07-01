@@ -37,7 +37,7 @@ class BZIPCompression implements Compression {
 	 * {@inheritdoc}
 	 */
 	public function compress($data, $length) {
-		$output = @bzcompress(substr($data, 0, $length));
+		$output = @\bzcompress(substr($data, 0, $length));
 		if(!is_string($output)) {
 			throw new InvalidInputDataException('The compression input data is invalid.', $output);
 		}
@@ -48,7 +48,7 @@ class BZIPCompression implements Compression {
 	 * {@inheritdoc}
 	 */
 	public function decompress($data, $length) {
-		$output = @bzdecompress(substr($data, 0, $length));
+		$output = @\bzdecompress(substr($data, 0, $length));
 		if(!is_string($output)) {
 			throw new InvalidInputDataException('The decompression input data is invalid.', $output);
 		}

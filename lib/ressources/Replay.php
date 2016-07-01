@@ -18,12 +18,12 @@ namespace HIS5\lib\Sc2repParser\ressources;
 class Replay {
 
 	/**
-	 * property containing the major game version for the current replay
+	 * property containing the base build number for the game (used for version specific code)
 	 *
 	 * @access 	public
-	 * @var 	integer verMajor | major game version number
+	 * @var 	integer baseBuild | base build number
 	 */
-	public $verMajor = 0;
+	public $baseBuild;
 
 	/**
 	 * property containing the full game version string for the current replay
@@ -45,12 +45,12 @@ class Replay {
 	 * constructor initialising the replay object with the inital data from the header
 	 *
 	 * @access public
-	 * @param  integer verMajor | the major version of the game
+	 * @param  integer baseBuild | the base build number of the game at that point
 	 * @param  string versionString | a string identifying the version and build of the game in detail
 	 * @param  integer frames | the counter of game frames inside the replay
 	 */
-	public function __construct($verMajor, $versionString, $frames) {
-		$this->verMajor = $verMajor;
+	public function __construct($baseBuild, $versionString, $frames) {
+		$this->baseBuild = $baseBuild;
 		$this->version = $versionString;
 		$this->frames = $frames;
 	}

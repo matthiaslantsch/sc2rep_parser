@@ -9,7 +9,7 @@
 namespace HIS5\lib\Sc2repParser\decoders;
 
 /**
- * The BitPackedDecoder class is a wrapper around the a byte stream and it reads using unpack()
+ * The BitPackedDecoder class is a wrapper around the a byte string and it reads using unpack()
  *
  * @author  {AUTHOR}
  * @version {VERSION}
@@ -21,7 +21,7 @@ class BitPackedDecoder {
 	 * property containing the data string
 	 *
 	 * @access 	private
-	 * @var 	Stream ressource | stream containing the raw byte data
+	 * @var 	string byteStr | string containing the raw byte data
 	 */
 	private $byteStr;
 
