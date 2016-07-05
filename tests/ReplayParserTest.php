@@ -56,6 +56,13 @@ class ReplayParserTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	/**
+	 * Intitialises a test data loader class for each replay in the hardcoded array
+	 */
+	public function replayDetailData() {
+		
+	}
+
+	/**
 	 * @covers \HIS5\lib\Sc2repParser\ReplayParser::__construct()
 	 * @uses   \Rogiel\MPQ\MPQFile::parseFile()
 	 */
@@ -87,8 +94,8 @@ class ReplayParserTest extends \PHPUnit_Framework_TestCase {
 	 * @uses   \Rogiel\MPQ\MPQFile::parseFile()
 	 */
 	public function testIdentify() {
-	//	$parser = parser\ReplayParser::identify(__DIR__.DIRECTORY_SEPARATOR."test_replays".DIRECTORY_SEPARATOR."2.1.3.30508.SC2Replay");
-		$parser = parser\ReplayParser::identify("/home/matthias/workspace/old.hdev/age_old/workdir/sc2rep/updir/3.sc2replay");
+		$parser = parser\ReplayParser::identify(__DIR__.DIRECTORY_SEPARATOR."test_replays".DIRECTORY_SEPARATOR."2.1.3.30508.SC2Replay");
+		//$parser = parser\ReplayParser::identify("/home/matthias/workspace/old.hdev/age_old/workdir/sc2rep/updir/3.sc2replay");
 
 		$this->assertEquals($expected, $parser->replay);		
 	}
