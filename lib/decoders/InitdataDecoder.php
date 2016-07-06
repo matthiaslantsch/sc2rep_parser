@@ -27,14 +27,14 @@ class InitdataDecoder extends BitwiseDecoderBase {
 	protected function doDecode() {
 		$ret = [];
 
-		$numberPlayers = $this->readUint8();
+		$numberPlayers = $this->readBits(5);
 
 		while ($numberPlayers--) {
 			$ret["userInitialData"][] = $this->decodePlayerInitData();
 		}
 
 		$ret["gameDescription"] = $this->decodeGameDescription();
-		die(json_encode($ret["gameDescription"], JSON_PRETTY_PRINT));
+
 		$ret["lobbyState"] = $this->decodeLobbyState();
 
 		$this->replay->rawdata["initdata"] = $ret;

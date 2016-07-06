@@ -344,17 +344,6 @@ abstract class BitwiseDecoderBase {
 	}
 
 	/**
-	 * function used to skip the rest of the started byte and then reading a new byte
-	 *
-	 * @access public
-	 * @return read byte
-	 */ 
-	public function readAlignedByte() {
-		$this->align();
-		return $this->readByte();
-	}
-
-	/**
 	 * function used to skip the rest of the started byte and then reading new bytes
 	 *
 	 * @access public
