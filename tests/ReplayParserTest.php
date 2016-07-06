@@ -95,7 +95,7 @@ class ReplayParserTest extends \PHPUnit_Framework_TestCase {
 	 */
 	public function testIdentify() {
 		$parser = parser\ReplayParser::identify(__DIR__.DIRECTORY_SEPARATOR."test_replays".DIRECTORY_SEPARATOR."2.1.3.30508.SC2Replay");
-		//$parser = parser\ReplayParser::identify("/home/matthias/workspace/old.hdev/age_old/workdir/sc2rep/updir/3.sc2replay");
+		//$parser = parser\ReplayParser::identify("/home/matthias/Downloads/SEA.SC2Replay");
 
 		$this->assertEquals($expected, $parser->replay);		
 	}

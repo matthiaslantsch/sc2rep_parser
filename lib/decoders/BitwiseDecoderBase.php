@@ -362,41 +362,43 @@ abstract class BitwiseDecoderBase {
 	 * @return mixed unserialized data
 	 */
 	public function parseSerializedData() {
+		$this->align();
+
 		$dataType = $this->readUInt8();
-		switch ($dataType) {
-			case 0x02: // binary data
-				$dataLen = $this->parseVLFNumber();
-				return $this->readBytes($dataLen);
-				break;
-			case 0x04: // simple array
+		switch ($dataType) {	
+			case 0x00: // array
 				$array = array();
-				$this->bytestream->readBytes(2); // skip 01 00
 				$numElements = $this->parseVLFNumber();
 				while ($numElements > 0) {
 					$array[] = $this->parseSerializedData();
 					$numElements--;
 				}
 				return $array;
-				break;
+			case 0x01: // bitarray
+				$numBits = $this->parseVLFNumber();
+				return $this->readBits($numBits);
+			case 0x02: // binary data
+				$dataLen = $this->parseVLFNumber();
+				return $this->readBytes($dataLen);
+			case 0x04: // optional
+				$exists = ($this->readUInt8() != 0);
+				return ($exists ? $this->parseSerializedData() : false);
 			case 0x05: // array with keys
 				$array = array();
 				$numElements = $this->parseVLFNumber();
-				while ($numElements > 0) {
+				while ($numElements--) {
 					$index = $this->parseVLFNumber();
 					$array[$index] = $this->parseSerializedData();
-					$numElements--;
-				}               
+				}
 				return $array;
-				break;
 			case 0x06: // number of one byte
 				return $this->readUInt8();
-				break;
 			case 0x07: // number of four bytes
 				return $this->readUInt32();
-				break;
+			case 0x08: // number of 8 bytes
+				return $this->readUInt64();			
 			case 0x09: // number in VLF
 				return $this->parseVLFNumber();
-				break;
 			default:
 				//unknown datatype!!
 				return false;

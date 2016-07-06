@@ -92,6 +92,7 @@ class ReplayParser {
 	 */
 	public function doIdentify() {
 		$this->decodeFile("replay.initdata", decoders\InitdataDecoder::class);
+		$this->decodeFile("replay.details", decoders\DetailsDecoder::class);
 	}
 
 	/**

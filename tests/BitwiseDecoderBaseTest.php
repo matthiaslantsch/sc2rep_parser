@@ -141,16 +141,16 @@ class BitwiseDecoderBaseTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @covers \HIS5\lib\Sc2repParser\decoders\BitwiseDecoderBase::readAlignedByte()
+	 * @covers \HIS5\lib\Sc2repParser\decoders\BitwiseDecoderBase::readAlignedBytes()
 	 */
-	public function testReadAlignedByte() {
+	public function testReadAlignedBytes() {
 		$data = pack('H*', base_convert("01011111 01101010 01101010", 2, 16));
 		$decoder = new TestDecoder(new parser\utils\StringStream($data));
 
 		//skip 1 bit
 		$decoder->readBits(1);
 
-		$value = unpack('H*', $decoder->readAlignedByte());
+		$value = unpack('H*', $decoder->readAlignedBytes(1));
 		$this->assertEquals("01101010", base_convert($value[1], 16, 2));
 	}
 
