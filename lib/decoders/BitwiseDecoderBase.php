@@ -233,9 +233,10 @@ abstract class BitwiseDecoderBase {
 	 * wrapper method around unpack() to read an unsigned 16 bit integer from the byte stream
 	 *
 	 * @access public
+	 * @param  boolean bigendian | boolean determing wheter a big endian should be used
 	 * @return the next two bytes as an unsigned 16 bit integer or false if the stream is finished already
 	 */
-	public function readUInt16() {
+	public function readUInt16($bigendian = false) {
 		//check if we are in the middle of a byte
 		if($this->nextbyte !== null) {
 			return $this->readBits(16);
@@ -247,7 +248,7 @@ abstract class BitwiseDecoderBase {
 			return false;
 		}
 
-		$ret = unpack("v", $bytes);
+		$ret = unpack(($bigendian ? "n" : "v"), $bytes);
 		return $ret[1];
 	}
 
@@ -255,9 +256,10 @@ abstract class BitwiseDecoderBase {
 	 * wrapper method around unpack() to read an unsigned 32 bit integer from the byte stream
 	 *
 	 * @access public
+	 * @param  boolean bigendian | boolean determing wheter a big endian should be used
 	 * @return the next 4 bytes as an unsigned 32 bit integer or false if the stream is finished already
 	 */
-	public function readUInt32() {
+	public function readUInt32($bigendian = false) {
 		//check if we are in the middle of a byte
 		if($this->nextbyte !== null) {
 			return $this->readBits(32);
@@ -269,7 +271,7 @@ abstract class BitwiseDecoderBase {
 			return false;
 		}
 
-		$ret = unpack("V", $bytes);
+		$ret = unpack(($bigendian ? "N" : "V"), $bytes);
 		return $ret[1];
 	}
 
@@ -359,13 +361,17 @@ abstract class BitwiseDecoderBase {
 	 * wrapper method around the methods of this class to parse serialized data into an array
 	 *
 	 * @access public
+	 * @param  integer dataType| uint8 describing the datatype (if not given will be read first)
 	 * @return mixed unserialized data
 	 */
-	public function parseSerializedData() {
+	public function parseSerializedData($dataType = null) {
 		$this->align();
 
-		$dataType = $this->readUInt8();
-		switch ($dataType) {	
+		if($dataType === null) {
+			$dataType = $this->readUInt8();
+		}
+
+		switch ($dataType) {
 			case 0x00: // array
 				$array = array();
 				$numElements = $this->parseVLFNumber();
@@ -400,7 +406,6 @@ abstract class BitwiseDecoderBase {
 			case 0x09: // number in VLF
 				return $this->parseVLFNumber();
 			default:
-				//unknown datatype!!
 				return false;
 		}
 	}

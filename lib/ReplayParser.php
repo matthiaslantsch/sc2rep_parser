@@ -68,9 +68,30 @@ class ReplayParser {
 	private function decodeHeader() {
 		$header = $this->archive->getUserData()->getRawContent();
 		$header = new utils\StringStream($header);
+		$string = "StarCraft II replay";
+		//die(var_dump(0x2C));
+		/*$v = 0;
+		echo "\n";
+		foreach (str_split($string) as $c) {
+			echo str_pad(decbin(ord($c)), 8, "0", STR_PAD_LEFT)." ";
+			$v++;
+			if($v % 5 == 0) {
+				echo "\n";
+			}
+		}
+		echo "\n\n";
+		$i = 75;
+		while ($i--) {
+			$byte = $header->readBytes(1);
+			echo str_pad(decbin(ord($byte)), 8, "0", STR_PAD_LEFT)." ";
+			if($i % 5 == 0) {
+				echo "\n";
+			}
+		}
+		die("stop");*/
 		$decoder = new decoders\HeaderDecoder($header);
 		$headerData = $decoder->decode(null); //null since we do not have a replay object yet
-		$this->replay = new ressources\Replay($headerData["baseBuild"], $headerData["versionString"], $headerData["frames"]);
+		$this->replay = new ressources\Replay($headerData["baseBuild"], $headerData["versionString"], $headerData["frames"], $headerData["expansion"]);
 	}
 
 	/**

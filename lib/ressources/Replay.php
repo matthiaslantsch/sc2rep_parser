@@ -34,6 +34,15 @@ class Replay {
 	public $version = "";
 
 	/**
+	 * property containing the game expansion as a string
+	 * one of [WoL Beta, WoL, HotS Beta, HotS, LotV Beta, LotV]
+	 *
+	 * @access 	public
+	 * @var 	string expansion | expansion string determing the game version
+	 */
+	public $expansion;
+
+	/**
 	 * property containing the number of frames in the played game
 	 *
 	 * @access 	public
@@ -48,11 +57,13 @@ class Replay {
 	 * @param  integer baseBuild | the base build number of the game at that point
 	 * @param  string versionString | a string identifying the version and build of the game in detail
 	 * @param  integer frames | the counter of game frames inside the replay
+	 * @param  string expansion | expansion string determing the game version
 	 */
-	public function __construct($baseBuild, $versionString, $frames) {
+	public function __construct($baseBuild, $versionString, $frames, $expansion) {
 		$this->baseBuild = $baseBuild;
 		$this->version = $versionString;
 		$this->frames = $frames;
+		$this->expansion = $expansion;
 	}
 
 }
