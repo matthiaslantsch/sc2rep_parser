@@ -8,6 +8,8 @@
 
 namespace HIS5\lib\Sc2repParser\decoders;
 
+use HIS5\lib\Sc2repParser\utils as utils;
+
 /**
  * The DetailsDecoder class is used to decode the replay.details subfile in a replay file
  *
@@ -23,7 +25,7 @@ class DetailsDecoder extends BitwiseDecoderBase {
 	 * @access protected
 	 */
 	protected function doDecode() {
-		$detailsData = $this->parseSerializedData();			
+		$detailsData = $this->parseSerializedData();
 		$details = [
 			"mapName" => $detailsData[1],
 			"difficulty" => $detailsData[2],
@@ -34,13 +36,20 @@ class DetailsDecoder extends BitwiseDecoderBase {
 			"description" => $detailsData[7],
 			"imageFilePath" => $detailsData[8],
 			"mapFileName" => $detailsData[9],
-			//skip over the cache handles for now
-			//"cacheHandles" => $detailsData[10],
+			"cacheHandles" => $detailsData[10],
 			"miniSave" => $detailsData[11],
 			"gameSpeed" => $detailsData[12],
 			"defaultDifficulty" => $detailsData[13]
 			//forget the mod paths / campaign index numbers, they don't matter
 		];
+
+		foreach ($details["cacheHandles"] as $i => $handle) {
+			$details["cacheHandles"][$i] = $this->parseCacheHandle($handle);
+		}
+
+		$mapCache = end($details["cacheHandles"]);
+		$this->replay->mapHash = $mapCache["hash"];
+		$this->replay->mapUrl = $mapCache["url"];
 
 		if($this->replay->baseBuild >= 26490) {
 			$details["restartAsTransitionMap"] = $detailsData[16];
@@ -50,31 +59,13 @@ class DetailsDecoder extends BitwiseDecoderBase {
 			$pl = $this->orderPlayerData($pl);
 			if($pl["control"] == 2) {
 				//is a player and can be used to figure out the region
-				switch ($pl["bnet"]["region"]) {
-					case 1:
-						$this->replay->region = "NA";
-						break;
-					case 2:
-						$this->replay->region = "EU";
-						break;
-					case 3:
-						$this->replay->region = "KR";
-						break;
-					case 5:
-						$this->replay->region = "CN";
-						break;
-					case 6:
-						$this->replay->region = "SEA";
-						break;					
-					default:
-						$this->replay->region = "Unknown";
-						break;
-				}
+				$this->replay->region = utils\gatewayLookup($pl["bnet"]["region"]);
 			}
+
+			$details["players"][] = $pl;
 		}
 
-		$this->replay->rawData["details"] = $details;
-
+		$this->replay->rawdata["details"] = $details;
 		$this->replay->mapName = $details["mapName"];
 		$this->replay->ntTimestamp = $details["fileTime"];
 
@@ -89,9 +80,11 @@ class DetailsDecoder extends BitwiseDecoderBase {
 		}
 
 		// This windows timestamp measures the number of 100 nanosecond periods since
-		// January 1st, 1601. First we subtract the number of nanosecond periods from
-		// 1601-1970, then we divide by 10^7 to bring it back to seconds.
-		$this->replay->timestamp = intval(($details["fileTime"] - 116444735995904000) / 10 ** 7);
+		// January 1st, 1601.
+		$this->replay->endTimestamp = intval($details["fileTime"] / 10000000 - 11644473600);
+
+		$this->replay->reallength = utils\framesToRealTime($this->replay->frames, $this->replay->gamespeed);
+		$this->replay->startTimestamp = $this->replay->endTimestamp - $this->replay->reallength;
 	}
 
 	/**

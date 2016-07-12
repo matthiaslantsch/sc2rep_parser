@@ -23,7 +23,7 @@ abstract class BitwiseDecoderBase {
 	 * property containing bit masks used to extract a certain number of bits
 	 *
 	 * @access  private
-	 * @var     array includeBitmask | array with bitmasks used to extract a byte partiallc
+	 * @var     array includeBitmask | array with bitmasks used to extract a byte partially
 	 */
 	private static $includeBitmask = [0x01, 0x03, 0x07, 0x0F, 0x1F, 0x3F, 0x7F, 0xFF];
 
@@ -144,11 +144,11 @@ abstract class BitwiseDecoderBase {
 				//just return byte count not bit count
 				$len /= 8;
 				while ($len--) {
-					$byte = $this->bytestream->readByte();
-					if ($byte === false) {
+					if($this->bytestream->eof()) {
+						//no more bytes
 						return false;
-					}      
-
+					}
+					$byte = $this->bytestream->readByte();
 					$ret = ($ret << 8) | ord($byte);
 				}
 				return $ret;
@@ -182,10 +182,11 @@ abstract class BitwiseDecoderBase {
 			if($len > 8) {
 				//read entire bytes as far as possible
 				for ($i = intval($len / 8); $i > 0; $i--) {
-					$byte = $this->bytestream->readByte();
-					if ($byte === false) {
+					if($this->bytestream->eof()) {
+						//no more bytes
 						return false;
-					}      
+					}
+					$byte = $this->bytestream->readByte();
 
 					$ret = ($ret << 8) | ord($byte);
 				}
@@ -236,7 +237,7 @@ abstract class BitwiseDecoderBase {
 	 * @param  boolean bigendian | boolean determing wheter a big endian should be used
 	 * @return the next two bytes as an unsigned 16 bit integer or false if the stream is finished already
 	 */
-	public function readUInt16($bigendian = false) {
+	public function readUInt16($bigendian = true) {
 		//check if we are in the middle of a byte
 		if($this->nextbyte !== null) {
 			return $this->readBits(16);
@@ -259,7 +260,7 @@ abstract class BitwiseDecoderBase {
 	 * @param  boolean bigendian | boolean determing wheter a big endian should be used
 	 * @return the next 4 bytes as an unsigned 32 bit integer or false if the stream is finished already
 	 */
-	public function readUInt32($bigendian = false) {
+	public function readUInt32($bigendian = true) {
 		//check if we are in the middle of a byte
 		if($this->nextbyte !== null) {
 			return $this->readBits(32);
@@ -407,6 +408,57 @@ abstract class BitwiseDecoderBase {
 				return $this->parseVLFNumber();
 			default:
 				return false;
+		}
+	}
+
+	/**
+	 * method used to decode a cache handler string
+	 *
+	 * @access public
+	 * @param  string bytes | if not given, the next 40 bytes in the stream will be parsed
+	 * @return array with the decoded cache handle (region, extension, hash)
+	 */
+	public function parseCacheHandle($bytes = "") {
+		if($bytes === "") {
+			$bytes = $this->readAlignedBytes(40);
+		}
+
+		$ret["extension"] = substr($bytes, 0, 4);
+		$ret["region"] = trim(substr($bytes, 4, 4));
+		// There is no SEA server, use US instead
+		if($ret["region"] == "SEA") {
+			$ret["region"] = "US";
+		}
+
+		$ret["hash"] = bin2hex(substr($bytes, 8));
+		$ret["url"] = sprintf("http://%s.depot.battle.net:1119/%s.%s", $ret["region"], $ret["hash"], $ret["extension"]);
+
+		return $ret;
+	}
+
+
+	/**
+	 * method used to read a frame counter from the raw data
+	 *
+	 * @access public
+	 * @return frame counter as an integer
+	 */
+	public function readFrameCount() {
+		$byte = $this->readByte();
+		if($byte === false) {
+			return false;
+		}
+
+		$additionalBytes = $byte & 0x03;
+		switch ($additionalBytes) {
+			case 0:
+				return $byte >> 2;
+			case 1:
+				return $byte << 8 | $this->readUInt8();
+			case 2:
+				return $byte << 16 | $this->readUInt16();
+			case 3:
+				return $byte << 24 | $this->readUInt16() << 8 | $this->readUInt8();
 		}
 	}
 

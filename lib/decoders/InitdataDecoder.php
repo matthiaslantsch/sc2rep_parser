@@ -34,7 +34,6 @@ class InitdataDecoder extends BitwiseDecoderBase {
 		}
 
 		$ret["gameDescription"] = $this->decodeGameDescription();
-
 		$ret["lobbyState"] = $this->decodeLobbyState();
 
 		$this->replay->rawdata["initdata"] = $ret;
@@ -76,7 +75,7 @@ class InitdataDecoder extends BitwiseDecoderBase {
 
 		if($this->replay->baseBuild >= 24764 && $this->readBoolean()) {
 			//supports and has a combined race level
-			$ret["combinedRaceLevel"] = $this->readUint32();
+			$ret["combinedRaceLevels"] = $this->readUint32();
 		}
 
 		$ret["randomSeed"] = $this->readUint32();
@@ -108,17 +107,8 @@ class InitdataDecoder extends BitwiseDecoderBase {
 
 		if($this->replay->baseBuild >= 34784) {
 			$ret["hero"] = $this->readAlignedBytes($this->readBits(9));
-		}
-
-		if($this->replay->baseBuild >= 34784) {
 			$ret["skin"] = $this->readAlignedBytes($this->readBits(9));
-		}
-
-		if($this->replay->baseBuild >= 34784) {
 			$ret["mount"] = $this->readAlignedBytes($this->readBits(9));
-		}
-
-		if($this->replay->baseBuild >= 34784) {
 			$ret["toonHandle"] = $this->readAlignedBytes($this->readBits(7));
 		}
 
@@ -179,10 +169,9 @@ class InitdataDecoder extends BitwiseDecoderBase {
 			$ret["defaultAIBuild"] = $this->readBits($this->readBits(($this->replay->baseBuild >= 38749 ? 8 : 7)));
 		}
 
-		//depot files, skip for now
-		$numberCacheHandles = $this->readBits($this->readBits(($this->replay->baseBuild >= 21955 ? 6 : 4)));
+		$numberCacheHandles = $this->readBits(($this->replay->baseBuild >= 21955 ? 6 : 4));
 		while ($numberCacheHandles--) {
-			$this->readAlignedBytes(40);
+			$ret["cacheHandles"][] = $this->parseCacheHandle();
 		}
 
 		if($this->replay->baseBuild >= 27950) {
@@ -248,6 +237,7 @@ class InitdataDecoder extends BitwiseDecoderBase {
 		}
 
 		$ret["fog"] = $this->readBits(2);
+		$ret["observers"] = $this->readBits(2);
 		$ret["difficulty"] = $this->readBits(2);
 
 		if($this->replay->baseBuild >= 22612) {

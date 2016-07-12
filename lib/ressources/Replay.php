@@ -48,7 +48,7 @@ class Replay {
 	 * @access 	public
 	 * @var 	integer frames | frames number for the entire game
 	 */
-	public $frames = "";
+	public $frames;
 
 	/**
 	 * constructor initialising the replay object with the inital data from the header

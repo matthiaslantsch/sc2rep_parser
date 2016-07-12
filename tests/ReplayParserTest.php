@@ -102,14 +102,30 @@ class ReplayParserTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @covers \HIS5\lib\Sc2repParser\ReplayParser::__construct()
+	 * @covers \HIS5\lib\Sc2repParser\ReplayParser::compare()
+	 * @uses   \Rogiel\MPQ\MPQFile::parseFile()
+	 * @uses   \HIS5\lib\Sc2repParser\ReplayParser::identify()
+	 */
+	public function testReplayHash() {
+		$identifyFirst = parser\ReplayParser::identify(__DIR__.DIRECTORY_SEPARATOR."test_replays"
+			.DIRECTORY_SEPARATOR."same_match".DIRECTORY_SEPARATOR."Full.SC2Replay");
+		$identifySecond = parser\ReplayParser::identify(__DIR__.DIRECTORY_SEPARATOR."test_replays"
+					.DIRECTORY_SEPARATOR."same_match".DIRECTORY_SEPARATOR."Partial.SC2Replay");
+
+		$this->assertEquals(true, parser\ReplayParser::compare($identifyFirst["repHash"], $identifySecond["repHash"]));
+
+
+	}
+
+	/**
+	 * @covers \HIS5\lib\Sc2repParser\ReplayParser::identify()
 	 * @uses   \Rogiel\MPQ\MPQFile::parseFile()
 	 */
 	public function testIdentify() {
-		$parser = parser\ReplayParser::identify(__DIR__.DIRECTORY_SEPARATOR."test_replays".DIRECTORY_SEPARATOR."2.1.3.30508.SC2Replay");
+		$identiy = parser\ReplayParser::identify(__DIR__.DIRECTORY_SEPARATOR."test_replays".DIRECTORY_SEPARATOR."2.1.3.30508.SC2Replay");
 		//$parser = parser\ReplayParser::identify("/home/matthias/Downloads/SEA.SC2Replay");
-
-		$this->assertEquals($expected, $parser->replay);		
+		/*die(var_dump($identiy));
+		$this->assertEquals($expected, $parser->replay);	*/	
 	}
 
 }

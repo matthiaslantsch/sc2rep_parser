@@ -9,7 +9,6 @@
 namespace HIS5\lib\Sc2repParser;
 
 use Rogiel\MPQ\MPQFile;
-use HIS5\lib\Sc2repParser\decoders as decoders;
 
 /**
  * The ReplayParser class is used as a center piece for the replay parsing process
@@ -68,27 +67,6 @@ class ReplayParser {
 	private function decodeHeader() {
 		$header = $this->archive->getUserData()->getRawContent();
 		$header = new utils\StringStream($header);
-		$string = "StarCraft II replay";
-		//die(var_dump(0x2C));
-		/*$v = 0;
-		echo "\n";
-		foreach (str_split($string) as $c) {
-			echo str_pad(decbin(ord($c)), 8, "0", STR_PAD_LEFT)." ";
-			$v++;
-			if($v % 5 == 0) {
-				echo "\n";
-			}
-		}
-		echo "\n\n";
-		$i = 75;
-		while ($i--) {
-			$byte = $header->readBytes(1);
-			echo str_pad(decbin(ord($byte)), 8, "0", STR_PAD_LEFT)." ";
-			if($i % 5 == 0) {
-				echo "\n";
-			}
-		}
-		die("stop");*/
 		$decoder = new decoders\HeaderDecoder($header);
 		$headerData = $decoder->decode(null); //null since we do not have a replay object yet
 		$this->replay = new ressources\Replay($headerData["baseBuild"], $headerData["versionString"], $headerData["frames"], $headerData["expansion"]);
@@ -113,7 +91,64 @@ class ReplayParser {
 	 */
 	public function doIdentify() {
 		$this->decodeFile("replay.initdata", decoders\InitdataDecoder::class);
+		$this->decodeFile("replay.attributes.events", decoders\AttributeEventsDecoder::class);
 		$this->decodeFile("replay.details", decoders\DetailsDecoder::class);
+
+		$identifyString = $this->replay->region;
+		$entities = [];
+		$detailsIndex = 0;
+		$playerId = 1;
+		$initData = $this->replay->rawdata["initdata"];
+		$details = $this->replay->rawdata["details"];
+		// Assume that the first X map slots starting at 1 are player slots
+		// so that we can assign player ids without the map
+		foreach ($initData["lobbyState"]["slots"] as $slotId => $slotData) {
+			if($slotData["control"] != 2 && $slotData["control"] != 3) {
+				//empty slot
+				continue;
+			}
+
+			$userId = $slotData["userId"];
+
+			if($slotData["observe"] == 0) {
+				//player
+				if($slotData["control"] == 3) {
+					//it's an ai, create artifical initdata for it
+					$playerInitData = ["name" => $details["players"][$detailsIndex]["name"]];
+				} else {
+					$playerInitData = $initData["userInitialData"][$userId];
+				}
+				$entities[$playerId] = new objects\Player(
+					$playerId, //our counting player id
+					$slotData, //slot data from replay.initdata
+					$playerInitData, // userInitData from replay.initdata (or created here for an ai)
+					$details["players"][$detailsIndex], //details data from replay.details
+					$this->replay->attributes[$playerId] //the players attributes from replay.attributes.events
+				);
+
+				$detailsIndex++;
+			} else {
+				//observer => has no attribute data and no details data
+				$entities[$playerId] = new objects\Observer(
+					$playerId, //our counting player id
+					$slotData, //slot data from replay.initdata
+					$initData["userInitialData"][$userId] // userInitData from replay.initdata 
+				);
+
+			}
+			//set up the identify string for the hash
+			$identifyString .= $entities[$playerId]->name.$entities[$playerId]->bnetId;
+			$playerId++;
+		}
+
+		$this->replay->identifier = $this->replay->startTimestamp.":".md5($identifyString);
+
+		return [
+			"frames" => $this->replay->frames,
+			"repHash" => $this->replay->identifier,
+			"mapHash" => $this->replay->mapHash,
+			"mapUrl" => $this->replay->mapUrl
+		];
 	}
 
 	/**
@@ -129,6 +164,33 @@ class ReplayParser {
 		$decoder = new $decoder($data);
 		//do the decoding
 		$decoder->decode($this->replay);
+	}
+
+
+	/**
+	 * static method used to compare two replays
+	 * neccessary because two computers recording the same match will never have the exact same timestamp on it
+	 *
+	 * @access public
+	 * @param  string hashOne | the replay hash of the first replay
+	 * @param  string hashTwo | the replay hash of the second replay
+	 * @return boolean determing wheter the two replays are from the same match
+	 */
+	public static function compare($hashOne, $hashTwo) {
+		if(strstr($hashOne, ":") !== strstr($hashTwo, ":")) {
+			return false;
+		}
+
+		$timestampOne = strstr($hashOne, ":", true);
+		$timestampTwo = strstr($hashTwo, ":", true);
+
+		//90 seconds tolerant
+		if(abs($timestampOne - $timestampTwo) < 90) {
+			return true;
+		} else {
+			return false;
+		}
+
 	}
 
 }

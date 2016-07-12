@@ -57,10 +57,8 @@ class HeaderDecoder extends BitwiseDecoderBase {
 		} elseif($ret["baseBuild"] <= 38996) {
 			$ret["expansion"] = "LotV Beta";
 		} else {
-			$ret["expansion"] = "LotV";			
+			$ret["expansion"] = "LotV";
 		}
-
-	//	$this->debug("Too low replay version"); //15097
 
 		return $ret;
 	}
@@ -74,14 +72,13 @@ class HeaderDecoder extends BitwiseDecoderBase {
 	private function oldVersionDecode() {
 		$this->readBytes(23); // skip Starcraft II replay 0x1B 0x32 0x01 0x00
 
-		//we assume its a replay from before 0.8 first
-		$verMajor = $this->readUint16();
-
-		$build = $this->readUint32(true);
-		$ret["baseBuild"] = $this->readUint32(true);
+		//we assume its a replay from before phase 2
+		$verMajor = $this->readUint16(false);
+		$build = $this->readUint32();
+		$ret["baseBuild"] = $this->readUint32();
 		$this->readBytes(2); //skip 0200
 		//apparently saved in seconds back then => times 16
-		$ret["frames"] = intval($this->readUint16(true) / 2) * 16;
+		$ret["frames"] = intval($this->readUint16() / 2) * 16;
 		$ret["versionString"] = "0.{$verMajor}.0.{$build}";
 
 		return $ret;

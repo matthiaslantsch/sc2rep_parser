@@ -79,4 +79,17 @@ class StringStream {
 		return $ret;
 	}
 
+	/**
+	 * emulation method to copy the stream behaviour to enable calls to eof() to check if the stream has more bytes
+	 *
+	 * @access public
+	 * @param  integer length | number of bytes to read
+	 * @return given number of read bytes from the byte string or false if the string is finished already
+	 */
+	public function eof() {
+		if ($this->pointer >= strlen($this->byteStr)) { 
+			return true;
+		}
+	}
+
 }
