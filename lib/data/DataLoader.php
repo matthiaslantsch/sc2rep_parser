@@ -18,14 +18,42 @@ namespace HIS5\lib\Sc2repParser\data;
 class DataLoader {
 
 	/**
-	 * read a json data file and return it's content
+	 * load a version specified dataset
+	 * usually contains a base json with changes per version to overwrite
 	 *
 	 * @access public
-	 * @param  string file | the name of the data file to load
+	 * @param  string dataset | the name of the data set to load
+	 * @param  integer baseBuild | the base build to load the data for
+	 * @return array with data from the requested data set
+	 */
+	public static function loadDataset($dataset, $baseBuild) {
+		$dir = __DIR__.DIRECTORY_SEPARATOR.$dataset.DIRECTORY_SEPARATOR;
+		$ret = self::loadFile("{$dir}base.json");
+
+		foreach (glob("$dir*") as $avaibleVersion) {
+			$filesAvaible[] = str_replace(".json", "", basename($avaibleVersion));
+		}
+		sort($filesAvaible);
+
+		foreach ($filesAvaible as $version) {
+			if($baseBuild <= $version) {
+				foreach (self::loadFile("{$dir}{$version}.json") as $key => $value) {
+					$ret[$key] = $value;
+				}
+			}
+		}
+
+		return $ret;
+	}
+
+	/**
+	 * read a specified json file and return it's contents as an array
+	 *
+	 * @access public
+	 * @param  string file | the name of the file to load
 	 * @return array with data from the requested data file
 	 */
-	public static function loadFile($file) {
-		$file = __DIR__.DIRECTORY_SEPARATOR."{$file}.json";
+	private static function loadFile($file) {
 		if(file_exists($file)) {
 			$content = file_get_contents($file);
 			return json_decode($content, true);

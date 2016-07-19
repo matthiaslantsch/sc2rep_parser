@@ -8,6 +8,8 @@
 
 namespace HIS5\lib\Sc2repParser\ressources;
 
+use \HIS5\lib\Sc2repParser as parser;
+
 /**
  * The Replay class is a wrapper around the MPQ archive object and oversees a lot of the decoding process
  *

@@ -78,40 +78,4 @@ class Player extends Entity {
 	 */
 	public $isComputer;
 
-	/**
-	 * constructor method for the entity object accepting the slot initData
-	 *
-	 * @access public
-	 * @param  integer pid | player id for this entity
-	 * @param  array slotData | slotData coming from the replay.initdata file
-	 * @param  array initData | initdata coming from the replay.initdata file
-	 * @param  array detailsData | detailsData coming from the replay.initdata file
-	 */
-	public function __construct($pid, $slotData, $initData, $detailsData, $attributes) {
-		parent::__construct($pid, $slotData, $initData);
-
-		if($detailsData["result"] == 1) {
-			$this->result = "Win";
-		} elseif($detailsData["result"] == 2) {
-			$this->result = "Loss";
-		}
-
-		if(isset($attributes["Race"])) {
-			$this->pickRace = $attributes["Race"];
-		}
-
-		if(isset($attributes["Difficulty"])) {
-			$this->difficulty = $attributes["Difficulty"];
-		}
-
-		$this->playRace = utils\delocalizeRace($detailsData["race"]);
-		$this->color = $detailsData["color"];
-
-		$this->region = utils\gatewayLookup($detailsData["bnet"]["region"]);
-		$this->subregion = $detailsData["bnet"]["subregion"];
-		$this->bnetId = $detailsData["bnet"]["uid"];
-
-		$this->isComputer = ($slotData["control"] != 2);
-	}
-
 }

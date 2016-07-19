@@ -355,7 +355,13 @@ abstract class BitwiseDecoderBase {
 	 */ 
 	public function readAlignedBytes($len) {
 		$this->align();
-		return $this->readBytes($len);	
+
+		$ret = $this->readBytes($len);
+		if($ret === false) {
+			return "";
+		}
+
+		return $ret;
 	}
 
 	/**

@@ -1,0 +1,19 @@
+Offset | Repeat | Type | Meaning
+-------|--------|:----:|--------
+0x00 | 1x | uint8 | Number of player slots to follow (usually 16)
+0x01 | 16x | string + 5 bytes | Variable size string for the name of the player with 5 empty bytes padding after
+0x01+16(str+5) | 1x | uint32 | Random seed integer for that replay
+0x01+16(str+5)+32 | 1x | string | Name for the game cache (Usually always Dflt => maybe default?)
+0x01+16(str+5)+32+str | 1x | byte | Game options one bit each right to left(teamsLocked, teamsTogether, advancedSharedControl, randomRaces, battlenet, amm)
+0x01+16(str+5)+32+str+1 | 1x | byte | Empty byte (0x00) with unknown purpose
+0x01+16(str+5)+32+str+2 | 1x | uint8 | Game speed 0x00 = Slowest, 0x01 = Slow, 0x02 = Normal, 0x03 = Fast, 0x04 = Fastest
+0x01+16(str+5)+32+str+2 | 1x | 11 bytes | 11 Unknown bytes, past 4 seem to change with the map
+0x01+16(str+5)+32+str+13 | 1x | string | Map file name (presumably in the local cache)
+0x01+16(str+5)+32+str+13+str | 1x | 686 bytes | 686 unknown bytes
+0x01+16(str+5)+32+str+13+str+686 | 5x | 40 bytes | cache handles for map files (0-4 file extension, 4-8 server, 8- hash in binary form)
+0x01+16(str+5)+32+str+13+str+686+5(40) | 1x | ? bytes | variable number of unknown bytes, will be skipped until 5 0x00 in a row can be found
+0x01+16(str+5)+32+str+13+str+686+5(40)+? | 1x | 2 bytes | two bytes in front of the map name with the map size (byte1 << 2 + byte2) for some reason...
+0x01+16(str+5)+32+str+13+str+686+5(40)+?+2 | 1x | fixstring | localized map name (as long as read from the previous 2 bytes)
+0x01+16(str+5)+32+str+13+str+686+5(40)+?+2+str | 1x | byte | 0x00 byte (maybe to end the map name)
+0x01+16(str+5)+32+str+13+str+686+5(40)+?+2+str+1 | 1x | uint8 | number of players to follow (usually 16)
+0x01+16(str+5)+32+str+13+str+686+5(40)+?+2+str+2 | 16x | 3x string | player information in groups of 3 strings (name, race, color seperated by ,)

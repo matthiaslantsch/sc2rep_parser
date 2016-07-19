@@ -109,41 +109,29 @@ class Entity {
 	public $highestLeague;
 
 	/**
-	 * constructor method for the entity object accepting the slot initData
+	 * constructor method for the entity object
 	 *
-	 * @access protected
+	 * @access public
 	 * @param  integer pid | player id for this entity
-	 * @param  array slotData | slotData coming from the replay.initdata file
-	 * @param  array initdata | initdata coming from the replay.initdata file
+	 * @param  string name | the name for this entity
 	 */
-	protected function __construct($pid, $slotData, $initdata) {
+	public function __construct($pid, $name) {
 		$this->playerId = $pid;
-		$this->handicap = $slotData["handicap"];
-		$this->teamId = $slotData["teamId"];
+		$this->name = $name;
+	}
 
-		if(isset($slotData["hero"])) {
-			$this->hero = $slotData["hero"];
-			$this->hero = $slotData["skin"];
-			$this->hero = $slotData["mount"];
+	/**
+	 * method called to construct a battle.net url from the battle.net information contained in the entity data
+	 *
+	 * @access public
+	 * @return string with the battle.net url or false if not applicable (e.g. battle.net 1 entity)
+	 */
+	public function bnetUrl() {
+		if(isset($this->realId) || $this->region === false || $this->subregion === false || $this->bnetId === false || $this->name === false) {
+			return false;
 		}
 
-		if(isset($slotData["archonLeaderUserId"])) {
-			$this->archonLeaderId = $slotData["archonLeaderUserId"];
-		}
-
-		if(isset($initdata["clanTag"])) {
-			$this->clanTag = $initdata["clanTag"];
-		}
-
-		$this->name = $initdata["name"];
-
-		if(isset($initdata["combinedRaceLevels"])) {
-			$this->combinedRaceLevels = $initdata["combinedRaceLevels"];
-		}
-
-		if(isset($initdata["highestLeague"])) {
-			$this->highestLeague = utils\leagueLookup($initdata["highestLeague"]);
-		}
+		return sprintf("http://%s.battle.net/sc2/en/profile/%d/%d/%s/", $this->region, $this->bnetId, $this->subregion, $this->name);
 	}
 
 }

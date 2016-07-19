@@ -102,7 +102,7 @@ class DetailsDecoder extends BitwiseDecoderBase {
 				"programId" => $pl[1][1],
 				"subregion" => $pl[1][2],
 				"name" => isset($pl[1][3]) ? $pl[1][3] : false,
-				"uid" => $pl[1][4]
+				"uid" => isset($pl[1][4]) ? $pl[1][4] : 0
 			],
 			"race" => $pl[2],
 			"color" => [
@@ -112,7 +112,7 @@ class DetailsDecoder extends BitwiseDecoderBase {
 				"b" => $pl[3][3],
 			],
 			"control" => $pl[4],
-			"team" => $pl[5],
+			"teamId" => $pl[5],
 			"handicap" => $pl[6],
 			"observe" => $pl[7],
 			"result" => $pl[8]

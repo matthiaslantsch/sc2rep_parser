@@ -1,0 +1,48 @@
+{
+	"3002": [
+		"Color", 
+		{
+			"1": "Red", 
+			"2": "Blue", 
+			"3": "Teal", 
+			"4": "Purple", 
+			"5": "Yellow", 
+			"6": "Orange", 
+			"7": "Green", 
+			"8": "Light Pink", 
+			"9": "Violet", 
+			"10": "Light Grey", 
+			"11": "Dark Green", 
+			"12": "Brown", 
+			"13": "Light Green", 
+			"14": "Dark Grey", 
+			"15": "Pink", 
+			"16": "??"
+		}
+	],
+	"3004": [
+		"Difficulty", 
+		{
+			"9": "Cheater 2 (Resources)", 
+			"8": "Cheater 1 (Vision)", 
+			"1": "Easy", 
+			"4": "Harder", 
+			"5": "Very Hard", 
+			"7": "Insane", 
+			"3": "Hard", 
+			"2": "Medium", 
+			"0": "Very Easy", 
+			"6": "Elite"
+		}
+	],
+	"3000": [
+		"Game Speed", 
+		{
+			"4": "Faster", 
+			"3": "Fast", 
+			"2": "Normal", 
+			"1": "Slower", 
+			"0": "Slow"
+		}
+	]
+}

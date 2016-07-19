@@ -33,8 +33,12 @@ class InitdataDecoder extends BitwiseDecoderBase {
 			$ret["userInitialData"][] = $this->decodePlayerInitData();
 		}
 
+
 		$ret["gameDescription"] = $this->decodeGameDescription();
-		$ret["lobbyState"] = $this->decodeLobbyState();
+
+		if($this->replay->baseBuild > 15623) {
+			$ret["lobbyState"] = $this->decodeLobbyState();
+		}
 
 		$this->replay->rawdata["initdata"] = $ret;
 		$options = $ret["gameDescription"]["options"];
@@ -63,9 +67,7 @@ class InitdataDecoder extends BitwiseDecoderBase {
 
 		if($this->replay->baseBuild >= 27950 && $this->readBoolean()) {
 			//supports and has a clan logo depot file
-			/*$ret["clanlogoDepotfile"] = $this->readAlignedBytes(40);*/
-			//skip for now
-			$this->readAlignedBytes(40);
+			$ret["clanlogoDepotfile"] = $this->parseCacheHandle();
 		}
 
 		if($this->replay->baseBuild >= 24764 && $this->readBoolean()) {
@@ -142,11 +144,14 @@ class InitdataDecoder extends BitwiseDecoderBase {
 				"sizeX" => $this->readUint8(),
 				"sizeY" => $this->readUint8(),
 				"fileSyncChecksum" => $this->readUint32(),
-				"filename" => $this->readAlignedBytes($this->readBits(11)),
-				"author" => $this->readAlignedBytes($this->readUint8())
+				"filename" => $this->readAlignedBytes($this->readBits(($this->replay->baseBuild > 15623 ? 11 : 10)))
 			],
-			"modFileSyncChecksum" => $this->readUint32()
 		];
+
+		if($this->replay->baseBuild > 15623) {
+			$ret["map"]["author"] = $this->readAlignedBytes($this->readUint8());
+		}
+		$ret["modFileSyncChecksum"] = $this->readUint32();
 
 		$numberSlots = $this->readBits(5);
 
@@ -279,7 +284,7 @@ class InitdataDecoder extends BitwiseDecoderBase {
 			$ret["slots"][$i]["observe"] = $this->readBits(2);
 
 			if($this->replay->baseBuild >= 32283) {
-				$ret["slots"][$i]["logoIndex"] = $this->readUint8();
+				$ret["slots"][$i]["logoIndex"] = $this->readUint32();
 			}
 
 			if($this->replay->baseBuild >= 34784) {
@@ -288,35 +293,37 @@ class InitdataDecoder extends BitwiseDecoderBase {
 				$ret["slots"][$i]["mount"] = $this->readAlignedBytes($this->readBits(9));
 				$numberArtifacts = $this->readBits(4);
 				while ($numberArtifacts--) {
-					$ret["slots"][$i]["mount"]["artifacts"][] = $this->readAlignedBytes($this->readBits(9));
+					$ret["slots"][$i]["artifacts"][] = $this->readAlignedBytes($this->readBits(9));
 				}
 			}
 
 			if($this->replay->baseBuild >= 24764) {
-				$ret["slots"][$i]["slotId"] = ($this->readBoolean() ? $this->readUint8() : null);
+				$ret["slots"][$i]["workingSlotId"] = ($this->readBoolean() ? $this->readUint8() : null);
 			}
 
-			if($this->replay->baseBuild >= 34784) {
-				$numberRewardBits = 17;
-			} elseif($this->replay->baseBuild >= 24764) {
-				$numberRewardBits = 6;
-			} else {
-				$numberRewardBits = 5;
-			}
+			if($this->replay->baseBuild > 15623) {
+				if($this->replay->baseBuild >= 34784) {
+					$numberRewardBits = 17;
+				} elseif($this->replay->baseBuild >= 24764) {
+					$numberRewardBits = 6;
+				} else {
+					$numberRewardBits = 5;
+				}
 
-			$numberRewards = $this->readBits($numberRewardBits);
-			while ($numberRewards--) {
-				$ret["slots"][$i]["rewards"][] = $this->readUint32();
+				$numberRewards = $this->readBits($numberRewardBits);
+				while ($numberRewards--) {
+					$ret["slots"][$i]["rewards"][] = $this->readUint32();
+				}
 			}
 
 			if($this->replay->baseBuild >= 17266) {
-				$ret["slots"][$i]["logoIndex"] = $this->readAlignedBytes($this->readBits(7));
+				$ret["slots"][$i]["toonHandle"] = $this->readAlignedBytes($this->readBits(7));
 			}
 
 			if($this->replay->baseBuild >= 19132) {
 				$numberLicenses = $this->readBits(9);
 				while ($numberLicenses--) {
-					$ret["slots"][$i]["licenses"][] = $this->readUint32();
+					/*$ret["slots"][$i]["licenses"][] =*/ $this->readUint32();
 				}
 			}
 
@@ -334,10 +341,10 @@ class InitdataDecoder extends BitwiseDecoderBase {
 			}
 
 			if($this->replay->baseBuild >= 39576) {
-				$ret["slots"][$i]["archonId"] = $this->readBits(4);
+				$ret["slots"][$i]["archonId"] = ($this->readBoolean() ? $this->readBits(4) : null);
 			}
 
-			if($this->replay->baseBuild >= 34784) {
+			if($this->replay->baseBuild >= 42932) {
 				$ret["slots"][$i]["commander"]["masteryLevel"] = $this->readUint32();
 				$numberMasteryTalents = $this->readBits(3);
 				while ($numberMasteryTalents--) {

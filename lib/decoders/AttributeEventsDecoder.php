@@ -9,6 +9,8 @@
 namespace HIS5\lib\Sc2repParser\decoders;
 
 use HIS5\lib\Sc2repParser\data\DataLoader;
+use \HIS5\lib\Sc2repParser\ParserException;
+
 
 /**
  * The AttributeEventsDecoder class is used to decode the replay.attributes.events file contained in the replay archive
@@ -25,7 +27,7 @@ class AttributeEventsDecoder extends BitwiseDecoderBase {
 	 * @access protected
 	 */
 	protected function doDecode() {
-		$attributeLookup = DataLoader::loadFile("attributes");
+		$attributeLookup = DataLoader::loadDataset("attributes", $this->replay->baseBuild);
 
 		//skip start bytes
 		$this->readBytes($this->replay->baseBuild >= 17326 ? 5 : 4);
@@ -44,7 +46,8 @@ class AttributeEventsDecoder extends BitwiseDecoderBase {
 				$attr["name"] = $lookup[0];
 				$attr["value"] = $lookup[1][$val];
 			} else {
-				die(var_dump("Unknown attribute id '{$attr["attrId"]}'"));
+				continue;
+				//throw new ParserException("Unknown attribute id '{$attr["attrId"]}'", 100);
 			}
 
 			//save it in our temporary array
@@ -55,6 +58,11 @@ class AttributeEventsDecoder extends BitwiseDecoderBase {
 		$this->replay->gamespeed = $attributes[16]["Game Speed"];
 		$this->replay->category = $attributes[16]["Game Mode"];
 		$this->replay->gametype = $attributes[16]["Teams"];
+		if(!isset($attributes[16]["Game Privacy"])) {
+			$attributes[16]["Game Privacy"] = "Normal";
+		}
+
+		$this->replay->privacy = $attributes[16]["Game Privacy"];
 	}
 
 }

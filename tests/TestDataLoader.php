@@ -46,7 +46,7 @@ class TestDataLoader {
 	 * @param  string dataset | the name of the test dataset requested
 	 */
 	public function load($dataset) {
-		$filename = __DIR__.DIRECTORY_SEPARATOR.$this->basename.DIRECTORY_SEPARATOR.$dataset."_test.json";
+		$filename = __DIR__.DIRECTORY_SEPARATOR."test_replays".DIRECTORY_SEPARATOR.$this->basename.DIRECTORY_SEPARATOR.$dataset.".json";
 		if(!file_exists($filename)) {
 			throw new \Exception("Error loading test data set $dataset from file $filename", 10);
 		}
