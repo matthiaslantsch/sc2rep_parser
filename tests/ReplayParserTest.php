@@ -67,6 +67,7 @@ class ReplayParserTest extends \PHPUnit_Framework_TestCase {
 			'3.1.0.39576' => ['3.1.0.39576/3.1.0.39576.SC2Replay', new parser\ressources\Replay(39576, "3.1.0.39576", 9029, "LotV")],
 			'3.2.2.42253' => ['3.2.2.42253/3.2.2.42253.SC2Replay', new parser\ressources\Replay(42253, "3.2.2.42253", 17735, "LotV")],
 			'3.3.1.43199' => ['3.3.1.43199/3.3.1.43199.SC2Replay', new parser\ressources\Replay(42932, "3.3.1.43199", 19386, "LotV")],
+			'3.4.0.44401' => ['3.4.0.44401/3.4.0.44401.SC2Replay', new parser\ressources\Replay(44401, "3.4.0.44401", 7008, "LotV")],
 		];
 	}
 
