@@ -89,7 +89,7 @@ abstract class BitwiseDecoderBase {
 	 */
 	public function readByte() {
 		// the following checks that there are enough bytes left in the stream
-		if (!($read = $this->readBits(8))) {
+		if (($read = $this->readBits(8)) === false) {
 			return false;
 		}
 
@@ -347,6 +347,15 @@ abstract class BitwiseDecoderBase {
 	}
 
 	/**
+	 * wrapper function around the eof() function of the byte stream
+	 *
+	 * @access public
+	 */ 
+	public function eof() {
+		return $this->bytestream->eof();
+	}
+
+	/**
 	 * function used to skip the rest of the started byte and then reading new bytes
 	 *
 	 * @access public
@@ -450,22 +459,12 @@ abstract class BitwiseDecoderBase {
 	 * @return frame counter as an integer
 	 */
 	public function readFrameCount() {
-		$byte = $this->readByte();
-		if($byte === false) {
+		$additionalBytes = $this->readBits(2);
+		if($additionalBytes === false) {
 			return false;
 		}
 
-		$additionalBytes = $byte & 0x03;
-		switch ($additionalBytes) {
-			case 0:
-				return $byte >> 2;
-			case 1:
-				return $byte << 8 | $this->readUInt8();
-			case 2:
-				return $byte << 16 | $this->readUInt16();
-			case 3:
-				return $byte << 24 | $this->readUInt16() << 8 | $this->readUInt8();
-		}
+		return $this->readBits(6 + $additionalBytes * 8);
 	}
 
 	/**

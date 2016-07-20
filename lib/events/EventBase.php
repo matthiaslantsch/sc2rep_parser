@@ -15,15 +15,23 @@ namespace HIS5\lib\Sc2repParser\events;
  * @version {VERSION}
  * @package HIS5\lib\Sc2repParser\events
  */
-abstract class MessageEventsDecoder {
+abstract class EventBase {
 
 	/**
 	 * property containing the number of frames at the time the event happened
 	 *
 	 * @access 	public
-	 * @var 	integer frames | frames number at the time the event happened
+	 * @var 	integer frame | frames number at the time the event happened
 	 */
-	public $frames;
+	public $frame;
+
+	/**
+	 * property containing the player id of the player that caused the event
+	 *
+	 * @access 	public
+	 * @var 	integer playerId | player id of the player that caused the event
+	 */
+	public $playerId;
 
 	/**
 	 * protected constructor accepting the frame count from the child classes
@@ -31,9 +39,11 @@ abstract class MessageEventsDecoder {
 	 *
 	 * @access protected
 	 * @param  integer frames | frame counter at the time the event happened
+	 * @param  integer playerId | playerId of the player that caused the event
 	 */
-	protected function __construct($frames) {
-		$this->frames = $frames;
+	protected function __construct($frames, $playerId) {
+		$this->frame = $frames;
+		$this->playerId = $playerId;
 	}
 
 }

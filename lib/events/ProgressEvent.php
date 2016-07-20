@@ -15,7 +15,7 @@ namespace HIS5\lib\Sc2repParser\events;
  * @version {VERSION}
  * @package HIS5\lib\Sc2repParser\events
  */
-abstract class ProgressEvent {
+class ProgressEvent extends EventBase {
 
 	/**
 	 * property containing the loading progress at the time
@@ -30,9 +30,13 @@ abstract class ProgressEvent {
 	 *
 	 * @access public
 	 * @param  integer frames | frame counter at the time the event happened
+	 * @param  integer playerId | playerId of the player that caused the event
+	 * @param  integer progress | progress of at the moment of the event
 	 */
 	public function __construct($frames, $playerId, $progress) {
-		$this->frames = $frames;
+		parent::__construct($frames, $playerId);
+
+		$this->progress = $progress;
 	}
 
 }

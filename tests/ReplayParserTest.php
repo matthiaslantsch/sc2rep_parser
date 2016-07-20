@@ -84,7 +84,6 @@ class ReplayParserTest extends \PHPUnit_Framework_TestCase {
 
 	/**
 	 * @covers \HIS5\lib\Sc2repParser\ReplayParser::__construct()
-	 * @uses   \Rogiel\MPQ\MPQFile::parseFile()
 	 */
 	public function testFileNotFoundException() {
 		$msg = null;
@@ -100,7 +99,6 @@ class ReplayParserTest extends \PHPUnit_Framework_TestCase {
 
 	/**
 	 * @covers \HIS5\lib\Sc2repParser\ReplayParser::__construct()
-	 * @uses   \Rogiel\MPQ\MPQFile::parseFile()
 	 * @dataProvider replayProvider
 	 */
 	public function testHeaderDecode($path, $expected) {
@@ -111,7 +109,6 @@ class ReplayParserTest extends \PHPUnit_Framework_TestCase {
 
 	/**
 	 * @covers \HIS5\lib\Sc2repParser\ReplayParser::compare()
-	 * @uses   \Rogiel\MPQ\MPQFile::parseFile()
 	 * @uses   \HIS5\lib\Sc2repParser\ReplayParser::identify()
 	 */
 	public function testReplayHash() {
@@ -125,17 +122,30 @@ class ReplayParserTest extends \PHPUnit_Framework_TestCase {
 
 	/**
 	 * @covers \HIS5\lib\Sc2repParser\ReplayParser::identify()
-	 * @uses   \Rogiel\MPQ\MPQFile::parseFile()
 	 * @dataProvider replayDetailData
 	 */
 	public function testIdentify($repFile, $dataLoader) {
 		$identify = parser\ReplayParser::identify(__DIR__.DIRECTORY_SEPARATOR."test_replays".DIRECTORY_SEPARATOR.$repFile);
 
 		$expected = $dataLoader->load("identify");
-		if($expected === null) {
-			die(var_dump(json_encode($identify, JSON_PRETTY_PRINT), $repFile));
-		}
 		$this->assertEquals($expected, $identify);
+	}
+
+	/**
+	 * @covers \HIS5\lib\Sc2repParser\ReplayParser::decode()
+	 * @dataProvider replayDetailData
+	 */
+	public function testMessageEventDecoder($repFile, $dataLoader) {
+		$replay = new parser\ReplayParser(__DIR__.DIRECTORY_SEPARATOR."test_replays".DIRECTORY_SEPARATOR.$repFile);
+		$rep = $replay->doDecode();
+
+		$expected = $dataLoader->load("message.events");
+		if($expected === null) {
+			$log = $rep->eventArray("message");
+			ksort($log);
+			die(var_dump(json_encode($log, JSON_PRETTY_PRINT)));
+		}
+		$this->assertEquals($expected, $rep->eventArray("message"));
 	}
 
 }

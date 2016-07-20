@@ -29,14 +29,6 @@ class Player extends Entity {
 	public $result = "Unknown";
 
 	/**
-	 * property containing a reference to the team object the player belongs to
-	 *
-	 * @access  public
-	 * @var     object team | reference to the team object
-	 */
-	public $team;
-
-	/**
 	 * property containing a string identifying the race the player picked prior to the game starting
 	 * one of the following: Protoss, Zerg, Terran, Random
 	 *

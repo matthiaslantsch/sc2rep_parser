@@ -75,6 +75,7 @@ class ReplayParser {
 	 *
 	 * @access public
 	 * @param  string path | the path to the replay to identify
+	 * @return array with identify data
 	 */
 	public static function identify($path) {
 		$me = new static($path);
@@ -82,30 +83,47 @@ class ReplayParser {
 	}
 
 	/**
+	 * static interface method to parse a replay, will identify it and then parse the game event files
+	 *
+	 * @access public
+	 * @param  string path | the path to the replay to parse
+	 * @return replay object resulting from the decoded replay file
+	 */
+	public static function decode($path) {
+		$me = new static($path);
+		return $me->doParse();
+	}
+
+	/**
 	 * function used to increase the load level of the replay to an identify level
 	 * will decode init data and replay details
 	 *
 	 * @access public
+	 * @return array with identify data
 	 */
 	public function doIdentify() {
-		if($this->replay->baseBuild < 15097) {
-			//replay version 1
-			$this->decodeFile("replay.info", decoders\InfoDecoder::class);
-		} else {
-			//replay version 2
-			$this->decodeFile("replay.initdata", decoders\InitdataDecoder::class);
-			$this->decodeFile("replay.attributes.events", decoders\AttributeEventsDecoder::class);
-			$this->decodeFile("replay.details", decoders\DetailsDecoder::class);
-		}
+		if($this->replay->loadLevel < 2) {
+			if($this->replay->baseBuild < 15097) {
+				//replay version 1
+				$this->decodeFile("replay.info", decoders\InfoDecoder::class);
+			} else {
+				//replay version 2
+				$this->decodeFile("replay.initdata", decoders\InitdataDecoder::class);
+				$this->decodeFile("replay.attributes.events", decoders\AttributeEventsDecoder::class);
+				$this->decodeFile("replay.details", decoders\DetailsDecoder::class);
+			}
 
-		utils\PlayerLoader::loadPlayers($this->replay);
+			utils\PlayerLoader::loadPlayers($this->replay);
 
-		$identifyString = $this->replay->region.$this->replay->peoplestring;
+			$identifyString = $this->replay->region.$this->replay->peoplestring;
 
-		if($this->replay->baseBuild < 16195) {
-			$this->replay->identifier = "BETA".(isset($this->replay->startTimestamp) ? $this->replay->startTimestamp : '').":".md5($identifyString);
-		} else {
-			$this->replay->identifier = $this->replay->startTimestamp.":".md5($identifyString);
+			if($this->replay->baseBuild < 16195) {
+				$this->replay->identifier = "BETA".(isset($this->replay->startTimestamp) ? $this->replay->startTimestamp : '').":".md5($identifyString);
+			} else {
+				$this->replay->identifier = $this->replay->startTimestamp.":".md5($identifyString);
+			}
+
+			$this->replay->loadLevel = 2;
 		}
 
 		return [
@@ -118,6 +136,24 @@ class ReplayParser {
 	}
 
 	/**
+	 * function used to increase the load level of the replay to a parsed level
+	 * will decode init data and replay details and all event files
+	 *
+	 * @access public
+	 * @return replay object resulting from the decoded replay file
+	 */
+	public function doDecode() {
+		$this->doIdentify();
+		if($this->replay->loadLevel < 3) {
+			$this->decodeFile("replay.message.events", decoders\MessageEventsDecoder::class);
+
+			$this->replay->loadLevel = 3;
+		}
+
+		return $this->replay;
+	}
+
+	/**
 	 * private dispatcher method calling a decoder on a certain replay subfile
 	 *
 	 * @access private
@@ -125,9 +161,6 @@ class ReplayParser {
 	 * @param  string decoder | the name of the decoder class to be used to decode the data
 	 */
 	private function decodeFile($file, $decoder) {
-		if(!$this->archive->hasFile($file)) {
-			throw new ParserException("The replay file '{$this->archive->getFilename()}' is corrupt, the '{$file}' file could not be read", 10);
-		}
 		$data = $this->archive->readFile($file);
 		$stream = new utils\StringStream($data);
 		//instantiate the decoder class
@@ -135,7 +168,6 @@ class ReplayParser {
 		//do the decoding
 		$decoder->decode($this->replay);
 	}
-
 
 	/**
 	 * static method used to compare two replays

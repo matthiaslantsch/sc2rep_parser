@@ -1,0 +1,40 @@
+{
+    "0": [
+        {
+            "progress": 80,
+            "frame": 0,
+            "playerId": 1
+        },
+        {
+            "progress": 85,
+            "frame": 0,
+            "playerId": 1
+        },
+        {
+            "progress": 90,
+            "frame": 0,
+            "playerId": 1
+        },
+        {
+            "progress": 100,
+            "frame": 0,
+            "playerId": 1
+        }
+    ],
+    "47769": [
+        {
+            "msg": "gg",
+            "recipient": "all",
+            "frame": 47769,
+            "playerId": 1
+        }
+    ],
+    "47807": [
+        {
+            "msg": "gg",
+            "recipient": "all",
+            "frame": 47807,
+            "playerId": 2
+        }
+    ]
+}

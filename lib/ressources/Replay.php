@@ -53,6 +53,14 @@ class Replay {
 	public $frames;
 
 	/**
+	 * property containing an integer marking how far this replay has been parsed yet
+	 *
+	 * @access 	public
+	 * @var 	integer frames | integer with the load level
+	 */
+	public $loadLevel;
+
+	/**
 	 * constructor initialising the replay object with the inital data from the header
 	 *
 	 * @access public
@@ -66,6 +74,40 @@ class Replay {
 		$this->version = $versionString;
 		$this->frames = $frames;
 		$this->expansion = $expansion;
+		$this->loadLevel = 1;
+	}
+
+	/**
+	 * getter method for an array of events
+	 *
+	 * @access public
+	 * @param  string type | string specifying the kind of events requested
+	 * @return array with all the events of the requested type in it
+	 */
+	public function eventArray($type) {	
+		if($this->loadLevel < 3) {
+			//no event files have been parsed yet
+			throw new parser\ParserException("Cannot list events without parsing event files first (load level 3 => decode)", 100);
+		}
+
+		switch ($type) {
+			case "message":
+				$events = $this->messages;
+				break;
+			default:
+				throw new parser\ParserException("Cannot list events for unknown event type: {$type}", 100);
+		}
+
+		$ret = [];
+		foreach ($events as $i => $ev) {
+			$arr = [];
+			foreach ($ev as $key => $value) {
+				$arr[$key] = $value;
+			}
+
+			$ret[$ev->frame][] = $arr;
+		}
+		return $ret;
 	}
 
 }
