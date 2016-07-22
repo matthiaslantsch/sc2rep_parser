@@ -146,6 +146,7 @@ class ReplayParser {
 		$this->doIdentify();
 		if($this->replay->loadLevel < 3) {
 			$this->decodeFile("replay.message.events", decoders\MessageEventsDecoder::class);
+			$this->decodeFile("replay.game.events", decoders\GameEventsDecoder::class);
 
 			$this->replay->loadLevel = 3;
 		}
