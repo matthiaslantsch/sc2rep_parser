@@ -402,10 +402,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function parseResourceTradeEvent($playerId) {
 		$recipientId = $this->readBits(4);
-		$numResources = $this->readBits(3);
-		while ($numResources--) {
-			$resources[] = $this->readUint32() - 2147483648;
-		}
+		$resources = $this->readResourceCounts();
 
 		return new events\ResourceTradeEvent($recipientId, $resources);
 	}
@@ -561,47 +558,38 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @param  integer playerId | the id of the player that triggered this event
 	 */
 	private function parseAICommunicateEvent($playerId) {
-			beacon=data.read_uint8()-128,
-			ally=data.read_uint8()-128,
-			flags=data.read_uint8()-128,
-			build=None,
-			target_unit_tag=data.read_uint32(),
-			target_unit_link=data.read_uint16(),
-			target_upkeep_player_id=data.read_bits(4) if data.read_bool() else None,
-			target_control_player_id=None,
-			target_point=dict(
-				x=data.read_uint32()-2147483648,
-				y=data.read_uint32()-2147483648,
-				z=data.read_uint32()-2147483648,
-			),
-19595
-			beacon=data.read_uint8()-128,
-			ally=data.read_uint8()-128,
-			flags=data.read_uint8()-128,  # autocast??
-			build=None,
-			target_unit_tag=data.read_uint32(),
-			target_unit_link=data.read_uint16(),
-			target_upkeep_player_id=data.read_bits(4) if data.read_bool() else None,
-			target_control_player_id=data.read_bits(4) if data.read_bool() else None,
-			target_point=dict(
-				x=data.read_uint32()-2147483648,
-				y=data.read_uint32()-2147483648,
-				z=data.read_uint32()-2147483648,
-			),
-22612
-			beacon=data.read_uint8()-128,
-			ally=data.read_uint8()-128,
-			flags=data.read_uint8()-128,
-			build=data.read_uint8()-128,
-			target_unit_tag=data.read_uint32(),
-			target_unit_link=data.read_uint16(),
-			target_upkeep_player_id=data.read_uint8(),
-			target_control_player_id=data.read_uint8(),
-			target_point=dict(
-				x=data.read_uint32()-2147483648,
-				y=data.read_uint32()-2147483648,
-				z=data.read_uint32()-2147483648,
-			),
+		$beacon = $this->readUint8() - 128;
+		$ally = $this->readUint8() - 128;
+		$flags = $this->readUint8() - 128;
+		if($this->replay->baseBuild >= 22612) {
+			$build = $this->readUint8() - 128;
+		} else {
+			$build = null;
+		}
+
+		$ret = new events\AICommunicateEvent($this->frameCount, $playerId, $beacon, $ally, $build);
+		$ret->targetUnitId = $this->readUint8();
+		$targetUnitLink = $this->readUint16();
+
+		if($this->replay->baseBuild < 22612 && $this->readBoolean()) {
+			$ret->targetUpkeepPlayerId = $this->readBits(4);
+		} else {
+			$ret->targetUpkeepPlayerId = $this->readUint8();
+		}
+
+		if($this->replay->baseBuild >= 19595 && $this->readBoolean()) {
+			$ret->targetControlPlayerId = $this->readBits(4);
+		} elseif($this->replay->baseBuild >= 22612) {
+			$ret->targetControlPlayerId = $this->readUint8();
+		}
+
+		$ret->location = [
+			"x" => $this->readUint32() - 2147483648,
+			"y" => $this->readUint32() - 2147483648,
+			"z" => $this->readUint32() - 2147483648
+		];
+
+		return $ret;
 	}
 
 	/**
@@ -1009,6 +997,26 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 				break;
 		}
 		return $removeMask;
+	}
+
+	/**
+	 * reads a group of resource counts and returns them indexed by resource name
+	 *
+	 * @access private
+	 * @return array with resource counts indexed by resource name
+	 */
+	private function readResourceCounts() {
+		$resourceNames = ["Minerals", "Vespene", "Terrazine", "Unknown"];
+		$numResources = $this->readBits(3);
+		for ($i=0; $i < $numResources; $i++) {
+			$resCount = $this->readUint32() - 2147483648;
+			if(!isset($resourceNames[$i])) {
+				die(var_dump("Unknown resource: {$resCount}"))
+			}
+			$resources[$resourceNames[$i]] = $resCount;
+		}
+
+		return $resources;
 	}
 
 }
