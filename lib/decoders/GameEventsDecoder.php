@@ -136,6 +136,75 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	}
 
 	/**
+	 * decode a AddAbsoluteGameSpeedEvent event
+	 *
+	 * @access private
+	 * @param  integer playerId | the id of the player that triggered this event
+	 */
+	private function parseAddAbsoluteGameSpeedEvent($playerId) {
+		$speedDelta = $this->readUint8() - 128;
+	}
+
+	/**
+	 * decode a TriggerPingEvent event
+	 *
+	 * @access private
+	 * @param  integer playerId | the id of the player that triggered this event
+	 */
+	private function parseTriggerPingEvent($playerId) {
+		
+22612
+            point=dict(
+                x=data.read_uint32()-2147483648,
+                y=data.read_uint32()-2147483648,
+            ),
+            unit_tag=data.read_uint32(),
+            pinged_minimap=data.read_bool(),
+34784
+            point=dict(
+                x=data.read_uint32() - 2147483648,
+                y=data.read_uint32() - 2147483648,
+            ),
+            unit_tag=data.read_uint32(),
+            pinged_minimap=data.read_bool(),
+            option=data.read_uint32() - 2147483648,
+38215
+            point=dict(
+                x=data.read_uint32() - 2147483648,
+                y=data.read_uint32() - 2147483648,
+            ),
+            unit_tag=data.read_uint32(),
+            unit_link=data.read_uint16(),
+            unit_control_player_id=(data.read_bits(4) if data.read_bool() else None),
+            unit_upkeep_player_id=(data.read_bits(4) if data.read_bool() else None),
+            unit_position=dict(
+                    x=data.read_bits(20),
+                    y=data.read_bits(20),
+                    z=data.read_bits(32) - 2147483648,
+                ),
+            pinged_minimap=data.read_bool(),
+            option=data.read_uint32() - 2147483648,
+38996
+            point=dict(
+                x=data.read_uint32() - 2147483648,
+                y=data.read_uint32() - 2147483648,
+            ),
+            unit_tag=data.read_uint32(),
+            unit_link=data.read_uint16(),
+            unit_control_player_id=(data.read_bits(4) if data.read_bool() else None),
+            unit_upkeep_player_id=(data.read_bits(4) if data.read_bool() else None),
+            unit_position=dict(
+                    x=data.read_bits(20),
+                    y=data.read_bits(20),
+                    z=data.read_bits(32) - 2147483648,
+                ),
+            unit_is_under_construction=data.read_bool(),
+            pinged_minimap=data.read_bool(),
+            option=data.read_uint32() - 2147483648,
+	}
+
+
+	/**
 	 * decode a TriggerConversationSkippedEvent event
 	 *
 	 * @access private
@@ -165,6 +234,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @param  integer playerId | the id of the player that triggered this event
 	 */
 	private function parseResourceRequestId($playerId) {
+		die("object");
 		$requestId = $this->readUint32() - 2147483648;
 	}
 
@@ -1006,7 +1076,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with resource counts indexed by resource name
 	 */
 	private function readResourceCounts() {
-		$resourceNames = ["Minerals", "Vespene", "Terrazine", "Unknown"];
+		$resourceNames = ["Minerals", "Vespene", "Terrazine", "Custom"];
 		$numResources = $this->readBits(3);
 		for ($i=0; $i < $numResources; $i++) {
 			$resCount = $this->readUint32() - 2147483648;
