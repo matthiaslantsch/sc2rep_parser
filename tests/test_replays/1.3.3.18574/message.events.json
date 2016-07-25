@@ -2,48 +2,57 @@
     "0": [
         {
             "playerId": 2, 
+            "gameloop": 0, 
             "progress": 11, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 2, 
+            "gameloop": 0, 
             "progress": 20, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 2, 
+            "gameloop": 0, 
             "progress": 30, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 2, 
+            "gameloop": 0, 
             "progress": 39, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 2, 
+            "gameloop": 0, 
             "progress": 46, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 2, 
+            "gameloop": 0, 
             "progress": 55, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 2, 
+            "gameloop": 0, 
             "progress": 60, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 2, 
+            "gameloop": 0, 
             "progress": 66, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 2, 
+            "gameloop": 0, 
             "progress": 100, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }
     ]
 }

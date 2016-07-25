@@ -453,12 +453,12 @@ abstract class BitwiseDecoderBase {
 
 
 	/**
-	 * method used to read a frame counter from the raw data
+	 * method used to read a gameloop counter from the raw data
 	 *
 	 * @access public
-	 * @return frame counter as an integer
+	 * @return gameloop counter as an integer
 	 */
-	public function readFrameCount() {
+	public function readLoopCount() {
 		$additionalBytes = $this->readBits(2);
 		if($additionalBytes === false) {
 			return false;

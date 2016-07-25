@@ -2,258 +2,292 @@
     "0": [
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 37, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 46, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 55, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 60, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 100, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }
     ], 
     "1153": [
         {
-            "msg": " well then you know what's comming ", 
             "playerId": 1, 
-            "frame": 1153, 
-            "recipient": "all"
+            "gameloop": 1153, 
+            "recipient": 0, 
+            "msg": " well then you know what's comming ", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "1409": [
         {
-            "msg": "im sure you can marine-tank too :P", 
             "playerId": 2, 
-            "frame": 1409, 
-            "recipient": "all"
+            "gameloop": 1409, 
+            "recipient": 0, 
+            "msg": "im sure you can marine-tank too :P", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "1544": [
         {
-            "msg": " no ", 
             "playerId": 1, 
-            "frame": 1544, 
-            "recipient": "all"
+            "gameloop": 1544, 
+            "recipient": 0, 
+            "msg": " no ", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "39020": [
         {
-            "msg": "gg", 
             "playerId": 2, 
-            "frame": 39020, 
-            "recipient": "all"
+            "gameloop": 39020, 
+            "recipient": 0, 
+            "msg": "gg", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "39063": [
         {
-            "msg": "gg", 
             "playerId": 1, 
-            "frame": 39063, 
-            "recipient": "all"
+            "gameloop": 39063, 
+            "recipient": 0, 
+            "msg": "gg", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "2061": [
         {
-            "msg": "i thoguht that was the harder one", 
             "playerId": 2, 
-            "frame": 2061, 
-            "recipient": "all"
+            "gameloop": 2061, 
+            "recipient": 0, 
+            "msg": "i thoguht that was the harder one", 
+            "eventtype": "ChatMessage"
         }, 
         {
-            "msg": " oh hell yah ", 
             "playerId": 1, 
-            "frame": 2061, 
-            "recipient": "all"
+            "gameloop": 2061, 
+            "recipient": 0, 
+            "msg": " oh hell yah ", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "148": [
         {
-            "msg": "gl hf", 
             "playerId": 2, 
-            "frame": 148, 
-            "recipient": "all"
+            "gameloop": 148, 
+            "recipient": 0, 
+            "msg": "gl hf", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "38935": [
         {
-            "msg": "so i suck at it", 
             "playerId": 2, 
-            "frame": 38935, 
-            "recipient": "all"
+            "gameloop": 38935, 
+            "recipient": 0, 
+            "msg": "so i suck at it", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "1689": [
         {
-            "msg": "just mech play?", 
             "playerId": 2, 
-            "frame": 1689, 
-            "recipient": "all"
+            "gameloop": 1689, 
+            "recipient": 0, 
+            "msg": "just mech play?", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "2076": [
         {
-            "msg": "lol", 
             "playerId": 2, 
-            "frame": 2076, 
-            "recipient": "all"
+            "gameloop": 2076, 
+            "recipient": 0, 
+            "msg": "lol", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "38432": [
         {
-            "msg": " yah ", 
             "playerId": 1, 
-            "frame": 38432, 
-            "recipient": "all"
+            "gameloop": 38432, 
+            "recipient": 0, 
+            "msg": " yah ", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "558": [
         {
-            "msg": " oh   ", 
             "playerId": 1, 
-            "frame": 558, 
-            "recipient": "all"
+            "gameloop": 558, 
+            "recipient": 0, 
+            "msg": " oh   ", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "38963": [
         {
-            "msg": "lol", 
             "playerId": 2, 
-            "frame": 38963, 
-            "recipient": "all"
+            "gameloop": 38963, 
+            "recipient": 0, 
+            "msg": "lol", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "38841": [
         {
-            "msg": "and range on Torats ", 
             "playerId": 1, 
-            "frame": 38841, 
-            "recipient": "all"
+            "gameloop": 38841, 
+            "recipient": 0, 
+            "msg": "and range on Torats ", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "449": [
         {
-            "msg": "nice helions before D:", 
             "playerId": 2, 
-            "frame": 449, 
-            "recipient": "all"
+            "gameloop": 449, 
+            "recipient": 0, 
+            "msg": "nice helions before D:", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "963": [
         {
-            "msg": "hate close positions :D", 
             "playerId": 2, 
-            "frame": 963, 
-            "recipient": "all"
+            "gameloop": 963, 
+            "recipient": 0, 
+            "msg": "hate close positions :D", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "38852": [
         {
-            "msg": "lol i dont do mutaling much", 
             "playerId": 2, 
-            "frame": 38852, 
-            "recipient": "all"
+            "gameloop": 38852, 
+            "recipient": 0, 
+            "msg": "lol i dont do mutaling much", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "38727": [
         {
-            "msg": " yah ", 
             "playerId": 1, 
-            "frame": 38727, 
-            "recipient": "all"
+            "gameloop": 38727, 
+            "recipient": 0, 
+            "msg": " yah ", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "204": [
         {
-            "msg": "glhf", 
             "playerId": 1, 
-            "frame": 204, 
-            "recipient": "all"
+            "gameloop": 204, 
+            "recipient": 0, 
+            "msg": "glhf", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "1888": [
         {
-            "msg": "serious?", 
             "playerId": 2, 
-            "frame": 1888, 
-            "recipient": "all"
+            "gameloop": 1888, 
+            "recipient": 0, 
+            "msg": "serious?", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "39139": [
         {
-            "msg": "too pro :P", 
             "playerId": 2, 
-            "frame": 39139, 
-            "recipient": "all"
+            "gameloop": 39139, 
+            "recipient": 0, 
+            "msg": "too pro :P", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "38629": [
         {
-            "msg": "did you get building armor too?", 
             "playerId": 2, 
-            "frame": 38629, 
-            "recipient": "all"
+            "gameloop": 38629, 
+            "recipient": 0, 
+            "msg": "did you get building armor too?", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "2305": [
         {
-            "msg": " no it's the easy one ", 
             "playerId": 1, 
-            "frame": 2305, 
-            "recipient": "all"
+            "gameloop": 2305, 
+            "recipient": 0, 
+            "msg": " no it's the easy one ", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "1776": [
         {
-            "msg": " yep ", 
             "playerId": 1, 
-            "frame": 1776, 
-            "recipient": "all"
+            "gameloop": 1776, 
+            "recipient": 0, 
+            "msg": " yep ", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "4979": [
         {
-            "msg": "noooo", 
             "playerId": 2, 
-            "frame": 4979, 
-            "recipient": "all"
+            "gameloop": 4979, 
+            "recipient": 0, 
+            "msg": "noooo", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "38516": [
         {
-            "msg": "so hard to break", 
             "playerId": 2, 
-            "frame": 38516, 
-            "recipient": "all"
+            "gameloop": 38516, 
+            "recipient": 0, 
+            "msg": "so hard to break", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "38264": [
         {
-            "msg": "you got your strat worked out huh? :P", 
             "playerId": 2, 
-            "frame": 38264, 
-            "recipient": "all"
+            "gameloop": 38264, 
+            "recipient": 0, 
+            "msg": "you got your strat worked out huh? :P", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "638": [
         {
-            "msg": " lol ", 
             "playerId": 1, 
-            "frame": 638, 
-            "recipient": "all"
+            "gameloop": 638, 
+            "recipient": 0, 
+            "msg": " lol ", 
+            "eventtype": "ChatMessage"
         }
     ]
 }

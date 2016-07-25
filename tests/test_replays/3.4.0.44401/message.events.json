@@ -2,214 +2,243 @@
     "0": [
         {
             "playerId": 0, 
+            "gameloop": 0, 
             "progress": 33, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 0, 
+            "gameloop": 0, 
             "progress": 38, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 0, 
+            "gameloop": 0, 
             "progress": 46, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 0, 
+            "gameloop": 0, 
             "progress": 55, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 0, 
+            "gameloop": 0, 
             "progress": 60, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 0, 
+            "gameloop": 0, 
             "progress": 66, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 0, 
+            "gameloop": 0, 
             "progress": 99, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }
     ], 
     "1028": [
         {
-            "msg": "ladder?", 
             "playerId": 1, 
-            "frame": 1028, 
-            "recipient": "all"
+            "gameloop": 1028, 
+            "recipient": 0, 
+            "msg": "ladder?", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "1416": [
         {
-            "msg": "which is now main", 
             "playerId": 0, 
-            "frame": 1416, 
-            "recipient": "all"
+            "gameloop": 1416, 
+            "recipient": 0, 
+            "msg": "which is now main", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "5643": [
         {
-            "msg": "I FUCKED UP", 
             "playerId": 0, 
-            "frame": 5643, 
-            "recipient": "all"
+            "gameloop": 5643, 
+            "recipient": 0, 
+            "msg": "I FUCKED UP", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "2066": [
         {
-            "msg": "mebe u should", 
             "playerId": 1, 
-            "frame": 2066, 
-            "recipient": "all"
+            "gameloop": 2066, 
+            "recipient": 0, 
+            "msg": "mebe u should", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "661": [
         {
-            "msg": "the otehr 2 ", 
             "playerId": 1, 
-            "frame": 661, 
-            "recipient": "all"
+            "gameloop": 661, 
+            "recipient": 0, 
+            "msg": "the otehr 2 ", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "1668": [
         {
-            "msg": "i should just add you on that acc", 
             "playerId": 0, 
-            "frame": 1668, 
-            "recipient": "all"
+            "gameloop": 1668, 
+            "recipient": 0, 
+            "msg": "i should just add you on that acc", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "1308": [
         {
-            "msg": "yeah", 
             "playerId": 0, 
-            "frame": 1308, 
-            "recipient": "all"
+            "gameloop": 1308, 
+            "recipient": 0, 
+            "msg": "yeah", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "2718": [
         {
-            "msg": "this is the map i lost to mass bc", 
             "playerId": 1, 
-            "frame": 2718, 
-            "recipient": "all"
+            "gameloop": 2718, 
+            "recipient": 0, 
+            "msg": "this is the map i lost to mass bc", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "672": [
         {
-            "msg": "i played 2 games today and lost instantly", 
             "playerId": 0, 
-            "frame": 672, 
-            "recipient": "all"
+            "gameloop": 672, 
+            "recipient": 0, 
+            "msg": "i played 2 games today and lost instantly", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "5794": [
         {
-            "msg": "I'M JUST GOING TO ALL IN HERE", 
             "playerId": 0, 
-            "frame": 5794, 
-            "recipient": "all"
+            "gameloop": 5794, 
+            "recipient": 0, 
+            "msg": "I'M JUST GOING TO ALL IN HERE", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "692": [
         {
-            "msg": "dont play", 
             "playerId": 1, 
-            "frame": 692, 
-            "recipient": "all"
+            "gameloop": 692, 
+            "recipient": 0, 
+            "msg": "dont play", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "2613": [
         {
-            "msg": "i hate this map", 
             "playerId": 1, 
-            "frame": 2613, 
-            "recipient": "all"
+            "gameloop": 2613, 
+            "recipient": 0, 
+            "msg": "i hate this map", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "1081": [
         {
-            "msg": "YEAH", 
             "playerId": 0, 
-            "frame": 1081, 
-            "recipient": "all"
+            "gameloop": 1081, 
+            "recipient": 0, 
+            "msg": "YEAH", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "59": [
         {
-            "msg": "the good one", 
             "playerId": 1, 
-            "frame": 59, 
-            "recipient": "all"
+            "gameloop": 59, 
+            "recipient": 0, 
+            "msg": "the good one", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "3005": [
         {
-            "msg": "lol", 
             "playerId": 0, 
-            "frame": 3005, 
-            "recipient": "all"
+            "gameloop": 3005, 
+            "recipient": 0, 
+            "msg": "lol", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "454": [
         {
-            "msg": "?", 
             "playerId": 0, 
-            "frame": 454, 
-            "recipient": "all"
+            "gameloop": 454, 
+            "recipient": 0, 
+            "msg": "?", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "1356": [
         {
-            "msg": "on smurf", 
             "playerId": 0, 
-            "frame": 1356, 
-            "recipient": "all"
+            "gameloop": 1356, 
+            "recipient": 0, 
+            "msg": "on smurf", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "1489": [
         {
-            "msg": "lol", 
             "playerId": 1, 
-            "frame": 1489, 
-            "recipient": "all"
+            "gameloop": 1489, 
+            "recipient": 0, 
+            "msg": "lol", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "5721": [
         {
-            "msg": "BRO I NEED TO TAKE A SHIT REAL BAD", 
             "playerId": 0, 
-            "frame": 5721, 
-            "recipient": "all"
+            "gameloop": 5721, 
+            "recipient": 0, 
+            "msg": "BRO I NEED TO TAKE A SHIT REAL BAD", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "1260": [
         {
-            "msg": "as terrna?", 
             "playerId": 1, 
-            "frame": 1260, 
-            "recipient": "all"
+            "gameloop": 1260, 
+            "recipient": 0, 
+            "msg": "as terrna?", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "621": [
         {
-            "msg": "the cunt that was good plays overwatch", 
             "playerId": 1, 
-            "frame": 621, 
-            "recipient": "all"
+            "gameloop": 621, 
+            "recipient": 0, 
+            "msg": "the cunt that was good plays overwatch", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "759": [
         {
-            "msg": "oh lmao", 
             "playerId": 0, 
-            "frame": 759, 
-            "recipient": "all"
+            "gameloop": 759, 
+            "recipient": 0, 
+            "msg": "oh lmao", 
+            "eventtype": "ChatMessage"
         }
     ]
 }

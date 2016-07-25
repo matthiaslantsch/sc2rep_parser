@@ -18,12 +18,12 @@ namespace HIS5\lib\Sc2repParser\events;
 abstract class EventBase {
 
 	/**
-	 * property containing the number of frames at the time the event happened
+	 * property containing the number of ingame engine loops at the time the event happened
 	 *
 	 * @access 	public
-	 * @var 	integer frame | frames number at the time the event happened
+	 * @var 	integer gameloop | gameloops number at the time the event happened
 	 */
-	public $frame;
+	public $gameloop;
 
 	/**
 	 * property containing the player id of the player that caused the event
@@ -34,15 +34,15 @@ abstract class EventBase {
 	public $playerId;
 
 	/**
-	 * protected constructor accepting the frame count from the child classes
-	 * all game events must have a frame counter
+	 * protected constructor accepting the gameloop count from the child classes
+	 * all game events must have a gameloop counter
 	 *
 	 * @access protected
-	 * @param  integer frames | frame counter at the time the event happened
+	 * @param  integer gameloops | gameloop counter at the time the event happened
 	 * @param  integer playerId | playerId of the player that caused the event
 	 */
-	protected function __construct($frames, $playerId) {
-		$this->frame = $frames;
+	protected function __construct($gameloops, $playerId) {
+		$this->frame = $gameloops;
 		$this->playerId = $playerId;
 	}
 

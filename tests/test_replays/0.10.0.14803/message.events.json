@@ -1,80 +1,91 @@
 {
     "0": [
         {
-            "progress": 100,
-            "frame": 0,
-            "playerId": 3
+            "gameloop": 0,
+            "playerId": 3,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 100
         },
         {
-            "progress": 78,
-            "frame": 0,
-            "playerId": 2
+            "gameloop": 0,
+            "playerId": 2,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 78
         },
         {
-            "progress": 95,
-            "frame": 0,
-            "playerId": 2
+            "gameloop": 0,
+            "playerId": 2,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 95
         },
         {
-            "progress": 100,
-            "frame": 0,
-            "playerId": 2
+            "gameloop": 0,
+            "playerId": 2,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 100
         }
     ],
     "21792": [
         {
-            "msg": "\ub4a4\uc9c8\ub798?",
-            "recipient": "all",
-            "frame": 21792,
-            "playerId": 1
+            "gameloop": 21792,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "\ub4a4\uc9c8\ub798?"
         }
     ],
     "21825": [
         {
-            "msg": "\u314b",
-            "recipient": "all",
-            "frame": 21825,
-            "playerId": 2
+            "gameloop": 21825,
+            "playerId": 2,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "\u314b"
         }
     ],
     "21828": [
         {
-            "msg": "\ub204\uac00\ubb34\ub9ac\ubf51\uc73c\ub798",
-            "recipient": "all",
-            "frame": 21828,
-            "playerId": 1
+            "gameloop": 21828,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "\ub204\uac00\ubb34\ub9ac\ubf51\uc73c\ub798"
         }
     ],
     "21848": [
         {
-            "msg": "\u314b",
-            "recipient": "all",
-            "frame": 21848,
-            "playerId": 2
+            "gameloop": 21848,
+            "playerId": 2,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "\u314b"
         }
     ],
     "21887": [
         {
-            "msg": "']\u3134\u3147\ub77c;\u3163\u3151\u3134\u3147\ub9bc\u3139\u3147\u3134",
-            "recipient": "all",
-            "frame": 21887,
-            "playerId": 1
+            "gameloop": 21887,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "']\u3134\u3147\ub77c;\u3163\u3151\u3134\u3147\ub9bc\u3139\u3147\u3134"
         }
     ],
     "21906": [
         {
-            "msg": "]\u3147\ub124\u315c\u3150\u3141\ub4d3\ud7880.]\u3154 [\u3160\u315b\uae30\u3154\u3151,\u314e\u3137\u3148\u3141",
-            "recipient": "all",
-            "frame": 21906,
-            "playerId": 1
+            "gameloop": 21906,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "]\u3147\ub124\u315c\u3150\u3141\ub4d3\ud7880.]\u3154 [\u3160\u315b\uae30\u3154\u3151,\u314e\u3137\u3148\u3141"
         }
     ],
     "21921": [
         {
-            "msg": "\u3148\u3148",
-            "recipient": "all",
-            "frame": 21921,
-            "playerId": 1
+            "gameloop": 21921,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "\u3148\u3148"
         }
     ]
 }

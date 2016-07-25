@@ -26,16 +26,16 @@ class ChatEvent extends MessageEvent {
 	public $msg;
 
 	/**
-	 * constructor accepting the frame count
+	 * constructor accepting the gameloop count
 	 *
 	 * @access public
-	 * @param  integer frames | frame counter at the time the event happened
+	 * @param  integer gameloops | gameloop counter at the time the event happened
 	 * @param  integer playerId | playerId of the player that caused the event
 	 * @param  integer recipient | integer describing the recipient of the message
 	 * @param  string msg | string with the chat message
 	 */
-	public function __construct($frames, $playerId, $recipient, $msg) {
-		parent::__construct($frames, $playerId, $recipient);
+	public function __construct($gameloops, $playerId, $recipient, $msg) {
+		parent::__construct($gameloops, $playerId, $recipient);
 
 		$this->msg = $msg;
 	}

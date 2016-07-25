@@ -55,10 +55,10 @@ class SelectionEvent extends EventBase {
 	public $newUnitInfo;
 
 	/**
-	 * constructor accepting the frame count
+	 * constructor accepting the gameloop count
 	 *
 	 * @access public
-	 * @param  integer frames | frame counter at the time the event happened
+	 * @param  integer gameloops | gameloop counter at the time the event happened
 	 * @param  integer playerId | playerId of the player that caused the event
 	 * @param  integer controlGroup | the control group index being modified
 	 * @param  integer subgroupIndex | the subgroup index
@@ -66,8 +66,8 @@ class SelectionEvent extends EventBase {
 	 * @param  array addSubGroups | array with unit type data for the new units
 	 * @param  array addUnitTags | array with unit tags being added
 	 */
-	public function __construct($frames, $playerId, $controlGroup, $subgroupIndex, $removeMask, $addSubGroups, $addUnitTags) {
-		parent::__construct($frames, $playerId);
+	public function __construct($gameloops, $playerId, $controlGroup, $subgroupIndex, $removeMask, $addSubGroups, $addUnitTags) {
+		parent::__construct($gameloops, $playerId);
 
 		$this->controlGroup = $controlGroup;
 		$this->subgroupIndex = $subgroupIndex;

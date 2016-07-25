@@ -21,25 +21,17 @@ use HIS5\lib\Sc2repParser\events as events;
 class GameEventsDecoder extends BitwiseDecoderBase {
 
 	/**
-	 * property used to keep track of the current frame count on an object level
-	 *
-	 * @access 	private
-	 * @var 	integer frameCount | current frame count
-	 */
-	private $frameCount;
-
-	/**
 	 * decode the replay.game.events file contained in the replay
 	 *
 	 * @access protected
 	 */
 	protected function doDecode() {
 		$eventLookup = DataLoader::loadDataset("gameeventtypes", $this->replay->baseBuild);
-		$this->frameCount = 0;
+		$loopCount = 0;
 		$gameEvents = [];
 
 		while(!$this->eof()) {
-			$this->frameCount += $this->readFrameCount();
+			$loopCount += $this->readLoopCount();
 			$playerId = $this->readBits(5);
 			$eventType = $this->readBits(7);
 			if(isset($eventLookup[$eventType])) {
@@ -152,55 +144,40 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @param  integer playerId | the id of the player that triggered this event
 	 */
 	private function parseTriggerPingEvent($playerId) {
-		
-22612
-            point=dict(
-                x=data.read_uint32()-2147483648,
-                y=data.read_uint32()-2147483648,
-            ),
-            unit_tag=data.read_uint32(),
-            pinged_minimap=data.read_bool(),
-34784
-            point=dict(
-                x=data.read_uint32() - 2147483648,
-                y=data.read_uint32() - 2147483648,
-            ),
-            unit_tag=data.read_uint32(),
-            pinged_minimap=data.read_bool(),
-            option=data.read_uint32() - 2147483648,
-38215
-            point=dict(
-                x=data.read_uint32() - 2147483648,
-                y=data.read_uint32() - 2147483648,
-            ),
-            unit_tag=data.read_uint32(),
-            unit_link=data.read_uint16(),
-            unit_control_player_id=(data.read_bits(4) if data.read_bool() else None),
-            unit_upkeep_player_id=(data.read_bits(4) if data.read_bool() else None),
-            unit_position=dict(
-                    x=data.read_bits(20),
-                    y=data.read_bits(20),
-                    z=data.read_bits(32) - 2147483648,
-                ),
-            pinged_minimap=data.read_bool(),
-            option=data.read_uint32() - 2147483648,
-38996
-            point=dict(
-                x=data.read_uint32() - 2147483648,
-                y=data.read_uint32() - 2147483648,
-            ),
-            unit_tag=data.read_uint32(),
-            unit_link=data.read_uint16(),
-            unit_control_player_id=(data.read_bits(4) if data.read_bool() else None),
-            unit_upkeep_player_id=(data.read_bits(4) if data.read_bool() else None),
-            unit_position=dict(
-                    x=data.read_bits(20),
-                    y=data.read_bits(20),
-                    z=data.read_bits(32) - 2147483648,
-                ),
-            unit_is_under_construction=data.read_bool(),
-            pinged_minimap=data.read_bool(),
-            option=data.read_uint32() - 2147483648,
+		$read = [
+			"point" => [
+				"x" => $this->readUint32() - 2147483648,
+				"y" => $this->read_uint32() - 2147483648
+			],
+			"unitId" => $this->readUint32()
+		];
+
+		if($this->replay->baseBuild >= 38215) {
+			$read["unitLink"] = $this->readUint16();
+			if($this->readBoolean()) {
+				$read["unitControlPlayerId"] = $this->readBits(4);
+			}
+			if($this->readBoolean()) {
+				$read["unitUpkeepPlayerId"] = $this->readBits(4);
+			}
+
+			$read["unitPosition"] = [
+				"x" => $this->readBits(20),
+				"y" => $this->readBits(20),
+				"z" => $this->readUint32() - 2147483648
+			];
+
+			if($this->replay->baseBuild >= 38996) {
+				$read["unitUnderConstruction"] = $this->readBoolean();
+			}
+		}
+
+		$read["pingedMinimap"] = $this->readBoolean();
+
+		if($this->replay->baseBuild >= 34784) {
+			$read["option"] = $this->readUint32() - 2147483648;
+		}
+		return $read;
 	}
 
 

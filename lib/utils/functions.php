@@ -118,12 +118,12 @@ function delocalizeRace($localizedRace) {
 }
 
 /**
- * method calculating the real second count out of a frame counter ingame
+ * method calculating the real second count out of a ingame engine loop counter
  *
- * @param  integer frameCount | the number of frames passed
+ * @param  integer loopCount | the number of loops passed
  * @return integer how many real life seconds have passed
  */
-function framesToRealTime($frameCount, $gameSpeed) {
+function loopsToRealTime($loopCount, $gameSpeed) {
 	$GAMESPEEDFACTOR = [
 	    "Slower" => 0.6,
 	    "Slow" => 0.8,
@@ -132,5 +132,5 @@ function framesToRealTime($frameCount, $gameSpeed) {
 	    "Faster" => 1.4
    	];
 
-   	return floor(floor($frameCount / 16) / $GAMESPEEDFACTOR[$gameSpeed]);
+   	return floor(floor($loopCount / 16) / $GAMESPEEDFACTOR[$gameSpeed]);
 }

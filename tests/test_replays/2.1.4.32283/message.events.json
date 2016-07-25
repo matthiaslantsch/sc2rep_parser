@@ -1,68 +1,79 @@
 {
-    "8472": [
-        {
-            "msg": "gggg", 
-            "playerId": 1, 
-            "frame": 8472, 
-            "recipient": "all"
-        }
-    ], 
     "0": [
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 9, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 14, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 36, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 44, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 50, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 57, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 63, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 97, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
+        }
+    ], 
+    "8472": [
+        {
+            "playerId": 1, 
+            "gameloop": 8472, 
+            "recipient": 0, 
+            "msg": "gggg", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "8516": [
         {
-            "msg": "gg", 
             "playerId": 0, 
-            "frame": 8516, 
-            "recipient": "all"
+            "gameloop": 8516, 
+            "recipient": 0, 
+            "msg": "gg", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "310": [
         {
-            "msg": "gl hf :)", 
             "playerId": 0, 
-            "frame": 310, 
-            "recipient": "all"
+            "gameloop": 310, 
+            "recipient": 0, 
+            "msg": "gl hf :)", 
+            "eventtype": "ChatMessage"
         }
     ]
 }

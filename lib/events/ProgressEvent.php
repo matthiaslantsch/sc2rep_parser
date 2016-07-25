@@ -26,15 +26,15 @@ class ProgressEvent extends EventBase {
 	public $progress;
 
 	/**
-	 * constructor accepting the frame count
+	 * constructor accepting the gameloop count
 	 *
 	 * @access public
-	 * @param  integer frames | frame counter at the time the event happened
+	 * @param  integer gameloops | gameloop counter at the time the event happened
 	 * @param  integer playerId | playerId of the player that caused the event
 	 * @param  integer progress | progress of at the moment of the event
 	 */
-	public function __construct($frames, $playerId, $progress) {
-		parent::__construct($frames, $playerId);
+	public function __construct($gameloops, $playerId, $progress) {
+		parent::__construct($gameloops, $playerId);
 
 		$this->progress = $progress;
 	}

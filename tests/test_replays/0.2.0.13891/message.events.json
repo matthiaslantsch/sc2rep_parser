@@ -1,56 +1,64 @@
 {
     "0": [
         {
-            "progress": 80,
-            "frame": 0,
-            "playerId": 2
+            "gameloop": 0,
+            "playerId": 2,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 80
         },
         {
-            "progress": 85,
-            "frame": 0,
-            "playerId": 2
+            "gameloop": 0,
+            "playerId": 2,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 85
         },
         {
-            "progress": 91,
-            "frame": 0,
-            "playerId": 2
+            "gameloop": 0,
+            "playerId": 2,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 91
         },
         {
-            "progress": 100,
-            "frame": 0,
-            "playerId": 2
+            "gameloop": 0,
+            "playerId": 2,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 100
         }
     ],
     "540": [
         {
-            "msg": "hi",
-            "recipient": "all",
-            "frame": 540,
-            "playerId": 1
+            "gameloop": 540,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "hi"
         }
     ],
     "551": [
         {
-            "msg": "gl",
-            "recipient": "all",
-            "frame": 551,
-            "playerId": 1
+            "gameloop": 551,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "gl"
         }
     ],
     "1031": [
         {
-            "msg": "race?",
-            "recipient": "all",
-            "frame": 1031,
-            "playerId": 1
+            "gameloop": 1031,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "race?"
         }
     ],
     "1237": [
         {
-            "msg": "t",
-            "recipient": "all",
-            "frame": 1237,
-            "playerId": 2
+            "gameloop": 1237,
+            "playerId": 2,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "t"
         }
     ]
 }

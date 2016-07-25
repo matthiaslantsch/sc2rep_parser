@@ -2,64 +2,75 @@
     "0": [
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 4, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 9, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 14, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 36, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 45, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 50, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 57, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 90, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 99, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }
     ], 
     "106": [
         {
-            "msg": "hfgl", 
             "playerId": 1, 
-            "frame": 106, 
-            "recipient": "all"
+            "gameloop": 106, 
+            "recipient": 0, 
+            "msg": "hfgl", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "178": [
         {
-            "msg": "glhf", 
             "playerId": 0, 
-            "frame": 178, 
-            "recipient": "all"
+            "gameloop": 178, 
+            "recipient": 0, 
+            "msg": "glhf", 
+            "eventtype": "ChatMessage"
         }
     ]
 }

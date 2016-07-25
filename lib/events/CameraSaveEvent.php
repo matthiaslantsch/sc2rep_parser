@@ -34,16 +34,16 @@ class CameraSaveEvent extends EventBase {
 	public $location;
 
 	/**
-	 * constructor accepting the frame count
+	 * constructor accepting the gameloop count
 	 *
 	 * @access public
-	 * @param  integer frames | frame counter at the time the event happened
+	 * @param  integer gameloops | gameloop counter at the time the event happened
 	 * @param  integer playerId | playerId of the player that caused the event
 	 * @param  integer number | integer describing the number of which hotkey was set
 	 * @param  array location | array with the location with the x and the y index
 	 */
-	public function __construct($frames, $playerId, $number, $location) {
-		parent::__construct($frames, $playerId);
+	public function __construct($gameloops, $playerId, $number, $location) {
+		parent::__construct($gameloops, $playerId);
 
 		$this->number = $number;
 		$this->location = $location;

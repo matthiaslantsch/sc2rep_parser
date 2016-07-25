@@ -11,7 +11,7 @@ namespace HIS5\lib\Sc2repParser\decoders;
 /**
  * The HeaderDecoder class is used to decode the header in an mpq replay archive file:
  *  - game version
- *  - game frame counter
+ *  - game loops counter
  *
  * @author  {AUTHOR}
  * @version {VERSION}
@@ -40,7 +40,7 @@ class HeaderDecoder extends BitwiseDecoderBase {
 				$headerData[1][3],//fix version number
 				$headerData[1][4] //the build
 			);
-			$ret["frames"] = $headerData[3];
+			$ret["gameloops"] = $headerData[3];
 		} else {
 			//fallback because old beta replay version
 			$ret = $this->oldVersionDecode();
@@ -78,7 +78,7 @@ class HeaderDecoder extends BitwiseDecoderBase {
 		$ret["baseBuild"] = $this->readUint32();
 		$this->readBytes(2); //skip 0200
 		//apparently saved in seconds back then => times 16
-		$ret["frames"] = intval($this->readUint16() / 2) * 16;
+		$ret["gameloops"] = intval($this->readUint16() / 2) * 16;
 		$ret["versionString"] = "0.{$verMajor}.0.{$build}";
 
 		return $ret;

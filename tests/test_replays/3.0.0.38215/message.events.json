@@ -2,54 +2,63 @@
     "0": [
         {
             "playerId": 0, 
+            "gameloop": 0, 
             "progress": 28, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 0, 
+            "gameloop": 0, 
             "progress": 34, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 0, 
+            "gameloop": 0, 
             "progress": 42, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 0, 
+            "gameloop": 0, 
             "progress": 51, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 0, 
+            "gameloop": 0, 
             "progress": 56, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 0, 
+            "gameloop": 0, 
             "progress": 63, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 0, 
+            "gameloop": 0, 
             "progress": 99, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }
     ], 
     "778": [
         {
-            "msg": "glhf", 
             "playerId": 0, 
-            "frame": 778, 
-            "recipient": "all"
+            "gameloop": 778, 
+            "recipient": 0, 
+            "msg": "glhf", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "693": [
         {
-            "msg": "glhf", 
             "playerId": 1, 
-            "frame": 693, 
-            "recipient": "all"
+            "gameloop": 693, 
+            "recipient": 0, 
+            "msg": "glhf", 
+            "eventtype": "ChatMessage"
         }
     ]
 }

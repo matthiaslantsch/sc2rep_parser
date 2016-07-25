@@ -26,7 +26,7 @@ class ReplayParserTest extends \PHPUnit_Framework_TestCase {
 	public function replayProvider() {
 		return [
 			//beta phase 1
-			/*'beta patch 1' => ['0.2.0.13891/0.2.0.13891.SC2Replay', new parser\ressources\Replay(13891, "0.2.0.13891", 7680, "WoL Beta")],
+			'beta patch 1' => ['0.2.0.13891/0.2.0.13891.SC2Replay', new parser\ressources\Replay(13891, "0.2.0.13891", 7680, "WoL Beta")],
 			'beta patch 3' => ['0.4.0.14133/0.4.0.14133.SC2Replay', new parser\ressources\Replay(14133, "0.4.0.14133", 48112, "WoL Beta")],
 			'beta patch 4' => ['0.6.0.14259/0.6.0.14259.SC2Replay', new parser\ressources\Replay(14259, "0.6.0.14259", 33552, "WoL Beta")],
 			'beta patch 5' => ['0.7.0.14356/0.7.0.14356.SC2Replay', new parser\ressources\Replay(14356, "0.7.0.14356", 35008, "WoL Beta")], //"36 minutes"
@@ -66,7 +66,7 @@ class ReplayParserTest extends \PHPUnit_Framework_TestCase {
 			'3.0.4.38996' => ['3.0.4.38996/3.0.4.38996.SC2Replay', new parser\ressources\Replay(38996, "3.0.4.38996", 8805, "LotV Beta")],
 			'3.1.0.39576' => ['3.1.0.39576/3.1.0.39576.SC2Replay', new parser\ressources\Replay(39576, "3.1.0.39576", 9029, "LotV")],
 			'3.2.2.42253' => ['3.2.2.42253/3.2.2.42253.SC2Replay', new parser\ressources\Replay(42253, "3.2.2.42253", 17735, "LotV")],
-			'3.3.1.43199' => ['3.3.1.43199/3.3.1.43199.SC2Replay', new parser\ressources\Replay(42932, "3.3.1.43199", 19386, "LotV")],*/
+			'3.3.1.43199' => ['3.3.1.43199/3.3.1.43199.SC2Replay', new parser\ressources\Replay(42932, "3.3.1.43199", 19386, "LotV")],
 			'3.4.0.44401' => ['3.4.0.44401/3.4.0.44401.SC2Replay', new parser\ressources\Replay(44401, "3.4.0.44401", 7008, "LotV")],
 		];
 	}

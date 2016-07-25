@@ -34,16 +34,16 @@ class HijackReplayGameEvent extends EventBase {
 	public $userInfo = [];
 
 	/**
-	 * constructor accepting the frame count
+	 * constructor accepting the gameloop count
 	 *
 	 * @access public
-	 * @param  integer frames | frame counter at the time the event happened
+	 * @param  integer gameloops | gameloop counter at the time the event happened
 	 * @param  integer playerId | playerId of the player that caused the event
 	 * @param  integer method | integer marking the method used to resume
 	 * @param  array userInfo | user info data about the players taking over
 	 */
-	public function __construct($frames, $playerId, $method, $userInfo) {
-		parent::__construct($frames, $playerId);
+	public function __construct($gameloops, $playerId, $method, $userInfo) {
+		parent::__construct($gameloops, $playerId);
 
 		$this->method = $method;
 		$this->userInfo = $userInfo;

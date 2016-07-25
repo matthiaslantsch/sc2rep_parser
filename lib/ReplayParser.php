@@ -59,7 +59,7 @@ class ReplayParser {
 	/**
 	 * method used to parse the information contained inside header of the replay file:
 	 *  - game version
-	 *  - game frame counter
+	 *  - game loop counter
 	 *
 	 * @access private
 	 */
@@ -67,7 +67,7 @@ class ReplayParser {
 		$header = new utils\StringStream($this->archive->userData);
 		$decoder = new decoders\HeaderDecoder($header);
 		$headerData = $decoder->decode(null); //null since we do not have a replay object yet
-		$this->replay = new ressources\Replay($headerData["baseBuild"], $headerData["versionString"], $headerData["frames"], $headerData["expansion"]);
+		$this->replay = new ressources\Replay($headerData["baseBuild"], $headerData["versionString"], $headerData["gameloops"], $headerData["expansion"]);
 	}
 
 	/**
@@ -127,7 +127,7 @@ class ReplayParser {
 		}
 
 		return [
-			"frames" => $this->replay->frames,
+			"gameloops" => $this->replay->gameloops,
 			"repHash" => $this->replay->identifier,
 			"mapHash" => $this->replay->mapHash,
 			"mapUrl" => $this->replay->mapUrl,
@@ -146,7 +146,7 @@ class ReplayParser {
 		$this->doIdentify();
 		if($this->replay->loadLevel < 3) {
 			$this->decodeFile("replay.message.events", decoders\MessageEventsDecoder::class);
-			$this->decodeFile("replay.game.events", decoders\GameEventsDecoder::class);
+			//$this->decodeFile("replay.game.events", decoders\GameEventsDecoder::class);
 
 			$this->replay->loadLevel = 3;
 		}

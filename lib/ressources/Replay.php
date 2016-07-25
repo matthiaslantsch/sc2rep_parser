@@ -45,12 +45,12 @@ class Replay {
 	public $expansion;
 
 	/**
-	 * property containing the number of frames in the played game
+	 * property containing the number of ingame engine game loops in the played game
 	 *
 	 * @access 	public
-	 * @var 	integer frames | frames number for the entire game
+	 * @var 	integer gameloops | gameloop number for the entire game
 	 */
-	public $frames;
+	public $gameloops;
 
 	/**
 	 * property containing an integer marking how far this replay has been parsed yet
@@ -66,13 +66,13 @@ class Replay {
 	 * @access public
 	 * @param  integer baseBuild | the base build number of the game at that point
 	 * @param  string versionString | a string identifying the version and build of the game in detail
-	 * @param  integer frames | the counter of game frames inside the replay
+	 * @param  integer gameloops | the counter of ingame engine game loops inside the replay
 	 * @param  string expansion | expansion string determing the game version
 	 */
-	public function __construct($baseBuild, $versionString, $frames, $expansion) {
+	public function __construct($baseBuild, $versionString, $gameloops, $expansion) {
 		$this->baseBuild = $baseBuild;
 		$this->version = $versionString;
-		$this->frames = $frames;
+		$this->gameloops = $gameloops;
 		$this->expansion = $expansion;
 		$this->loadLevel = 1;
 	}
@@ -92,7 +92,7 @@ class Replay {
 
 		switch ($type) {
 			case "message":
-				$events = $this->messages;
+				$events = $this->rawdata["messages"];
 				break;
 			default:
 				throw new parser\ParserException("Cannot list events for unknown event type: {$type}", 100);
@@ -100,12 +100,7 @@ class Replay {
 
 		$ret = [];
 		foreach ($events as $i => $ev) {
-			$arr = [];
-			foreach ($ev as $key => $value) {
-				$arr[$key] = $value;
-			}
-
-			$ret[$ev->frame][] = $arr;
+			$ret[$ev["gameloop"]][] = $ev;
 		}
 		return $ret;
 	}

@@ -26,43 +26,50 @@ class MessageEventsDecoder extends BitwiseDecoderBase {
 	 * @access protected
 	 */
 	protected function doDecode() {
-
-		$totalFrame = 0;
+		$loopCount = 0;
 		$messages = [];
 
 		while(!$this->eof()) {
-			$totalFrame += $this->readFrameCount();
-			$playerId = $this->readBits(5);
+			$loopCount += $this->readLoopCount();
+
+			$messageEvent = [
+				"gameloop" => $loopCount,
+				"playerId" => $this->readBits(5)
+			];
+
 			$flag = $this->readBits(4);
 			switch ($flag) {
 				case 0: //chat message
-					$recipient = $this->readBits($this->replay->baseBuild >= 21955 ? 3 : 2);
-					$msg = $this->readAlignedBytes($this->readBits(11));
-					$messages[] = new events\ChatEvent($totalFrame, $playerId, $recipient, $msg);
+					$messageEvent["eventtype"] = "ChatMessage";
+					$messageEvent["recipient"] = $this->readBits($this->replay->baseBuild >= 21955 ? 3 : 2);
+					$messageEvent["msg"] = $this->readAlignedBytes($this->readBits(11));
 					break;
 				case 1: //player ping
-					$recipient = $this->readBits($this->replay->baseBuild >= 21955 ? 3 : 2);
+					$messageEvent["eventtype"] = "PingMessage";
+					$messageEvent["recipient"] = $this->readBits($this->replay->baseBuild >= 21955 ? 3 : 2);
 					$x = $this->readUint32() - 2147483648;
 					$y = $this->readUint32() - 2147483648;
-					$messages[] = new events\PingEvent($totalFrame, $playerId, $recipient, ["x" => $x, "y" => $y]);
+					$messageEvent["location"] = ["x" => $x, "y" => $y];
 					break;
 				case 2: //loading progress
-					$progress = $this->readUint32() - 2147483648;
-					$messages[] = new events\ProgressEvent($totalFrame, $playerId, $progress);
+					$messageEvent["eventtype"] = "LoadingProgressMessage";
+					$messageEvent["progress"] = $this->readUint32() - 2147483648;
 					break;
 				case 3: //server ping
-					die(var_dump("SERVER PING"));
+					$messageEvent["eventtype"] = "ServerPingMessage";
 					break;
 				case 4: //reconnect
-					die(var_dump("SERVER PING"));
-					$status = $this->readBits(2);
+					$messageEvent["eventtype"] = "ReconnectNotifyMessage";
+					$messageEvent["status"] = $this->readBits(2);
 					break;
 				default:
-					break;
+					die("Unknown message event type: {$flag}");
 			}
+
+			$messages[] = $messageEvent;
 			$this->align();
 		}
-		$this->replay->messages = $messages;
+		$this->replay->rawdata["messages"] = $messages;
 	}
 
 }

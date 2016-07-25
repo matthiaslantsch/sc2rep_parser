@@ -34,16 +34,16 @@ class ResourceTradeEvent extends EventBase {
 	public $resources;
 
 	/**
-	 * constructor accepting the frame count
+	 * constructor accepting the gameloop count
 	 *
 	 * @access public
-	 * @param  integer frames | frame counter at the time the event happened
+	 * @param  integer gameloops | gameloop counter at the time the event happened
 	 * @param  integer playerId | playerId of the player that caused the event
 	 * @param  integer recipientId | player id of the recipient
 	 * @param  array resources | array with the traded resources
 	 */
-	public function __construct($frames, $playerId, $recipientId, $resources) {
-		parent::__construct($frames, $playerId);
+	public function __construct($gameloops, $playerId, $recipientId, $resources) {
+		parent::__construct($gameloops, $playerId);
 
 		$this->recipientId = $recipientId;
 		die(var_dump("parse resource at trade", $resources));

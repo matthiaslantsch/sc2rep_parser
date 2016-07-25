@@ -1,55 +1,64 @@
 {
-    "328": [
-        {
-            "msg": "(glhf)", 
-            "playerId": 1, 
-            "frame": 328, 
-            "recipient": "all"
-        }
-    ], 
     "0": [
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 12, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 17, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 30, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 41, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 47, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 73, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 99, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
+        }
+    ], 
+    "328": [
+        {
+            "playerId": 1, 
+            "gameloop": 328, 
+            "recipient": 0, 
+            "msg": "(glhf)", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "380": [
         {
-            "msg": "glhf", 
             "playerId": 0, 
-            "frame": 380, 
-            "recipient": "all"
+            "gameloop": 380, 
+            "recipient": 0, 
+            "msg": "glhf", 
+            "eventtype": "ChatMessage"
         }
     ]
 }

@@ -26,15 +26,15 @@ abstract class MessageEvent extends EventBase {
 	public $recipient;
 
 	/**
-	 * constructor accepting the frame count
+	 * constructor accepting the gameloop count
 	 *
 	 * @access public
-	 * @param  integer frames | frame counter at the time the event happened
+	 * @param  integer gameloops | gameloop counter at the time the event happened
 	 * @param  integer playerId | playerId of the player that caused the event
 	 * @param  integer recipient | integer describing the recipient of the message
 	 */
-	public function __construct($frames, $playerId, $recipient) {
-		parent::__construct($frames, $playerId);
+	public function __construct($gameloops, $playerId, $recipient) {
+		parent::__construct($gameloops, $playerId);
 
 		switch ($recipient) {
 			case 0:

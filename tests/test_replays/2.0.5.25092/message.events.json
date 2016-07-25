@@ -1,353 +1,412 @@
 {
-    "256": [
+    "0": [
         {
-            "msg": "hi", 
+            "playerId": 1, 
+            "gameloop": 0, 
+            "progress": 9, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 4, 
+            "gameloop": 0, 
+            "progress": 9, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 5, 
+            "gameloop": 0, 
+            "progress": 9, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
             "playerId": 3, 
-            "frame": 256, 
-            "recipient": "all"
+            "gameloop": 0, 
+            "progress": 5, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 0, 
+            "gameloop": 0, 
+            "progress": 9, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 1, 
+            "gameloop": 0, 
+            "progress": 14, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 4, 
+            "gameloop": 0, 
+            "progress": 14, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 1, 
+            "gameloop": 0, 
+            "progress": 36, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 3, 
+            "gameloop": 0, 
+            "progress": 11, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 5, 
+            "gameloop": 0, 
+            "progress": 14, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 0, 
+            "gameloop": 0, 
+            "progress": 14, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 4, 
+            "gameloop": 0, 
+            "progress": 30, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 4, 
+            "gameloop": 0, 
+            "progress": 36, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 5, 
+            "gameloop": 0, 
+            "progress": 29, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 5, 
+            "gameloop": 0, 
+            "progress": 36, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 3, 
+            "gameloop": 0, 
+            "progress": 18, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 3, 
+            "gameloop": 0, 
+            "progress": 29, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 3, 
+            "gameloop": 0, 
+            "progress": 36, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 0, 
+            "gameloop": 0, 
+            "progress": 29, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 0, 
+            "gameloop": 0, 
+            "progress": 36, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 3, 
+            "gameloop": 0, 
+            "progress": 43, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 1, 
+            "gameloop": 0, 
+            "progress": 41, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 5, 
+            "gameloop": 0, 
+            "progress": 44, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 0, 
+            "gameloop": 0, 
+            "progress": 43, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 4, 
+            "gameloop": 0, 
+            "progress": 48, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 3, 
+            "gameloop": 0, 
+            "progress": 48, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 1, 
+            "gameloop": 0, 
+            "progress": 50, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 5, 
+            "gameloop": 0, 
+            "progress": 50, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 0, 
+            "gameloop": 0, 
+            "progress": 48, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 4, 
+            "gameloop": 0, 
+            "progress": 54, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 0, 
+            "gameloop": 0, 
+            "progress": 54, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 3, 
+            "gameloop": 0, 
+            "progress": 54, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 1, 
+            "gameloop": 0, 
+            "progress": 57, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 1, 
+            "gameloop": 0, 
+            "progress": 90, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 1, 
+            "gameloop": 0, 
+            "progress": 95, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 4, 
+            "gameloop": 0, 
+            "progress": 90, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 4, 
+            "gameloop": 0, 
+            "progress": 97, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 5, 
+            "gameloop": 0, 
+            "progress": 57, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 5, 
+            "gameloop": 0, 
+            "progress": 90, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 3, 
+            "gameloop": 0, 
+            "progress": 90, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 3, 
+            "gameloop": 0, 
+            "progress": 95, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 5, 
+            "gameloop": 0, 
+            "progress": 95, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 0, 
+            "gameloop": 0, 
+            "progress": 63, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 0, 
+            "gameloop": 0, 
+            "progress": 73, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 0, 
+            "gameloop": 0, 
+            "progress": 89, 
+            "eventtype": "LoadingProgressMessage"
+        }, 
+        {
+            "playerId": 0, 
+            "gameloop": 0, 
+            "progress": 97, 
+            "eventtype": "LoadingProgressMessage"
         }
     ], 
-    "3808": [
+    "256": [
         {
-            "msg": ",,,.", 
-            "playerId": 0, 
-            "frame": 3808, 
-            "recipient": "all"
+            "playerId": 3, 
+            "gameloop": 256, 
+            "recipient": 0, 
+            "msg": "hi", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "4675": [
         {
             "playerId": 0, 
-            "frame": 4675, 
-            "recipient": "all", 
+            "gameloop": 4675, 
+            "recipient": 1, 
             "location": {
                 "y": 546778, 
                 "x": 571303
-            }
-        }
-    ], 
-    "0": [
-        {
-            "playerId": 1, 
-            "progress": 9, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 4, 
-            "progress": 9, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 5, 
-            "progress": 9, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 3, 
-            "progress": 5, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 0, 
-            "progress": 9, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 1, 
-            "progress": 14, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 4, 
-            "progress": 14, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 1, 
-            "progress": 36, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 3, 
-            "progress": 11, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 5, 
-            "progress": 14, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 0, 
-            "progress": 14, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 4, 
-            "progress": 30, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 4, 
-            "progress": 36, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 5, 
-            "progress": 29, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 5, 
-            "progress": 36, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 3, 
-            "progress": 18, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 3, 
-            "progress": 29, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 3, 
-            "progress": 36, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 0, 
-            "progress": 29, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 0, 
-            "progress": 36, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 3, 
-            "progress": 43, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 1, 
-            "progress": 41, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 5, 
-            "progress": 44, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 0, 
-            "progress": 43, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 4, 
-            "progress": 48, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 3, 
-            "progress": 48, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 1, 
-            "progress": 50, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 5, 
-            "progress": 50, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 0, 
-            "progress": 48, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 4, 
-            "progress": 54, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 0, 
-            "progress": 54, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 3, 
-            "progress": 54, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 1, 
-            "progress": 57, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 1, 
-            "progress": 90, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 1, 
-            "progress": 95, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 4, 
-            "progress": 90, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 4, 
-            "progress": 97, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 5, 
-            "progress": 57, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 5, 
-            "progress": 90, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 3, 
-            "progress": 90, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 3, 
-            "progress": 95, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 5, 
-            "progress": 95, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 0, 
-            "progress": 63, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 0, 
-            "progress": 73, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 0, 
-            "progress": 89, 
-            "frame": 0
-        }, 
-        {
-            "playerId": 0, 
-            "progress": 97, 
-            "frame": 0
+            }, 
+            "eventtype": "PingMessage"
         }
     ], 
     "807": [
         {
-            "msg": "showtime", 
             "playerId": 3, 
-            "frame": 807, 
-            "recipient": "all"
+            "gameloop": 807, 
+            "recipient": 0, 
+            "msg": "showtime", 
+            "eventtype": "ChatMessage"
         }
     ], 
-    "1420": [
+    "9097": [
         {
-            "msg": "shi a", 
-            "playerId": 3, 
-            "frame": 1420, 
-            "recipient": "all"
+            "playerId": 1, 
+            "gameloop": 9097, 
+            "recipient": 1, 
+            "msg": "\u98de\u9f99", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "9100": [
         {
             "playerId": 0, 
-            "frame": 9100, 
-            "recipient": "all", 
+            "gameloop": 9100, 
+            "recipient": 1, 
             "location": {
                 "y": 335074, 
                 "x": 131359
-            }
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "1420": [
+        {
+            "playerId": 3, 
+            "gameloop": 1420, 
+            "recipient": 0, 
+            "msg": "shi a", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "435": [
         {
+            "playerId": 0, 
+            "gameloop": 435, 
+            "recipient": 0, 
             "msg": "hello", 
-            "playerId": 0, 
-            "frame": 435, 
-            "recipient": "all"
-        }
-    ], 
-    "9112": [
-        {
-            "playerId": 0, 
-            "frame": 9112, 
-            "recipient": "all", 
-            "location": {
-                "y": 331949, 
-                "x": 132320
-            }
-        }
-    ], 
-    "339": [
-        {
-            "msg": "hi", 
-            "playerId": 2, 
-            "frame": 339, 
-            "recipient": "all"
-        }
-    ], 
-    "9097": [
-        {
-            "msg": "\u98de\u9f99", 
-            "playerId": 1, 
-            "frame": 9097, 
-            "recipient": "all"
+            "eventtype": "ChatMessage"
         }
     ], 
     "3704": [
         {
             "playerId": 0, 
-            "frame": 3704, 
-            "recipient": "all", 
+            "gameloop": 3704, 
+            "recipient": 1, 
             "location": {
                 "y": 389468, 
                 "x": 721820
-            }
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "9112": [
+        {
+            "playerId": 0, 
+            "gameloop": 9112, 
+            "recipient": 1, 
+            "location": {
+                "y": 331949, 
+                "x": 132320
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "339": [
+        {
+            "playerId": 2, 
+            "gameloop": 339, 
+            "recipient": 0, 
+            "msg": "hi", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "3808": [
+        {
+            "playerId": 0, 
+            "gameloop": 3808, 
+            "recipient": 1, 
+            "msg": ",,,.", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "1144": [
         {
-            "msg": "qiao a", 
             "playerId": 0, 
-            "frame": 1144, 
-            "recipient": "all"
+            "gameloop": 1144, 
+            "recipient": 0, 
+            "msg": "qiao a", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "3709": [
         {
             "playerId": 0, 
-            "frame": 3709, 
-            "recipient": "all", 
+            "gameloop": 3709, 
+            "recipient": 1, 
             "location": {
                 "y": 389468, 
                 "x": 721820
-            }
+            }, 
+            "eventtype": "PingMessage"
         }
     ]
 }

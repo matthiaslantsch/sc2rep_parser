@@ -1,116 +1,133 @@
 {
     "0": [
         {
-            "playerId": 1, 
-            "progress": 9, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 1,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 9
+        },
         {
-            "playerId": 1, 
-            "progress": 14, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 1,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 14
+        },
         {
-            "playerId": 1, 
-            "progress": 36, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 1,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 36
+        },
         {
-            "playerId": 1, 
-            "progress": 44, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 1,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 44
+        },
         {
-            "playerId": 1, 
-            "progress": 50, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 1,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 50
+        },
         {
-            "playerId": 1, 
-            "progress": 57, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 1,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 57
+        },
         {
-            "playerId": 1, 
-            "progress": 90, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 1,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 90
+        },
         {
-            "playerId": 1, 
-            "progress": 97, 
-            "frame": 0
+            "gameloop": 0,
+            "playerId": 1,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 97
         }
-    ], 
-    "483": [
-        {
-            "msg": "gold", 
-            "playerId": 2, 
-            "frame": 483, 
-            "recipient": "all"
-        }
-    ], 
-    "548": [
-        {
-            "msg": "same :D", 
-            "playerId": 1, 
-            "frame": 548, 
-            "recipient": "all"
-        }
-    ], 
-    "102": [
-        {
-            "msg": "gg gl hf", 
-            "playerId": 1, 
-            "frame": 102, 
-            "recipient": "all"
-        }
-    ], 
-    "360": [
-        {
-            "msg": "k", 
-            "playerId": 1, 
-            "frame": 360, 
-            "recipient": "all"
-        }
-    ], 
+    ],
     "83": [
         {
-            "msg": "glgl", 
-            "playerId": 2, 
-            "frame": 83, 
-            "recipient": "all"
+            "gameloop": 83,
+            "playerId": 2,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "glgl"
         }
-    ], 
+    ],
+    "102": [
+        {
+            "gameloop": 102,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "gg gl hf"
+        }
+    ],
     "214": [
         {
-            "msg": "league? my 3rd hots game", 
-            "playerId": 1, 
-            "frame": 214, 
-            "recipient": "all"
+            "gameloop": 214,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "league? my 3rd hots game"
         }
-    ], 
-    "411": [
-        {
-            "msg": "in wotl?", 
-            "playerId": 1, 
-            "frame": 411, 
-            "recipient": "all"
-        }
-    ], 
+    ],
     "317": [
         {
-            "msg": "bronze", 
-            "playerId": 2, 
-            "frame": 317, 
-            "recipient": "all"
+            "gameloop": 317,
+            "playerId": 2,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "bronze"
         }
-    ], 
+    ],
+    "360": [
+        {
+            "gameloop": 360,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "k"
+        }
+    ],
+    "411": [
+        {
+            "gameloop": 411,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "in wotl?"
+        }
+    ],
+    "483": [
+        {
+            "gameloop": 483,
+            "playerId": 2,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "gold"
+        }
+    ],
+    "548": [
+        {
+            "gameloop": 548,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "same :D"
+        }
+    ],
     "8190": [
         {
-            "msg": "gg", 
-            "playerId": 2, 
-            "frame": 8190, 
-            "recipient": "all"
+            "gameloop": 8190,
+            "playerId": 2,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "gg"
         }
     ]
 }

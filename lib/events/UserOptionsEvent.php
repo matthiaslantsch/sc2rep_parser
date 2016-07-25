@@ -26,15 +26,15 @@ class UserOptionsEvent extends EventBase {
 	public $useroptions;
 
 	/**
-	 * constructor accepting the frame count
+	 * constructor accepting the gameloop count
 	 *
 	 * @access public
-	 * @param  integer frames | frame counter at the time the event happened
+	 * @param  integer gameloops | gameloop counter at the time the event happened
 	 * @param  integer playerId | playerId of the player that caused the event
 	 * @param  array useroptions | associative array with user options
 	 */
-	public function __construct($frames, $playerId, $useroptions) {
-		parent::__construct($frames, $playerId);
+	public function __construct($gameloops, $playerId, $useroptions) {
+		parent::__construct($gameloops, $playerId);
 
 		$this->useroptions = $useroptions;
 	}

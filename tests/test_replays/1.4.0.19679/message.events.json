@@ -2,2101 +2,2340 @@
     "0": [
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 6, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 3, 
+            "gameloop": 0, 
             "progress": 11, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 3, 
+            "gameloop": 0, 
             "progress": 23, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 3, 
+            "gameloop": 0, 
             "progress": 30, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 11, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 23, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 30, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 4, 
+            "gameloop": 0, 
             "progress": 6, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 4, 
+            "gameloop": 0, 
             "progress": 11, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 4, 
+            "gameloop": 0, 
             "progress": 23, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 4, 
+            "gameloop": 0, 
             "progress": 30, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 3, 
+            "gameloop": 0, 
             "progress": 39, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 3, 
+            "gameloop": 0, 
             "progress": 46, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 39, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 46, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 55, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 3, 
+            "gameloop": 0, 
             "progress": 55, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 60, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 3, 
+            "gameloop": 0, 
             "progress": 60, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 4, 
+            "gameloop": 0, 
             "progress": 35, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 3, 
+            "gameloop": 0, 
             "progress": 70, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 66, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 4, 
+            "gameloop": 0, 
             "progress": 42, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 3, 
+            "gameloop": 0, 
             "progress": 75, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 73, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 3, 
+            "gameloop": 0, 
             "progress": 80, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 3, 
+            "gameloop": 0, 
             "progress": 91, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 78, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 3, 
+            "gameloop": 0, 
             "progress": 100, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 85, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 91, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 4, 
+            "gameloop": 0, 
             "progress": 47, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 100, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 4, 
+            "gameloop": 0, 
             "progress": 55, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 4, 
+            "gameloop": 0, 
             "progress": 60, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 4, 
+            "gameloop": 0, 
             "progress": 66, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 4, 
+            "gameloop": 0, 
             "progress": 76, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 4, 
+            "gameloop": 0, 
             "progress": 83, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 4, 
+            "gameloop": 0, 
             "progress": 88, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 4, 
+            "gameloop": 0, 
             "progress": 93, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 4, 
+            "gameloop": 0, 
             "progress": 99, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 4, 
+            "gameloop": 0, 
             "progress": 100, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }
     ], 
     "8198": [
         {
+            "playerId": 2, 
+            "gameloop": 8198, 
+            "recipient": 1, 
             "msg": "I've got +1 speed roaches, so good w/e you are", 
-            "playerId": 2, 
-            "frame": 8198, 
-            "recipient": "all"
-        }
-    ], 
-    "9231": [
-        {
-            "playerId": 1, 
-            "frame": 9231, 
-            "recipient": "all", 
-            "location": {
-                "y": 384368, 
-                "x": 155099
-            }
-        }
-    ], 
-    "7185": [
-        {
-            "playerId": 1, 
-            "frame": 7185, 
-            "recipient": "all", 
-            "location": {
-                "y": 494333, 
-                "x": 170471
-            }
-        }
-    ], 
-    "1283": [
-        {
-            "msg": "k", 
-            "playerId": 2, 
-            "frame": 1283, 
-            "recipient": "all"
-        }
-    ], 
-    "7189": [
-        {
-            "playerId": 1, 
-            "frame": 7189, 
-            "recipient": "all", 
-            "location": {
-                "y": 494333, 
-                "x": 170471
-            }
-        }
-    ], 
-    "18966": [
-        {
-            "playerId": 1, 
-            "frame": 18966, 
-            "recipient": "all", 
-            "location": {
-                "y": 373819, 
-                "x": 390860
-            }
-        }
-    ], 
-    "18968": [
-        {
-            "playerId": 1, 
-            "frame": 18968, 
-            "recipient": "all", 
-            "location": {
-                "y": 372430, 
-                "x": 388160
-            }
-        }
-    ], 
-    "22041": [
-        {
-            "msg": "that alone", 
-            "playerId": 1, 
-            "frame": 22041, 
-            "recipient": "all"
-        }
-    ], 
-    "5146": [
-        {
-            "msg": "whole in da wall", 
-            "playerId": 1, 
-            "frame": 5146, 
-            "recipient": "all"
-        }
-    ], 
-    "6685": [
-        {
-            "playerId": 2, 
-            "frame": 6685, 
-            "recipient": "all", 
-            "location": {
-                "y": 132030, 
-                "x": 440362
-            }
-        }
-    ], 
-    "9248": [
-        {
-            "playerId": 1, 
-            "frame": 9248, 
-            "recipient": "all", 
-            "location": {
-                "y": 571080, 
-                "x": 570657
-            }
-        }
-    ], 
-    "18823": [
-        {
-            "msg": "i SEE IT", 
-            "playerId": 2, 
-            "frame": 18823, 
-            "recipient": "all"
-        }
-    ], 
-    "21030": [
-        {
-            "msg": "we need to do sometihbnbg", 
-            "playerId": 1, 
-            "frame": 21030, 
-            "recipient": "all"
-        }
-    ], 
-    "14375": [
-        {
-            "playerId": 1, 
-            "frame": 14375, 
-            "recipient": "all", 
-            "location": {
-                "y": 62867, 
-                "x": 369362
-            }
-        }
-    ], 
-    "14377": [
-        {
-            "playerId": 1, 
-            "frame": 14377, 
-            "recipient": "all", 
-            "location": {
-                "y": 48847, 
-                "x": 389395
-            }
-        }
-    ], 
-    "14379": [
-        {
-            "playerId": 1, 
-            "frame": 14379, 
-            "recipient": "all", 
-            "location": {
-                "y": 46732, 
-                "x": 402568
-            }
-        }
-    ], 
-    "13869": [
-        {
-            "msg": "ready?", 
-            "playerId": 1, 
-            "frame": 13869, 
-            "recipient": "all"
-        }
-    ], 
-    "18993": [
-        {
-            "msg": "FUNGAL", 
-            "playerId": 1, 
-            "frame": 18993, 
-            "recipient": "all"
-        }
-    ], 
-    "22066": [
-        {
-            "msg": "tyhat logn", 
-            "playerId": 1, 
-            "frame": 22066, 
-            "recipient": "all"
-        }
-    ], 
-    "8509": [
-        {
-            "msg": "us?", 
-            "playerId": 2, 
-            "frame": 8509, 
-            "recipient": "all"
-        }
-    ], 
-    "5686": [
-        {
-            "playerId": 1, 
-            "frame": 5686, 
-            "recipient": "all", 
-            "location": {
-                "y": 602418, 
-                "x": 370618
-            }
-        }
-    ], 
-    "5689": [
-        {
-            "playerId": 1, 
-            "frame": 5689, 
-            "recipient": "all", 
-            "location": {
-                "y": 604184, 
-                "x": 370101
-            }
-        }
-    ], 
-    "9274": [
-        {
-            "msg": "ling", 
-            "playerId": 1, 
-            "frame": 9274, 
-            "recipient": "all"
-        }
-    ], 
-    "5691": [
-        {
-            "playerId": 1, 
-            "frame": 5691, 
-            "recipient": "all", 
-            "location": {
-                "y": 604184, 
-                "x": 370027
-            }
-        }
-    ], 
-    "19009": [
-        {
-            "playerId": 1, 
-            "frame": 19009, 
-            "recipient": "all", 
-            "location": {
-                "y": 369172, 
-                "x": 384244
-            }
-        }
-    ], 
-    "14404": [
-        {
-            "msg": "sproes", 
-            "playerId": 1, 
-            "frame": 14404, 
-            "recipient": "all"
-        }
-    ], 
-    "19014": [
-        {
-            "playerId": 1, 
-            "frame": 19014, 
-            "recipient": "all", 
-            "location": {
-                "y": 368669, 
-                "x": 383748
-            }
-        }
-    ], 
-    "21063": [
-        {
-            "playerId": 1, 
-            "frame": 21063, 
-            "recipient": "all", 
-            "location": {
-                "y": 578355, 
-                "x": 568226
-            }
-        }
-    ], 
-    "21578": [
-        {
-            "playerId": 1, 
-            "frame": 21578, 
-            "recipient": "all", 
-            "location": {
-                "y": 568655, 
-                "x": 551215
-            }
-        }
-    ], 
-    "21067": [
-        {
-            "playerId": 1, 
-            "frame": 21067, 
-            "recipient": "all", 
-            "location": {
-                "y": 578355, 
-                "x": 568226
-            }
-        }
-    ], 
-    "21070": [
-        {
-            "playerId": 1, 
-            "frame": 21070, 
-            "recipient": "all", 
-            "location": {
-                "y": 573505, 
-                "x": 563366
-            }
-        }
-    ], 
-    "19024": [
-        {
-            "playerId": 1, 
-            "frame": 19024, 
-            "recipient": "all", 
-            "location": {
-                "y": 368080, 
-                "x": 383457
-            }
-        }
-    ], 
-    "8632": [
-        {
-            "msg": "them", 
-            "playerId": 1, 
-            "frame": 8632, 
-            "recipient": "all"
-        }
-    ], 
-    "19029": [
-        {
-            "playerId": 1, 
-            "frame": 19029, 
-            "recipient": "all", 
-            "location": {
-                "y": 367659, 
-                "x": 383119
-            }
-        }
-    ], 
-    "5718": [
-        {
-            "msg": "scout that", 
-            "playerId": 1, 
-            "frame": 5718, 
-            "recipient": "all"
-        }
-    ], 
-    "1114": [
-        {
-            "msg": "ping doorway", 
-            "playerId": 1, 
-            "frame": 1114, 
-            "recipient": "all"
-        }
-    ], 
-    "21595": [
-        {
-            "playerId": 1, 
-            "frame": 21595, 
-            "recipient": "all", 
-            "location": {
-                "y": 345571, 
-                "x": 150238
-            }
-        }
-    ], 
-    "19036": [
-        {
-            "playerId": 1, 
-            "frame": 19036, 
-            "recipient": "all", 
-            "location": {
-                "y": 366333, 
-                "x": 382040
-            }
-        }
-    ], 
-    "21598": [
-        {
-            "playerId": 1, 
-            "frame": 21598, 
-            "recipient": "all", 
-            "location": {
-                "y": 350421, 
-                "x": 152669
-            }
-        }
-    ], 
-    "21087": [
-        {
-            "playerId": 1, 
-            "frame": 21087, 
-            "recipient": "all", 
-            "location": {
-                "y": 360120, 
-                "x": 176970
-            }
-        }
-    ], 
-    "21601": [
-        {
-            "playerId": 1, 
-            "frame": 21601, 
-            "recipient": "all", 
-            "location": {
-                "y": 350421, 
-                "x": 152669
-            }
-        }
-    ], 
-    "21091": [
-        {
-            "playerId": 1, 
-            "frame": 21091, 
-            "recipient": "all", 
-            "location": {
-                "y": 360120, 
-                "x": 176970
-            }
-        }
-    ], 
-    "21604": [
-        {
-            "playerId": 1, 
-            "frame": 21604, 
-            "recipient": "all", 
-            "location": {
-                "y": 352845, 
-                "x": 155099
-            }
-        }
-    ], 
-    "21606": [
-        {
-            "playerId": 1, 
-            "frame": 21606, 
-            "recipient": "all", 
-            "location": {
-                "y": 352845, 
-                "x": 155099
-            }
-        }
-    ], 
-    "21095": [
-        {
-            "playerId": 1, 
-            "frame": 21095, 
-            "recipient": "all", 
-            "location": {
-                "y": 362545, 
-                "x": 174540
-            }
-        }
-    ], 
-    "111": [
-        {
-            "msg": "mech", 
-            "playerId": 1, 
-            "frame": 111, 
-            "recipient": "all"
-        }
-    ], 
-    "8311": [
-        {
-            "msg": "no expo", 
-            "playerId": 1, 
-            "frame": 8311, 
-            "recipient": "all"
-        }
-    ], 
-    "13660": [
-        {
-            "msg": "only 5 though", 
-            "playerId": 2, 
-            "frame": 13660, 
-            "recipient": "all"
-        }
-    ], 
-    "1145": [
-        {
-            "msg": "to get out", 
-            "playerId": 1, 
-            "frame": 1145, 
-            "recipient": "all"
-        }
-    ], 
-    "7290": [
-        {
-            "msg": "roaches", 
-            "playerId": 2, 
-            "frame": 7290, 
-            "recipient": "all"
-        }
-    ], 
-    "643": [
-        {
-            "msg": "you want me to wall?", 
-            "playerId": 1, 
-            "frame": 643, 
-            "recipient": "all"
-        }
-    ], 
-    "12420": [
-        {
-            "playerId": 1, 
-            "frame": 12420, 
-            "recipient": "all", 
-            "location": {
-                "y": 365322, 
-                "x": 337046
-            }
-        }
-    ], 
-    "4403": [
-        {
-            "msg": "send an early ling", 
-            "playerId": 1, 
-            "frame": 4403, 
-            "recipient": "all"
-        }
-    ], 
-    "21131": [
-        {
-            "msg": "like attack...", 
-            "playerId": 2, 
-            "frame": 21131, 
-            "recipient": "all"
-        }
-    ], 
-    "5260": [
-        {
-            "msg": "ha", 
-            "playerId": 2, 
-            "frame": 5260, 
-            "recipient": "all"
-        }
-    ], 
-    "12430": [
-        {
-            "playerId": 2, 
-            "frame": 12430, 
-            "recipient": "all", 
-            "location": {
-                "y": 369550, 
-                "x": 344465
-            }
-        }
-    ], 
-    "13455": [
-        {
-            "msg": "cool", 
-            "playerId": 1, 
-            "frame": 13455, 
-            "recipient": "all"
-        }
-    ], 
-    "12434": [
-        {
-            "playerId": 2, 
-            "frame": 12434, 
-            "recipient": "all", 
-            "location": {
-                "y": 369550, 
-                "x": 344465
-            }
-        }
-    ], 
-    "3523": [
-        {
-            "msg": "did ug et scv", 
-            "playerId": 1, 
-            "frame": 3523, 
-            "recipient": "all"
-        }
-    ], 
-    "13974": [
-        {
-            "playerId": 1, 
-            "frame": 13974, 
-            "recipient": "all", 
-            "location": {
-                "y": 613697, 
-                "x": 355526
-            }
-        }
-    ], 
-    "663": [
-        {
-            "msg": "or not", 
-            "playerId": 1, 
-            "frame": 663, 
-            "recipient": "all"
+            "eventtype": "ChatMessage"
         }
     ], 
     "6671": [
         {
             "playerId": 1, 
-            "frame": 6671, 
-            "recipient": "all", 
+            "gameloop": 6671, 
+            "recipient": 1, 
             "location": {
                 "y": 590479, 
                 "x": 373813
-            }
+            }, 
+            "eventtype": "PingMessage"
         }
     ], 
-    "666": [
-        {
-            "msg": "I'll bring the meat then", 
-            "playerId": 2, 
-            "frame": 666, 
-            "recipient": "all"
-        }
-    ], 
-    "12443": [
-        {
-            "msg": "jesus", 
-            "playerId": 1, 
-            "frame": 12443, 
-            "recipient": "all"
-        }
-    ], 
-    "3741": [
-        {
-            "msg": "no", 
-            "playerId": 2, 
-            "frame": 3741, 
-            "recipient": "all"
-        }
-    ], 
-    "11423": [
-        {
-            "msg": "you wanna macro?", 
-            "playerId": 1, 
-            "frame": 11423, 
-            "recipient": "all"
-        }
-    ], 
-    "22689": [
+    "7185": [
         {
             "playerId": 1, 
-            "frame": 22689, 
-            "recipient": "all", 
+            "gameloop": 7185, 
+            "recipient": 1, 
             "location": {
-                "y": 436061, 
-                "x": 357924
-            }
+                "y": 494333, 
+                "x": 170471
+            }, 
+            "eventtype": "PingMessage"
         }
     ], 
-    "167": [
-        {
-            "msg": "early thors", 
-            "playerId": 1, 
-            "frame": 167, 
-            "recipient": "all"
-        }
-    ], 
-    "12969": [
-        {
-            "msg": "sure", 
-            "playerId": 1, 
-            "frame": 12969, 
-            "recipient": "all"
-        }
-    ], 
-    "13484": [
-        {
-            "msg": "that will ine up", 
-            "playerId": 1, 
-            "frame": 13484, 
-            "recipient": "all"
-        }
-    ], 
-    "687": [
-        {
-            "msg": "your call", 
-            "playerId": 1, 
-            "frame": 687, 
-            "recipient": "all"
-        }
-    ], 
-    "22706": [
+    "7189": [
         {
             "playerId": 1, 
-            "frame": 22706, 
-            "recipient": "all", 
+            "gameloop": 7189, 
+            "recipient": 1, 
             "location": {
-                "y": 504220, 
-                "x": 394250
-            }
+                "y": 494333, 
+                "x": 170471
+            }, 
+            "eventtype": "PingMessage"
         }
     ], 
-    "11955": [
-        {
-            "msg": "so they dont see", 
-            "playerId": 1, 
-            "frame": 11955, 
-            "recipient": "all"
-        }
-    ], 
-    "22708": [
+    "18966": [
         {
             "playerId": 1, 
-            "frame": 22708, 
-            "recipient": "all", 
+            "gameloop": 18966, 
+            "recipient": 1, 
             "location": {
-                "y": 504016, 
-                "x": 394244
-            }
+                "y": 373819, 
+                "x": 390860
+            }, 
+            "eventtype": "PingMessage"
         }
     ], 
-    "11445": [
-        {
-            "msg": "or push?", 
-            "playerId": 1, 
-            "frame": 11445, 
-            "recipient": "all"
-        }
-    ], 
-    "22710": [
+    "18968": [
         {
             "playerId": 1, 
-            "frame": 22710, 
-            "recipient": "all", 
+            "gameloop": 18968, 
+            "recipient": 1, 
             "location": {
-                "y": 503917, 
-                "x": 394241
-            }
+                "y": 372430, 
+                "x": 388160
+            }, 
+            "eventtype": "PingMessage"
         }
     ], 
-    "15221": [
-        {
-            "msg": "get shit on ur line", 
-            "playerId": 1, 
-            "frame": 15221, 
-            "recipient": "all"
-        }
-    ], 
-    "6339": [
-        {
-            "msg": "k, getting units now", 
-            "playerId": 2, 
-            "frame": 6339, 
-            "recipient": "all"
-        }
-    ], 
-    "11972": [
-        {
-            "msg": "me coming", 
-            "playerId": 1, 
-            "frame": 11972, 
-            "recipient": "all"
-        }
-    ], 
-    "15047": [
-        {
-            "msg": "push now??", 
-            "playerId": 2, 
-            "frame": 15047, 
-            "recipient": "all"
-        }
-    ], 
-    "8904": [
-        {
-            "msg": "you arent gonna be able to hold expo", 
-            "playerId": 1, 
-            "frame": 8904, 
-            "recipient": "all"
-        }
-    ], 
-    "26315": [
-        {
-            "msg": "gg", 
-            "playerId": 4, 
-            "frame": 26315, 
-            "recipient": "all"
-        }
-    ], 
-    "209": [
-        {
-            "msg": "k", 
-            "playerId": 2, 
-            "frame": 209, 
-            "recipient": "all"
-        }
-    ], 
-    "14034": [
-        {
-            "msg": "no saturation", 
-            "playerId": 1, 
-            "frame": 14034, 
-            "recipient": "all"
-        }
-    ], 
-    "217": [
-        {
-            "msg": "tyo counter muta", 
-            "playerId": 1, 
-            "frame": 217, 
-            "recipient": "all"
-        }
-    ], 
-    "4826": [
-        {
-            "msg": "is that scv's gone?", 
-            "playerId": 1, 
-            "frame": 4826, 
-            "recipient": "all"
-        }
-    ], 
-    "20701": [
-        {
-            "msg": "so slow :0/", 
-            "playerId": 2, 
-            "frame": 20701, 
-            "recipient": "all"
-        }
-    ], 
-    "230": [
-        {
-            "msg": "gl hf", 
-            "playerId": 1, 
-            "frame": 230, 
-            "recipient": "all"
-        }
-    ], 
-    "3819": [
-        {
-            "msg": "wherd it go?", 
-            "playerId": 1, 
-            "frame": 3819, 
-            "recipient": "all"
-        }
-    ], 
-    "750": [
-        {
-            "msg": "yeah", 
-            "playerId": 2, 
-            "frame": 750, 
-            "recipient": "all"
-        }
-    ], 
-    "12073": [
-        {
-            "msg": "k", 
-            "playerId": 2, 
-            "frame": 12073, 
-            "recipient": "all"
-        }
-    ], 
-    "26365": [
-        {
-            "msg": "gg", 
-            "playerId": 1, 
-            "frame": 26365, 
-            "recipient": "all"
-        }
-    ], 
-    "254": [
-        {
-            "msg": "Gl hf", 
-            "playerId": 1, 
-            "frame": 254, 
-            "recipient": "all"
-        }
-    ], 
-    "4863": [
-        {
-            "msg": "]i dont see it", 
-            "playerId": 1, 
-            "frame": 4863, 
-            "recipient": "all"
-        }
-    ], 
-    "21291": [
+    "22041": [
         {
             "playerId": 1, 
-            "frame": 21291, 
-            "recipient": "all", 
-            "location": {
-                "y": 602603, 
-                "x": 361663
-            }
+            "gameloop": 22041, 
+            "recipient": 1, 
+            "msg": "that alone", 
+            "eventtype": "ChatMessage"
         }
     ], 
-    "15118": [
+    "5146": [
         {
-            "msg": "lol", 
             "playerId": 1, 
-            "frame": 15118, 
-            "recipient": "all"
+            "gameloop": 5146, 
+            "recipient": 1, 
+            "msg": "whole in da wall", 
+            "eventtype": "ChatMessage"
         }
     ], 
-    "20269": [
+    "6685": [
         {
             "playerId": 2, 
-            "frame": 20269, 
-            "recipient": "all", 
+            "gameloop": 6685, 
+            "recipient": 1, 
             "location": {
-                "y": 103669, 
-                "x": 163324
-            }
+                "y": 132030, 
+                "x": 440362
+            }, 
+            "eventtype": "PingMessage"
         }
     ], 
-    "14096": [
+    "9248": [
         {
             "playerId": 1, 
-            "frame": 14096, 
-            "recipient": "all", 
+            "gameloop": 9248, 
+            "recipient": 1, 
             "location": {
-                "y": 477284, 
-                "x": 124729
-            }
+                "y": 571080, 
+                "x": 570657
+            }, 
+            "eventtype": "PingMessage"
         }
     ], 
-    "16659": [
+    "21595": [
         {
             "playerId": 1, 
-            "frame": 16659, 
-            "recipient": "all", 
+            "gameloop": 21595, 
+            "recipient": 1, 
             "location": {
-                "y": 303128, 
-                "x": 312973
-            }
-        }
-    ], 
-    "14100": [
-        {
-            "playerId": 1, 
-            "frame": 14100, 
-            "recipient": "all", 
-            "location": {
-                "y": 476546, 
-                "x": 124020
-            }
-        }
-    ], 
-    "16661": [
-        {
-            "playerId": 1, 
-            "frame": 16661, 
-            "recipient": "all", 
-            "location": {
-                "y": 303990, 
-                "x": 313983
-            }
-        }
-    ], 
-    "14102": [
-        {
-            "playerId": 1, 
-            "frame": 14102, 
-            "recipient": "all", 
-            "location": {
-                "y": 476458, 
-                "x": 123967
-            }
-        }
-    ], 
-    "8921": [
-        {
-            "msg": "cancel", 
-            "playerId": 1, 
-            "frame": 8921, 
-            "recipient": "all"
-        }
-    ], 
-    "13529": [
-        {
-            "msg": "with stim", 
-            "playerId": 1, 
-            "frame": 13529, 
-            "recipient": "all"
-        }
-    ], 
-    "18720": [
-        {
-            "playerId": 1, 
-            "frame": 18720, 
-            "recipient": "all", 
-            "location": {
-                "y": 362545, 
-                "x": 135657
-            }
-        }
-    ], 
-    "18723": [
-        {
-            "playerId": 1, 
-            "frame": 18723, 
-            "recipient": "all", 
-            "location": {
-                "y": 362545, 
-                "x": 133227
-            }
-        }
-    ], 
-    "18725": [
-        {
-            "playerId": 1, 
-            "frame": 18725, 
-            "recipient": "all", 
-            "location": {
-                "y": 357695, 
-                "x": 140518
-            }
-        }
-    ], 
-    "21286": [
-        {
-            "playerId": 1, 
-            "frame": 21286, 
-            "recipient": "all", 
-            "location": {
-                "y": 605028, 
-                "x": 381104
-            }
-        }
-    ], 
-    "18728": [
-        {
-            "playerId": 1, 
-            "frame": 18728, 
-            "recipient": "all", 
-            "location": {
-                "y": 355270, 
+                "y": 345571, 
                 "x": 150238
-            }
+            }, 
+            "eventtype": "PingMessage"
         }
     ], 
-    "20265": [
+    "14379": [
+        {
+            "playerId": 1, 
+            "gameloop": 14379, 
+            "recipient": 1, 
+            "location": {
+                "y": 46732, 
+                "x": 402568
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "21030": [
+        {
+            "playerId": 1, 
+            "gameloop": 21030, 
+            "recipient": 1, 
+            "msg": "we need to do sometihbnbg", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "14375": [
+        {
+            "playerId": 1, 
+            "gameloop": 14375, 
+            "recipient": 1, 
+            "location": {
+                "y": 62867, 
+                "x": 369362
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "14377": [
+        {
+            "playerId": 1, 
+            "gameloop": 14377, 
+            "recipient": 1, 
+            "location": {
+                "y": 48847, 
+                "x": 389395
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "6699": [
+        {
+            "playerId": 1, 
+            "gameloop": 6699, 
+            "recipient": 1, 
+            "msg": "check pleas", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "13869": [
+        {
+            "playerId": 1, 
+            "gameloop": 13869, 
+            "recipient": 1, 
+            "msg": "ready?", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "18993": [
+        {
+            "playerId": 1, 
+            "gameloop": 18993, 
+            "recipient": 1, 
+            "msg": "FUNGAL", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "22066": [
+        {
+            "playerId": 1, 
+            "gameloop": 22066, 
+            "recipient": 1, 
+            "msg": "tyhat logn", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "5686": [
+        {
+            "playerId": 1, 
+            "gameloop": 5686, 
+            "recipient": 1, 
+            "location": {
+                "y": 602418, 
+                "x": 370618
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "5689": [
+        {
+            "playerId": 1, 
+            "gameloop": 5689, 
+            "recipient": 1, 
+            "location": {
+                "y": 604184, 
+                "x": 370101
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "9274": [
+        {
+            "playerId": 1, 
+            "gameloop": 9274, 
+            "recipient": 1, 
+            "msg": "ling", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "5691": [
+        {
+            "playerId": 1, 
+            "gameloop": 5691, 
+            "recipient": 1, 
+            "location": {
+                "y": 604184, 
+                "x": 370027
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "8769": [
         {
             "playerId": 2, 
-            "frame": 20265, 
-            "recipient": "all", 
-            "location": {
-                "y": 93034, 
-                "x": 156220
-            }
+            "gameloop": 8769, 
+            "recipient": 1, 
+            "msg": "yeha", 
+            "eventtype": "ChatMessage"
         }
     ], 
-    "18731": [
+    "14404": [
         {
             "playerId": 1, 
-            "frame": 18731, 
-            "recipient": "all", 
-            "location": {
-                "y": 355270, 
-                "x": 150238
-            }
+            "gameloop": 14404, 
+            "recipient": 1, 
+            "msg": "sproes", 
+            "eventtype": "ChatMessage"
         }
     ], 
-    "21292": [
+    "19014": [
         {
             "playerId": 1, 
-            "frame": 21292, 
-            "recipient": "all", 
+            "gameloop": 19014, 
+            "recipient": 1, 
             "location": {
-                "y": 600178, 
-                "x": 361663
-            }
+                "y": 368669, 
+                "x": 383748
+            }, 
+            "eventtype": "PingMessage"
         }
     ], 
-    "18733": [
+    "21063": [
         {
             "playerId": 1, 
-            "frame": 18733, 
-            "recipient": "all", 
+            "gameloop": 21063, 
+            "recipient": 1, 
             "location": {
-                "y": 355270, 
-                "x": 150238
-            }
-        }
-    ], 
-    "18736": [
-        {
-            "playerId": 1, 
-            "frame": 18736, 
-            "recipient": "all", 
-            "location": {
-                "y": 355270, 
-                "x": 150238
-            }
-        }
-    ], 
-    "17713": [
-        {
-            "playerId": 1, 
-            "frame": 17713, 
-            "recipient": "all", 
-            "location": {
-                "y": 146822, 
-                "x": 172565
-            }
-        }
-    ], 
-    "17714": [
-        {
-            "playerId": 1, 
-            "frame": 17714, 
-            "recipient": "all", 
-            "location": {
-                "y": 156719, 
-                "x": 175628
-            }
+                "y": 578355, 
+                "x": 568226
+            }, 
+            "eventtype": "PingMessage"
         }
     ], 
     "18739": [
         {
             "playerId": 1, 
-            "frame": 18739, 
-            "recipient": "all", 
+            "gameloop": 18739, 
+            "recipient": 1, 
             "location": {
                 "y": 355270, 
                 "x": 150238
-            }
+            }, 
+            "eventtype": "PingMessage"
         }
     ], 
-    "17717": [
+    "21578": [
         {
             "playerId": 1, 
-            "frame": 17717, 
-            "recipient": "all", 
+            "gameloop": 21578, 
+            "recipient": 1, 
             "location": {
-                "y": 151103, 
-                "x": 173892
-            }
-        }
-    ], 
-    "17718": [
-        {
-            "playerId": 1, 
-            "frame": 17718, 
-            "recipient": "all", 
-            "location": {
-                "y": 144868, 
-                "x": 171872
-            }
-        }
-    ], 
-    "18743": [
-        {
-            "playerId": 1, 
-            "frame": 18743, 
-            "recipient": "all", 
-            "location": {
-                "y": 355270, 
-                "x": 150238
-            }
-        }
-    ], 
-    "18744": [
-        {
-            "playerId": 1, 
-            "frame": 18744, 
-            "recipient": "all", 
-            "location": {
-                "y": 355270, 
-                "x": 150238
-            }
-        }
-    ], 
-    "17721": [
-        {
-            "playerId": 1, 
-            "frame": 17721, 
-            "recipient": "all", 
-            "location": {
-                "y": 144502, 
-                "x": 171686
-            }
-        }
-    ], 
-    "17724": [
-        {
-            "playerId": 1, 
-            "frame": 17724, 
-            "recipient": "all", 
-            "location": {
-                "y": 144133, 
-                "x": 171717
-            }
-        }
-    ], 
-    "18749": [
-        {
-            "playerId": 1, 
-            "frame": 18749, 
-            "recipient": "all", 
-            "location": {
-                "y": 352845, 
-                "x": 152669
-            }
-        }
-    ], 
-    "18741": [
-        {
-            "playerId": 1, 
-            "frame": 18741, 
-            "recipient": "all", 
-            "location": {
-                "y": 355270, 
-                "x": 150238
-            }
-        }
-    ], 
-    "18752": [
-        {
-            "playerId": 1, 
-            "frame": 18752, 
-            "recipient": "all", 
-            "location": {
-                "y": 352845, 
-                "x": 152669
-            }
-        }
-    ], 
-    "18754": [
-        {
-            "playerId": 1, 
-            "frame": 18754, 
-            "recipient": "all", 
-            "location": {
-                "y": 352845, 
-                "x": 152669
-            }
-        }
-    ], 
-    "21827": [
-        {
-            "msg": "dyude", 
-            "playerId": 1, 
-            "frame": 21827, 
-            "recipient": "all"
-        }
-    ], 
-    "18756": [
-        {
-            "playerId": 1, 
-            "frame": 18756, 
-            "recipient": "all", 
-            "location": {
-                "y": 350421, 
-                "x": 155099
-            }
-        }
-    ], 
-    "4424": [
-        {
-            "msg": "to check", 
-            "playerId": 1, 
-            "frame": 4424, 
-            "recipient": "all"
-        }
-    ], 
-    "12619": [
-        {
-            "msg": "wait for fungal?", 
-            "playerId": 2, 
-            "frame": 12619, 
-            "recipient": "all"
-        }
-    ], 
-    "17742": [
-        {
-            "msg": "LING", 
-            "playerId": 1, 
-            "frame": 17742, 
-            "recipient": "all"
-        }
-    ], 
-    "21844": [
-        {
-            "msg": "git", 
-            "playerId": 1, 
-            "frame": 21844, 
-            "recipient": "all"
-        }
-    ], 
-    "16219": [
-        {
-            "playerId": 1, 
-            "frame": 16219, 
-            "recipient": "all", 
-            "location": {
-                "y": 67444, 
-                "x": 371928
-            }
-        }
-    ], 
-    "14684": [
-        {
-            "playerId": 1, 
-            "frame": 14684, 
-            "recipient": "all", 
-            "location": {
-                "y": 372244, 
-                "x": 186691
-            }
-        }
-    ], 
-    "16223": [
-        {
-            "playerId": 1, 
-            "frame": 16223, 
-            "recipient": "all", 
-            "location": {
-                "y": 67277, 
-                "x": 371926
-            }
-        }
-    ], 
-    "14688": [
-        {
-            "playerId": 1, 
-            "frame": 14688, 
-            "recipient": "all", 
-            "location": {
-                "y": 241303, 
-                "x": 159959
-            }
-        }
-    ], 
-    "16226": [
-        {
-            "playerId": 1, 
-            "frame": 16226, 
-            "recipient": "all", 
-            "location": {
-                "y": 67109, 
-                "x": 372257
-            }
-        }
-    ], 
-    "19003": [
-        {
-            "playerId": 1, 
-            "frame": 19003, 
-            "recipient": "all", 
-            "location": {
-                "y": 369342, 
-                "x": 384269
-            }
-        }
-    ], 
-    "11621": [
-        {
-            "msg": "push I think", 
-            "playerId": 2, 
-            "frame": 11621, 
-            "recipient": "all"
-        }
-    ], 
-    "6699": [
-        {
-            "msg": "check pleas", 
-            "playerId": 1, 
-            "frame": 6699, 
-            "recipient": "all"
-        }
-    ], 
-    "5997": [
-        {
-            "msg": "i can go whenever", 
-            "playerId": 1, 
-            "frame": 5997, 
-            "recipient": "all"
-        }
-    ], 
-    "3950": [
-        {
-            "msg": "shit, don't knwo if that was a rax or a factory", 
-            "playerId": 2, 
-            "frame": 3950, 
-            "recipient": "all"
-        }
-    ], 
-    "21871": [
-        {
-            "playerId": 1, 
-            "frame": 21871, 
-            "recipient": "all", 
-            "location": {
-                "y": 522584, 
-                "x": 135657
-            }
-        }
-    ], 
-    "21907": [
-        {
-            "playerId": 1, 
-            "frame": 21907, 
-            "recipient": "all", 
-            "location": {
-                "y": 386793, 
-                "x": 147808
-            }
-        }
-    ], 
-    "21876": [
-        {
-            "playerId": 1, 
-            "frame": 21876, 
-            "recipient": "all", 
-            "location": {
-                "y": 367394, 
-                "x": 133227
-            }
-        }
-    ], 
-    "14709": [
-        {
-            "msg": "ling", 
-            "playerId": 1, 
-            "frame": 14709, 
-            "recipient": "all"
-        }
-    ], 
-    "8054": [
-        {
-            "msg": "expo", 
-            "playerId": 1, 
-            "frame": 8054, 
-            "recipient": "all"
-        }
-    ], 
-    "21879": [
-        {
-            "playerId": 1, 
-            "frame": 21879, 
-            "recipient": "all", 
-            "location": {
-                "y": 362545, 
-                "x": 133227
-            }
-        }
-    ], 
-    "21881": [
-        {
-            "playerId": 1, 
-            "frame": 21881, 
-            "recipient": "all", 
-            "location": {
-                "y": 284950, 
-                "x": 150238
-            }
-        }
-    ], 
-    "4475": [
-        {
-            "msg": "k", 
-            "playerId": 2, 
-            "frame": 4475, 
-            "recipient": "all"
-        }
-    ], 
-    "21885": [
-        {
-            "playerId": 1, 
-            "frame": 21885, 
-            "recipient": "all", 
-            "location": {
-                "y": 440139, 
-                "x": 138088
-            }
-        }
-    ], 
-    "6024": [
-        {
-            "msg": "your erad", 
-            "playerId": 1, 
-            "frame": 6024, 
-            "recipient": "all"
-        }
-    ], 
-    "8000": [
-        {
-            "playerId": 1, 
-            "frame": 8000, 
-            "recipient": "all", 
-            "location": {
-                "y": 81264, 
-                "x": 383534
-            }
-        }
-    ], 
-    "21893": [
-        {
-            "playerId": 1, 
-            "frame": 21893, 
-            "recipient": "all", 
-            "location": {
-                "y": 401342, 
-                "x": 196412
-            }
-        }
-    ], 
-    "21894": [
-        {
-            "playerId": 1, 
-            "frame": 21894, 
-            "recipient": "all", 
-            "location": {
-                "y": 347996, 
-                "x": 181831
-            }
-        }
-    ], 
-    "8769": [
-        {
-            "msg": "yeha", 
-            "playerId": 2, 
-            "frame": 8769, 
-            "recipient": "all"
-        }
-    ], 
-    "21896": [
-        {
-            "playerId": 1, 
-            "frame": 21896, 
-            "recipient": "all", 
-            "location": {
-                "y": 384368, 
-                "x": 155099
-            }
-        }
-    ], 
-    "13195": [
-        {
-            "msg": "spawning infestors now", 
-            "playerId": 2, 
-            "frame": 13195, 
-            "recipient": "all"
-        }
-    ], 
-    "21901": [
-        {
-            "playerId": 1, 
-            "frame": 21901, 
-            "recipient": "all", 
-            "location": {
-                "y": 394067, 
-                "x": 147808
-            }
-        }
-    ], 
-    "10643": [
-        {
-            "playerId": 1, 
-            "frame": 10643, 
-            "recipient": "all", 
-            "location": {
-                "y": 90551, 
-                "x": 371647
-            }
-        }
-    ], 
-    "21908": [
-        {
-            "playerId": 1, 
-            "frame": 21908, 
-            "recipient": "all", 
-            "location": {
-                "y": 381943, 
-                "x": 147808
-            }
-        }
-    ], 
-    "21911": [
-        {
-            "playerId": 1, 
-            "frame": 21911, 
-            "recipient": "all", 
-            "location": {
-                "y": 377094, 
-                "x": 147808
-            }
-        }
-    ], 
-    "21913": [
-        {
-            "playerId": 1, 
-            "frame": 21913, 
-            "recipient": "all", 
-            "location": {
-                "y": 377094, 
-                "x": 147808
-            }
-        }
-    ], 
-    "21914": [
-        {
-            "playerId": 1, 
-            "frame": 21914, 
-            "recipient": "all", 
-            "location": {
-                "y": 372244, 
-                "x": 147808
-            }
-        }
-    ], 
-    "21917": [
-        {
-            "playerId": 1, 
-            "frame": 21917, 
-            "recipient": "all", 
-            "location": {
-                "y": 369819, 
-                "x": 150238
-            }
-        }
-    ], 
-    "21920": [
-        {
-            "playerId": 1, 
-            "frame": 21920, 
-            "recipient": "all", 
-            "location": {
-                "y": 367394, 
-                "x": 150238
-            }
-        }
-    ], 
-    "21922": [
-        {
-            "playerId": 1, 
-            "frame": 21922, 
-            "recipient": "all", 
-            "location": {
-                "y": 364969, 
-                "x": 150238
-            }
-        }
-    ], 
-    "21925": [
-        {
-            "playerId": 1, 
-            "frame": 21925, 
-            "recipient": "all", 
-            "location": {
-                "y": 364969, 
-                "x": 150238
-            }
-        }
-    ], 
-    "17779": [
-        {
-            "msg": "GODAMMIT", 
-            "playerId": 1, 
-            "frame": 17779, 
-            "recipient": "all"
-        }
-    ], 
-    "15176": [
-        {
-            "msg": "right as they get mutas?", 
-            "playerId": 1, 
-            "frame": 15176, 
-            "recipient": "all"
-        }
-    ], 
-    "11704": [
-        {
-            "playerId": 1, 
-            "frame": 11704, 
-            "recipient": "all", 
-            "location": {
-                "y": 301924, 
-                "x": 286328
-            }
-        }
-    ], 
-    "9145": [
-        {
-            "msg": "i have seige", 
-            "playerId": 1, 
-            "frame": 9145, 
-            "recipient": "all"
-        }
-    ], 
-    "22463": [
-        {
-            "playerId": 1, 
-            "frame": 22463, 
-            "recipient": "all", 
-            "location": {
-                "y": 607876, 
-                "x": 334703
-            }
-        }
-    ], 
-    "22466": [
-        {
-            "playerId": 1, 
-            "frame": 22466, 
-            "recipient": "all", 
-            "location": {
-                "y": 606224, 
-                "x": 337045
-            }
+                "y": 568655, 
+                "x": 551215
+            }, 
+            "eventtype": "PingMessage"
         }
     ], 
     "7243": [
         {
             "playerId": 1, 
-            "frame": 7243, 
-            "recipient": "all", 
+            "gameloop": 7243, 
+            "recipient": 1, 
             "location": {
                 "y": 364969, 
                 "x": 366523
-            }
-        }
-    ], 
-    "22470": [
-        {
-            "playerId": 1, 
-            "frame": 22470, 
-            "recipient": "all", 
-            "location": {
-                "y": 604920, 
-                "x": 338956
-            }
-        }
-    ], 
-    "8353": [
-        {
-            "msg": "aqll in", 
-            "playerId": 1, 
-            "frame": 8353, 
-            "recipient": "all"
-        }
-    ], 
-    "10697": [
-        {
-            "msg": "now take", 
-            "playerId": 1, 
-            "frame": 10697, 
-            "recipient": "all"
-        }
-    ], 
-    "14795": [
-        {
-            "msg": "we need map control", 
-            "playerId": 1, 
-            "frame": 14795, 
-            "recipient": "all"
-        }
-    ], 
-    "6604": [
-        {
-            "msg": "tough to expo on", 
-            "playerId": 1, 
-            "frame": 6604, 
-            "recipient": "all"
-        }
-    ], 
-    "14754": [
-        {
-            "msg": "come on dude", 
-            "playerId": 1, 
-            "frame": 14754, 
-            "recipient": "all"
-        }
-    ], 
-    "15240": [
-        {
-            "msg": "then sure", 
-            "playerId": 1, 
-            "frame": 15240, 
-            "recipient": "all"
-        }
-    ], 
-    "11728": [
-        {
-            "playerId": 1, 
-            "frame": 11728, 
-            "recipient": "all", 
-            "location": {
-                "y": 367394, 
-                "x": 410266
-            }
-        }
-    ], 
-    "9169": [
-        {
-            "msg": "tehy dont", 
-            "playerId": 1, 
-            "frame": 9169, 
-            "recipient": "all"
-        }
-    ], 
-    "12242": [
-        {
-            "msg": "on stim", 
-            "playerId": 1, 
-            "frame": 12242, 
-            "recipient": "all"
+            }, 
+            "eventtype": "PingMessage"
         }
     ], 
     "7246": [
         {
             "playerId": 1, 
-            "frame": 7246, 
-            "recipient": "all", 
+            "gameloop": 7246, 
+            "recipient": 1, 
             "location": {
                 "y": 364969, 
                 "x": 366523
-            }
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "19024": [
+        {
+            "playerId": 1, 
+            "gameloop": 19024, 
+            "recipient": 1, 
+            "location": {
+                "y": 368080, 
+                "x": 383457
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "8632": [
+        {
+            "playerId": 1, 
+            "gameloop": 8632, 
+            "recipient": 1, 
+            "msg": "them", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "19029": [
+        {
+            "playerId": 1, 
+            "gameloop": 19029, 
+            "recipient": 1, 
+            "location": {
+                "y": 367659, 
+                "x": 383119
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "5718": [
+        {
+            "playerId": 1, 
+            "gameloop": 5718, 
+            "recipient": 1, 
+            "msg": "scout that", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "1114": [
+        {
+            "playerId": 1, 
+            "gameloop": 1114, 
+            "recipient": 1, 
+            "msg": "ping doorway", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "9231": [
+        {
+            "playerId": 1, 
+            "gameloop": 9231, 
+            "recipient": 1, 
+            "location": {
+                "y": 384368, 
+                "x": 155099
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "19036": [
+        {
+            "playerId": 1, 
+            "gameloop": 19036, 
+            "recipient": 1, 
+            "location": {
+                "y": 366333, 
+                "x": 382040
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "21598": [
+        {
+            "playerId": 1, 
+            "gameloop": 21598, 
+            "recipient": 1, 
+            "location": {
+                "y": 350421, 
+                "x": 152669
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "21087": [
+        {
+            "playerId": 1, 
+            "gameloop": 21087, 
+            "recipient": 1, 
+            "location": {
+                "y": 360120, 
+                "x": 176970
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "21601": [
+        {
+            "playerId": 1, 
+            "gameloop": 21601, 
+            "recipient": 1, 
+            "location": {
+                "y": 350421, 
+                "x": 152669
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "21091": [
+        {
+            "playerId": 1, 
+            "gameloop": 21091, 
+            "recipient": 1, 
+            "location": {
+                "y": 360120, 
+                "x": 176970
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "21604": [
+        {
+            "playerId": 1, 
+            "gameloop": 21604, 
+            "recipient": 1, 
+            "location": {
+                "y": 352845, 
+                "x": 155099
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "21606": [
+        {
+            "playerId": 1, 
+            "gameloop": 21606, 
+            "recipient": 1, 
+            "location": {
+                "y": 352845, 
+                "x": 155099
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "21095": [
+        {
+            "playerId": 1, 
+            "gameloop": 21095, 
+            "recipient": 1, 
+            "location": {
+                "y": 362545, 
+                "x": 174540
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "111": [
+        {
+            "playerId": 1, 
+            "gameloop": 111, 
+            "recipient": 1, 
+            "msg": "mech", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "8311": [
+        {
+            "playerId": 1, 
+            "gameloop": 8311, 
+            "recipient": 1, 
+            "msg": "no expo", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "1145": [
+        {
+            "playerId": 1, 
+            "gameloop": 1145, 
+            "recipient": 1, 
+            "msg": "to get out", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "7290": [
+        {
+            "playerId": 2, 
+            "gameloop": 7290, 
+            "recipient": 1, 
+            "msg": "roaches", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "643": [
+        {
+            "playerId": 1, 
+            "gameloop": 643, 
+            "recipient": 1, 
+            "msg": "you want me to wall?", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "12420": [
+        {
+            "playerId": 1, 
+            "gameloop": 12420, 
+            "recipient": 1, 
+            "location": {
+                "y": 365322, 
+                "x": 337046
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "21131": [
+        {
+            "playerId": 2, 
+            "gameloop": 21131, 
+            "recipient": 1, 
+            "msg": "like attack...", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "5260": [
+        {
+            "playerId": 2, 
+            "gameloop": 5260, 
+            "recipient": 1, 
+            "msg": "ha", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "12430": [
+        {
+            "playerId": 2, 
+            "gameloop": 12430, 
+            "recipient": 1, 
+            "location": {
+                "y": 369550, 
+                "x": 344465
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "13455": [
+        {
+            "playerId": 1, 
+            "gameloop": 13455, 
+            "recipient": 1, 
+            "msg": "cool", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "12434": [
+        {
+            "playerId": 2, 
+            "gameloop": 12434, 
+            "recipient": 1, 
+            "location": {
+                "y": 369550, 
+                "x": 344465
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "13974": [
+        {
+            "playerId": 1, 
+            "gameloop": 13974, 
+            "recipient": 1, 
+            "location": {
+                "y": 613697, 
+                "x": 355526
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "663": [
+        {
+            "playerId": 1, 
+            "gameloop": 663, 
+            "recipient": 1, 
+            "msg": "or not", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "14684": [
+        {
+            "playerId": 1, 
+            "gameloop": 14684, 
+            "recipient": 1, 
+            "location": {
+                "y": 372244, 
+                "x": 186691
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "666": [
+        {
+            "playerId": 2, 
+            "gameloop": 666, 
+            "recipient": 1, 
+            "msg": "I'll bring the meat then", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "12443": [
+        {
+            "playerId": 1, 
+            "gameloop": 12443, 
+            "recipient": 1, 
+            "msg": "jesus", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "3741": [
+        {
+            "playerId": 2, 
+            "gameloop": 3741, 
+            "recipient": 1, 
+            "msg": "no", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "11423": [
+        {
+            "playerId": 1, 
+            "gameloop": 11423, 
+            "recipient": 1, 
+            "msg": "you wanna macro?", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "8353": [
+        {
+            "playerId": 1, 
+            "gameloop": 8353, 
+            "recipient": 1, 
+            "msg": "aqll in", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "21896": [
+        {
+            "playerId": 1, 
+            "gameloop": 21896, 
+            "recipient": 1, 
+            "location": {
+                "y": 384368, 
+                "x": 155099
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "167": [
+        {
+            "playerId": 1, 
+            "gameloop": 167, 
+            "recipient": 1, 
+            "msg": "early thors", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "12969": [
+        {
+            "playerId": 1, 
+            "gameloop": 12969, 
+            "recipient": 1, 
+            "msg": "sure", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "13484": [
+        {
+            "playerId": 1, 
+            "gameloop": 13484, 
+            "recipient": 1, 
+            "msg": "that will ine up", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "687": [
+        {
+            "playerId": 1, 
+            "gameloop": 687, 
+            "recipient": 1, 
+            "msg": "your call", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "22706": [
+        {
+            "playerId": 1, 
+            "gameloop": 22706, 
+            "recipient": 1, 
+            "location": {
+                "y": 504220, 
+                "x": 394250
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "11955": [
+        {
+            "playerId": 1, 
+            "gameloop": 11955, 
+            "recipient": 1, 
+            "msg": "so they dont see", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "22708": [
+        {
+            "playerId": 1, 
+            "gameloop": 22708, 
+            "recipient": 1, 
+            "location": {
+                "y": 504016, 
+                "x": 394244
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "11445": [
+        {
+            "playerId": 1, 
+            "gameloop": 11445, 
+            "recipient": 1, 
+            "msg": "or push?", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "22710": [
+        {
+            "playerId": 1, 
+            "gameloop": 22710, 
+            "recipient": 1, 
+            "location": {
+                "y": 503917, 
+                "x": 394241
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "15221": [
+        {
+            "playerId": 1, 
+            "gameloop": 15221, 
+            "recipient": 1, 
+            "msg": "get shit on ur line", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "6339": [
+        {
+            "playerId": 2, 
+            "gameloop": 6339, 
+            "recipient": 1, 
+            "msg": "k, getting units now", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "11972": [
+        {
+            "playerId": 1, 
+            "gameloop": 11972, 
+            "recipient": 1, 
+            "msg": "me coming", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "15047": [
+        {
+            "playerId": 2, 
+            "gameloop": 15047, 
+            "recipient": 1, 
+            "msg": "push now??", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "8904": [
+        {
+            "playerId": 1, 
+            "gameloop": 8904, 
+            "recipient": 1, 
+            "msg": "you arent gonna be able to hold expo", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "26315": [
+        {
+            "playerId": 4, 
+            "gameloop": 26315, 
+            "recipient": 0, 
+            "msg": "gg", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "209": [
+        {
+            "playerId": 2, 
+            "gameloop": 209, 
+            "recipient": 1, 
+            "msg": "k", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "14034": [
+        {
+            "playerId": 1, 
+            "gameloop": 14034, 
+            "recipient": 1, 
+            "msg": "no saturation", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "8921": [
+        {
+            "playerId": 1, 
+            "gameloop": 8921, 
+            "recipient": 1, 
+            "msg": "cancel", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "4826": [
+        {
+            "playerId": 1, 
+            "gameloop": 4826, 
+            "recipient": 1, 
+            "msg": "is that scv's gone?", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "20701": [
+        {
+            "playerId": 2, 
+            "gameloop": 20701, 
+            "recipient": 1, 
+            "msg": "so slow :0/", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "230": [
+        {
+            "playerId": 1, 
+            "gameloop": 230, 
+            "recipient": 1, 
+            "msg": "gl hf", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "3819": [
+        {
+            "playerId": 1, 
+            "gameloop": 3819, 
+            "recipient": 1, 
+            "msg": "wherd it go?", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "750": [
+        {
+            "playerId": 2, 
+            "gameloop": 750, 
+            "recipient": 1, 
+            "msg": "yeah", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "20265": [
+        {
+            "playerId": 2, 
+            "gameloop": 20265, 
+            "recipient": 1, 
+            "location": {
+                "y": 93034, 
+                "x": 156220
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "21067": [
+        {
+            "playerId": 1, 
+            "gameloop": 21067, 
+            "recipient": 1, 
+            "location": {
+                "y": 578355, 
+                "x": 568226
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "26365": [
+        {
+            "playerId": 1, 
+            "gameloop": 26365, 
+            "recipient": 0, 
+            "msg": "gg", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "254": [
+        {
+            "playerId": 1, 
+            "gameloop": 254, 
+            "recipient": 0, 
+            "msg": "Gl hf", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "4863": [
+        {
+            "playerId": 1, 
+            "gameloop": 4863, 
+            "recipient": 1, 
+            "msg": "]i dont see it", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "1283": [
+        {
+            "playerId": 2, 
+            "gameloop": 1283, 
+            "recipient": 1, 
+            "msg": "k", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "15118": [
+        {
+            "playerId": 1, 
+            "gameloop": 15118, 
+            "recipient": 1, 
+            "msg": "lol", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "20269": [
+        {
+            "playerId": 2, 
+            "gameloop": 20269, 
+            "recipient": 1, 
+            "location": {
+                "y": 103669, 
+                "x": 163324
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "14096": [
+        {
+            "playerId": 1, 
+            "gameloop": 14096, 
+            "recipient": 1, 
+            "location": {
+                "y": 477284, 
+                "x": 124729
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "16659": [
+        {
+            "playerId": 1, 
+            "gameloop": 16659, 
+            "recipient": 1, 
+            "location": {
+                "y": 303128, 
+                "x": 312973
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "14100": [
+        {
+            "playerId": 1, 
+            "gameloop": 14100, 
+            "recipient": 1, 
+            "location": {
+                "y": 476546, 
+                "x": 124020
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "16661": [
+        {
+            "playerId": 1, 
+            "gameloop": 16661, 
+            "recipient": 1, 
+            "location": {
+                "y": 303990, 
+                "x": 313983
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "14102": [
+        {
+            "playerId": 1, 
+            "gameloop": 14102, 
+            "recipient": 1, 
+            "location": {
+                "y": 476458, 
+                "x": 123967
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "13529": [
+        {
+            "playerId": 1, 
+            "gameloop": 13529, 
+            "recipient": 1, 
+            "msg": "with stim", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "18720": [
+        {
+            "playerId": 1, 
+            "gameloop": 18720, 
+            "recipient": 1, 
+            "location": {
+                "y": 362545, 
+                "x": 135657
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "18723": [
+        {
+            "playerId": 1, 
+            "gameloop": 18723, 
+            "recipient": 1, 
+            "location": {
+                "y": 362545, 
+                "x": 133227
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "18725": [
+        {
+            "playerId": 1, 
+            "gameloop": 18725, 
+            "recipient": 1, 
+            "location": {
+                "y": 357695, 
+                "x": 140518
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "21286": [
+        {
+            "playerId": 1, 
+            "gameloop": 21286, 
+            "recipient": 1, 
+            "location": {
+                "y": 605028, 
+                "x": 381104
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "17713": [
+        {
+            "playerId": 1, 
+            "gameloop": 17713, 
+            "recipient": 1, 
+            "location": {
+                "y": 146822, 
+                "x": 172565
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "18728": [
+        {
+            "playerId": 1, 
+            "gameloop": 18728, 
+            "recipient": 1, 
+            "location": {
+                "y": 355270, 
+                "x": 150238
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "12073": [
+        {
+            "playerId": 2, 
+            "gameloop": 12073, 
+            "recipient": 1, 
+            "msg": "k", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "18731": [
+        {
+            "playerId": 1, 
+            "gameloop": 18731, 
+            "recipient": 1, 
+            "location": {
+                "y": 355270, 
+                "x": 150238
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "21292": [
+        {
+            "playerId": 1, 
+            "gameloop": 21292, 
+            "recipient": 1, 
+            "location": {
+                "y": 600178, 
+                "x": 361663
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "18733": [
+        {
+            "playerId": 1, 
+            "gameloop": 18733, 
+            "recipient": 1, 
+            "location": {
+                "y": 355270, 
+                "x": 150238
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "18736": [
+        {
+            "playerId": 1, 
+            "gameloop": 18736, 
+            "recipient": 1, 
+            "location": {
+                "y": 355270, 
+                "x": 150238
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "15240": [
+        {
+            "playerId": 1, 
+            "gameloop": 15240, 
+            "recipient": 1, 
+            "msg": "then sure", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "17714": [
+        {
+            "playerId": 1, 
+            "gameloop": 17714, 
+            "recipient": 1, 
+            "location": {
+                "y": 156719, 
+                "x": 175628
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "4403": [
+        {
+            "playerId": 1, 
+            "gameloop": 4403, 
+            "recipient": 1, 
+            "msg": "send an early ling", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "17717": [
+        {
+            "playerId": 1, 
+            "gameloop": 17717, 
+            "recipient": 1, 
+            "location": {
+                "y": 151103, 
+                "x": 173892
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "17718": [
+        {
+            "playerId": 1, 
+            "gameloop": 17718, 
+            "recipient": 1, 
+            "location": {
+                "y": 144868, 
+                "x": 171872
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "18743": [
+        {
+            "playerId": 1, 
+            "gameloop": 18743, 
+            "recipient": 1, 
+            "location": {
+                "y": 355270, 
+                "x": 150238
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "18744": [
+        {
+            "playerId": 1, 
+            "gameloop": 18744, 
+            "recipient": 1, 
+            "location": {
+                "y": 355270, 
+                "x": 150238
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "17721": [
+        {
+            "playerId": 1, 
+            "gameloop": 17721, 
+            "recipient": 1, 
+            "location": {
+                "y": 144502, 
+                "x": 171686
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "17724": [
+        {
+            "playerId": 1, 
+            "gameloop": 17724, 
+            "recipient": 1, 
+            "location": {
+                "y": 144133, 
+                "x": 171717
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "8509": [
+        {
+            "playerId": 2, 
+            "gameloop": 8509, 
+            "recipient": 1, 
+            "msg": "us?", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "18741": [
+        {
+            "playerId": 1, 
+            "gameloop": 18741, 
+            "recipient": 1, 
+            "location": {
+                "y": 355270, 
+                "x": 150238
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "8000": [
+        {
+            "playerId": 1, 
+            "gameloop": 8000, 
+            "recipient": 1, 
+            "location": {
+                "y": 81264, 
+                "x": 383534
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "18754": [
+        {
+            "playerId": 1, 
+            "gameloop": 18754, 
+            "recipient": 1, 
+            "location": {
+                "y": 352845, 
+                "x": 152669
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "21827": [
+        {
+            "playerId": 1, 
+            "gameloop": 21827, 
+            "recipient": 1, 
+            "msg": "dyude", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "18756": [
+        {
+            "playerId": 1, 
+            "gameloop": 18756, 
+            "recipient": 1, 
+            "location": {
+                "y": 350421, 
+                "x": 155099
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "4424": [
+        {
+            "playerId": 1, 
+            "gameloop": 4424, 
+            "recipient": 1, 
+            "msg": "to check", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "12619": [
+        {
+            "playerId": 2, 
+            "gameloop": 12619, 
+            "recipient": 1, 
+            "msg": "wait for fungal?", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "17742": [
+        {
+            "playerId": 1, 
+            "gameloop": 17742, 
+            "recipient": 1, 
+            "msg": "LING", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "21844": [
+        {
+            "playerId": 1, 
+            "gameloop": 21844, 
+            "recipient": 1, 
+            "msg": "git", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "16219": [
+        {
+            "playerId": 1, 
+            "gameloop": 16219, 
+            "recipient": 1, 
+            "location": {
+                "y": 67444, 
+                "x": 371928
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "13660": [
+        {
+            "playerId": 2, 
+            "gameloop": 13660, 
+            "recipient": 1, 
+            "msg": "only 5 though", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "16223": [
+        {
+            "playerId": 1, 
+            "gameloop": 16223, 
+            "recipient": 1, 
+            "location": {
+                "y": 67277, 
+                "x": 371926
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "14688": [
+        {
+            "playerId": 1, 
+            "gameloop": 14688, 
+            "recipient": 1, 
+            "location": {
+                "y": 241303, 
+                "x": 159959
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "16226": [
+        {
+            "playerId": 1, 
+            "gameloop": 16226, 
+            "recipient": 1, 
+            "location": {
+                "y": 67109, 
+                "x": 372257
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "19003": [
+        {
+            "playerId": 1, 
+            "gameloop": 19003, 
+            "recipient": 1, 
+            "location": {
+                "y": 369342, 
+                "x": 384269
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "11621": [
+        {
+            "playerId": 2, 
+            "gameloop": 11621, 
+            "recipient": 1, 
+            "msg": "push I think", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "5997": [
+        {
+            "playerId": 1, 
+            "gameloop": 5997, 
+            "recipient": 1, 
+            "msg": "i can go whenever", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "3950": [
+        {
+            "playerId": 2, 
+            "gameloop": 3950, 
+            "recipient": 1, 
+            "msg": "shit, don't knwo if that was a rax or a factory", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "18749": [
+        {
+            "playerId": 1, 
+            "gameloop": 18749, 
+            "recipient": 1, 
+            "location": {
+                "y": 352845, 
+                "x": 152669
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "17779": [
+        {
+            "playerId": 1, 
+            "gameloop": 17779, 
+            "recipient": 1, 
+            "msg": "GODAMMIT", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "21876": [
+        {
+            "playerId": 1, 
+            "gameloop": 21876, 
+            "recipient": 1, 
+            "location": {
+                "y": 367394, 
+                "x": 133227
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "14709": [
+        {
+            "playerId": 1, 
+            "gameloop": 14709, 
+            "recipient": 1, 
+            "msg": "ling", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "8054": [
+        {
+            "playerId": 1, 
+            "gameloop": 8054, 
+            "recipient": 1, 
+            "msg": "expo", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "21879": [
+        {
+            "playerId": 1, 
+            "gameloop": 21879, 
+            "recipient": 1, 
+            "location": {
+                "y": 362545, 
+                "x": 133227
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "21881": [
+        {
+            "playerId": 1, 
+            "gameloop": 21881, 
+            "recipient": 1, 
+            "location": {
+                "y": 284950, 
+                "x": 150238
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "217": [
+        {
+            "playerId": 1, 
+            "gameloop": 217, 
+            "recipient": 1, 
+            "msg": "tyo counter muta", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "4475": [
+        {
+            "playerId": 2, 
+            "gameloop": 4475, 
+            "recipient": 1, 
+            "msg": "k", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "21885": [
+        {
+            "playerId": 1, 
+            "gameloop": 21885, 
+            "recipient": 1, 
+            "location": {
+                "y": 440139, 
+                "x": 138088
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "18752": [
+        {
+            "playerId": 1, 
+            "gameloop": 18752, 
+            "recipient": 1, 
+            "location": {
+                "y": 352845, 
+                "x": 152669
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "21893": [
+        {
+            "playerId": 1, 
+            "gameloop": 21893, 
+            "recipient": 1, 
+            "location": {
+                "y": 401342, 
+                "x": 196412
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "21894": [
+        {
+            "playerId": 1, 
+            "gameloop": 21894, 
+            "recipient": 1, 
+            "location": {
+                "y": 347996, 
+                "x": 181831
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "18823": [
+        {
+            "playerId": 2, 
+            "gameloop": 18823, 
+            "recipient": 1, 
+            "msg": "i SEE IT", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "6024": [
+        {
+            "playerId": 1, 
+            "gameloop": 6024, 
+            "recipient": 1, 
+            "msg": "your erad", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "13195": [
+        {
+            "playerId": 2, 
+            "gameloop": 13195, 
+            "recipient": 1, 
+            "msg": "spawning infestors now", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "21901": [
+        {
+            "playerId": 1, 
+            "gameloop": 21901, 
+            "recipient": 1, 
+            "location": {
+                "y": 394067, 
+                "x": 147808
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "10643": [
+        {
+            "playerId": 1, 
+            "gameloop": 10643, 
+            "recipient": 1, 
+            "location": {
+                "y": 90551, 
+                "x": 371647
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "21908": [
+        {
+            "playerId": 1, 
+            "gameloop": 21908, 
+            "recipient": 1, 
+            "location": {
+                "y": 381943, 
+                "x": 147808
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "21911": [
+        {
+            "playerId": 1, 
+            "gameloop": 21911, 
+            "recipient": 1, 
+            "location": {
+                "y": 377094, 
+                "x": 147808
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "21913": [
+        {
+            "playerId": 1, 
+            "gameloop": 21913, 
+            "recipient": 1, 
+            "location": {
+                "y": 377094, 
+                "x": 147808
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "21914": [
+        {
+            "playerId": 1, 
+            "gameloop": 21914, 
+            "recipient": 1, 
+            "location": {
+                "y": 372244, 
+                "x": 147808
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "21917": [
+        {
+            "playerId": 1, 
+            "gameloop": 21917, 
+            "recipient": 1, 
+            "location": {
+                "y": 369819, 
+                "x": 150238
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "21920": [
+        {
+            "playerId": 1, 
+            "gameloop": 21920, 
+            "recipient": 1, 
+            "location": {
+                "y": 367394, 
+                "x": 150238
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "14754": [
+        {
+            "playerId": 1, 
+            "gameloop": 14754, 
+            "recipient": 1, 
+            "msg": "come on dude", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "21925": [
+        {
+            "playerId": 1, 
+            "gameloop": 21925, 
+            "recipient": 1, 
+            "location": {
+                "y": 364969, 
+                "x": 150238
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "21291": [
+        {
+            "playerId": 1, 
+            "gameloop": 21291, 
+            "recipient": 1, 
+            "location": {
+                "y": 602603, 
+                "x": 361663
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "15176": [
+        {
+            "playerId": 1, 
+            "gameloop": 15176, 
+            "recipient": 1, 
+            "msg": "right as they get mutas?", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "21871": [
+        {
+            "playerId": 1, 
+            "gameloop": 21871, 
+            "recipient": 1, 
+            "location": {
+                "y": 522584, 
+                "x": 135657
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "11704": [
+        {
+            "playerId": 1, 
+            "gameloop": 11704, 
+            "recipient": 1, 
+            "location": {
+                "y": 301924, 
+                "x": 286328
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "9145": [
+        {
+            "playerId": 1, 
+            "gameloop": 9145, 
+            "recipient": 1, 
+            "msg": "i have seige", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "22463": [
+        {
+            "playerId": 1, 
+            "gameloop": 22463, 
+            "recipient": 1, 
+            "location": {
+                "y": 607876, 
+                "x": 334703
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "22466": [
+        {
+            "playerId": 1, 
+            "gameloop": 22466, 
+            "recipient": 1, 
+            "location": {
+                "y": 606224, 
+                "x": 337045
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "3523": [
+        {
+            "playerId": 1, 
+            "gameloop": 3523, 
+            "recipient": 1, 
+            "msg": "did ug et scv", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "22470": [
+        {
+            "playerId": 1, 
+            "gameloop": 22470, 
+            "recipient": 1, 
+            "location": {
+                "y": 604920, 
+                "x": 338956
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "22689": [
+        {
+            "playerId": 1, 
+            "gameloop": 22689, 
+            "recipient": 1, 
+            "location": {
+                "y": 436061, 
+                "x": 357924
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "10697": [
+        {
+            "playerId": 1, 
+            "gameloop": 10697, 
+            "recipient": 1, 
+            "msg": "now take", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "14795": [
+        {
+            "playerId": 1, 
+            "gameloop": 14795, 
+            "recipient": 1, 
+            "msg": "we need map control", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "6604": [
+        {
+            "playerId": 1, 
+            "gameloop": 6604, 
+            "recipient": 1, 
+            "msg": "tough to expo on", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "21922": [
+        {
+            "playerId": 1, 
+            "gameloop": 21922, 
+            "recipient": 1, 
+            "location": {
+                "y": 364969, 
+                "x": 150238
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "11728": [
+        {
+            "playerId": 1, 
+            "gameloop": 11728, 
+            "recipient": 1, 
+            "location": {
+                "y": 367394, 
+                "x": 410266
+            }, 
+            "eventtype": "PingMessage"
+        }
+    ], 
+    "9169": [
+        {
+            "playerId": 1, 
+            "gameloop": 9169, 
+            "recipient": 1, 
+            "msg": "tehy dont", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "12242": [
+        {
+            "playerId": 1, 
+            "gameloop": 12242, 
+            "recipient": 1, 
+            "msg": "on stim", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "21070": [
+        {
+            "playerId": 1, 
+            "gameloop": 21070, 
+            "recipient": 1, 
+            "location": {
+                "y": 573505, 
+                "x": 563366
+            }, 
+            "eventtype": "PingMessage"
         }
     ], 
     "21975": [
         {
-            "msg": "tyoy CANT", 
             "playerId": 1, 
-            "frame": 21975, 
-            "recipient": "all"
+            "gameloop": 21975, 
+            "recipient": 0, 
+            "msg": "tyoy CANT", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "12256": [
         {
-            "msg": "we go", 
             "playerId": 1, 
-            "frame": 12256, 
-            "recipient": "all"
+            "gameloop": 12256, 
+            "recipient": 1, 
+            "msg": "we go", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "5089": [
         {
-            "msg": "ohhh", 
             "playerId": 1, 
-            "frame": 5089, 
-            "recipient": "all"
+            "gameloop": 5089, 
+            "recipient": 1, 
+            "msg": "ohhh", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "14308": [
         {
-            "msg": "spire", 
             "playerId": 1, 
-            "frame": 14308, 
-            "recipient": "all"
+            "gameloop": 14308, 
+            "recipient": 1, 
+            "msg": "spire", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "11749": [
         {
-            "msg": "take", 
             "playerId": 1, 
-            "frame": 11749, 
-            "recipient": "all"
+            "gameloop": 11749, 
+            "recipient": 1, 
+            "msg": "take", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "21907": [
+        {
+            "playerId": 1, 
+            "gameloop": 21907, 
+            "recipient": 1, 
+            "location": {
+                "y": 386793, 
+                "x": 147808
+            }, 
+            "eventtype": "PingMessage"
         }
     ], 
     "21856": [
         {
-            "msg": "hit", 
             "playerId": 1, 
-            "frame": 21856, 
-            "recipient": "all"
+            "gameloop": 21856, 
+            "recipient": 1, 
+            "msg": "hit", 
+            "eventtype": "ChatMessage"
+        }
+    ], 
+    "19009": [
+        {
+            "playerId": 1, 
+            "gameloop": 19009, 
+            "recipient": 1, 
+            "location": {
+                "y": 369172, 
+                "x": 384244
+            }, 
+            "eventtype": "PingMessage"
         }
     ], 
     "22008": [
         {
-            "msg": "leave", 
             "playerId": 1, 
-            "frame": 22008, 
-            "recipient": "all"
+            "gameloop": 22008, 
+            "recipient": 1, 
+            "msg": "leave", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "22523": [
         {
-            "msg": "fuck", 
             "playerId": 2, 
-            "frame": 22523, 
-            "recipient": "all"
+            "gameloop": 22523, 
+            "recipient": 1, 
+            "msg": "fuck", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "5117": [
         {
-            "msg": "I don't see it either", 
             "playerId": 2, 
-            "frame": 5117, 
-            "recipient": "all"
+            "gameloop": 5117, 
+            "recipient": 1, 
+            "msg": "I don't see it either", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "9215": [
         {
             "playerId": 1, 
-            "frame": 9215, 
-            "recipient": "all", 
+            "gameloop": 9215, 
+            "recipient": 1, 
             "location": {
                 "y": 246153, 
                 "x": 191551
-            }
+            }, 
+            "eventtype": "PingMessage"
         }
     ]
 }

@@ -1,136 +1,154 @@
 {
     "0": [
         {
-            "progress": 56,
-            "frame": 0,
-            "playerId": 2
+            "gameloop": 0,
+            "playerId": 2,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 56
         },
         {
-            "progress": 79,
-            "frame": 0,
-            "playerId": 2
+            "gameloop": 0,
+            "playerId": 2,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 79
         },
         {
-            "progress": 91,
-            "frame": 0,
-            "playerId": 2
+            "gameloop": 0,
+            "playerId": 2,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 91
         },
         {
-            "progress": 100,
-            "frame": 0,
-            "playerId": 2
+            "gameloop": 0,
+            "playerId": 2,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 100
         }
     ],
     "96": [
         {
-            "msg": "tja, gg gl",
-            "recipient": "all",
-            "frame": 96,
-            "playerId": 1
+            "gameloop": 96,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "tja, gg gl"
         }
     ],
     "147": [
         {
-            "msg": "hejsan",
-            "recipient": "all",
-            "frame": 147,
-            "playerId": 2
+            "gameloop": 147,
+            "playerId": 2,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "hejsan"
         }
     ],
     "161": [
         {
-            "msg": "glhf",
-            "recipient": "all",
-            "frame": 161,
-            "playerId": 2
+            "gameloop": 161,
+            "playerId": 2,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "glhf"
         }
     ],
     "44255": [
         {
-            "msg": "gg",
-            "recipient": "all",
-            "frame": 44255,
-            "playerId": 1
+            "gameloop": 44255,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "gg"
         }
     ],
     "44303": [
         {
-            "msg": "gg",
-            "recipient": "all",
-            "frame": 44303,
-            "playerId": 2
+            "gameloop": 44303,
+            "playerId": 2,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "gg"
         }
     ],
     "44343": [
         {
-            "msg": "ah",
-            "recipient": "all",
-            "frame": 44343,
-            "playerId": 2
+            "gameloop": 44343,
+            "playerId": 2,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "ah"
         }
     ],
     "44367": [
         {
-            "msg": "haru n\u00e5ge emot att denna rep laddas upp",
-            "recipient": "all",
-            "frame": 44367,
-            "playerId": 1
+            "gameloop": 44367,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "haru n\u00e5ge emot att denna rep laddas upp"
         }
     ],
     "44384": [
         {
-            "msg": "s\u00e4r game",
-            "recipient": "all",
-            "frame": 44384,
-            "playerId": 2
+            "gameloop": 44384,
+            "playerId": 2,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "s\u00e4r game"
         }
     ],
     "44393": [
         {
-            "msg": "n\u00e5gonstans?",
-            "recipient": "all",
-            "frame": 44393,
-            "playerId": 1
+            "gameloop": 44393,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "n\u00e5gonstans?"
         }
     ],
     "44468": [
         {
-            "msg": "var ju r\u00e4tt skoj match",
-            "recipient": "all",
-            "frame": 44468,
-            "playerId": 1
+            "gameloop": 44468,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "var ju r\u00e4tt skoj match"
         }
     ],
     "44609": [
         {
-            "msg": "n\u00e4 det \u00e4r lungt",
-            "recipient": "all",
-            "frame": 44609,
-            "playerId": 2
+            "gameloop": 44609,
+            "playerId": 2,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "n\u00e4 det \u00e4r lungt"
         }
     ],
     "44643": [
         {
-            "msg": "kk",
-            "recipient": "all",
-            "frame": 44643,
-            "playerId": 1
+            "gameloop": 44643,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "kk"
         }
     ],
     "44660": [
         {
-            "msg": "gg =)",
-            "recipient": "all",
-            "frame": 44660,
-            "playerId": 1
+            "gameloop": 44660,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "gg =)"
         }
     ],
     "44699": [
         {
-            "msg": "gg :)",
-            "recipient": "all",
-            "frame": 44699,
-            "playerId": 2
+            "gameloop": 44699,
+            "playerId": 2,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "gg :)"
         }
     ]
 }

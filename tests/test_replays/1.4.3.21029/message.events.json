@@ -1,55 +1,64 @@
 {
-    "30512": [
-        {
-            "msg": "GG", 
-            "playerId": 2, 
-            "frame": 30512, 
-            "recipient": "all"
-        }
-    ], 
     "0": [
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 23, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 30, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 36, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 47, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 58, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 65, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 1, 
+            "gameloop": 0, 
             "progress": 100, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
+        }
+    ], 
+    "30512": [
+        {
+            "playerId": 2, 
+            "gameloop": 30512, 
+            "recipient": 0, 
+            "msg": "GG", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "30482": [
         {
-            "msg": "gg", 
             "playerId": 1, 
-            "frame": 30482, 
-            "recipient": "all"
+            "gameloop": 30482, 
+            "recipient": 0, 
+            "msg": "gg", 
+            "eventtype": "ChatMessage"
         }
     ]
 }

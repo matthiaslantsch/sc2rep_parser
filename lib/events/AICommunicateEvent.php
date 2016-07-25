@@ -82,18 +82,17 @@ class AICommunicateEvent extends EventBase {
 	public $location;
 
 	/**
-	 * constructor accepting the frame count
+	 * constructor accepting the gameloop count
 	 *
 	 * @access public
-	 * @param  integer frames | frame counter at the time the event happened
+	 * @param  integer gameloops | gameloop counter at the time the event happened
 	 * @param  integer playerId | playerId of the player that caused the event
 	 * @param  integer beacon | the type of beacon sent to the ai
 	 * @param  integer ally | player id of the ai getting the command
 	 * @param  integer build | AI build identifier
 	 */
-	public function __construct($frames, $playerId, $beacon, $ally, $build) {
-		parent::__construct($frames, $playerId);
-		die(var_dump("Parse beacon and ally integers"));
+	public function __construct($gameloops, $playerId, $beacon, $ally, $build) {
+		parent::__construct($gameloops, $playerId);
 
 		if($beacon != -1) {
 			switch ($beacon) {

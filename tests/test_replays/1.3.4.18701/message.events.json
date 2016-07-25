@@ -2,115 +2,132 @@
     "0": [
         {
             "playerId": 2, 
+            "gameloop": 0, 
             "progress": 6, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 2, 
+            "gameloop": 0, 
             "progress": 23, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 2, 
+            "gameloop": 0, 
             "progress": 30, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 2, 
+            "gameloop": 0, 
             "progress": 36, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 2, 
+            "gameloop": 0, 
             "progress": 47, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 2, 
+            "gameloop": 0, 
             "progress": 55, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 2, 
+            "gameloop": 0, 
             "progress": 60, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }, 
         {
             "playerId": 2, 
+            "gameloop": 0, 
             "progress": 100, 
-            "frame": 0
+            "eventtype": "LoadingProgressMessage"
         }
     ], 
     "8098": [
         {
-            "msg": "gg", 
             "playerId": 2, 
-            "frame": 8098, 
-            "recipient": "all"
+            "gameloop": 8098, 
+            "recipient": 0, 
+            "msg": "gg", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "6915": [
         {
-            "msg": "yeah", 
             "playerId": 2, 
-            "frame": 6915, 
-            "recipient": "all"
+            "gameloop": 6915, 
+            "recipient": 0, 
+            "msg": "yeah", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "1866": [
         {
-            "msg": "u do 12 gate in pvp?", 
             "playerId": 2, 
-            "frame": 1866, 
-            "recipient": "all"
+            "gameloop": 1866, 
+            "recipient": 0, 
+            "msg": "u do 12 gate in pvp?", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "685": [
         {
-            "msg": "top right", 
             "playerId": 1, 
-            "frame": 685, 
-            "recipient": "all"
+            "gameloop": 685, 
+            "recipient": 0, 
+            "msg": "top right", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "2005": [
         {
-            "msg": "yep", 
             "playerId": 1, 
-            "frame": 2005, 
-            "recipient": "all"
+            "gameloop": 2005, 
+            "recipient": 0, 
+            "msg": "yep", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "2103": [
         {
-            "msg": "always?", 
             "playerId": 2, 
-            "frame": 2103, 
-            "recipient": "all"
+            "gameloop": 2103, 
+            "recipient": 0, 
+            "msg": "always?", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "8184": [
         {
-            "msg": "gg", 
             "playerId": 1, 
-            "frame": 8184, 
-            "recipient": "all"
+            "gameloop": 8184, 
+            "recipient": 0, 
+            "msg": "gg", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "6745": [
         {
-            "msg": "completely denied", 
             "playerId": 1, 
-            "frame": 6745, 
-            "recipient": "all"
+            "gameloop": 6745, 
+            "recipient": 0, 
+            "msg": "completely denied", 
+            "eventtype": "ChatMessage"
         }
     ], 
     "2235": [
         {
-            "msg": "mostly", 
             "playerId": 1, 
-            "frame": 2235, 
-            "recipient": "all"
+            "gameloop": 2235, 
+            "recipient": 0, 
+            "msg": "mostly", 
+            "eventtype": "ChatMessage"
         }
     ]
 }

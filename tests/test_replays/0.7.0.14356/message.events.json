@@ -1,38 +1,43 @@
 {
     "0": [
         {
-            "progress": 58,
-            "frame": 0,
-            "playerId": 1
+            "gameloop": 0,
+            "playerId": 1,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 58
         },
         {
-            "progress": 100,
-            "frame": 0,
-            "playerId": 1
+            "gameloop": 0,
+            "playerId": 1,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 100
         }
     ],
     "84": [
         {
-            "msg": "gg gl",
-            "recipient": "all",
-            "frame": 84,
-            "playerId": 2
+            "gameloop": 84,
+            "playerId": 2,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "gg gl"
         }
     ],
     "124": [
         {
-            "msg": "gl hf",
-            "recipient": "all",
-            "frame": 124,
-            "playerId": 1
+            "gameloop": 124,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "gl hf"
         }
     ],
     "35016": [
         {
-            "msg": "gg",
-            "recipient": "all",
-            "frame": 35016,
-            "playerId": 2
+            "gameloop": 35016,
+            "playerId": 2,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "gg"
         }
     ]
 }

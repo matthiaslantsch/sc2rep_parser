@@ -1,692 +1,799 @@
 {
     "0": [
         {
-            "playerId": 2, 
-            "progress": 9, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 2,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 9
+        },
         {
-            "playerId": 3, 
-            "progress": 9, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 3,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 9
+        },
         {
-            "playerId": 5, 
-            "progress": 9, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 5,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 9
+        },
         {
-            "playerId": 6, 
-            "progress": 4, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 6,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 4
+        },
         {
-            "playerId": 6, 
-            "progress": 9, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 6,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 9
+        },
         {
-            "playerId": 3, 
-            "progress": 14, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 3,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 14
+        },
         {
-            "playerId": 4, 
-            "progress": 9, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 4,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 9
+        },
         {
-            "playerId": 1, 
-            "progress": 7, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 1,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 7
+        },
         {
-            "playerId": 3, 
-            "progress": 36, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 3,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 36
+        },
         {
-            "playerId": 2, 
-            "progress": 14, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 2,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 14
+        },
         {
-            "playerId": 2, 
-            "progress": 36, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 2,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 36
+        },
         {
-            "playerId": 6, 
-            "progress": 14, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 6,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 14
+        },
         {
-            "playerId": 4, 
-            "progress": 14, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 4,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 14
+        },
         {
-            "playerId": 5, 
-            "progress": 14, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 5,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 14
+        },
         {
-            "playerId": 5, 
-            "progress": 29, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 5,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 29
+        },
         {
-            "playerId": 6, 
-            "progress": 29, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 6,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 29
+        },
         {
-            "playerId": 5, 
-            "progress": 36, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 5,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 36
+        },
         {
-            "playerId": 6, 
-            "progress": 36, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 6,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 36
+        },
         {
-            "playerId": 1, 
-            "progress": 12, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 1,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 12
+        },
         {
-            "playerId": 1, 
-            "progress": 17, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 1,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 17
+        },
         {
-            "playerId": 1, 
-            "progress": 29, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 1,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 29
+        },
         {
-            "playerId": 1, 
-            "progress": 36, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 1,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 36
+        },
         {
-            "playerId": 4, 
-            "progress": 29, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 4,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 29
+        },
         {
-            "playerId": 4, 
-            "progress": 36, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 4,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 36
+        },
         {
-            "playerId": 2, 
-            "progress": 41, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 2,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 41
+        },
         {
-            "playerId": 4, 
-            "progress": 42, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 4,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 42
+        },
         {
-            "playerId": 6, 
-            "progress": 41, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 6,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 41
+        },
         {
-            "playerId": 1, 
-            "progress": 41, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 1,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 41
+        },
         {
-            "playerId": 5, 
-            "progress": 41, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 5,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 41
+        },
         {
-            "playerId": 3, 
-            "progress": 42, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 3,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 42
+        },
         {
-            "playerId": 2, 
-            "progress": 48, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 2,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 48
+        },
         {
-            "playerId": 3, 
-            "progress": 48, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 3,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 48
+        },
         {
-            "playerId": 4, 
-            "progress": 48, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 4,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 48
+        },
         {
-            "playerId": 5, 
-            "progress": 48, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 5,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 48
+        },
         {
-            "playerId": 6, 
-            "progress": 48, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 6,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 48
+        },
         {
-            "playerId": 2, 
-            "progress": 54, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 2,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 54
+        },
         {
-            "playerId": 1, 
-            "progress": 48, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 1,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 48
+        },
         {
-            "playerId": 3, 
-            "progress": 54, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 3,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 54
+        },
         {
-            "playerId": 4, 
-            "progress": 54, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 4,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 54
+        },
         {
-            "playerId": 5, 
-            "progress": 54, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 5,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 54
+        },
         {
-            "playerId": 6, 
-            "progress": 54, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 6,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 54
+        },
         {
-            "playerId": 1, 
-            "progress": 54, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 1,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 54
+        },
         {
-            "playerId": 3, 
-            "progress": 90, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 3,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 90
+        },
         {
-            "playerId": 2, 
-            "progress": 90, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 2,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 90
+        },
         {
-            "playerId": 3, 
-            "progress": 97, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 3,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 97
+        },
         {
-            "playerId": 2, 
-            "progress": 99, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 2,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 99
+        },
         {
-            "playerId": 6, 
-            "progress": 90, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 6,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 90
+        },
         {
-            "playerId": 6, 
-            "progress": 95, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 6,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 95
+        },
         {
-            "playerId": 4, 
-            "progress": 72, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 4,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 72
+        },
         {
-            "playerId": 4, 
-            "progress": 90, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 4,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 90
+        },
         {
-            "playerId": 5, 
-            "progress": 63, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 5,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 63
+        },
         {
-            "playerId": 5, 
-            "progress": 90, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 5,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 90
+        },
         {
-            "playerId": 5, 
-            "progress": 97, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 5,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 97
+        },
         {
-            "playerId": 4, 
-            "progress": 95, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 4,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 95
+        },
         {
-            "playerId": 1, 
-            "progress": 62, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 1,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 62
+        },
         {
-            "playerId": 1, 
-            "progress": 87, 
-            "frame": 0
-        }, 
+            "gameloop": 0,
+            "playerId": 1,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 87
+        },
         {
-            "playerId": 1, 
-            "progress": 95, 
-            "frame": 0
+            "gameloop": 0,
+            "playerId": 1,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 95
         }
-    ], 
-    "8450": [
-        {
-            "msg": "holy shit", 
-            "playerId": 1, 
-            "frame": 8450, 
-            "recipient": "all"
-        }
-    ], 
-    "1798": [
-        {
-            "msg": "lol", 
-            "playerId": 0, 
-            "frame": 1798, 
-            "recipient": "all"
-        }
-    ], 
-    "833": [
-        {
-            "msg": "i'll forge in top'", 
-            "playerId": 0, 
-            "frame": 833, 
-            "recipient": "all"
-        }
-    ], 
-    "3211": [
-        {
-            "msg": "i told him to", 
-            "playerId": 6, 
-            "frame": 3211, 
-            "recipient": "all"
-        }
-    ], 
-    "141": [
-        {
-            "msg": "oh yall are fucked", 
-            "playerId": 6, 
-            "frame": 141, 
-            "recipient": "all"
-        }
-    ], 
-    "152": [
-        {
-            "msg": ":D <3", 
-            "playerId": 5, 
-            "frame": 152, 
-            "recipient": "all"
-        }
-    ], 
-    "14355": [
-        {
-            "msg": "gg", 
-            "playerId": 1, 
-            "frame": 14355, 
-            "recipient": "all"
-        }
-    ], 
-    "278": [
-        {
-            "msg": "glhf", 
-            "playerId": 2, 
-            "frame": 278, 
-            "recipient": "all"
-        }
-    ], 
-    "664": [
-        {
-            "msg": "ya", 
-            "playerId": 1, 
-            "frame": 664, 
-            "recipient": "all"
-        }
-    ], 
-    "525": [
-        {
-            "msg": "u always say that", 
-            "playerId": 1, 
-            "frame": 525, 
-            "recipient": "all"
-        }
-    ], 
-    "14365": [
-        {
-            "msg": "take that as a no", 
-            "playerId": 6, 
-            "frame": 14365, 
-            "recipient": "all"
-        }
-    ], 
-    "8478": [
-        {
-            "msg": "8 kills", 
-            "playerId": 1, 
-            "frame": 8478, 
-            "recipient": "all"
-        }
-    ], 
-    "1695": [
-        {
-            "msg": "damn to busy telling ai wtf to do", 
-            "playerId": 6, 
-            "frame": 1695, 
-            "recipient": "all"
-        }
-    ], 
-    "14506": [
-        {
-            "msg": "gg", 
-            "playerId": 0, 
-            "frame": 14506, 
-            "recipient": "all"
-        }
-    ], 
-    "166": [
-        {
-            "msg": "glhf!", 
-            "playerId": 4, 
-            "frame": 166, 
-            "recipient": "all"
-        }
-    ], 
-    "7082": [
-        {
-            "msg": "mind if i pause stream?", 
-            "playerId": 1, 
-            "frame": 7082, 
-            "recipient": "all"
-        }
-    ], 
-    "1323": [
-        {
-            "msg": "no here", 
-            "playerId": 0, 
-            "frame": 1323, 
-            "recipient": "all"
-        }
-    ], 
-    "4396": [
-        {
-            "msg": "HOLY FUCK IT HAS JIM RAYNORS VOICE", 
-            "playerId": 6, 
-            "frame": 4396, 
-            "recipient": "all"
-        }
-    ], 
-    "7982": [
-        {
-            "msg": "getting attacked at all angles", 
-            "playerId": 6, 
-            "frame": 7982, 
-            "recipient": "all"
-        }
-    ], 
-    "1072": [
-        {
-            "msg": "late pylons ftw", 
-            "playerId": 1, 
-            "frame": 1072, 
-            "recipient": "all"
-        }
-    ], 
-    "5809": [
-        {
-            "msg": "msc?", 
-            "playerId": 1, 
-            "frame": 5809, 
-            "recipient": "all"
-        }
-    ], 
-    "562": [
-        {
-            "msg": "i think we have to go air", 
-            "playerId": 0, 
-            "frame": 562, 
-            "recipient": "all"
-        }
-    ], 
-    "439": [
-        {
-            "msg": "D:", 
-            "playerId": 5, 
-            "frame": 439, 
-            "recipient": "all"
-        }
-    ], 
-    "2292": [
-        {
-            "msg": "yes", 
-            "playerId": 6, 
-            "frame": 2292, 
-            "recipient": "all"
-        }
-    ], 
-    "954": [
-        {
-            "msg": "k", 
-            "playerId": 1, 
-            "frame": 954, 
-            "recipient": "all"
-        }
-    ], 
-    "4511": [
-        {
-            "msg": "wall in tight", 
-            "playerId": 0, 
-            "frame": 4511, 
-            "recipient": "all"
-        }
-    ], 
-    "1468": [
-        {
-            "msg": "ah", 
-            "playerId": 1, 
-            "frame": 1468, 
-            "recipient": "all"
-        }
-    ], 
-    "192": [
-        {
-            "msg": "gl hf", 
-            "playerId": 1, 
-            "frame": 192, 
-            "recipient": "all"
-        }
-    ], 
-    "705": [
-        {
-            "msg": "you forge in bottom", 
-            "playerId": 0, 
-            "frame": 705, 
-            "recipient": "all"
-        }
-    ], 
-    "3778": [
-        {
-            "msg": "BURN", 
-            "playerId": 3, 
-            "frame": 3778, 
-            "recipient": "all"
-        }
-    ], 
-    "10179": [
-        {
-            "msg": "26 kills", 
-            "playerId": 1, 
-            "frame": 10179, 
-            "recipient": "all"
-        }
-    ], 
-    "1477": [
-        {
-            "msg": "k", 
-            "playerId": 1, 
-            "frame": 1477, 
-            "recipient": "all"
-        }
-    ], 
-    "4557": [
-        {
-            "msg": "all air", 
-            "playerId": 0, 
-            "frame": 4557, 
-            "recipient": "all"
-        }
-    ], 
-    "1231": [
-        {
-            "playerId": 0, 
-            "frame": 1231, 
-            "recipient": "all", 
-            "location": {
-                "y": 105411, 
-                "x": 515030
-            }
-        }
-    ], 
-    "8088": [
-        {
-            "msg": "other than that not 1/2 bad", 
-            "playerId": 6, 
-            "frame": 8088, 
-            "recipient": "all"
-        }
-    ], 
-    "7127": [
-        {
-            "msg": "im lagging", 
-            "playerId": 1, 
-            "frame": 7127, 
-            "recipient": "all"
-        }
-    ], 
-    "2140": [
-        {
-            "msg": "you can tell it what to do?", 
-            "playerId": 0, 
-            "frame": 2140, 
-            "recipient": "all"
-        }
-    ], 
-    "1374": [
-        {
-            "msg": "so we get expos", 
-            "playerId": 0, 
-            "frame": 1374, 
-            "recipient": "all"
-        }
-    ], 
-    "1760": [
-        {
-            "msg": "forgot pylon", 
-            "playerId": 6, 
-            "frame": 1760, 
-            "recipient": "all"
-        }
-    ], 
-    "2275": [
-        {
-            "msg": "that cmae with the update", 
-            "playerId": 1, 
-            "frame": 2275, 
-            "recipient": "all"
-        }
-    ], 
-    "3217": [
-        {
-            "msg": "i call hacks", 
-            "playerId": 1, 
-            "frame": 3217, 
-            "recipient": "all"
-        }
-    ], 
-    "10091": [
-        {
-            "msg": "omfg this is so op", 
-            "playerId": 1, 
-            "frame": 10091, 
-            "recipient": "all"
-        }
-    ], 
-    "3053": [
-        {
-            "msg": "we've been scouted by ai", 
-            "playerId": 1, 
-            "frame": 3053, 
-            "recipient": "all"
-        }
-    ], 
-    "367": [
-        {
-            "msg": "imma going to kill u with nukes", 
-            "playerId": 6, 
-            "frame": 367, 
-            "recipient": "all"
-        }
-    ], 
+    ],
     "116": [
         {
-            "msg": "Gl hf.", 
-            "playerId": 5, 
-            "frame": 116, 
-            "recipient": "all"
+            "gameloop": 116,
+            "playerId": 5,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "Gl hf."
         }
-    ], 
-    "13431": [
+    ],
+    "141": [
         {
-            "msg": "pause 1 ssec", 
-            "playerId": 6, 
-            "frame": 13431, 
-            "recipient": "all"
+            "gameloop": 141,
+            "playerId": 6,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "oh yall are fucked"
         }
-    ], 
-    "3705": [
+    ],
+    "152": [
         {
-            "msg": "bm", 
-            "playerId": 1, 
-            "frame": 3705, 
-            "recipient": "all"
+            "gameloop": 152,
+            "playerId": 5,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": ":D <3"
         }
-    ], 
-    "13819": [
+    ],
+    "166": [
         {
-            "msg": "no yes?", 
-            "playerId": 6, 
-            "frame": 13819, 
-            "recipient": "all"
+            "gameloop": 166,
+            "playerId": 4,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "glhf!"
         }
-    ], 
+    ],
+    "192": [
+        {
+            "gameloop": 192,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "gl hf"
+        }
+    ],
+    "278": [
+        {
+            "gameloop": 278,
+            "playerId": 2,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "glhf"
+        }
+    ],
+    "367": [
+        {
+            "gameloop": 367,
+            "playerId": 6,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "imma going to kill u with nukes"
+        }
+    ],
+    "439": [
+        {
+            "gameloop": 439,
+            "playerId": 5,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "D:"
+        }
+    ],
+    "525": [
+        {
+            "gameloop": 525,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "u always say that"
+        }
+    ],
+    "562": [
+        {
+            "gameloop": 562,
+            "playerId": 0,
+            "eventtype": "ChatMessage",
+            "recipient": 1,
+            "msg": "i think we have to go air"
+        }
+    ],
+    "664": [
+        {
+            "gameloop": 664,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 1,
+            "msg": "ya"
+        }
+    ],
+    "705": [
+        {
+            "gameloop": 705,
+            "playerId": 0,
+            "eventtype": "ChatMessage",
+            "recipient": 1,
+            "msg": "you forge in bottom"
+        }
+    ],
+    "833": [
+        {
+            "gameloop": 833,
+            "playerId": 0,
+            "eventtype": "ChatMessage",
+            "recipient": 1,
+            "msg": "i'll forge in top'"
+        }
+    ],
+    "954": [
+        {
+            "gameloop": 954,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 1,
+            "msg": "k"
+        }
+    ],
+    "1072": [
+        {
+            "gameloop": 1072,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 1,
+            "msg": "late pylons ftw"
+        }
+    ],
+    "1231": [
+        {
+            "gameloop": 1231,
+            "playerId": 0,
+            "eventtype": "PingMessage",
+            "recipient": 1,
+            "location": {
+                "x": 515030,
+                "y": 105411
+            }
+        }
+    ],
+    "1323": [
+        {
+            "gameloop": 1323,
+            "playerId": 0,
+            "eventtype": "ChatMessage",
+            "recipient": 1,
+            "msg": "no here"
+        }
+    ],
+    "1374": [
+        {
+            "gameloop": 1374,
+            "playerId": 0,
+            "eventtype": "ChatMessage",
+            "recipient": 1,
+            "msg": "so we get expos"
+        }
+    ],
+    "1468": [
+        {
+            "gameloop": 1468,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 1,
+            "msg": "ah"
+        }
+    ],
+    "1477": [
+        {
+            "gameloop": 1477,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 1,
+            "msg": "k"
+        }
+    ],
+    "1695": [
+        {
+            "gameloop": 1695,
+            "playerId": 6,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "damn to busy telling ai wtf to do"
+        }
+    ],
+    "1760": [
+        {
+            "gameloop": 1760,
+            "playerId": 6,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "forgot pylon"
+        }
+    ],
+    "1798": [
+        {
+            "gameloop": 1798,
+            "playerId": 0,
+            "eventtype": "ChatMessage",
+            "recipient": 1,
+            "msg": "lol"
+        }
+    ],
+    "2140": [
+        {
+            "gameloop": 2140,
+            "playerId": 0,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "you can tell it what to do?"
+        }
+    ],
+    "2275": [
+        {
+            "gameloop": 2275,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "that cmae with the update"
+        }
+    ],
+    "2292": [
+        {
+            "gameloop": 2292,
+            "playerId": 6,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "yes"
+        }
+    ],
+    "3053": [
+        {
+            "gameloop": 3053,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "we've been scouted by ai"
+        }
+    ],
+    "3211": [
+        {
+            "gameloop": 3211,
+            "playerId": 6,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "i told him to"
+        }
+    ],
+    "3217": [
+        {
+            "gameloop": 3217,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "i call hacks"
+        }
+    ],
     "3581": [
         {
-            "msg": "ur just a bad player", 
-            "playerId": 6, 
-            "frame": 3581, 
-            "recipient": "all"
+            "gameloop": 3581,
+            "playerId": 6,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "ur just a bad player"
         }
-    ], 
+    ],
+    "3705": [
+        {
+            "gameloop": 3705,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "bm"
+        }
+    ],
+    "3778": [
+        {
+            "gameloop": 3778,
+            "playerId": 3,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "BURN"
+        }
+    ],
+    "4396": [
+        {
+            "gameloop": 4396,
+            "playerId": 6,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "HOLY FUCK IT HAS JIM RAYNORS VOICE"
+        }
+    ],
+    "4511": [
+        {
+            "gameloop": 4511,
+            "playerId": 0,
+            "eventtype": "ChatMessage",
+            "recipient": 1,
+            "msg": "wall in tight"
+        }
+    ],
+    "4557": [
+        {
+            "gameloop": 4557,
+            "playerId": 0,
+            "eventtype": "ChatMessage",
+            "recipient": 1,
+            "msg": "all air"
+        }
+    ],
+    "5809": [
+        {
+            "gameloop": 5809,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 1,
+            "msg": "msc?"
+        }
+    ],
+    "7082": [
+        {
+            "gameloop": 7082,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 1,
+            "msg": "mind if i pause stream?"
+        }
+    ],
+    "7127": [
+        {
+            "gameloop": 7127,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 1,
+            "msg": "im lagging"
+        }
+    ],
     "7678": [
         {
-            "msg": "so how is everyone?", 
-            "playerId": 3, 
-            "frame": 7678, 
-            "recipient": "all"
+            "gameloop": 7678,
+            "playerId": 3,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "so how is everyone?"
+        }
+    ],
+    "7982": [
+        {
+            "gameloop": 7982,
+            "playerId": 6,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "getting attacked at all angles"
+        }
+    ],
+    "8088": [
+        {
+            "gameloop": 8088,
+            "playerId": 6,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "other than that not 1\/2 bad"
+        }
+    ],
+    "8450": [
+        {
+            "gameloop": 8450,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 1,
+            "msg": "holy shit"
+        }
+    ],
+    "8478": [
+        {
+            "gameloop": 8478,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 1,
+            "msg": "8 kills"
+        }
+    ],
+    "10091": [
+        {
+            "gameloop": 10091,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 1,
+            "msg": "omfg this is so op"
+        }
+    ],
+    "10179": [
+        {
+            "gameloop": 10179,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 1,
+            "msg": "26 kills"
+        }
+    ],
+    "13431": [
+        {
+            "gameloop": 13431,
+            "playerId": 6,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "pause 1 ssec"
+        }
+    ],
+    "13819": [
+        {
+            "gameloop": 13819,
+            "playerId": 6,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "no yes?"
+        }
+    ],
+    "14355": [
+        {
+            "gameloop": 14355,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "gg"
+        }
+    ],
+    "14365": [
+        {
+            "gameloop": 14365,
+            "playerId": 6,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "take that as a no"
+        }
+    ],
+    "14506": [
+        {
+            "gameloop": 14506,
+            "playerId": 0,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "gg"
         }
     ]
 }

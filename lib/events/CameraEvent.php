@@ -50,15 +50,15 @@ class CameraEvent extends EventBase {
 	public $yaw;
 
 	/**
-	 * constructor accepting the frame count
+	 * constructor accepting the gameloop count
 	 *
 	 * @access public
-	 * @param  integer frames | frame counter at the time the event happened
+	 * @param  integer gameloops | gameloop counter at the time the event happened
 	 * @param  integer playerId | playerId of the player that caused the event
 	 * @param  array location | array with x and y coordinate
 	 */
-	public function __construct($frames, $playerId, $location) {
-		parent::__construct($frames, $playerId);
+	public function __construct($gameloops, $playerId, $location) {
+		parent::__construct($gameloops, $playerId);
 		$this->location = $location;
 	}
 

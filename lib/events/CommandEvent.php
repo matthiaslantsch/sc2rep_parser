@@ -53,16 +53,16 @@ class CommandEvent extends EventBase {
 	public $otherUnitId;
 
 	/**
-	 * constructor accepting the frame count
+	 * constructor accepting the gameloop count
 	 *
 	 * @access public
-	 * @param  integer frames | frame counter at the time the event happened
+	 * @param  integer gameloops | gameloop counter at the time the event happened
 	 * @param  integer playerId | playerId of the player that caused the event
 	 * @param  integer flagBitMask | bit mask containing the options as bit flags
 	 * @param  array ability | optional array with information about the ability used
 	 */
-	public function __construct($frames, $playerId, $flagBitMask, $ability = null) {
-		parent::__construct($frames, $playerId);
+	public function __construct($gameloops, $playerId, $flagBitMask, $ability = null) {
+		parent::__construct($gameloops, $playerId);
 
 		$this->flags = [
 			"alternate" => (0x1 & $flagBitMask != 0),

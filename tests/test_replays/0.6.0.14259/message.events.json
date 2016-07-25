@@ -1,226 +1,268 @@
 {
     "0": [
         {
-            "progress": 58,
-            "frame": 0,
-            "playerId": 1
+            "gameloop": 0,
+            "playerId": 1,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 58
         },
         {
-            "progress": 100,
-            "frame": 0,
-            "playerId": 1
+            "gameloop": 0,
+            "playerId": 1,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 100
         },
         {
-            "progress": 58,
-            "frame": 0,
-            "playerId": 4
+            "gameloop": 0,
+            "playerId": 4,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 58
         },
         {
-            "progress": 58,
-            "frame": 0,
-            "playerId": 2
+            "gameloop": 0,
+            "playerId": 2,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 58
         },
         {
-            "progress": 56,
-            "frame": 0,
-            "playerId": 3
+            "gameloop": 0,
+            "playerId": 3,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 56
         },
         {
-            "progress": 66,
-            "frame": 0,
-            "playerId": 2
+            "gameloop": 0,
+            "playerId": 2,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 66
         },
         {
-            "progress": 58,
-            "frame": 0,
-            "playerId": 5
+            "gameloop": 0,
+            "playerId": 5,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 58
         },
         {
-            "progress": 71,
-            "frame": 0,
-            "playerId": 3
+            "gameloop": 0,
+            "playerId": 3,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 71
         },
         {
-            "progress": 63,
-            "frame": 0,
-            "playerId": 4
+            "gameloop": 0,
+            "playerId": 4,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 63
         },
         {
-            "progress": 64,
-            "frame": 0,
-            "playerId": 5
+            "gameloop": 0,
+            "playerId": 5,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 64
         },
         {
-            "progress": 72,
-            "frame": 0,
-            "playerId": 2
+            "gameloop": 0,
+            "playerId": 2,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 72
         },
         {
-            "progress": 76,
-            "frame": 0,
-            "playerId": 3
+            "gameloop": 0,
+            "playerId": 3,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 76
         },
         {
-            "progress": 81,
-            "frame": 0,
-            "playerId": 3
+            "gameloop": 0,
+            "playerId": 3,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 81
         },
         {
-            "progress": 69,
-            "frame": 0,
-            "playerId": 4
+            "gameloop": 0,
+            "playerId": 4,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 69
         },
         {
-            "progress": 58,
-            "frame": 0,
-            "playerId": 6
+            "gameloop": 0,
+            "playerId": 6,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 58
         },
         {
-            "progress": 69,
-            "frame": 0,
-            "playerId": 5
+            "gameloop": 0,
+            "playerId": 5,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 69
         },
         {
-            "progress": 70,
-            "frame": 0,
-            "playerId": 6
+            "gameloop": 0,
+            "playerId": 6,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 70
         },
         {
-            "progress": 79,
-            "frame": 0,
-            "playerId": 2
+            "gameloop": 0,
+            "playerId": 2,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 79
         },
         {
-            "progress": 86,
-            "frame": 0,
-            "playerId": 3
+            "gameloop": 0,
+            "playerId": 3,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 86
         },
         {
-            "progress": 74,
-            "frame": 0,
-            "playerId": 5
+            "gameloop": 0,
+            "playerId": 5,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 74
         },
         {
-            "progress": 74,
-            "frame": 0,
-            "playerId": 4
+            "gameloop": 0,
+            "playerId": 4,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 74
         },
         {
-            "progress": 77,
-            "frame": 0,
-            "playerId": 6
+            "gameloop": 0,
+            "playerId": 6,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 77
         },
         {
-            "progress": 80,
-            "frame": 0,
-            "playerId": 5
+            "gameloop": 0,
+            "playerId": 5,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 80
         },
         {
-            "progress": 84,
-            "frame": 0,
-            "playerId": 2
+            "gameloop": 0,
+            "playerId": 2,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 84
         },
         {
-            "progress": 92,
-            "frame": 0,
-            "playerId": 3
+            "gameloop": 0,
+            "playerId": 3,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 92
         },
         {
-            "progress": 100,
-            "frame": 0,
-            "playerId": 3
+            "gameloop": 0,
+            "playerId": 3,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 100
         },
         {
-            "progress": 86,
-            "frame": 0,
-            "playerId": 5
+            "gameloop": 0,
+            "playerId": 5,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 86
         },
         {
-            "progress": 83,
-            "frame": 0,
-            "playerId": 6
+            "gameloop": 0,
+            "playerId": 6,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 83
         },
         {
-            "progress": 89,
-            "frame": 0,
-            "playerId": 2
+            "gameloop": 0,
+            "playerId": 2,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 89
         },
         {
-            "progress": 80,
-            "frame": 0,
-            "playerId": 4
+            "gameloop": 0,
+            "playerId": 4,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 80
         },
         {
-            "progress": 100,
-            "frame": 0,
-            "playerId": 2
+            "gameloop": 0,
+            "playerId": 2,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 100
         },
         {
-            "progress": 92,
-            "frame": 0,
-            "playerId": 4
+            "gameloop": 0,
+            "playerId": 4,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 92
         },
         {
-            "progress": 100,
-            "frame": 0,
-            "playerId": 4
+            "gameloop": 0,
+            "playerId": 4,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 100
         },
         {
-            "progress": 92,
-            "frame": 0,
-            "playerId": 5
+            "gameloop": 0,
+            "playerId": 5,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 92
         },
         {
-            "progress": 97,
-            "frame": 0,
-            "playerId": 5
+            "gameloop": 0,
+            "playerId": 5,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 97
         },
         {
-            "progress": 100,
-            "frame": 0,
-            "playerId": 5
+            "gameloop": 0,
+            "playerId": 5,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 100
         },
         {
-            "progress": 88,
-            "frame": 0,
-            "playerId": 6
+            "gameloop": 0,
+            "playerId": 6,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 88
         },
         {
-            "progress": 93,
-            "frame": 0,
-            "playerId": 6
+            "gameloop": 0,
+            "playerId": 6,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 93
         },
         {
-            "progress": 100,
-            "frame": 0,
-            "playerId": 6
+            "gameloop": 0,
+            "playerId": 6,
+            "eventtype": "LoadingProgressMessage",
+            "progress": 100
         }
     ],
     "23046": [
         {
+            "gameloop": 23046,
+            "playerId": 6,
+            "eventtype": "PingMessage",
+            "recipient": 1,
             "location": {
                 "x": 552145,
                 "y": 223667
-            },
-            "recipient": "all",
-            "frame": 23046,
-            "playerId": 6
+            }
         }
     ],
     "33269": [
         {
-            "msg": "\uc9c0\uc9c0",
-            "recipient": "all",
-            "frame": 33269,
-            "playerId": 1
+            "gameloop": 33269,
+            "playerId": 1,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "\uc9c0\uc9c0"
         }
     ],
     "33360": [
         {
-            "msg": "\uc9c0\uc9c0",
-            "recipient": "all",
-            "frame": 33360,
-            "playerId": 2
+            "gameloop": 33360,
+            "playerId": 2,
+            "eventtype": "ChatMessage",
+            "recipient": 0,
+            "msg": "\uc9c0\uc9c0"
         }
     ]
 }
