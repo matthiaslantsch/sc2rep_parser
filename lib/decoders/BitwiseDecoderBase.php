@@ -8,6 +8,9 @@
 
 namespace HIS5\lib\Sc2repParser\decoders;
 
+use \HIS5\lib\Sc2repParser\ParserException;
+use HIS5\lib\Sc2repParser\utils as utils;
+
 /**
  * The BitwiseDecoderBase class is a wrapper around a file stream returned from the mpq library/our own string stream object
  * reads from the internal stream and offers methods to make the access easier (e.g. read an entire Uint16 with one call)
@@ -136,6 +139,10 @@ abstract class BitwiseDecoderBase {
 			return 0;
 		}
 
+		if(($len / 8) > PHP_INT_SIZE) {
+			return $this->readBitsGMP($len);
+		}
+
 		if($this->nextbyte === null) {
 			//no byte has been started yet
 			if($len % 8 == 0) {
@@ -206,6 +213,74 @@ abstract class BitwiseDecoderBase {
 		}
 
 		return $ret;
+	}
+
+	/**
+	 * adapted readBits method using gmp functions in order to read bit arrays bigger than the integer size limit
+	 *
+	 * @access private
+	 * @param  integer len | number of bits to read
+	 * @return specified number of read bits from the byte stream or false if the stream is finished already
+	 */
+	private function readBitsGMP($len) {
+		if($this->nextbyte === null) {
+			//no byte has been started yet
+			if($len % 8 == 0) {
+				//don't start a byte with the cache, even number of bytes
+				$ret = gmp_init(0, 10);
+				//just return byte count not bit count
+				$len /= 8;
+				while ($len--) {
+					if($this->bytestream->eof()) {
+						//no more bytes
+						return false;
+					}
+					$byte = $this->bytestream->readByte();
+					$ret = gmp_or(utils\gmp_shiftl($ret, 8), ord($byte));
+				}
+				return $ret;
+			} else {
+				$this->nextbyte = ord($this->bytestream->readByte());
+				$this->byteshift = 0;
+			}
+		}
+
+		//read the remaining bits first
+		$bitsremaining = 8 - $this->byteshift;
+		$ret = gmp_init($this->readBits($bitsremaining), 10);
+
+		//decrease len by the amount bits remaining
+		$len -= $bitsremaining;
+
+		//set the internal byte cache to null
+		$this->nextbyte = null;
+
+		if($len > 8) {
+			//read entire bytes as far as possible
+			for ($i = intval($len / 8); $i > 0; $i--) {
+				if($this->bytestream->eof()) {
+					//no more bytes
+					return false;
+				}
+				$byte = $this->bytestream->readByte();
+
+				$ret = gmp_or(utils\gmp_shiftl($ret, 8), ord($byte));
+			}
+
+			//reduce len to the rest of the requested number
+			$len = $len % 8;
+		}
+
+		//read a new byte to get the rest required
+		$newbyte = $this->readBits($len);
+		$ret = gmp_or(utils\gmp_shiftl($ret, $len), $newbyte);
+
+		if($this->byteshift === 8) {
+			//delete the cached byte
+			$this->nextbyte = null;
+		}
+
+		return gmp_strval($ret);
 	}
 
 	/**

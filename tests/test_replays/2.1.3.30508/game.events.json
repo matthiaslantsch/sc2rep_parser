@@ -1,0 +1,4647 @@
+{
+    "0": [
+        {
+            "eventtype": "UserOptionsEvent", 
+            "gameloop": 0, 
+            "options": {
+                "baseBuildNumber": 28667, 
+                "debugPauseEnabled": false, 
+                "developmentCheatsEnabled": false, 
+                "gameFullyDownloaded": true, 
+                "isMapToMapTransition": false, 
+                "multiplayerCheatsEnabled": true, 
+                "startingRally": true, 
+                "syncChecksumEnabled": false
+            }, 
+            "playerId": 0
+        }, 
+        {
+            "eventtype": "UserFinishedLoadingSyncEvent", 
+            "gameloop": 0, 
+            "playerId": 16
+        }
+    ], 
+    "1": [
+        {
+            "distance": 8704, 
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1, 
+            "location": {
+                "x": 5888, 
+                "y": 32706
+            }, 
+            "pitch": 318, 
+            "playerId": 0, 
+            "yaw": 1024
+        }
+    ], 
+    "18": [
+        {
+            "addSubGroups": [
+                {
+                    "count": 1, 
+                    "intraSubGroupPriority": 1, 
+                    "subGroupPriority": 2, 
+                    "unitLink": 96
+                }
+            ], 
+            "addUnitTags": [
+                40894465
+            ], 
+            "controlGroupIndex": 10, 
+            "eventtype": "SelectionDeltaEvent", 
+            "gameloop": 18, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "subGroupIndex": 0
+        }
+    ], 
+    "20": [
+        {
+            "ability": {
+                "abilityLink": 167, 
+                "commandData": null, 
+                "commandIndex": 0
+            }, 
+            "cmdType": "CommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 256, 
+            "gameloop": 20, 
+            "playerId": 0
+        }
+    ], 
+    "39": [
+        {
+            "cmdType": "TargetUnitCommandEvent", 
+            "controlPlayerId": 0, 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 39, 
+            "location": {
+                "x": 110592, 
+                "y": 546816, 
+                "z": 49088
+            }, 
+            "playerId": 0, 
+            "targetFlags": 55, 
+            "targetTimer": 0, 
+            "targetUnitId": 1, 
+            "unitLink": 261, 
+            "upkeepPlayerId": 0
+        }
+    ], 
+    "53": [
+        {
+            "controlGroupIndex": 5, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 53, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 0
+        }
+    ], 
+    "63": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 63, 
+            "location": {
+                "x": 6528, 
+                "y": 32194
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "105": [
+        {
+            "addSubGroups": [
+                {
+                    "count": 1, 
+                    "intraSubGroupPriority": 1, 
+                    "subGroupPriority": 3, 
+                    "unitLink": 121
+                }
+            ], 
+            "addUnitTags": [
+                42467329
+            ], 
+            "controlGroupIndex": 10, 
+            "eventtype": "SelectionDeltaEvent", 
+            "gameloop": 105, 
+            "playerId": 0, 
+            "removeMask": {
+                "ZeroIndices": []
+            }, 
+            "subGroupIndex": 0
+        }
+    ], 
+    "113": [
+        {
+            "cmdType": "TargetUnitCommandEvent", 
+            "controlPlayerId": 0, 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 113, 
+            "location": {
+                "x": 77824, 
+                "y": 526336, 
+                "z": 49088
+            }, 
+            "playerId": 0, 
+            "targetFlags": 55, 
+            "targetTimer": 0, 
+            "targetUnitId": 1572865, 
+            "unitLink": 261, 
+            "upkeepPlayerId": 0
+        }
+    ], 
+    "137": [
+        {
+            "addSubGroups": [
+                {
+                    "count": 1, 
+                    "intraSubGroupPriority": 1, 
+                    "subGroupPriority": 2, 
+                    "unitLink": 96
+                }
+            ], 
+            "addUnitTags": [
+                40894465
+            ], 
+            "controlGroupIndex": 10, 
+            "eventtype": "SelectionDeltaEvent", 
+            "gameloop": 137, 
+            "playerId": 0, 
+            "removeMask": {
+                "ZeroIndices": []
+            }, 
+            "subGroupIndex": 0
+        }
+    ], 
+    "266": [
+        {
+            "ability": {
+                "abilityLink": 167, 
+                "commandData": null, 
+                "commandIndex": 0
+            }, 
+            "cmdType": "CommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 256, 
+            "gameloop": 266, 
+            "playerId": 0
+        }
+    ], 
+    "302": [
+        {
+            "cmdType": "TargetUnitCommandEvent", 
+            "controlPlayerId": 0, 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 302, 
+            "location": {
+                "x": 94208, 
+                "y": 546816, 
+                "z": 49088
+            }, 
+            "playerId": 0, 
+            "targetFlags": 55, 
+            "targetTimer": 0, 
+            "targetUnitId": 524289, 
+            "unitLink": 261, 
+            "upkeepPlayerId": 0
+        }
+    ], 
+    "398": [
+        {
+            "cmdType": "TargetUnitCommandEvent", 
+            "controlPlayerId": 0, 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 398, 
+            "location": {
+                "x": 81920, 
+                "y": 542720, 
+                "z": 49088
+            }, 
+            "playerId": 0, 
+            "targetFlags": 55, 
+            "targetTimer": 0, 
+            "targetUnitId": 786433, 
+            "unitLink": 261, 
+            "upkeepPlayerId": 0
+        }
+    ], 
+    "461": [
+        {
+            "ability": {
+                "abilityLink": 167, 
+                "commandData": null, 
+                "commandIndex": 0
+            }, 
+            "cmdType": "CommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 256, 
+            "gameloop": 461, 
+            "playerId": 0
+        }
+    ], 
+    "714": [
+        {
+            "addSubGroups": [
+                {
+                    "count": 1, 
+                    "intraSubGroupPriority": 1, 
+                    "subGroupPriority": 3, 
+                    "unitLink": 121
+                }
+            ], 
+            "addUnitTags": [
+                41680897
+            ], 
+            "controlGroupIndex": 10, 
+            "eventtype": "SelectionDeltaEvent", 
+            "gameloop": 714, 
+            "playerId": 0, 
+            "removeMask": {
+                "ZeroIndices": []
+            }, 
+            "subGroupIndex": 0
+        }
+    ], 
+    "724": [
+        {
+            "cmdType": "TargetUnitCommandEvent", 
+            "controlPlayerId": 1, 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 724, 
+            "location": {
+                "x": 104448, 
+                "y": 522240, 
+                "z": 49088
+            }, 
+            "playerId": 0, 
+            "targetFlags": 55, 
+            "targetTimer": 0, 
+            "targetUnitId": 40894465, 
+            "unitLink": 96, 
+            "upkeepPlayerId": 1
+        }
+    ], 
+    "728": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 728, 
+            "location": {
+                "x": 100858, 
+                "y": 508973, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "731": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 731, 
+            "location": {
+                "x": 104962, 
+                "y": 507057, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "734": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 734, 
+            "location": {
+                "x": 110398, 
+                "y": 508102, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "738": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 738, 
+            "location": {
+                "x": 112439, 
+                "y": 509065, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "742": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 742, 
+            "location": {
+                "x": 113421, 
+                "y": 509325, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "758": [
+        {
+            "ability": {
+                "abilityLink": 162, 
+                "commandData": null, 
+                "commandIndex": 1
+            }, 
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 256, 
+            "gameloop": 758, 
+            "location": {
+                "x": 118784, 
+                "y": 516096, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "779": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 65802, 
+            "gameloop": 779, 
+            "location": {
+                "x": 516499, 
+                "y": 521604, 
+                "z": 49104
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "795": [
+        {
+            "controlGroupIndex": 5, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 795, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 2
+        }
+    ], 
+    "809": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 809, 
+            "location": {
+                "x": 7104, 
+                "y": 31617
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "825": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 825, 
+            "location": {
+                "x": 7615, 
+                "y": 31296
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "826": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 826, 
+            "location": {
+                "x": 7969, 
+                "y": 30942
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "872": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 872, 
+            "location": {
+                "x": 7563, 
+                "y": 31539
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "873": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 873, 
+            "location": {
+                "x": 7379, 
+                "y": 31722
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "893": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 893, 
+            "location": {
+                "x": 7707, 
+                "y": 31395
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "894": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 894, 
+            "location": {
+                "x": 8041, 
+                "y": 31395
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "901": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 901, 
+            "location": {
+                "x": 8356, 
+                "y": 31080
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "902": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 902, 
+            "location": {
+                "x": 8677, 
+                "y": 30759
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "903": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 903, 
+            "location": {
+                "x": 9011, 
+                "y": 30425
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "904": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 904, 
+            "location": {
+                "x": 9319, 
+                "y": 30117
+            }, 
+            "playerId": 0
+        }, 
+        {
+            "ability": {
+                "abilityLink": 167, 
+                "commandData": null, 
+                "commandIndex": 0
+            }, 
+            "cmdType": "CommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 256, 
+            "gameloop": 904, 
+            "playerId": 0
+        }
+    ], 
+    "909": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 909, 
+            "location": {
+                "x": 9319, 
+                "y": 29815
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "910": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 910, 
+            "location": {
+                "x": 9319, 
+                "y": 29474
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "911": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 911, 
+            "location": {
+                "x": 9319, 
+                "y": 29160
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "912": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 912, 
+            "location": {
+                "x": 9319, 
+                "y": 28845
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "913": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 913, 
+            "location": {
+                "x": 9319, 
+                "y": 28518
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "914": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 914, 
+            "location": {
+                "x": 9319, 
+                "y": 28177
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "915": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 915, 
+            "location": {
+                "x": 9319, 
+                "y": 27849
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "917": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 917, 
+            "location": {
+                "x": 9319, 
+                "y": 27495
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "918": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 918, 
+            "location": {
+                "x": 9319, 
+                "y": 27148
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "919": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 919, 
+            "location": {
+                "x": 9319, 
+                "y": 26814
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "932": [
+        {
+            "addSubGroups": [
+                {
+                    "count": 1, 
+                    "intraSubGroupPriority": 1, 
+                    "subGroupPriority": 3, 
+                    "unitLink": 121
+                }
+            ], 
+            "addUnitTags": [
+                41680897
+            ], 
+            "controlGroupIndex": 10, 
+            "eventtype": "SelectionDeltaEvent", 
+            "gameloop": 932, 
+            "playerId": 0, 
+            "removeMask": {
+                "ZeroIndices": []
+            }, 
+            "subGroupIndex": 0
+        }
+    ], 
+    "935": [
+        {
+            "controlGroupIndex": 1, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 935, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 0
+        }
+    ], 
+    "942": [
+        {
+            "controlGroupIndex": 5, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 942, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 2
+        }
+    ], 
+    "946": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 946, 
+            "location": {
+                "x": 6528, 
+                "y": 32194
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1014": [
+        {
+            "controlGroupIndex": 1, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 1014, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 2
+        }
+    ], 
+    "1019": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1019, 
+            "location": {
+                "x": 10264, 
+                "y": 23557
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1024": [
+        {
+            "controlGroupIndex": 5, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 1024, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 2
+        }
+    ], 
+    "1028": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1028, 
+            "location": {
+                "x": 6528, 
+                "y": 32194
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1128": [
+        {
+            "ability": {
+                "abilityLink": 167, 
+                "commandData": null, 
+                "commandIndex": 0
+            }, 
+            "cmdType": "CommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 256, 
+            "gameloop": 1128, 
+            "playerId": 0
+        }
+    ], 
+    "1194": [
+        {
+            "ability": {
+                "abilityLink": 108, 
+                "commandData": null, 
+                "commandIndex": 0
+            }, 
+            "cmdType": "TargetUnitCommandEvent", 
+            "controlPlayerId": 1, 
+            "eventtype": "CmdEvent", 
+            "flags": 256, 
+            "gameloop": 1194, 
+            "location": {
+                "x": 104448, 
+                "y": 522240, 
+                "z": 49088
+            }, 
+            "playerId": 0, 
+            "targetFlags": 55, 
+            "targetTimer": 0, 
+            "targetUnitId": 40894465, 
+            "unitLink": 96, 
+            "upkeepPlayerId": 1
+        }
+    ], 
+    "1205": [
+        {
+            "ability": {
+                "abilityLink": 167, 
+                "commandData": null, 
+                "commandIndex": 0
+            }, 
+            "cmdType": "CommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 256, 
+            "gameloop": 1205, 
+            "playerId": 0
+        }
+    ], 
+    "1221": [
+        {
+            "controlGroupIndex": 1, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 1221, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 2
+        }
+    ], 
+    "1233": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1233, 
+            "location": {
+                "x": 34317, 
+                "y": 29894
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1246": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 1246, 
+            "location": {
+                "x": 548187, 
+                "y": 475734, 
+                "z": 49103
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1253": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 266, 
+            "gameloop": 1253, 
+            "location": {
+                "x": 580495, 
+                "y": 488934, 
+                "z": 49116
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1261": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1261, 
+            "location": {
+                "x": 34317, 
+                "y": 30253
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1263": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1263, 
+            "location": {
+                "x": 34317, 
+                "y": 30771
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1267": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 266, 
+            "gameloop": 1267, 
+            "location": {
+                "x": 589544, 
+                "y": 523935, 
+                "z": 49103
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1271": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1271, 
+            "location": {
+                "x": 34317, 
+                "y": 31105
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1272": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1272, 
+            "location": {
+                "x": 34317, 
+                "y": 31439
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1274": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1274, 
+            "location": {
+                "x": 34317, 
+                "y": 31951
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1275": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1275, 
+            "location": {
+                "x": 34317, 
+                "y": 32285
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1276": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1276, 
+            "location": {
+                "x": 34317, 
+                "y": 32606
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1280": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 266, 
+            "gameloop": 1280, 
+            "location": {
+                "x": 583835, 
+                "y": 556551, 
+                "z": 49103
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1287": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 266, 
+            "gameloop": 1287, 
+            "location": {
+                "x": 549715, 
+                "y": 561061, 
+                "z": 49103
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1290": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 266, 
+            "gameloop": 1290, 
+            "location": {
+                "x": 539027, 
+                "y": 562460, 
+                "z": 49326
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1293": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 266, 
+            "gameloop": 1293, 
+            "location": {
+                "x": 520989, 
+                "y": 552060, 
+                "z": 49103
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1297": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 266, 
+            "gameloop": 1297, 
+            "location": {
+                "x": 518350, 
+                "y": 532294, 
+                "z": 49103
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1300": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 266, 
+            "gameloop": 1300, 
+            "location": {
+                "x": 515850, 
+                "y": 519413, 
+                "z": 49103
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1304": [
+        {
+            "controlGroupIndex": 5, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 1304, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 2
+        }
+    ], 
+    "1307": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1307, 
+            "location": {
+                "x": 6528, 
+                "y": 32194
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1383": [
+        {
+            "controlGroupIndex": 1, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 1383, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 2
+        }
+    ], 
+    "1393": [
+        {
+            "controlGroupIndex": 5, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 1393, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 2
+        }
+    ], 
+    "1396": [
+        {
+            "ability": {
+                "abilityLink": 167, 
+                "commandData": null, 
+                "commandIndex": 0
+            }, 
+            "cmdType": "CommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 256, 
+            "gameloop": 1396, 
+            "playerId": 0
+        }
+    ], 
+    "1403": [
+        {
+            "controlGroupIndex": 1, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 1403, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 2
+        }
+    ], 
+    "1408": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1408, 
+            "location": {
+                "x": 27596, 
+                "y": 24088
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1415": [
+        {
+            "controlGroupIndex": 5, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 1415, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 2
+        }
+    ], 
+    "1420": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1420, 
+            "location": {
+                "x": 6528, 
+                "y": 32194
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1522": [
+        {
+            "ability": {
+                "abilityLink": 108, 
+                "commandData": null, 
+                "commandIndex": 0
+            }, 
+            "cmdType": "TargetUnitCommandEvent", 
+            "controlPlayerId": 1, 
+            "eventtype": "CmdEvent", 
+            "flags": 256, 
+            "gameloop": 1522, 
+            "location": {
+                "x": 104448, 
+                "y": 522240, 
+                "z": 49088
+            }, 
+            "playerId": 0, 
+            "targetFlags": 55, 
+            "targetTimer": 0, 
+            "targetUnitId": 40894465, 
+            "unitLink": 96, 
+            "upkeepPlayerId": 1
+        }
+    ], 
+    "1566": [
+        {
+            "ability": {
+                "abilityLink": 167, 
+                "commandData": null, 
+                "commandIndex": 0
+            }, 
+            "cmdType": "CommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 256, 
+            "gameloop": 1566, 
+            "playerId": 0
+        }
+    ], 
+    "1593": [
+        {
+            "ability": {
+                "abilityLink": 269, 
+                "commandData": null, 
+                "commandIndex": 0
+            }, 
+            "cmdType": "CommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 256, 
+            "gameloop": 1593, 
+            "playerId": 0
+        }
+    ], 
+    "1613": [
+        {
+            "addSubGroups": [
+                {
+                    "count": 1, 
+                    "intraSubGroupPriority": 1, 
+                    "subGroupPriority": 3, 
+                    "unitLink": 121
+                }
+            ], 
+            "addUnitTags": [
+                48234497
+            ], 
+            "controlGroupIndex": 10, 
+            "eventtype": "SelectionDeltaEvent", 
+            "gameloop": 1613, 
+            "playerId": 0, 
+            "removeMask": {
+                "ZeroIndices": []
+            }, 
+            "subGroupIndex": 0
+        }
+    ], 
+    "1619": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 1619, 
+            "location": {
+                "x": 122763, 
+                "y": 539333, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1623": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 1623, 
+            "location": {
+                "x": 124772, 
+                "y": 539217, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1626": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 1626, 
+            "location": {
+                "x": 124411, 
+                "y": 538885, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1630": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 1630, 
+            "location": {
+                "x": 123775, 
+                "y": 537005, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1634": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 1634, 
+            "location": {
+                "x": 122934, 
+                "y": 535696, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1637": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 1637, 
+            "location": {
+                "x": 121428, 
+                "y": 534194, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1641": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 1641, 
+            "location": {
+                "x": 120477, 
+                "y": 533447, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1645": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 1645, 
+            "location": {
+                "x": 119884, 
+                "y": 533133, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1649": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 1649, 
+            "location": {
+                "x": 119173, 
+                "y": 532176, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1652": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 1652, 
+            "location": {
+                "x": 120063, 
+                "y": 530600, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1655": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 1655, 
+            "location": {
+                "x": 119870, 
+                "y": 530076, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1660": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 1660, 
+            "location": {
+                "x": 120824, 
+                "y": 529769, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1663": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 1663, 
+            "location": {
+                "x": 121394, 
+                "y": 529769, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1666": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 1666, 
+            "location": {
+                "x": 119333, 
+                "y": 536569, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1669": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 1669, 
+            "location": {
+                "x": 120300, 
+                "y": 536016, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1672": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 1672, 
+            "location": {
+                "x": 119208, 
+                "y": 531331, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1676": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 1676, 
+            "location": {
+                "x": 121643, 
+                "y": 529877, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1679": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 1679, 
+            "location": {
+                "x": 122822, 
+                "y": 529352, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1694": [
+        {
+            "ability": {
+                "abilityLink": 162, 
+                "commandData": null, 
+                "commandIndex": 3
+            }, 
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 256, 
+            "gameloop": 1694, 
+            "location": {
+                "x": 120832, 
+                "y": 526336, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1705": [
+        {
+            "cmdType": "TargetUnitCommandEvent", 
+            "controlPlayerId": 0, 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 1705, 
+            "location": {
+                "x": 110592, 
+                "y": 546816, 
+                "z": 49088
+            }, 
+            "playerId": 0, 
+            "targetFlags": 55, 
+            "targetTimer": 0, 
+            "targetUnitId": 1, 
+            "unitLink": 261, 
+            "upkeepPlayerId": 0
+        }
+    ], 
+    "1709": [
+        {
+            "cmdType": "TargetUnitCommandEvent", 
+            "controlPlayerId": 0, 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 1709, 
+            "location": {
+                "x": 110592, 
+                "y": 546816, 
+                "z": 49088
+            }, 
+            "playerId": 0, 
+            "targetFlags": 55, 
+            "targetTimer": 0, 
+            "targetUnitId": 1, 
+            "unitLink": 261, 
+            "upkeepPlayerId": 0
+        }
+    ], 
+    "1713": [
+        {
+            "controlGroupIndex": 5, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 1713, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 2
+        }
+    ], 
+    "1760": [
+        {
+            "addSubGroups": [
+                {
+                    "count": 1, 
+                    "intraSubGroupPriority": 1, 
+                    "subGroupPriority": 2, 
+                    "unitLink": 99
+                }
+            ], 
+            "addUnitTags": [
+                49020929
+            ], 
+            "controlGroupIndex": 10, 
+            "eventtype": "SelectionDeltaEvent", 
+            "gameloop": 1760, 
+            "playerId": 0, 
+            "removeMask": {
+                "ZeroIndices": []
+            }, 
+            "subGroupIndex": 0
+        }
+    ], 
+    "1761": [
+        {
+            "controlGroupIndex": 4, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 1761, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 1
+        }
+    ], 
+    "1764": [
+        {
+            "controlGroupIndex": 5, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 1764, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 2
+        }
+    ], 
+    "1777": [
+        {
+            "ability": {
+                "abilityLink": 167, 
+                "commandData": null, 
+                "commandIndex": 0
+            }, 
+            "cmdType": "CommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 256, 
+            "gameloop": 1777, 
+            "playerId": 0
+        }
+    ], 
+    "1789": [
+        {
+            "controlGroupIndex": 1, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 1789, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 2
+        }
+    ], 
+    "1793": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1793, 
+            "location": {
+                "x": 36500, 
+                "y": 34272
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1799": [
+        {
+            "controlGroupIndex": 5, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 1799, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 2
+        }
+    ], 
+    "1809": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1809, 
+            "location": {
+                "x": 36192, 
+                "y": 33964
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1810": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1810, 
+            "location": {
+                "x": 35858, 
+                "y": 33630
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1811": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1811, 
+            "location": {
+                "x": 35569, 
+                "y": 33342
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1812": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1812, 
+            "location": {
+                "x": 35379, 
+                "y": 33152
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1813": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1813, 
+            "location": {
+                "x": 34999, 
+                "y": 32772
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1814": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1814, 
+            "location": {
+                "x": 34626, 
+                "y": 32398
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1816": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1816, 
+            "location": {
+                "x": 34036, 
+                "y": 31808
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1825": [
+        {
+            "controlGroupIndex": 1, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 1825, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 2
+        }
+    ], 
+    "1833": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1833, 
+            "location": {
+                "x": 34036, 
+                "y": 32241
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1844": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 1844, 
+            "location": {
+                "x": 515269, 
+                "y": 548223, 
+                "z": 49103
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1851": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1851, 
+            "location": {
+                "x": 34036, 
+                "y": 31834
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1853": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1853, 
+            "location": {
+                "x": 34036, 
+                "y": 31264
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1855": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1855, 
+            "location": {
+                "x": 34036, 
+                "y": 30681
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1857": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1857, 
+            "location": {
+                "x": 34036, 
+                "y": 30098
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1867": [
+        {
+            "ability": {
+                "abilityLink": 38, 
+                "commandData": null, 
+                "commandIndex": 1
+            }, 
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 258, 
+            "gameloop": 1867, 
+            "location": {
+                "x": 519759, 
+                "y": 476140, 
+                "z": 49103
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1881": [
+        {
+            "ability": {
+                "abilityLink": 38, 
+                "commandData": null, 
+                "commandIndex": 1
+            }, 
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 258, 
+            "gameloop": 1881, 
+            "location": {
+                "x": 582021, 
+                "y": 477414, 
+                "z": 49113
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1888": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1888, 
+            "location": {
+                "x": 34036, 
+                "y": 30504
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1890": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1890, 
+            "location": {
+                "x": 34036, 
+                "y": 31074
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1892": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1892, 
+            "location": {
+                "x": 34036, 
+                "y": 31684
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1894": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1894, 
+            "location": {
+                "x": 34036, 
+                "y": 32260
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1902": [
+        {
+            "ability": {
+                "abilityLink": 38, 
+                "commandData": null, 
+                "commandIndex": 1
+            }, 
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 258, 
+            "gameloop": 1902, 
+            "location": {
+                "x": 589280, 
+                "y": 553000, 
+                "z": 49103
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1920": [
+        {
+            "ability": {
+                "abilityLink": 38, 
+                "commandData": null, 
+                "commandIndex": 1
+            }, 
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 258, 
+            "gameloop": 1920, 
+            "location": {
+                "x": 515965, 
+                "y": 548318, 
+                "z": 49103
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1928": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1928, 
+            "location": {
+                "x": 34036, 
+                "y": 31651
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1930": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1930, 
+            "location": {
+                "x": 34036, 
+                "y": 31074
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1932": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1932, 
+            "location": {
+                "x": 34036, 
+                "y": 30491
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1934": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1934, 
+            "location": {
+                "x": 34036, 
+                "y": 30104
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1936": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 1936, 
+            "location": {
+                "x": 519191, 
+                "y": 471727, 
+                "z": 49103
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1960": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 65800, 
+            "gameloop": 1960, 
+            "location": {
+                "x": 555003, 
+                "y": 398065, 
+                "z": 40912
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1965": [
+        {
+            "controlGroupIndex": 5, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 1965, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 2
+        }
+    ], 
+    "1968": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 1968, 
+            "location": {
+                "x": 6528, 
+                "y": 32194
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "1969": [
+        {
+            "ability": {
+                "abilityLink": 167, 
+                "commandData": null, 
+                "commandIndex": 0
+            }, 
+            "cmdType": "CommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 256, 
+            "gameloop": 1969, 
+            "playerId": 0
+        }
+    ], 
+    "2028": [
+        {
+            "addSubGroups": [
+                {
+                    "count": 1, 
+                    "intraSubGroupPriority": 1, 
+                    "subGroupPriority": 2, 
+                    "unitLink": 99
+                }
+            ], 
+            "addUnitTags": [
+                49020929
+            ], 
+            "controlGroupIndex": 10, 
+            "eventtype": "SelectionDeltaEvent", 
+            "gameloop": 2028, 
+            "playerId": 0, 
+            "removeMask": {
+                "ZeroIndices": []
+            }, 
+            "subGroupIndex": 0
+        }
+    ], 
+    "2054": [
+        {
+            "addSubGroups": [
+                {
+                    "count": 1, 
+                    "intraSubGroupPriority": 1, 
+                    "subGroupPriority": 3, 
+                    "unitLink": 121
+                }
+            ], 
+            "addUnitTags": [
+                41156609
+            ], 
+            "controlGroupIndex": 10, 
+            "eventtype": "SelectionDeltaEvent", 
+            "gameloop": 2054, 
+            "playerId": 0, 
+            "removeMask": {
+                "ZeroIndices": []
+            }, 
+            "subGroupIndex": 0
+        }
+    ], 
+    "2065": [
+        {
+            "ability": {
+                "abilityLink": 162, 
+                "commandData": null, 
+                "commandIndex": 2
+            }, 
+            "cmdType": "TargetUnitCommandEvent", 
+            "controlPlayerId": 0, 
+            "eventtype": "CmdEvent", 
+            "flags": 256, 
+            "gameloop": 2065, 
+            "location": {
+                "x": 75776, 
+                "y": 509952, 
+                "z": 49088
+            }, 
+            "playerId": 0, 
+            "targetFlags": 55, 
+            "targetTimer": 0, 
+            "targetUnitId": 12058625, 
+            "unitLink": 515, 
+            "upkeepPlayerId": 0
+        }
+    ], 
+    "2076": [
+        {
+            "cmdType": "TargetUnitCommandEvent", 
+            "controlPlayerId": 0, 
+            "eventtype": "CmdEvent", 
+            "flags": 266, 
+            "gameloop": 2076, 
+            "location": {
+                "x": 77824, 
+                "y": 526336, 
+                "z": 49088
+            }, 
+            "playerId": 0, 
+            "targetFlags": 55, 
+            "targetTimer": 0, 
+            "targetUnitId": 1572865, 
+            "unitLink": 261, 
+            "upkeepPlayerId": 0
+        }
+    ], 
+    "2083": [
+        {
+            "controlGroupIndex": 5, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 2083, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 2
+        }
+    ], 
+    "2098": [
+        {
+            "controlGroupIndex": 1, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 2098, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 2
+        }
+    ], 
+    "2102": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 2102, 
+            "location": {
+                "x": 34494, 
+                "y": 24809
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2110": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 2110, 
+            "location": {
+                "x": 34494, 
+                "y": 24501
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2111": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 2111, 
+            "location": {
+                "x": 34494, 
+                "y": 24180
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2116": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2116, 
+            "location": {
+                "x": 564967, 
+                "y": 405241, 
+                "z": 40911
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2118": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2118, 
+            "location": {
+                "x": 566282, 
+                "y": 406632, 
+                "z": 40911
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2122": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2122, 
+            "location": {
+                "x": 565454, 
+                "y": 409901, 
+                "z": 40911
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2125": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2125, 
+            "location": {
+                "x": 569302, 
+                "y": 411118, 
+                "z": 40911
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2130": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2130, 
+            "location": {
+                "x": 569154, 
+                "y": 408800, 
+                "z": 40911
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2132": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2132, 
+            "location": {
+                "x": 571179, 
+                "y": 408145, 
+                "z": 40911
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2136": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2136, 
+            "location": {
+                "x": 570180, 
+                "y": 406739, 
+                "z": 40911
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2139": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2139, 
+            "location": {
+                "x": 566247, 
+                "y": 404604, 
+                "z": 40911
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2143": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2143, 
+            "location": {
+                "x": 561287, 
+                "y": 410228, 
+                "z": 40911
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2146": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2146, 
+            "location": {
+                "x": 563096, 
+                "y": 413582, 
+                "z": 40911
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2149": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2149, 
+            "location": {
+                "x": 565351, 
+                "y": 409681, 
+                "z": 40911
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2152": [
+        {
+            "controlGroupIndex": 5, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 2152, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 2
+        }
+    ], 
+    "2157": [
+        {
+            "ability": {
+                "abilityLink": 167, 
+                "commandData": null, 
+                "commandIndex": 0
+            }, 
+            "cmdType": "CommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 256, 
+            "gameloop": 2157, 
+            "playerId": 0
+        }
+    ], 
+    "2172": [
+        {
+            "addSubGroups": [
+                {
+                    "count": 1, 
+                    "intraSubGroupPriority": 1, 
+                    "subGroupPriority": 3, 
+                    "unitLink": 121
+                }
+            ], 
+            "addUnitTags": [
+                41680897
+            ], 
+            "controlGroupIndex": 10, 
+            "eventtype": "SelectionDeltaEvent", 
+            "gameloop": 2172, 
+            "playerId": 0, 
+            "removeMask": {
+                "ZeroIndices": []
+            }, 
+            "subGroupIndex": 0
+        }
+    ], 
+    "2173": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2173, 
+            "location": {
+                "x": 560741, 
+                "y": 403865, 
+                "z": 40912
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2176": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2176, 
+            "location": {
+                "x": 557410, 
+                "y": 405241, 
+                "z": 40912
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2181": [
+        {
+            "controlGroupIndex": 5, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 2181, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 2
+        }
+    ], 
+    "2185": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 2185, 
+            "location": {
+                "x": 6528, 
+                "y": 32194
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2199": [
+        {
+            "ability": {
+                "abilityLink": 108, 
+                "commandData": null, 
+                "commandIndex": 0
+            }, 
+            "cmdType": "TargetUnitCommandEvent", 
+            "controlPlayerId": 1, 
+            "eventtype": "CmdEvent", 
+            "flags": 256, 
+            "gameloop": 2199, 
+            "location": {
+                "x": 104448, 
+                "y": 522240, 
+                "z": 49088
+            }, 
+            "playerId": 0, 
+            "targetFlags": 55, 
+            "targetTimer": 0, 
+            "targetUnitId": 40894465, 
+            "unitLink": 96, 
+            "upkeepPlayerId": 1
+        }
+    ], 
+    "2213": [
+        {
+            "addSubGroups": [
+                {
+                    "count": 1, 
+                    "intraSubGroupPriority": 1, 
+                    "subGroupPriority": 2, 
+                    "unitLink": 99
+                }
+            ], 
+            "addUnitTags": [
+                49020929
+            ], 
+            "controlGroupIndex": 10, 
+            "eventtype": "SelectionDeltaEvent", 
+            "gameloop": 2213, 
+            "playerId": 0, 
+            "removeMask": {
+                "ZeroIndices": []
+            }, 
+            "subGroupIndex": 0
+        }
+    ], 
+    "2224": [
+        {
+            "controlGroupIndex": 5, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 2224, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 2
+        }
+    ], 
+    "2249": [
+        {
+            "controlGroupIndex": 1, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 2249, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 2
+        }
+    ], 
+    "2253": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 2253, 
+            "location": {
+                "x": 34838, 
+                "y": 24882
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2274": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2274, 
+            "location": {
+                "x": 560137, 
+                "y": 412682, 
+                "z": 40912
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2285": [
+        {
+            "ability": {
+                "abilityLink": 38, 
+                "commandData": null, 
+                "commandIndex": 1
+            }, 
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 258, 
+            "gameloop": 2285, 
+            "location": {
+                "x": 547592, 
+                "y": 403871, 
+                "z": 40913
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2312": [
+        {
+            "controlGroupIndex": 5, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 2312, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 2
+        }
+    ], 
+    "2316": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 2316, 
+            "location": {
+                "x": 6528, 
+                "y": 32194
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2325": [
+        {
+            "ability": {
+                "abilityLink": 167, 
+                "commandData": null, 
+                "commandIndex": 0
+            }, 
+            "cmdType": "CommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 256, 
+            "gameloop": 2325, 
+            "playerId": 0
+        }
+    ], 
+    "2386": [
+        {
+            "addSubGroups": [
+                {
+                    "count": 1, 
+                    "intraSubGroupPriority": 1, 
+                    "subGroupPriority": 3, 
+                    "unitLink": 121
+                }
+            ], 
+            "addUnitTags": [
+                42467329
+            ], 
+            "controlGroupIndex": 10, 
+            "eventtype": "SelectionDeltaEvent", 
+            "gameloop": 2386, 
+            "playerId": 0, 
+            "removeMask": {
+                "ZeroIndices": []
+            }, 
+            "subGroupIndex": 0
+        }
+    ], 
+    "2395": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2395, 
+            "location": {
+                "x": 96752, 
+                "y": 511278, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2398": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2398, 
+            "location": {
+                "x": 101901, 
+                "y": 509325, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2402": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2402, 
+            "location": {
+                "x": 105716, 
+                "y": 509417, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2405": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2405, 
+            "location": {
+                "x": 114455, 
+                "y": 508973, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2410": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2410, 
+            "location": {
+                "x": 119159, 
+                "y": 508973, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2412": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2412, 
+            "location": {
+                "x": 121881, 
+                "y": 509417, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2434": [
+        {
+            "ability": {
+                "abilityLink": 162, 
+                "commandData": null, 
+                "commandIndex": 1
+            }, 
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 256, 
+            "gameloop": 2434, 
+            "location": {
+                "x": 126976, 
+                "y": 516096, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2452": [
+        {
+            "cmdType": "TargetUnitCommandEvent", 
+            "controlPlayerId": 0, 
+            "eventtype": "CmdEvent", 
+            "flags": 266, 
+            "gameloop": 2452, 
+            "location": {
+                "x": 77824, 
+                "y": 530432, 
+                "z": 49088
+            }, 
+            "playerId": 0, 
+            "targetFlags": 55, 
+            "targetTimer": 0, 
+            "targetUnitId": 1310721, 
+            "unitLink": 261, 
+            "upkeepPlayerId": 0
+        }
+    ], 
+    "2462": [
+        {
+            "controlGroupIndex": 5, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 2462, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 2
+        }
+    ], 
+    "2477": [
+        {
+            "ability": {
+                "abilityLink": 167, 
+                "commandData": null, 
+                "commandIndex": 0
+            }, 
+            "cmdType": "CommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 256, 
+            "gameloop": 2477, 
+            "playerId": 0
+        }
+    ], 
+    "2503": [
+        {
+            "addSubGroups": [
+                {
+                    "count": 1, 
+                    "intraSubGroupPriority": 1, 
+                    "subGroupPriority": 2, 
+                    "unitLink": 99
+                }
+            ], 
+            "addUnitTags": [
+                49020929
+            ], 
+            "controlGroupIndex": 10, 
+            "eventtype": "SelectionDeltaEvent", 
+            "gameloop": 2503, 
+            "playerId": 0, 
+            "removeMask": {
+                "ZeroIndices": []
+            }, 
+            "subGroupIndex": 0
+        }
+    ], 
+    "2545": [
+        {
+            "addSubGroups": [
+                {
+                    "count": 1, 
+                    "intraSubGroupPriority": 1, 
+                    "subGroupPriority": 3, 
+                    "unitLink": 121
+                }
+            ], 
+            "addUnitTags": [
+                43253762
+            ], 
+            "controlGroupIndex": 10, 
+            "eventtype": "SelectionDeltaEvent", 
+            "gameloop": 2545, 
+            "playerId": 0, 
+            "removeMask": {
+                "ZeroIndices": []
+            }, 
+            "subGroupIndex": 0
+        }
+    ], 
+    "2554": [
+        {
+            "cmdType": "TargetUnitCommandEvent", 
+            "controlPlayerId": 1, 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2554, 
+            "location": {
+                "x": 75776, 
+                "y": 509952, 
+                "z": 49088
+            }, 
+            "playerId": 0, 
+            "targetFlags": 55, 
+            "targetTimer": 0, 
+            "targetUnitId": 42991619, 
+            "unitLink": 98, 
+            "upkeepPlayerId": 1
+        }
+    ], 
+    "2571": [
+        {
+            "addSubGroups": [
+                {
+                    "count": 1, 
+                    "intraSubGroupPriority": 1, 
+                    "subGroupPriority": 3, 
+                    "unitLink": 121
+                }
+            ], 
+            "addUnitTags": [
+                41156609
+            ], 
+            "controlGroupIndex": 10, 
+            "eventtype": "SelectionDeltaEvent", 
+            "gameloop": 2571, 
+            "playerId": 0, 
+            "removeMask": {
+                "ZeroIndices": []
+            }, 
+            "subGroupIndex": 0
+        }
+    ], 
+    "2577": [
+        {
+            "cmdType": "TargetUnitCommandEvent", 
+            "controlPlayerId": 1, 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2577, 
+            "location": {
+                "x": 75776, 
+                "y": 509952, 
+                "z": 49088
+            }, 
+            "playerId": 0, 
+            "targetFlags": 55, 
+            "targetTimer": 0, 
+            "targetUnitId": 42991619, 
+            "unitLink": 98, 
+            "upkeepPlayerId": 1
+        }
+    ], 
+    "2583": [
+        {
+            "controlGroupIndex": 1, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 2583, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 2
+        }
+    ], 
+    "2588": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 2588, 
+            "location": {
+                "x": 34500, 
+                "y": 24982
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2614": [
+        {
+            "controlGroupIndex": 5, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 2614, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 2
+        }
+    ], 
+    "2618": [
+        {
+            "ability": {
+                "abilityLink": 167, 
+                "commandData": null, 
+                "commandIndex": 0
+            }, 
+            "cmdType": "CommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 256, 
+            "gameloop": 2618, 
+            "playerId": 0
+        }
+    ], 
+    "2637": [
+        {
+            "addSubGroups": [
+                {
+                    "count": 1, 
+                    "intraSubGroupPriority": 1, 
+                    "subGroupPriority": 3, 
+                    "unitLink": 121
+                }
+            ], 
+            "addUnitTags": [
+                41680897
+            ], 
+            "controlGroupIndex": 10, 
+            "eventtype": "SelectionDeltaEvent", 
+            "gameloop": 2637, 
+            "playerId": 0, 
+            "removeMask": {
+                "ZeroIndices": []
+            }, 
+            "subGroupIndex": 0
+        }
+    ], 
+    "2683": [
+        {
+            "controlGroupIndex": 5, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 2683, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 2
+        }
+    ], 
+    "2752": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 2752, 
+            "location": {
+                "x": 5994, 
+                "y": 31966
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2760": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 2760, 
+            "location": {
+                "x": 6348, 
+                "y": 31612
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2762": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 2762, 
+            "location": {
+                "x": 6748, 
+                "y": 31212
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2770": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 2770, 
+            "location": {
+                "x": 6748, 
+                "y": 31684
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2771": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 2771, 
+            "location": {
+                "x": 6748, 
+                "y": 32117
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2773": [
+        {
+            "eventtype": "CameraSaveEvent", 
+            "gameloop": 2773, 
+            "location": {
+                "x": 6748, 
+                "y": 32117
+            }, 
+            "number": 0, 
+            "playerId": 0
+        }
+    ], 
+    "2795": [
+        {
+            "addSubGroups": [
+                {
+                    "count": 1, 
+                    "intraSubGroupPriority": 1, 
+                    "subGroupPriority": 3, 
+                    "unitLink": 121
+                }
+            ], 
+            "addUnitTags": [
+                42205185
+            ], 
+            "controlGroupIndex": 10, 
+            "eventtype": "SelectionDeltaEvent", 
+            "gameloop": 2795, 
+            "playerId": 0, 
+            "removeMask": {
+                "ZeroIndices": []
+            }, 
+            "subGroupIndex": 0
+        }
+    ], 
+    "2799": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2799, 
+            "location": {
+                "x": 131585, 
+                "y": 542021, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2801": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2801, 
+            "location": {
+                "x": 132516, 
+                "y": 541009, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2829": [
+        {
+            "ability": {
+                "abilityLink": 162, 
+                "commandData": null, 
+                "commandIndex": 14
+            }, 
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 256, 
+            "gameloop": 2829, 
+            "location": {
+                "x": 133120, 
+                "y": 526336, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2841": [
+        {
+            "cmdType": "TargetUnitCommandEvent", 
+            "controlPlayerId": 0, 
+            "eventtype": "CmdEvent", 
+            "flags": 266, 
+            "gameloop": 2841, 
+            "location": {
+                "x": 110592, 
+                "y": 546816, 
+                "z": 49088
+            }, 
+            "playerId": 0, 
+            "targetFlags": 55, 
+            "targetTimer": 0, 
+            "targetUnitId": 1, 
+            "unitLink": 261, 
+            "upkeepPlayerId": 0
+        }
+    ], 
+    "2847": [
+        {
+            "controlGroupIndex": 1, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 2847, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 2
+        }
+    ], 
+    "2850": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 2850, 
+            "location": {
+                "x": 34598, 
+                "y": 25299
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2864": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2864, 
+            "location": {
+                "x": 539205, 
+                "y": 405351, 
+                "z": 40913
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2867": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2867, 
+            "location": {
+                "x": 536759, 
+                "y": 400527, 
+                "z": 40913
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2870": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2870, 
+            "location": {
+                "x": 535362, 
+                "y": 399101, 
+                "z": 40913
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2875": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2875, 
+            "location": {
+                "x": 534825, 
+                "y": 400253, 
+                "z": 40913
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2878": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2878, 
+            "location": {
+                "x": 550832, 
+                "y": 394344, 
+                "z": 40913
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2881": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2881, 
+            "location": {
+                "x": 561431, 
+                "y": 395199, 
+                "z": 40911
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2885": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2885, 
+            "location": {
+                "x": 565089, 
+                "y": 396141, 
+                "z": 40911
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2888": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2888, 
+            "location": {
+                "x": 570552, 
+                "y": 399195, 
+                "z": 40911
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2891": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2891, 
+            "location": {
+                "x": 571316, 
+                "y": 403599, 
+                "z": 40911
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2895": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2895, 
+            "location": {
+                "x": 573233, 
+                "y": 405812, 
+                "z": 40911
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2898": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2898, 
+            "location": {
+                "x": 573101, 
+                "y": 406088, 
+                "z": 40911
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2904": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2904, 
+            "location": {
+                "x": 572647, 
+                "y": 412404, 
+                "z": 40911
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2907": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2907, 
+            "location": {
+                "x": 568060, 
+                "y": 419464, 
+                "z": 40911
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2911": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2911, 
+            "location": {
+                "x": 550157, 
+                "y": 424317, 
+                "z": 40913
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2914": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 2914, 
+            "location": {
+                "x": 534263, 
+                "y": 420294, 
+                "z": 40913
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2934": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 65800, 
+            "gameloop": 2934, 
+            "location": {
+                "x": 555003, 
+                "y": 319723, 
+                "z": 32720
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2952": [
+        {
+            "ability": {
+                "abilityLink": 38, 
+                "commandData": null, 
+                "commandIndex": 1
+            }, 
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 65794, 
+            "gameloop": 2952, 
+            "location": {
+                "x": 403948, 
+                "y": 479420, 
+                "z": 40919
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2957": [
+        {
+            "controlGroupIndex": 5, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 2957, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 2
+        }
+    ], 
+    "2960": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 2960, 
+            "location": {
+                "x": 6528, 
+                "y": 32194
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "2961": [
+        {
+            "ability": {
+                "abilityLink": 167, 
+                "commandData": null, 
+                "commandIndex": 0
+            }, 
+            "cmdType": "CommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 256, 
+            "gameloop": 2961, 
+            "playerId": 0
+        }
+    ], 
+    "2982": [
+        {
+            "addSubGroups": [
+                {
+                    "count": 1, 
+                    "intraSubGroupPriority": 1, 
+                    "subGroupPriority": 2, 
+                    "unitLink": 99
+                }
+            ], 
+            "addUnitTags": [
+                49020929
+            ], 
+            "controlGroupIndex": 10, 
+            "eventtype": "SelectionDeltaEvent", 
+            "gameloop": 2982, 
+            "playerId": 0, 
+            "removeMask": {
+                "ZeroIndices": []
+            }, 
+            "subGroupIndex": 0
+        }
+    ], 
+    "2990": [
+        {
+            "addSubGroups": [
+                {
+                    "count": 1, 
+                    "intraSubGroupPriority": 1, 
+                    "subGroupPriority": 2, 
+                    "unitLink": 109
+                }
+            ], 
+            "addUnitTags": [
+                46137346
+            ], 
+            "controlGroupIndex": 10, 
+            "eventtype": "SelectionDeltaEvent", 
+            "gameloop": 2990, 
+            "playerId": 0, 
+            "removeMask": {
+                "ZeroIndices": []
+            }, 
+            "subGroupIndex": 0
+        }
+    ], 
+    "2993": [
+        {
+            "controlGroupIndex": 4, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 2993, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 1
+        }
+    ], 
+    "3049": [
+        {
+            "automatic": false, 
+            "description": "", 
+            "eventtype": "SaveGameEvent", 
+            "fileName": "flatlinesc2_pvz_309.SC2Save", 
+            "gameloop": 3049, 
+            "name": "", 
+            "overwrite": true, 
+            "playerId": 0
+        }
+    ], 
+    "3069": [
+        {
+            "addSubGroups": [
+                {
+                    "count": 1, 
+                    "intraSubGroupPriority": 1, 
+                    "subGroupPriority": 2, 
+                    "unitLink": 96
+                }
+            ], 
+            "addUnitTags": [
+                40894465
+            ], 
+            "controlGroupIndex": 10, 
+            "eventtype": "SelectionDeltaEvent", 
+            "gameloop": 3069, 
+            "playerId": 0, 
+            "removeMask": {
+                "ZeroIndices": []
+            }, 
+            "subGroupIndex": 0
+        }
+    ], 
+    "3074": [
+        {
+            "ability": {
+                "abilityLink": 167, 
+                "commandData": null, 
+                "commandIndex": 0
+            }, 
+            "cmdType": "CommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 256, 
+            "gameloop": 3074, 
+            "playerId": 0
+        }
+    ], 
+    "3077": [
+        {
+            "ability": {
+                "abilityLink": 167, 
+                "commandData": null, 
+                "commandIndex": 0
+            }, 
+            "cmdType": "CommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 256, 
+            "gameloop": 3077, 
+            "playerId": 0
+        }
+    ], 
+    "3090": [
+        {
+            "ability": {
+                "abilityLink": 108, 
+                "commandData": null, 
+                "commandIndex": 0
+            }, 
+            "cmdType": "TargetUnitCommandEvent", 
+            "controlPlayerId": 1, 
+            "eventtype": "CmdEvent", 
+            "flags": 256, 
+            "gameloop": 3090, 
+            "location": {
+                "x": 104448, 
+                "y": 522240, 
+                "z": 49088
+            }, 
+            "playerId": 0, 
+            "targetFlags": 55, 
+            "targetTimer": 0, 
+            "targetUnitId": 40894465, 
+            "unitLink": 96, 
+            "upkeepPlayerId": 1
+        }
+    ], 
+    "3160": [
+        {
+            "addSubGroups": [
+                {
+                    "count": 1, 
+                    "intraSubGroupPriority": 1, 
+                    "subGroupPriority": 3, 
+                    "unitLink": 121
+                }
+            ], 
+            "addUnitTags": [
+                47972354
+            ], 
+            "controlGroupIndex": 10, 
+            "eventtype": "SelectionDeltaEvent", 
+            "gameloop": 3160, 
+            "playerId": 0, 
+            "removeMask": {
+                "ZeroIndices": []
+            }, 
+            "subGroupIndex": 0
+        }
+    ], 
+    "3176": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3176, 
+            "location": {
+                "x": 84368, 
+                "y": 510560, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3182": [
+        {
+            "cmdType": "TargetUnitCommandEvent", 
+            "controlPlayerId": 1, 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3182, 
+            "location": {
+                "x": 75776, 
+                "y": 509952, 
+                "z": 49088
+            }, 
+            "playerId": 0, 
+            "targetFlags": 55, 
+            "targetTimer": 0, 
+            "targetUnitId": 42991619, 
+            "unitLink": 98, 
+            "upkeepPlayerId": 1
+        }
+    ], 
+    "3206": [
+        {
+            "addSubGroups": [
+                {
+                    "count": 1, 
+                    "intraSubGroupPriority": 1, 
+                    "subGroupPriority": 3, 
+                    "unitLink": 121
+                }
+            ], 
+            "addUnitTags": [
+                47185921
+            ], 
+            "controlGroupIndex": 10, 
+            "eventtype": "SelectionDeltaEvent", 
+            "gameloop": 3206, 
+            "playerId": 0, 
+            "removeMask": {
+                "ZeroIndices": []
+            }, 
+            "subGroupIndex": 0
+        }
+    ], 
+    "3211": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 3211, 
+            "location": {
+                "x": 6528, 
+                "y": 31853
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3212": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 3212, 
+            "location": {
+                "x": 6528, 
+                "y": 31493
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3219": [
+        {
+            "ability": {
+                "abilityLink": 162, 
+                "commandData": null, 
+                "commandIndex": 2
+            }, 
+            "cmdType": "TargetUnitCommandEvent", 
+            "controlPlayerId": 0, 
+            "eventtype": "CmdEvent", 
+            "flags": 256, 
+            "gameloop": 3219, 
+            "location": {
+                "x": 92160, 
+                "y": 493568, 
+                "z": 49088
+            }, 
+            "playerId": 0, 
+            "targetFlags": 55, 
+            "targetTimer": 0, 
+            "targetUnitId": 11796481, 
+            "unitLink": 515, 
+            "upkeepPlayerId": 0
+        }
+    ], 
+    "3236": [
+        {
+            "cmdType": "TargetUnitCommandEvent", 
+            "controlPlayerId": 0, 
+            "eventtype": "CmdEvent", 
+            "flags": 266, 
+            "gameloop": 3236, 
+            "location": {
+                "x": 77824, 
+                "y": 526336, 
+                "z": 49088
+            }, 
+            "playerId": 0, 
+            "targetFlags": 55, 
+            "targetTimer": 0, 
+            "targetUnitId": 1572865, 
+            "unitLink": 261, 
+            "upkeepPlayerId": 0
+        }
+    ], 
+    "3244": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 3244, 
+            "location": {
+                "x": 6528, 
+                "y": 31847
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3245": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 3245, 
+            "location": {
+                "x": 6528, 
+                "y": 32207
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3259": [
+        {
+            "addSubGroups": [
+                {
+                    "count": 1, 
+                    "intraSubGroupPriority": 1, 
+                    "subGroupPriority": 2, 
+                    "unitLink": 99
+                }
+            ], 
+            "addUnitTags": [
+                49020929
+            ], 
+            "controlGroupIndex": 10, 
+            "eventtype": "SelectionDeltaEvent", 
+            "gameloop": 3259, 
+            "playerId": 0, 
+            "removeMask": {
+                "ZeroIndices": []
+            }, 
+            "subGroupIndex": 0
+        }
+    ], 
+    "3268": [
+        {
+            "addSubGroups": [
+                {
+                    "count": 1, 
+                    "intraSubGroupPriority": 1, 
+                    "subGroupPriority": 2, 
+                    "unitLink": 109
+                }
+            ], 
+            "addUnitTags": [
+                46137346
+            ], 
+            "controlGroupIndex": 10, 
+            "eventtype": "SelectionDeltaEvent", 
+            "gameloop": 3268, 
+            "playerId": 0, 
+            "removeMask": {
+                "ZeroIndices": []
+            }, 
+            "subGroupIndex": 0
+        }
+    ], 
+    "3273": [
+        {
+            "controlGroupIndex": 5, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 3273, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 2
+        }
+    ], 
+    "3326": [
+        {
+            "controlGroupIndex": 1, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 3326, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 2
+        }
+    ], 
+    "3331": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 3331, 
+            "location": {
+                "x": 27227, 
+                "y": 26987
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3341": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 3341, 
+            "location": {
+                "x": 26893, 
+                "y": 27321
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3343": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 3343, 
+            "location": {
+                "x": 26526, 
+                "y": 27688
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3344": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 3344, 
+            "location": {
+                "x": 26526, 
+                "y": 28068
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3345": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 3345, 
+            "location": {
+                "x": 26526, 
+                "y": 28429
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3346": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 3346, 
+            "location": {
+                "x": 26526, 
+                "y": 28769
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3347": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 3347, 
+            "location": {
+                "x": 26526, 
+                "y": 29097
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3349": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 3349, 
+            "location": {
+                "x": 26526, 
+                "y": 29425
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3353": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3353, 
+            "location": {
+                "x": 411348, 
+                "y": 499657, 
+                "z": 40919
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3356": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3356, 
+            "location": {
+                "x": 408292, 
+                "y": 502331, 
+                "z": 40919
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3364": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3364, 
+            "location": {
+                "x": 400941, 
+                "y": 515461, 
+                "z": 40919
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3375": [
+        {
+            "controlGroupIndex": 5, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 3375, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 2
+        }
+    ], 
+    "3378": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 3378, 
+            "location": {
+                "x": 6528, 
+                "y": 32194
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3421": [
+        {
+            "addSubGroups": [
+                {
+                    "count": 1, 
+                    "intraSubGroupPriority": 1, 
+                    "subGroupPriority": 2, 
+                    "unitLink": 99
+                }
+            ], 
+            "addUnitTags": [
+                49020929
+            ], 
+            "controlGroupIndex": 10, 
+            "eventtype": "SelectionDeltaEvent", 
+            "gameloop": 3421, 
+            "playerId": 0, 
+            "removeMask": {
+                "ZeroIndices": []
+            }, 
+            "subGroupIndex": 0
+        }
+    ], 
+    "3432": [
+        {
+            "addSubGroups": [
+                {
+                    "count": 1, 
+                    "intraSubGroupPriority": 1, 
+                    "subGroupPriority": 2, 
+                    "unitLink": 109
+                }
+            ], 
+            "addUnitTags": [
+                46137346
+            ], 
+            "controlGroupIndex": 10, 
+            "eventtype": "SelectionDeltaEvent", 
+            "gameloop": 3432, 
+            "playerId": 0, 
+            "removeMask": {
+                "ZeroIndices": []
+            }, 
+            "subGroupIndex": 0
+        }
+    ], 
+    "3505": [
+        {
+            "addSubGroups": [
+                {
+                    "count": 1, 
+                    "intraSubGroupPriority": 1, 
+                    "subGroupPriority": 3, 
+                    "unitLink": 121
+                }
+            ], 
+            "addUnitTags": [
+                42467329
+            ], 
+            "controlGroupIndex": 10, 
+            "eventtype": "SelectionDeltaEvent", 
+            "gameloop": 3505, 
+            "playerId": 0, 
+            "removeMask": {
+                "ZeroIndices": []
+            }, 
+            "subGroupIndex": 0
+        }
+    ], 
+    "3508": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3508, 
+            "location": {
+                "x": 112261, 
+                "y": 508177, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3511": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3511, 
+            "location": {
+                "x": 114415, 
+                "y": 502716, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3514": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3514, 
+            "location": {
+                "x": 113944, 
+                "y": 501892, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3518": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3518, 
+            "location": {
+                "x": 113785, 
+                "y": 501558, 
+                "z": 49090
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3539": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 65800, 
+            "gameloop": 3539, 
+            "location": {
+                "x": 81104, 
+                "y": 401078, 
+                "z": 40896
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3545": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 3545, 
+            "location": {
+                "x": 6364, 
+                "y": 24810
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3554": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3554, 
+            "location": {
+                "x": 86079, 
+                "y": 404167, 
+                "z": 40894
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3557": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3557, 
+            "location": {
+                "x": 86516, 
+                "y": 404758, 
+                "z": 40896
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3561": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3561, 
+            "location": {
+                "x": 86449, 
+                "y": 404558, 
+                "z": 40895
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3564": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3564, 
+            "location": {
+                "x": 87950, 
+                "y": 404554, 
+                "z": 40902
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3569": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3569, 
+            "location": {
+                "x": 88507, 
+                "y": 404458, 
+                "z": 40904
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3572": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3572, 
+            "location": {
+                "x": 88118, 
+                "y": 404357, 
+                "z": 40902
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3589": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3589, 
+            "location": {
+                "x": 89271, 
+                "y": 404946, 
+                "z": 40907
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3592": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3592, 
+            "location": {
+                "x": 89752, 
+                "y": 404850, 
+                "z": 40909
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3596": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3596, 
+            "location": {
+                "x": 89682, 
+                "y": 404651, 
+                "z": 40909
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3600": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3600, 
+            "location": {
+                "x": 89696, 
+                "y": 404352, 
+                "z": 40909
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3610": [
+        {
+            "controlGroupIndex": 5, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 3610, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 2
+        }
+    ], 
+    "3628": [
+        {
+            "ability": {
+                "abilityLink": 269, 
+                "commandData": null, 
+                "commandIndex": 0
+            }, 
+            "cmdType": "CommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 256, 
+            "gameloop": 3628, 
+            "playerId": 0
+        }
+    ], 
+    "3649": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 3649, 
+            "location": {
+                "x": 6364, 
+                "y": 25124
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3650": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 3650, 
+            "location": {
+                "x": 6364, 
+                "y": 25459
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3651": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 3651, 
+            "location": {
+                "x": 6364, 
+                "y": 25793
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3660": [
+        {
+            "addSubGroups": [
+                {
+                    "count": 1, 
+                    "intraSubGroupPriority": 1, 
+                    "subGroupPriority": 3, 
+                    "unitLink": 121
+                }
+            ], 
+            "addUnitTags": [
+                42467329
+            ], 
+            "controlGroupIndex": 10, 
+            "eventtype": "SelectionDeltaEvent", 
+            "gameloop": 3660, 
+            "playerId": 0, 
+            "removeMask": {
+                "ZeroIndices": []
+            }, 
+            "subGroupIndex": 0
+        }
+    ], 
+    "3663": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 3663, 
+            "location": {
+                "x": 6364, 
+                "y": 25485
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3664": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 3664, 
+            "location": {
+                "x": 6364, 
+                "y": 25164
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3665": [
+        {
+            "eventtype": "CameraUpdateEvent", 
+            "gameloop": 3665, 
+            "location": {
+                "x": 6364, 
+                "y": 24843
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3669": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3669, 
+            "location": {
+                "x": 100755, 
+                "y": 399896, 
+                "z": 40909
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3672": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3672, 
+            "location": {
+                "x": 98804, 
+                "y": 401407, 
+                "z": 40909
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3675": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3675, 
+            "location": {
+                "x": 91011, 
+                "y": 405478, 
+                "z": 40910
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3679": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3679, 
+            "location": {
+                "x": 88921, 
+                "y": 406176, 
+                "z": 40905
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3683": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3683, 
+            "location": {
+                "x": 88024, 
+                "y": 405190, 
+                "z": 40902
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3686": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3686, 
+            "location": {
+                "x": 85432, 
+                "y": 407477, 
+                "z": 40893
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3691": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3691, 
+            "location": {
+                "x": 84535, 
+                "y": 407773, 
+                "z": 40893
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3694": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3694, 
+            "location": {
+                "x": 87987, 
+                "y": 418185, 
+                "z": 40902
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3697": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3697, 
+            "location": {
+                "x": 91722, 
+                "y": 420361, 
+                "z": 40910
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3701": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3701, 
+            "location": {
+                "x": 96774, 
+                "y": 418395, 
+                "z": 40910
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3704": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3704, 
+            "location": {
+                "x": 98396, 
+                "y": 414968, 
+                "z": 40910
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3707": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3707, 
+            "location": {
+                "x": 97001, 
+                "y": 410703, 
+                "z": 40910
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3712": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3712, 
+            "location": {
+                "x": 92550, 
+                "y": 408865, 
+                "z": 40910
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3715": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3715, 
+            "location": {
+                "x": 88990, 
+                "y": 407967, 
+                "z": 40906
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3718": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3718, 
+            "location": {
+                "x": 86172, 
+                "y": 407077, 
+                "z": 40894
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3723": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3723, 
+            "location": {
+                "x": 84964, 
+                "y": 406082, 
+                "z": 40893
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3726": [
+        {
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 264, 
+            "gameloop": 3726, 
+            "location": {
+                "x": 84364, 
+                "y": 405593, 
+                "z": 40893
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3752": [
+        {
+            "ability": {
+                "abilityLink": 162, 
+                "commandData": null, 
+                "commandIndex": 0
+            }, 
+            "cmdType": "TargetPointCommandEvent", 
+            "eventtype": "CmdEvent", 
+            "flags": 256, 
+            "gameloop": 3752, 
+            "location": {
+                "x": 96256, 
+                "y": 407552, 
+                "z": 40910
+            }, 
+            "playerId": 0
+        }
+    ], 
+    "3775": [
+        {
+            "addSubGroups": [
+                {
+                    "count": 1, 
+                    "intraSubGroupPriority": 1, 
+                    "subGroupPriority": 2, 
+                    "unitLink": 96
+                }
+            ], 
+            "addUnitTags": [
+                50855938
+            ], 
+            "controlGroupIndex": 10, 
+            "eventtype": "SelectionDeltaEvent", 
+            "gameloop": 3775, 
+            "playerId": 0, 
+            "removeMask": {
+                "ZeroIndices": []
+            }, 
+            "subGroupIndex": 0
+        }
+    ], 
+    "3777": [
+        {
+            "controlGroupIndex": 5, 
+            "eventtype": "ControlGroupUpdateEvent", 
+            "gameloop": 3777, 
+            "playerId": 0, 
+            "removeMask": {
+                "None": null
+            }, 
+            "updateType": 1
+        }
+    ], 
+    "3787": [
+        {
+            "eventtype": "GameUserLeaveEvent", 
+            "gameloop": 3787, 
+            "playerId": 0
+        }
+    ]
+}

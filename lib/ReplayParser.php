@@ -146,7 +146,7 @@ class ReplayParser {
 		$this->doIdentify();
 		if($this->replay->loadLevel < 3) {
 			$this->decodeFile("replay.message.events", decoders\MessageEventsDecoder::class);
-			//$this->decodeFile("replay.game.events", decoders\GameEventsDecoder::class);
+			$this->decodeFile("replay.game.events", decoders\GameEventsDecoder::class);
 
 			$this->replay->loadLevel = 3;
 		}
@@ -162,12 +162,14 @@ class ReplayParser {
 	 * @param  string decoder | the name of the decoder class to be used to decode the data
 	 */
 	private function decodeFile($file, $decoder) {
-		$data = $this->archive->readFile($file);
-		$stream = new utils\StringStream($data);
-		//instantiate the decoder class
-		$decoder = new $decoder($stream);
-		//do the decoding
-		$decoder->decode($this->replay);
+		if(!in_array($file, array_keys($this->replay->rawdata))) {
+			$data = $this->archive->readFile($file);
+			$stream = new utils\StringStream($data);
+			//instantiate the decoder class
+			$decoder = new $decoder($stream);
+			//do the decoding
+			$decoder->decode($this->replay);
+		}
 	}
 
 	/**

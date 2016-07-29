@@ -26,7 +26,7 @@ class ReplayParserTest extends \PHPUnit_Framework_TestCase {
 	public function replayProvider() {
 		return [
 			//beta phase 1
-			'beta patch 1' => ['0.2.0.13891/0.2.0.13891.SC2Replay', new parser\ressources\Replay(13891, "0.2.0.13891", 7680, "WoL Beta")],
+			/*'beta patch 1' => ['0.2.0.13891/0.2.0.13891.SC2Replay', new parser\ressources\Replay(13891, "0.2.0.13891", 7680, "WoL Beta")],
 			'beta patch 3' => ['0.4.0.14133/0.4.0.14133.SC2Replay', new parser\ressources\Replay(14133, "0.4.0.14133", 48112, "WoL Beta")],
 			'beta patch 4' => ['0.6.0.14259/0.6.0.14259.SC2Replay', new parser\ressources\Replay(14259, "0.6.0.14259", 33552, "WoL Beta")],
 			'beta patch 5' => ['0.7.0.14356/0.7.0.14356.SC2Replay', new parser\ressources\Replay(14356, "0.7.0.14356", 35008, "WoL Beta")], //"36 minutes"
@@ -51,7 +51,7 @@ class ReplayParserTest extends \PHPUnit_Framework_TestCase {
 			'1.4.3.21029' => ['1.4.3.21029/1.4.3.21029.SC2Replay', new parser\ressources\Replay(21029, "1.4.3.21029", 30527, "WoL")],
 			'1.5.3.23260' => ['1.5.3.23260/1.5.3.23260.SC2Replay', new parser\ressources\Replay(23260, "1.5.3.23260", 18340, "WoL")],
 			'1.5.4.24540' => ['1.5.4.24540/1.5.4.24540.SC2Replay', new parser\ressources\Replay(23260, "1.5.4.24540", 26533, "WoL")],
-			'2.0.0.23925' => ['2.0.0.23925/2.0.0.23925.SC2Replay', new parser\ressources\Replay(23925, "2.0.0.23925", 8225, "WoL")],
+			'2.0.0.23925' => ['2.0.0.23925/2.0.0.23925.SC2Replay', new parser\ressources\Replay(23925, "2.0.0.23925", 8225, "WoL")],*/
 			'2.0.0.24247' => ['2.0.0.24247/2.0.0.24247.SC2Replay', new parser\ressources\Replay(24247, "2.0.0.24247", 14554, "WoL")],
 			'2.0.3.24764' => ['2.0.3.24764/2.0.3.24764.SC2Replay', new parser\ressources\Replay(24764, "2.0.3.24764", 10465, "WoL")],
 			'2.0.4.24944' => ['2.0.4.24944/2.0.4.24944.SC2Replay', new parser\ressources\Replay(24944, "2.0.4.24944", 27840, "WoL")],
@@ -152,12 +152,15 @@ class ReplayParserTest extends \PHPUnit_Framework_TestCase {
 		$rep = $replay->doDecode();
 
 		$expected = $dataLoader->load("game.events");
-		if($expected === null) {
-			$log = $rep->eventArray("game");
-			ksort($log);
-			die(var_dump(json_encode($log, JSON_PRETTY_PRINT)));
-		}
-		$this->assertEquals($expected, $rep->eventArray("message"));
+
+		/*foreach ($rep->eventArray("game") as $gameloop => $arr) {
+			if($expected[$gameloop] != $arr) {
+				var_dump($arr);
+				$this->assertEquals($expected["$gameloop"], $arr);
+			}
+		}*/
+
+		$this->assertEquals($expected, $rep->eventArray("game"));
 	}
 
 }

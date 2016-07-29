@@ -121,16 +121,39 @@ function delocalizeRace($localizedRace) {
  * method calculating the real second count out of a ingame engine loop counter
  *
  * @param  integer loopCount | the number of loops passed
+ * @param  string gameSpeed | a string despicting the game speed of the replay
  * @return integer how many real life seconds have passed
  */
 function loopsToRealTime($loopCount, $gameSpeed) {
 	$GAMESPEEDFACTOR = [
-	    "Slower" => 0.6,
-	    "Slow" => 0.8,
-	    "Normal" => 1.0,
-	    "Fast" => 1.2,
-	    "Faster" => 1.4
-   	];
+		"Slower" => 0.6,
+		"Slow" => 0.8,
+		"Normal" => 1.0,
+		"Fast" => 1.2,
+		"Faster" => 1.4
+	];
 
-   	return floor(floor($loopCount / 16) / $GAMESPEEDFACTOR[$gameSpeed]);
+	return floor(floor($loopCount / 16) / $GAMESPEEDFACTOR[$gameSpeed]);
+}
+
+/**
+ * method used to bit shift a gmp number to the left
+ *
+ * @param  integer x | the qmp number to be shifted
+ * @return integer n | the number of bits to shift the number to the left
+ * @return qmp number shifted n digits to the left
+ */
+function gmp_shiftl($x, $n) {
+	return(gmp_mul($x,gmp_pow(2,$n)));
+}
+
+/**
+ * method used to bit shift a gmp number to the right
+ *
+ * @param  integer x | the qmp number to be shifted
+ * @return integer n | the number of bits to shift the number to the right
+ * @return qmp number shifted n digits to the right
+ */
+function gmp_shiftr($x,$n) {
+	return(gmp_div($x,gmp_pow(2,$n)));
 }

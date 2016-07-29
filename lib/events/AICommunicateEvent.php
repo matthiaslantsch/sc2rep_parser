@@ -93,6 +93,7 @@ class AICommunicateEvent extends EventBase {
 	 */
 	public function __construct($gameloops, $playerId, $beacon, $ally, $build) {
 		parent::__construct($gameloops, $playerId);
+		die(var_dump("remove parsing"));
 
 		if($beacon != -1) {
 			switch ($beacon) {

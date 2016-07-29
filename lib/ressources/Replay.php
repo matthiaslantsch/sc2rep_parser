@@ -75,6 +75,7 @@ class Replay {
 		$this->gameloops = $gameloops;
 		$this->expansion = $expansion;
 		$this->loadLevel = 1;
+		$this->rawdata = [];
 	}
 
 	/**
@@ -92,14 +93,17 @@ class Replay {
 
 		switch ($type) {
 			case "message":
-				$events = $this->rawdata["messages"];
+				$events = $this->rawdata["replay.message.events"];
+				break;
+			case "game":
+				$events = $this->rawdata["replay.game.events"];
 				break;
 			default:
 				throw new parser\ParserException("Cannot list events for unknown event type: {$type}", 100);
 		}
 
 		$ret = [];
-		foreach ($events as $i => $ev) {
+		foreach ($events as $ev) {
 			$ret[$ev["gameloop"]][] = $ev;
 		}
 		return $ret;

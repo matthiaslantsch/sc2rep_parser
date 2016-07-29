@@ -69,7 +69,7 @@ class MessageEventsDecoder extends BitwiseDecoderBase {
 			$messages[] = $messageEvent;
 			$this->align();
 		}
-		$this->replay->rawdata["messages"] = $messages;
+		$this->replay->rawdata["replay.message.events"] = $messages;
 	}
 
 }
