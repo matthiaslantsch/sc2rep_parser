@@ -35,9 +35,9 @@ class ReplayParserTest extends \PHPUnit_Framework_TestCase {
 			'0.10.0.14803' => ['0.10.0.14803/0.10.0.14803.SC2Replay', new parser\ressources\Replay(14803, "0.10.0.14803", 21936, "WoL Beta")], //00:22:51
 			//new replay format with initdata => replay version 2
 			'0.11.0.15097' => ['0.11.0.15097/0.11.0.15097.SC2Replay', new parser\ressources\Replay(15097, "0.11.0.15097", 20416, "WoL Beta")],
-			'0.13.0.15250' => ['0.13.0.15250/0.13.0.15250.SC2Replay', new parser\ressources\Replay(15250, "0.13.0.15250", 44720, "WoL Beta")],
-			'0.16.0.15580' => ['0.16.0.15580/0.16.0.15580.SC2Replay', new parser\ressources\Replay(15580, "0.16.0.15580", 14048, "WoL Beta")],
-			'0.17.0.15623' => ['0.17.0.15623/0.17.0.15623.SC2Replay', new parser\ressources\Replay(15623, "0.17.0.15623", 12992, "WoL Beta")],
+			'0.13.0.15250' => ['0.13.0.15250/0.13.0.15250.SC2Replay', new parser\ressources\Replay(15250, "0.13.0.15250", 44720, "WoL Beta")],*/
+			/*'0.16.0.15580' => ['0.16.0.15580/0.16.0.15580.SC2Replay', new parser\ressources\Replay(15580, "0.16.0.15580", 14048, "WoL Beta")],
+			'0.17.0.15623' => ['0.17.0.15623/0.17.0.15623.SC2Replay', new parser\ressources\Replay(15623, "0.17.0.15623", 12992, "WoL Beta")],*/
 			//beta phase 2 => header packed struct
 			'0.19.0.15976' => ['0.19.0.15976/0.19.0.15976.SC2Replay', new parser\ressources\Replay(15976, "0.19.0.15976", 2282, "WoL Beta")],
 			'1.3.0.18092' => ['1.3.0.18092/1.3.0.18092.SC2Replay', new parser\ressources\Replay(18092, "1.3.0.18092", 13946, "WoL")],
@@ -51,7 +51,7 @@ class ReplayParserTest extends \PHPUnit_Framework_TestCase {
 			'1.4.3.21029' => ['1.4.3.21029/1.4.3.21029.SC2Replay', new parser\ressources\Replay(21029, "1.4.3.21029", 30527, "WoL")],
 			'1.5.3.23260' => ['1.5.3.23260/1.5.3.23260.SC2Replay', new parser\ressources\Replay(23260, "1.5.3.23260", 18340, "WoL")],
 			'1.5.4.24540' => ['1.5.4.24540/1.5.4.24540.SC2Replay', new parser\ressources\Replay(23260, "1.5.4.24540", 26533, "WoL")],
-			'2.0.0.23925' => ['2.0.0.23925/2.0.0.23925.SC2Replay', new parser\ressources\Replay(23925, "2.0.0.23925", 8225, "WoL")],*/
+			'2.0.0.23925' => ['2.0.0.23925/2.0.0.23925.SC2Replay', new parser\ressources\Replay(23925, "2.0.0.23925", 8225, "WoL")],
 			'2.0.0.24247' => ['2.0.0.24247/2.0.0.24247.SC2Replay', new parser\ressources\Replay(24247, "2.0.0.24247", 14554, "WoL")],
 			'2.0.3.24764' => ['2.0.3.24764/2.0.3.24764.SC2Replay', new parser\ressources\Replay(24764, "2.0.3.24764", 10465, "WoL")],
 			'2.0.4.24944' => ['2.0.4.24944/2.0.4.24944.SC2Replay', new parser\ressources\Replay(24944, "2.0.4.24944", 27840, "WoL")],
@@ -151,7 +151,7 @@ class ReplayParserTest extends \PHPUnit_Framework_TestCase {
 		$replay = new parser\ReplayParser(__DIR__.DIRECTORY_SEPARATOR."test_replays".DIRECTORY_SEPARATOR.$repFile);
 		$rep = $replay->doDecode();
 
-		$expected = $dataLoader->load("game.events");
+		$expected = $dataLoader->load("game.events");		
 
 		/*foreach ($rep->eventArray("game") as $gameloop => $arr) {
 			if($expected[$gameloop] != $arr) {

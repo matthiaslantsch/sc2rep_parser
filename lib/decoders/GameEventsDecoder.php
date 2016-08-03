@@ -170,7 +170,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 			return $eventlookup;
 		}
 
-		if($this->replay->baseBuild <= 23260) {
+		if($this->replay->baseBuild <= 23925) {
 			$eventlookup[7] = "BankFileEvent"; //overwrite UserOptionsEvent
 			$eventlookup[8] = "BankSectionEvent"; //new
 			$eventlookup[9] = "BankKeyEvent"; //overwrite BankFileEvent
@@ -212,6 +212,8 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 
 		if($this->replay->baseBuild < 15405) {
 			die("beta event lookup table!!");
+		} else {
+			return $eventlookup;
 		}
 
 	}
@@ -231,7 +233,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 			$playerId = $this->readBits(5);
 			$eventType = $this->readBits(7);
 			if(isset($eventLookup[$eventType])) {
-				//echo "$loopCount - {$eventLookup[$eventType]}\n";
+				//echo "$loopCount - {$eventLookup[$eventType]}({$eventType})\n";
 				$method = "parse{$eventLookup[$eventType]}";
 				$event = $this->$method();
 			} else {
@@ -281,12 +283,12 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 		$options["syncChecksumEnabled"] = $this->readBoolean();
 		$options["isMapToMapTransition"] = $this->readBoolean();
 
-		if($this->replay->baseBuild >= 22612 && $this->replay->baseBuild < 23260) {
-			$options["useAiBeacons"] = $this->readBoolean();
-		}
-
 		if($this->replay->baseBuild > 23260 && $this->replay->baseBuild < 38215) {
 			$options["startingRally"] = $this->readBoolean();
+		}
+
+		if($this->replay->baseBuild >= 22612 && $this->replay->baseBuild < 23260) {
+			$options["useAiBeacons"] = $this->readBoolean();
 		}
 
 		if($this->replay->baseBuild >= 26490) {
@@ -517,8 +519,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 				}
 
 				$ret["targetUnitId"] = $this->readUint32();
-				$ret["unitLink"] = $this->readUint16();
-
+				$ret["targetUnitLink"] = $this->readUint16();
 
 				if($this->replay->baseBuild >= 19595 && $this->readBoolean()) {
 					$ret["controlPlayerId"] = $this->readBits(4);
@@ -575,17 +576,18 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	private function parseSelectionDeltaEvent() {
 		$ret["controlGroupIndex"] = $this->readBits(4);
 		$ret["subGroupIndex"] = $this->readBits($this->replay->baseBuild >= 22612 ? 9 : 8);
-		$ret["removeMask"] = $this->readRemoveBitmask();
+		$ret["removeMask"] = $this->readRemoveBitmask(true);
 
-		$numAddSubGroupEntries = $this->readBits(9);
+		$numAddSubGroupEntries = $this->readBits($this->replay->baseBuild >= 22612 ? 9 : 8);
 		$ret["addSubGroups"] = [];
 		while($numAddSubGroupEntries--) {
-			$ret["addSubGroups"][] = [
-				"unitLink" => $this->readUint16(),
-				"subGroupPriority" => ($this->replay->baseBuild > 23260 ? $this->readUint8() : null),
-				"intraSubGroupPriority" => $this->readUint8(),
-				"count" => $this->readBits($this->replay->baseBuild >= 22612 ? 9 : 8)
-			];
+			$subGroupentry = ["unitLink" => $this->readUint16()];
+			if($this->replay->baseBuild > 23260) {
+				$subGroupentry["subGroupPriority"] = $this->readUint8();
+			}
+			$subGroupentry["intraSubGroupPriority"] = $this->readUint8();
+			$subGroupentry["count"] = $this->readBits($this->replay->baseBuild >= 22612 ? 9 : 8);
+			$ret["addSubGroups"][] = $subGroupentry;
 		}
 
 		$numAddUnitTags = $this->readBits($this->replay->baseBuild >= 22612 ? 9 : 8);
@@ -593,6 +595,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 		while($numAddUnitTags--) {
 			$ret["addUnitTags"][] = $this->readUint32();
 		}
+
 		return $ret;
 	}
 
@@ -905,7 +908,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function parseCameraUpdateEvent() {
 		$ret = [];
-		if($this->replay->baseBuild < 23260 || $this->readBoolean()) {
+		if($this->replay->baseBuild <= 23260 || $this->readBoolean()) {
 			$ret["location"] = [
 				"x" => $this->readUint16(),
 				"y" => $this->readUint16()
@@ -1828,9 +1831,10 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * helper function to read a removal bit mask (used by selection and control group event parsers)
 	 *
 	 * @access private
+	 * @param  boolean forceMask | boolean allowing selectiondeltaevents to be treated like newer versions
 	 * @return array with the removal mask read from the stream
 	 */
-	private function readRemoveBitmask() {
+	private function readRemoveBitmask($forceMask = false) {
 		if($this->replay->baseBuild >= 16561) {
 			$removeMask = $this->readBits(2);
 		} else {
@@ -1842,8 +1846,12 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 				$removeMask = ["None" => null];
 				break;
 			case 1:
-				$numBits = $this->readBits($this->replay->baseBuild >= 22612 ? 9 : 8);
-				$removeMask = ["Mask" => $this->readBits($numBits)];
+				if($this->replay->baseBuild >= 16561 || $forceMask || $this->readBoolean()) {
+					$numBits = $this->readBits($this->replay->baseBuild >= 22612 ? 9 : 8);
+					$removeMask = ["Mask" => $this->readBits($numBits)];
+				} else {
+					$removeMask = ["None" => null];
+				}
 				break;
 			case 2:
 				$removeMask = ["OneIndices" => []];
