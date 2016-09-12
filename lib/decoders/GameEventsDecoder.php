@@ -10,6 +10,7 @@ namespace HIS5\lib\Sc2repParser\decoders;
 
 use HIS5\lib\Sc2repParser\data\DataLoader;
 use HIS5\lib\Sc2repParser\events as events;
+use HIS5\lib\Sc2repParser\ParserException;
 
 /**
  * The GameEventsDecoder class is used to decode the replay.game.events file contained in the replay archive
@@ -210,12 +211,12 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 			return $eventlookup;
 		}
 
-		if($this->replay->baseBuild < 15405) {
-			die("beta event lookup table!!");
-		} else {
-			return $eventlookup;
+		if($this->replay->baseBuild <= 15623) {
+			throw new ParserException("Game event parsing for beta versions of sc2 is incomplete and won't work properly", 500);
+			$eventlookup[12] = "UnknownEvent"; //unknown
 		}
 
+		return $eventlookup;
 	}
 
 	/**
@@ -232,6 +233,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 			$loopCount += $this->readLoopCount();
 			$playerId = $this->readBits(5);
 			$eventType = $this->readBits(7);
+
 			if(isset($eventLookup[$eventType])) {
 				//echo "$loopCount - {$eventLookup[$eventType]}({$eventType})\n";
 				$method = "parse{$eventLookup[$eventType]}";
@@ -606,6 +608,11 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseControlGroupUpdateEvent() {
+		if($this->replay->baseBuild <= 15623) {
+			//unknown control group update event
+			return [];
+		}
+
 		return [
 			"controlGroupIndex" => $this->readBits(4),
 			"updateType" => $this->readBits($this->replay->baseBuild >= 36442 ? 3 : 2),
@@ -913,6 +920,12 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 				"x" => $this->readUint16(),
 				"y" => $this->readUint16()
 			];
+		}
+
+		if($this->replay->baseBuild <= 15623) {
+			//unknown values, skip 16 more bytes and return
+			$this->readAlignedBytes(16);
+			return $ret;
 		}
 
 		if($this->readBoolean()) {

@@ -9,7 +9,7 @@
 namespace HIS5\lib\Sc2repParser\decoders;
 
 use HIS5\lib\Sc2repParser\data\DataLoader;
-use \HIS5\lib\Sc2repParser\ParserException;
+use HIS5\lib\Sc2repParser\ParserException;
 
 
 /**

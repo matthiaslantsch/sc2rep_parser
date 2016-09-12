@@ -87,8 +87,11 @@ class Replay {
 	 */
 	public function eventArray($type) {	
 		if($this->loadLevel < 3) {
-			//no event files have been parsed yet
-			throw new parser\ParserException("Cannot list events without parsing event files first (load level 3 => decode)", 100);
+			//not all event files have been parsed yet
+			//check if the requested type has been parsed
+			if(!isset($this->rawdata["replay.{$type}.events"])) {
+				throw new parser\ParserException("Cannot list events without parsing event files first (load level 3 => decode)", 100);		
+			}
 		}
 
 		switch ($type) {

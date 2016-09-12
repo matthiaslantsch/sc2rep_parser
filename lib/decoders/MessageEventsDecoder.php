@@ -63,7 +63,7 @@ class MessageEventsDecoder extends BitwiseDecoderBase {
 					$messageEvent["status"] = $this->readBits(2);
 					break;
 				default:
-					die("Unknown message event type: {$flag}");
+					die("Unknown message event type: {$flag} in version {$this->replay->baseBuild}");
 			}
 
 			$messages[] = $messageEvent;

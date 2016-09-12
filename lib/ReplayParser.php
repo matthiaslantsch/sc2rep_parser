@@ -155,13 +155,13 @@ class ReplayParser {
 	}
 
 	/**
-	 * private dispatcher method calling a decoder on a certain replay subfile
+	 * dispatcher method calling a decoder on a certain replay subfile
 	 *
-	 * @access private
+	 * @access public
 	 * @param  string file | the name of the replay sub file that should be decoded
 	 * @param  string decoder | the name of the decoder class to be used to decode the data
 	 */
-	private function decodeFile($file, $decoder) {
+	public function decodeFile($file, $decoder) {
 		if(!in_array($file, array_keys($this->replay->rawdata))) {
 			$data = $this->archive->readFile($file);
 			$stream = new utils\StringStream($data);
