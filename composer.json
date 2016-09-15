@@ -2,6 +2,7 @@
     "name": "his5/Common",
     "autoload": {
         "psr-4" : {
+            "HIS5\\lib\\Sc2repParser\\scripts\\" : "scripts/",
             "HIS5\\lib\\Sc2repParser\\" : "lib/"
         }
     },

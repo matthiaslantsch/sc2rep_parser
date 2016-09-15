@@ -8,6 +8,8 @@
 
 namespace HIS5\lib\Sc2repParser\decoders;
 
+use HIS5\lib\Sc2repParser\utils as utils;
+
 /**
  * The InfoDecoder class is used to decode the replay.info file contained in old replays (replay version 1)
  *
@@ -40,10 +42,13 @@ class InfoDecoder extends BitwiseDecoderBase {
 		$ret["randomRaces"] = $this->readBoolean();
 		$ret["battlenet"] = $this->readBoolean();
 		$ret["amm"] = $this->readBoolean();
+		if($ret["amm"]) {
+			$this->replay->category = "Ladder";
+		}
 
 		//unknown byte (0x00)
 		$this->readAlignedBytes(1);
-		$ret["gameSpeed"] = $this->readUint8();
+		$this->replay->gamespeed = $this->readUint8();
 		//11 unknown bytes
 		$this->readAlignedBytes(11);
 
@@ -107,6 +112,9 @@ class InfoDecoder extends BitwiseDecoderBase {
 		$this->replay->mapUrl = $mapCache["url"];
 		$this->replay->region = $mapCache["region"];
 		$this->replay->mapName = $ret["map"]["name"];
+
+		$this->replay->reallength = utils\loopsToRealTime($this->replay->gameloops, $this->replay->gamespeed);
+		$this->replay->gamelength = utils\createTimeString($this->replay->reallength);
 	}
 
 	/**

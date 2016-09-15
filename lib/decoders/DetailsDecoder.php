@@ -84,6 +84,7 @@ class DetailsDecoder extends BitwiseDecoderBase {
 		$this->replay->endTimestamp = intval($details["fileTime"] / 10000000 - 11644473600);
 
 		$this->replay->reallength = utils\loopsToRealTime($this->replay->gameloops, $this->replay->gamespeed);
+		$this->replay->gamelength = utils\createTimeString($this->replay->reallength);
 		$this->replay->startTimestamp = $this->replay->endTimestamp - $this->replay->reallength;
 	}
 

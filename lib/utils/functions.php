@@ -137,6 +137,44 @@ function loopsToRealTime($loopCount, $gameSpeed) {
 }
 
 /**
+ * method used to create a MM:SS time string out of seconds number
+ *
+ * @param  integer seconds | the number of seconds passed
+ * @return string how many minutes and seconds have passed
+ */
+function createTimeString($seconds) {
+		if($seconds === null) {
+		return '-';
+	}
+
+	if($seconds >= 60) {
+		if($seconds % 60 == 0) {
+			return twoDigitNumber($seconds / 60).' : 00';
+		}
+
+		return twoDigitNumber((int)($seconds / 60)).' : '.twoDigitNumber((int)($seconds % 60));
+	} else {
+		return '00 : '.twoDigitNumber($seconds);
+	}
+}
+
+/**
+ * small helper function making sure the number always has two digits
+ * e.g. 1 => 01, 10 => 10, 4 => 04
+ *
+ * @access public
+ * @param  integer number | the number to format
+ * @return string a two digit number
+ */
+function twoDigitNumber($number) {
+	if($number < 10) {
+		return '0'.$number;
+	} else {
+		return $number;
+	}
+}
+
+/**
  * method used to bit shift a gmp number to the left
  *
  * @param  integer x | the qmp number to be shifted

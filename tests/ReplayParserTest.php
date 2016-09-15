@@ -26,7 +26,7 @@ class ReplayParserTest extends \PHPUnit_Framework_TestCase {
 	public function replayProvider() {
 		return [
 			//beta phase 1
-			/*'beta patch 1' => ['0.2.0.13891/0.2.0.13891.SC2Replay', new parser\ressources\Replay(13891, "0.2.0.13891", 7680, "WoL Beta")],
+			'beta patch 1' => ['0.2.0.13891/0.2.0.13891.SC2Replay', new parser\ressources\Replay(13891, "0.2.0.13891", 7680, "WoL Beta")],
 			'beta patch 3' => ['0.4.0.14133/0.4.0.14133.SC2Replay', new parser\ressources\Replay(14133, "0.4.0.14133", 48112, "WoL Beta")],
 			'beta patch 4' => ['0.6.0.14259/0.6.0.14259.SC2Replay', new parser\ressources\Replay(14259, "0.6.0.14259", 33552, "WoL Beta")],
 			'beta patch 5' => ['0.7.0.14356/0.7.0.14356.SC2Replay', new parser\ressources\Replay(14356, "0.7.0.14356", 35008, "WoL Beta")], //"36 minutes"
@@ -39,7 +39,7 @@ class ReplayParserTest extends \PHPUnit_Framework_TestCase {
 			'0.16.0.15580' => ['0.16.0.15580/0.16.0.15580.SC2Replay', new parser\ressources\Replay(15580, "0.16.0.15580", 14048, "WoL Beta")],
 			'0.17.0.15623' => ['0.17.0.15623/0.17.0.15623.SC2Replay', new parser\ressources\Replay(15623, "0.17.0.15623", 12992, "WoL Beta")],
 			//beta phase 2 => header packed struct
-			'0.19.0.15976' => ['0.19.0.15976/0.19.0.15976.SC2Replay', new parser\ressources\Replay(15976, "0.19.0.15976", 2282, "WoL Beta")],*/
+			'0.19.0.15976' => ['0.19.0.15976/0.19.0.15976.SC2Replay', new parser\ressources\Replay(15976, "0.19.0.15976", 2282, "WoL Beta")],
 			'1.3.0.18092' => ['1.3.0.18092/1.3.0.18092.SC2Replay', new parser\ressources\Replay(18092, "1.3.0.18092", 13946, "WoL")],
 			'1.3.1.18221' => ['1.3.1.18221/1.3.1.18221.SC2Replay', new parser\ressources\Replay(18092, "1.3.1.18221", 33970, "WoL")],
 			'1.3.2.18317' => ['1.3.2.18317/1.3.2.18317.SC2Replay', new parser\ressources\Replay(18092, "1.3.2.18317", 36425, "WoL")],

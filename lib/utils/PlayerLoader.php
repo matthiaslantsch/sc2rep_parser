@@ -8,8 +8,8 @@
 
 namespace HIS5\lib\Sc2repParser\utils;
 
-use \HIS5\lib\Sc2repParser\ressources\Replay;
-use \HIS5\lib\Sc2repParser\objects as objects;
+use HIS5\lib\Sc2repParser\ressources\Replay;
+use HIS5\lib\Sc2repParser\objects as objects;
 
 /**
  * The PlayerLoader class contains logic to create player objects from the replay's raw data
@@ -37,6 +37,25 @@ class PlayerLoader {
 			//replay version 3
 			self::loadVersion3($replay);
 		}
+
+		$teams = [];
+		foreach ($replay->entities as $entity) {
+			if(is_a($entity, "HIS5\lib\Sc2repParser\objects\Player")) {
+				$teams[$entity->teamId][] = $entity->playRace[0];
+			}
+		}
+
+		$gametype = [];
+		$matchup = [];
+		foreach ($teams as $teamArr) {
+			sort($teamArr);
+			$gametype[] = count($teamArr);
+			$matchup[] = implode("", $teamArr);
+		}
+		$replay->gametype = implode("v", $gametype);
+		sort($matchup);
+		$replay->matchup = implode("v", $matchup);
+
 	}
 
 	/**
