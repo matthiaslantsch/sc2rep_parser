@@ -4,8 +4,107 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "67aef008f72e6c912a8c67f61f6553a9",
-    "packages": [],
+    "content-hash": "41c59ac6e518ce73cf50bf982043dded",
+    "packages": [
+        {
+            "name": "holonet/bitstream",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/matthiaslantsch/holonet-bitstream.git",
+                "reference": "69af5abba1b0285b242a42a895d15a5e44602d23"
+            },
+            "require": {
+                "ext-gmp": "*",
+                "holonet/common": "dev-develop"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "holonet\\bitstream\\": "src"
+                }
+            },
+            "authors": [
+                {
+                    "name": "matthias.lantsch",
+                    "email": "matthias.lantsch@bluewin.ch"
+                }
+            ],
+            "description": "Object oriented wrapper classes around a stream to make working with binary files easier.",
+            "time": "2019-05-23T12:15:18+00:00"
+        },
+        {
+            "name": "holonet/common",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/matthiaslantsch/holonet-common.git",
+                "reference": "53cca414326c01d7d2c6b68c48df6251df6bf0c3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "holonet\\common\\": "src/",
+                    "holonet\\common\\tests\\": "tests/"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "matthias.lantsch",
+                    "email": "matthias.lantsch@bluewin.ch"
+                }
+            ],
+            "time": "2018-12-30T05:45:06+00:00"
+        },
+        {
+            "name": "rogiel/mpq",
+            "version": "0.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Rogiel/php-mpq.git",
+                "reference": "a8091dfa7dfc10f3f39536f92864e0b9e7aeb7e0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Rogiel/php-mpq/zipball/a8091dfa7dfc10f3f39536f92864e0b9e7aeb7e0",
+                "reference": "a8091dfa7dfc10f3f39536f92864e0b9e7aeb7e0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rogiel\\MPQ\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Rogiel Sulzbach",
+                    "email": "rogiel@rogiel.com",
+                    "homepage": "https://rogiel.com"
+                }
+            ],
+            "description": "A MPQ reader in PHP",
+            "homepage": "https://github.com/rogiel/php-mpq",
+            "keywords": [
+                "MPQ",
+                "file management"
+            ],
+            "time": "2016-07-24T02:50:43+00:00"
+        }
+    ],
     "packages-dev": [
         {
             "name": "doctrine/instantiator",
@@ -1483,7 +1582,10 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "holonet/common": 20,
+        "holonet/bitstream": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

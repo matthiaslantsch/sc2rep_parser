@@ -1,21 +1,21 @@
 {
-	"name": "his5/Common",
+	"name": "holonet/Sc2repParser",
 	"autoload": {
 		"psr-4" : {
-			"HIS5\\lib\\Sc2repParser\\scripts\\" : "scripts/",
-			"HIS5\\lib\\Sc2repParser\\" : "lib/"
+			"holonet\\Sc2repParser\\scripts\\" : "scripts/",
+			"holonet\\Sc2repParser\\" : "src/"
 		}
 	},
 	"autoload-dev": {
-		"psr-4" : {"HIS5\\lib\\Sc2repParser\\tests\\" : "tests/"},
+		"psr-4" : {"holonet\\Sc2repParser\\tests\\" : "tests/"},
 		"files": [
-			"lib/utils/functions.php",
-			"lib/php-mpq/mpq.php"
+			"lib/utils/functions.php"
 		]
 	},
 	"require": {
-		"holonet/common": "*",
-		"holonet/bitstream": "*"
+		"holonet/common": "dev-develop",
+		"holonet/bitstream": "dev-develop",
+		"rogiel/mpq": "^0.2.3"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "*"
@@ -23,11 +23,11 @@
 	"repositories": [
 		{
 			"type": "git",
-			"url": "https://github.com/matthiaslantsch/holonet-common"
+			"url": "https://github.com/matthiaslantsch/holonet-common.git"
 		},
 		{
 			"type": "git",
-			"url": "https://github.com/matthiaslantsch/holonet-bitstream"
+			"url": "https://github.com/matthiaslantsch/holonet-bitstream.git"
 		}
 	]
 }
