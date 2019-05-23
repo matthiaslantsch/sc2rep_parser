@@ -10,15 +10,16 @@ namespace HIS5\lib\Sc2repParser\tests;
 
 use HIS5\lib\common as co;
 use HIS5\lib\Sc2repParser as parser;
+use PHPUnit\Framework\TestCase;
 
 /**
  * The BitwiseDecoderBaseTest tests the bit wise reading operations of our stream wrapper
- * 
+ *
  * @author  {AUTHOR}
  * @version {VERSION}
  * @package HIS5\lib\Sc2repParser\tests
  */
-class BitwiseDecoderBaseTest extends \PHPUnit_Framework_TestCase {
+class BitwiseDecoderBaseTest extends TestCase {
 /*
 */
 	/**
@@ -160,7 +161,7 @@ class BitwiseDecoderBaseTest extends \PHPUnit_Framework_TestCase {
 
 /**
  * The TestDecoder is our fake decoder used to test the bit by bit reading
- * 
+ *
  * @author  {AUTHOR}
  * @version {VERSION}
  * @package HIS5\lib\Sc2repParser\tests

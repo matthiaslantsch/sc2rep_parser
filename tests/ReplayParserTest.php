@@ -10,15 +10,16 @@ namespace HIS5\lib\Sc2repParser\tests;
 
 use HIS5\lib\common as co;
 use HIS5\lib\Sc2repParser as parser;
+use PHPUnit\Framework\TestCase;
 
 /**
  * The ReplayParserTest tests the ReplayParser class for correct values
- * 
+ *
  * @author  {AUTHOR}
  * @version {VERSION}
  * @package HIS5\lib\Sc2repParser\tests
  */
-class ReplayParserTest extends \PHPUnit_Framework_TestCase {
+class ReplayParserTest extends TestCase {
 
 	/**
 	 * Contains hardcoded details about my replay files in order to test our code
@@ -159,7 +160,7 @@ class ReplayParserTest extends \PHPUnit_Framework_TestCase {
 		} else {
 			$parser->decodeFile("replay.game.events", parser\decoders\GameEventsDecoder::class);
 			$expected = $dataLoader->load("game.events");
-			$this->assertEquals($expected, $parser->replay->eventArray("game"));	
+			$this->assertEquals($expected, $parser->replay->eventArray("game"));
 		}
 	}
 
