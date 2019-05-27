@@ -47,7 +47,7 @@ class MessageEventsDecoder extends DecoderBase {
 				case 0: //chat message
 					$messageEvent["eventtype"] = "ChatMessage";
 					$messageEvent["recipient"] = $this->stream->readBits($this->replay->baseBuild >= 21955 ? 3 : 2);
-					$messageEvent["msg"] = $this->stream->readAlignedBytes($this->stream->readBits(11));
+					$messageEvent["msg"] = $this->stream->readAlignedString($this->stream->readBits(11));
 					break;
 				case 1: //player ping
 					$messageEvent["eventtype"] = "PingMessage";

@@ -37,7 +37,7 @@ class InfoDecoder extends DecoderBase {
 
 		$ret["randomValue"] = $this->stream->readUint32();
 
-		$ret["gameCacheName"] = $this->stream->readAlignedBytes(
+		$ret["gameCacheName"] = $this->stream->readAlignedString(
 			$this->stream->readUint8()
 		);
 
@@ -54,18 +54,18 @@ class InfoDecoder extends DecoderBase {
 		}
 
 		//unknown byte (0x00)
-		$this->stream->readAlignedBytes(1);
+		$this->stream->readAlignedString(1);
 		$gamespeedInt = $this->stream->readUint8();
 		$speekLookup = array(0 => "Slower", 1 => "Slow", 2 => "Normal", 3 => "Fast", 4 => "Faster");
 		$this->replay->gamespeed = $speekLookup[$gamespeedInt];
 
 		//11 unknown bytes
-		$this->stream->readAlignedBytes(11);
+		$this->stream->readAlignedString(11);
 
-		$ret["map"] = ["filename" => $this->stream->readAlignedBytes($this->stream->readUint8())];
+		$ret["map"] = ["filename" => $this->stream->readAlignedString($this->stream->readUint8())];
 
 		//686 unknown bytes
-		$this->stream->readAlignedBytes(686);
+		$this->stream->readAlignedString(686);
 
 		for ($i=0; $i < 5; $i++) {
 			$ret["cacheHandles"][] = $this->parseCacheHandle();
@@ -79,7 +79,7 @@ class InfoDecoder extends DecoderBase {
 			$one = $this->stream->readByte(true);
 		}
 		//skip over the other three null bytes
-		$this->stream->readAlignedBytes(3);
+		$this->stream->readAlignedString(3);
 
 		//skip the map name length bytes, as for maps with multiple words, there's multiple bytes => unreliable
 		do {
@@ -98,14 +98,14 @@ class InfoDecoder extends DecoderBase {
 		$colorKeys = ["a", "r", "g", "b"];
 		while($numPlayers--) {
 			$pl = [
-				"name" => $this->stream->readAlignedBytes(
+				"name" => $this->stream->readAlignedString(
 					$this->stream->readUint8()
 				),
-				"race" => $this->stream->readAlignedBytes(
+				"race" => $this->stream->readAlignedString(
 					$this->stream->readUint8()
 				)
 			];
-			$color = explode(",", $this->stream->readAlignedBytes(
+			$color = explode(",", $this->stream->readAlignedString(
 				$this->stream->readUint8()
 			));
 
@@ -141,7 +141,7 @@ class InfoDecoder extends DecoderBase {
 	 */
 	private function decodePlayerSlot() {
 		$nameLen = $this->stream->readUint8();
-		$ret = $this->stream->readAlignedBytes($nameLen);
+		$ret = $this->stream->readAlignedString($nameLen);
 		//padding
 		$this->stream->readBytes(5);
 		return $ret;

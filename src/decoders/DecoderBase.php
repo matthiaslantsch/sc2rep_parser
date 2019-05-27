@@ -158,7 +158,7 @@ abstract class DecoderBase {
 	 */
 	public function parseCacheHandle(string $bytes = "") {
 		if($bytes === "") {
-			$bytes = $this->stream->readAlignedBytes(40);
+			$bytes = $this->stream->readAlignedString(40);
 		}
 
 		$ret["extension"] = substr($bytes, 0, 4);

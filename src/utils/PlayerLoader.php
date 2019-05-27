@@ -228,6 +228,7 @@ class PlayerLoader {
 		$details = $replay->rawdata["details"];
 		// Assume that the first X map slots starting at 1 are player slots
 		// so that we can assign player ids without the map
+		var_dump($replay->rawdata["initdata"]);
 		foreach ($initData["lobbyState"]["slots"] as $slotId => $slotData) {
 			if($slotData["control"] != 2 && $slotData["control"] != 3) {
 				//empty slot

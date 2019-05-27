@@ -12,6 +12,8 @@
 
 namespace holonet\Sc2repParser\decoders;
 
+use holonet\Sc2repParser\ParserException;
+
 /**
  * The InitdataDecoder class is used to decode the "initdata" file contained within the replay archive
  * information on the format can be found here: https://github.com/GraylinKim/sc2reader/wiki/replay.initData
@@ -44,6 +46,10 @@ class InitdataDecoder extends DecoderBase {
 			$ret["lobbyState"] = $this->decodeLobbyState();
 		}
 
+		if(!$this->stream->eof()) {
+			throw new ParserException("Did not use all bytes while decoding initidata", 1000);
+		}
+
 		$this->replay->rawdata["initdata"] = $ret;
 		$options = $ret["gameDescription"]["options"];
 
@@ -62,11 +68,11 @@ class InitdataDecoder extends DecoderBase {
 	 * @return array with init data for one player
 	 */
 	private function decodePlayerInitData() {
-		$ret = ["name" => $this->stream->readAlignedBytes($this->stream->readUint8())];
+		$ret = ["name" => $this->stream->readAlignedString($this->stream->readUint8())];
 
 		if($this->replay->baseBuild >= 24764 && $this->stream->readBoolean()) {
 			//supports and has a clan tag
-			$ret["clanTag"] = $this->stream->readAlignedBytes(
+			$ret["clanTag"] = $this->stream->readAlignedString(
 				$this->stream->readUint8()
 			);
 		}
@@ -114,10 +120,10 @@ class InitdataDecoder extends DecoderBase {
 		$ret["observe"] = $this->stream->readBits(2);
 
 		if($this->replay->baseBuild >= 34784) {
-			$ret["hero"] = $this->stream->readAlignedBytes($this->stream->readBits(9));
-			$ret["skin"] = $this->stream->readAlignedBytes($this->stream->readBits(9));
-			$ret["mount"] = $this->stream->readAlignedBytes($this->stream->readBits(9));
-			$ret["toonHandle"] = $this->stream->readAlignedBytes($this->stream->readBits(7));
+			$ret["hero"] = $this->stream->readAlignedString($this->stream->readBits(9));
+			$ret["skin"] = $this->stream->readAlignedString($this->stream->readBits(9));
+			$ret["mount"] = $this->stream->readAlignedString($this->stream->readBits(9));
+			$ret["toonHandle"] = $this->stream->readAlignedString($this->stream->readBits(7));
 		}
 
 		return $ret;
@@ -132,7 +138,7 @@ class InitdataDecoder extends DecoderBase {
 	private function decodeGameDescription() {
 		$ret = [
 			"randomValue" => $this->stream->readUint32(),
-			"gameCacheName" => $this->stream->readAlignedBytes($this->stream->readBits(10)),
+			"gameCacheName" => $this->stream->readAlignedString($this->stream->readBits(10)),
 			"options" => $this->decodeGameOptions(),
 			"gameSpeed" => $this->stream->readBits(3),
 			"gameType" => $this->stream->readBits(3),
@@ -150,12 +156,12 @@ class InitdataDecoder extends DecoderBase {
 				"sizeX" => $this->stream->readUint8(),
 				"sizeY" => $this->stream->readUint8(),
 				"fileSyncChecksum" => $this->stream->readUint32(),
-				"filename" => $this->stream->readAlignedBytes($this->stream->readBits(($this->replay->baseBuild > 15623 ? 11 : 10)))
+				"filename" => $this->stream->readAlignedString($this->stream->readBits(($this->replay->baseBuild > 15623 ? 11 : 10)))
 			],
 		];
 
 		if($this->replay->baseBuild > 15623) {
-			$ret["map"]["author"] = $this->stream->readAlignedBytes($this->stream->readUint8());
+			$ret["map"]["author"] = $this->stream->readAlignedString($this->stream->readUint8());
 		}
 		$ret["modFileSyncChecksum"] = $this->stream->readUint32();
 
@@ -300,12 +306,12 @@ class InitdataDecoder extends DecoderBase {
 			}
 
 			if($this->replay->baseBuild >= 34784) {
-				$ret["slots"][$i]["hero"] = $this->stream->readAlignedBytes($this->stream->readBits(9));
-				$ret["slots"][$i]["skin"] = $this->stream->readAlignedBytes($this->stream->readBits(9));
-				$ret["slots"][$i]["mount"] = $this->stream->readAlignedBytes($this->stream->readBits(9));
+				$ret["slots"][$i]["hero"] = $this->stream->readAlignedString($this->stream->readBits(9));
+				$ret["slots"][$i]["skin"] = $this->stream->readAlignedString($this->stream->readBits(9));
+				$ret["slots"][$i]["mount"] = $this->stream->readAlignedString($this->stream->readBits(9));
 				$numberArtifacts = $this->stream->readBits(4);
 				while ($numberArtifacts--) {
-					$ret["slots"][$i]["artifacts"][] = $this->stream->readAlignedBytes($this->stream->readBits(9));
+					$ret["slots"][$i]["artifacts"][] = $this->stream->readAlignedString($this->stream->readBits(9));
 				}
 			}
 
@@ -329,19 +335,19 @@ class InitdataDecoder extends DecoderBase {
 			}
 
 			if($this->replay->baseBuild >= 17266) {
-				$ret["slots"][$i]["toonHandle"] = $this->stream->readAlignedBytes($this->stream->readBits(7));
+				$ret["slots"][$i]["toonHandle"] = $this->stream->readAlignedString($this->stream->readBits(7));
 			}
 
 			if($this->replay->baseBuild >= 19132) {
-				$numberLicenses = $this->stream->readBits(9);
+				$numberLicenses = $this->stream->readBits(($this->replay->baseBuild >= 70154 ? 13 : 9));
 				while ($numberLicenses--) {
-					/*$ret["slots"][$i]["licenses"][] =*/ $this->stream->readUint32();
+					$ret["slots"][$i]["licenses"][] = $this->stream->readUint32();
 				}
 			}
 
 			if($this->replay->baseBuild >= 34784) {
 				$ret["slots"][$i]["archonLeaderUserId"] = ($this->stream->readBoolean() ? $this->stream->readBits(4) : null);
-				$ret["slots"][$i]["commander"]["name"] = $this->stream->readAlignedBytes($this->stream->readBits(9));
+				$ret["slots"][$i]["commander"]["name"] = $this->stream->readAlignedString($this->stream->readBits(9));
 			}
 
 			if($this->replay->baseBuild >= 36442) {
@@ -361,6 +367,17 @@ class InitdataDecoder extends DecoderBase {
 				$numberMasteryTalents = $this->stream->readBits(3);
 				while ($numberMasteryTalents--) {
 					$ret["slots"][$i]["commander"]["masteryTalents"][] = $this->stream->readUint32();
+				}
+			}
+
+			if($this->replay->baseBuild >= 47185) {
+				$numberRewardOverrides = $this->stream->readBits(17);
+				while ($numberRewardOverrides--) {
+					$key = $this->stream->readUint32();
+					$numbOverrides = $this->stream->readBits(17);
+					while ($numbOverrides--) {
+						$ret["slots"][$i]["rewardOverrides"][$key][] = $this->stream->readUint32();
+					}
 				}
 			}
 		}

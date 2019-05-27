@@ -42,7 +42,7 @@ class AttributeEventsDecoder extends DecoderBase {
 			$attr["header"] = $this->stream->readUint32(false);
 			$attr["attrId"] = $this->stream->readUint32(false);
 			$attr["playerId"] = $this->stream->readUint8();
-			$val = trim(strrev($this->stream->readAlignedBytes(4)));
+			$val = trim(strrev($this->stream->readAlignedString(4)));
 
 			if(isset($attributeLookup[$attr["attrId"]])) {
 				$lookup = $attributeLookup[$attr["attrId"]];

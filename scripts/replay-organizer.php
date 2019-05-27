@@ -1,16 +1,20 @@
 <?php
 /**
- * This file is part of the php sc2rep_parse package
+ * This file is part of the holonet sc2 replay parser library
  * (c) Matthias Lantsch
  *
  * This script is a utility script that makes use of the sc2rep_parse library to parse sc2 replay files.
  * It can be used to organize replays by different criteria (even in subfolders)
+ *
+ * @package holonet sc2 replay parser library
+ * @license http://opensource.org/licenses/gpl-license.php  GNU Public License
+ * @author  Matthias Lantsch <matthias.lantsch@bluewin.ch>
  */
 
-namespace HIS5\lib\Sc2repParser\scripts;
+namespace holonet\Sc2repParser\scripts;
 
-use HIS5\lib\common as co;
-use HIS5\lib\Sc2repParser as parser;
+use holonet\Sc2repParser\ReplayParser;
+use holonet\Sc2repParser\objects\Player;
 
 //procedural entry point
 if(in_array("help", $argv) || in_array("--help", $argv)) {
@@ -23,10 +27,9 @@ new SC2ReplayOrganizer();
 
 /**
  * Logic class used to wrap all the organizer functions to be able to work from an object context
- * 
- * @author  {AUTHOR}
- * @version {VERSION}
- * @package HIS5\lib\Sc2repParser\scripts
+ *
+ * @author  matthias.lantsch
+ * @package holonet\Sc2repParser\scripts
  */
 class SC2ReplayOrganizer {
 
@@ -34,8 +37,8 @@ class SC2ReplayOrganizer {
 	 * property containing an array with config options for the script
 	 * this can be used to hardcode default values
 	 *
-	 * @access 	public
-	 * @var 	array config | associative array with config options
+	 * @access public
+	 * @var    array $config Associative array with config options
 	 */
 	public $config = [
 		"dateformat" => "Y-m-d H:i:s",
@@ -46,6 +49,7 @@ class SC2ReplayOrganizer {
 	 * constructor method overseeing the entire script process
 	 *
 	 * @access public
+	 * @return void
 	 */
 	public function __construct() {
 		$this->constructConfig();
@@ -74,6 +78,7 @@ class SC2ReplayOrganizer {
 	 * private helper method used to ensure that all config options are set in one way or another
 	 *
 	 * @access private
+	 * @return void
 	 */
 	private function constructConfig() {
 		$options = array(
@@ -112,6 +117,7 @@ class SC2ReplayOrganizer {
 	 * this method will specify the required loadlevel that the application needs to fullfill all tokens
 	 *
 	 * @access private
+	 * @return void
 	 */
 	private function checkTokens() {
 		$tokenPattern = "/\{\w+\}/";
@@ -133,19 +139,19 @@ class SC2ReplayOrganizer {
 	 * the replay will be parsed as far as specified by the loadlevel integer in this object
 	 *
 	 * @access private
-	 * @param  string file | the path to the replay file to be processed
+	 * @param  string $file The path to the replay file to be processed
+	 * @return void
 	 */
 	private function processReplay($file) {
 		echo "Processing replay file {$file}...\n";
 		try {
-			$parser = new parser\ReplayParser($file);
+			$parser = new ReplayParser($file);
 			if($this->loadlevel == 2) {
 				$parser->doIdentify();
 			}
 		} catch (\Exception $e) {
 			echo "\tError while processing: {$e->getMessage()}\n";
 		}
-
 
 		$newname = $this->config["format"];
 		foreach ($this->tokens as $tkn) {
@@ -155,7 +161,7 @@ class SC2ReplayOrganizer {
 		echo "\t => {$newname}\n";
 		$newname = $this->config["target"].DIRECTORY_SEPARATOR.$newname.".SC2Replay";
 		if(!file_exists(dirname($newname))) {
-			mkdir(dirname($newname), 0777, true);	
+			mkdir(dirname($newname), 0777, true);
 		}
 
 		rename($file, $newname);
@@ -168,8 +174,8 @@ class SC2ReplayOrganizer {
 	 * method used to extract a token value out of the replay object
 	 *
 	 * @access private
-	 * @param  string token | the name of the token whose value should be extracted
-	 * @param  Replay object | replay object as returned from the parser
+	 * @param  string $token The name of the token whose value should be extracted
+	 * @param  Replay $replay Replay object as returned from the parser
 	 * @return string with the tokens value/the token itself if it's unknown
 	 */
 	private function extractTokenValue($token, $replay) {
@@ -207,7 +213,7 @@ class SC2ReplayOrganizer {
 			case '{vs}':
 				$teams = [];
 				foreach ($replay->entities as $entity) {
-					if(is_a($entity, "HIS5\lib\Sc2repParser\objects\Player")) {
+					if($entity instanceof Player) {
 						$teams[$entity->teamId][] = $entity;
 					}
 				}
@@ -242,8 +248,8 @@ class SC2ReplayOrganizer {
 /**
  * function called to get an arbitrary non empty input string from the user
  *
- * @param  string msg | the message to display to the user as a prompt
- * @return a non empty input string
+ * @param  string $msg The message to display to the user as a prompt
+ * @return string with non empty input
  */
 function getNonEmptyInput($msg) {
 	do {
@@ -259,7 +265,8 @@ function getNonEmptyInput($msg) {
  * function used to print an error message
  * and stop the execution of the script with an error code
  *
- * @param string errmsg | error message to throw
+ * @param string $errmsg Error message to throw
+ * @return void
  */
 function throwError($errmsg) {
 	echo "ERROR $errmsg\n";
@@ -269,6 +276,8 @@ function throwError($errmsg) {
 /**
  * desc function used to print usage information to the user
  * and stop the execution of the script
+ *
+ * @return void
  */
 function usage() {
 	echo <<<DESC

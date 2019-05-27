@@ -311,7 +311,7 @@ class GameEventsDecoder extends DecoderBase {
 		if($this->replay->baseBuild >= 34784) {
 			$options["buildNumber"] = $this->stream->readUint32();
 			$options["versionFlags"] = $this->stream->readUint32();
-			$options["hotkeyProfile"] = $this->stream->readAlignedBytes($this->stream->readBits(9));
+			$options["hotkeyProfile"] = $this->stream->readAlignedString($this->stream->readBits(9));
 		}
 
 		return ["options" => $options];
@@ -325,7 +325,7 @@ class GameEventsDecoder extends DecoderBase {
 	 */
 	private function parseBankFileEvent() {
 		return [
-			"name" => $this->stream->readAlignedBytes($this->stream->readBits(7))
+			"name" => $this->stream->readAlignedString($this->stream->readBits(7))
 		];
 	}
 
@@ -346,7 +346,7 @@ class GameEventsDecoder extends DecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseBankSectionEvent() {
-		$read = ["name" => $this->stream->readAlignedBytes($this->stream->readBits(6))];
+		$read = ["name" => $this->stream->readAlignedString($this->stream->readBits(6))];
 	}
 
 	/**
@@ -357,9 +357,9 @@ class GameEventsDecoder extends DecoderBase {
 	 */
 	private function parseBankKeyEvent() {
 		return [
-			"name" => $this->stream->readAlignedBytes($this->stream->readBits(6)),
+			"name" => $this->stream->readAlignedString($this->stream->readBits(6)),
 			"type" => $this->stream->readUint32(),
-			"data" => $this->stream->readAlignedBytes($this->stream->readBits(7))
+			"data" => $this->stream->readAlignedString($this->stream->readBits(7))
 		];
 	}
 
@@ -372,8 +372,8 @@ class GameEventsDecoder extends DecoderBase {
 	private function parseBankValueEvent() {
 		return [
 			"type" => $this->stream->readUint32(),
-			"name" => $this->stream->readAlignedBytes($this->stream->readBits(6)),
-			"data" => $this->stream->readAlignedBytes($this->stream->readBits(12))
+			"name" => $this->stream->readAlignedString($this->stream->readBits(6)),
+			"data" => $this->stream->readAlignedString($this->stream->readBits(12))
 		];
 	}
 
@@ -391,7 +391,7 @@ class GameEventsDecoder extends DecoderBase {
 		}
 
 		if($this->replay->baseBuild >= 24247) {
-			$read["toonHandle"] = $this->stream->readAlignedBytes($this->stream->readBits(7));
+			$read["toonHandle"] = $this->stream->readAlignedString($this->stream->readBits(7));
 		}
 
 		return $read;
@@ -421,11 +421,11 @@ class GameEventsDecoder extends DecoderBase {
 	 */
 	private function parseSaveGameEvent() {
 		return [
-			"fileName" => $this->stream->readAlignedBytes($this->stream->readBits(11)),
+			"fileName" => $this->stream->readAlignedString($this->stream->readBits(11)),
 			"automatic" => $this->stream->readBoolean(),
 			"overwrite" => $this->stream->readBoolean(),
-			"name" => $this->stream->readAlignedBytes($this->stream->readUint8()),
-			"description" => $this->stream->readAlignedBytes($this->stream->readBits(10))
+			"name" => $this->stream->readAlignedString($this->stream->readUint8()),
+			"description" => $this->stream->readAlignedString($this->stream->readBits(10))
 		];
 	}
 
@@ -452,8 +452,8 @@ class GameEventsDecoder extends DecoderBase {
 				"y" => $this->stream->readUint32() - 2147483648
 			],
 			"time" => $this->stream->readUint32() - 2147483648,
-			"verb" => $this->stream->readAlignedBytes($this->stream->readBits(10)),
-			"arguments" => $this->stream->readAlignedBytes($this->stream->readBits(10))
+			"verb" => $this->stream->readAlignedString($this->stream->readBits(10)),
+			"arguments" => $this->stream->readAlignedString($this->stream->readBits(10))
 		];
 	}
 
@@ -662,7 +662,7 @@ class GameEventsDecoder extends DecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseTriggerChatMessageEvent() {
-		return ["message" => $this->stream->readAlignedBytes($this->stream->readBits(10))];
+		return ["message" => $this->stream->readAlignedString($this->stream->readBits(10))];
 	}
 
 	/**
@@ -776,8 +776,8 @@ class GameEventsDecoder extends DecoderBase {
 	 */
 	private function parseBroadcastCheatEvent() {
 		return [
-			"verb" => $this->stream->readAlignedBytes($this->stream->readBits(10)),
-			"arguments" => $this->stream->readAlignedBytes($this->stream->readBits(10))
+			"verb" => $this->stream->readAlignedString($this->stream->readBits(10)),
+			"arguments" => $this->stream->readAlignedString($this->stream->readBits(10))
 		];
 	}
 
@@ -843,15 +843,15 @@ class GameEventsDecoder extends DecoderBase {
 			$userInfo = [
 				"gameUserId" => $this->stream->readBits(4),
 				"observe" => $this->stream->readBits(2),
-				"name" => $this->stream->readAlignedBytes($this->stream->readUint8()),
+				"name" => $this->stream->readAlignedString($this->stream->readUint8()),
 			];
 
 			if($this->stream->readBoolean()) {
-				$userInfo["toonHandle"] = $this->stream->readAlignedBytes($this->stream->readBits(7));
+				$userInfo["toonHandle"] = $this->stream->readAlignedString($this->stream->readBits(7));
 			}
 
 			if($this->stream->readBoolean()) {
-				$userInfo["clanTag"] = $this->stream->readAlignedBytes($this->stream->readUint8());
+				$userInfo["clanTag"] = $this->stream->readAlignedString($this->stream->readUint8());
 			}
 
 			if($this->replay->baseBuild >= 27950 && $this->stream->readBoolean()) {
@@ -925,7 +925,7 @@ class GameEventsDecoder extends DecoderBase {
 
 		if($this->replay->baseBuild <= 15623) {
 			//unknown values, skip 16 more bytes and return
-			$this->stream->readAlignedBytes(16);
+			$this->stream->readAlignedString(16);
 			return $ret;
 		}
 
@@ -999,7 +999,7 @@ class GameEventsDecoder extends DecoderBase {
 				$read["eventData"] = ["SelectionChanged" => $this->stream->readUint32() - 2147483648];
 				break;
 			case 4:
-				$read["eventData"] = ["TextChanged" => $this->stream->readAlignedBytes($this->stream->readBits(11))];
+				$read["eventData"] = ["TextChanged" => $this->stream->readAlignedString($this->stream->readBits(11))];
 				break;
 			case 5:
 				if($this->replay->baseBuild > 23260) {
@@ -1183,7 +1183,7 @@ class GameEventsDecoder extends DecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseTriggerMovieFunctionEvent() {
-		return ["functionName" => $this->stream->readAlignedBytes($this->stream->readBits(7))];
+		return ["functionName" => $this->stream->readAlignedString($this->stream->readBits(7))];
 	}
 
 	/**
@@ -1395,7 +1395,7 @@ class GameEventsDecoder extends DecoderBase {
 	private function parseTriggerCutsceneBookmarkFiredEvent() {
 		return [
 			"cutsceneId" => $this->stream->readUint32() - 2147483648,
-			"bookmarkName" => $this->stream->readAlignedBytes($this->stream->readBits(7))
+			"bookmarkName" => $this->stream->readAlignedString($this->stream->readBits(7))
 		];
 	}
 
@@ -1418,8 +1418,8 @@ class GameEventsDecoder extends DecoderBase {
 	private function parseTriggerCutsceneConversationLineEvent() {
 		return [
 			"cutsceneId" => $this->stream->readUint32() - 2147483648,
-			"conversationLine" => $this->stream->readAlignedBytes($this->stream->readBits(7)),
-			"altConversationLine" => $this->stream->readAlignedBytes($this->stream->readBits(7))
+			"conversationLine" => $this->stream->readAlignedString($this->stream->readBits(7)),
+			"altConversationLine" => $this->stream->readAlignedString($this->stream->readBits(7))
 		];
 	}
 
@@ -1432,7 +1432,7 @@ class GameEventsDecoder extends DecoderBase {
 	private function parseTriggerCutsceneConversationLineMissingEvent() {
 		return [
 			"cutsceneId" => $this->stream->readUint32() - 2147483648,
-			"conversationLine" => $this->stream->readAlignedBytes($this->stream->readBits(7))
+			"conversationLine" => $this->stream->readAlignedString($this->stream->readBits(7))
 		];
 	}
 
@@ -1459,13 +1459,13 @@ class GameEventsDecoder extends DecoderBase {
 	private function parseGameUserJoinEvent() {
 		$ret = [
 			"observe" => $this->stream->readBits(2),
-			"name" => $this->stream->readAlignedBytes($this->stream->readBits(8)),
+			"name" => $this->stream->readAlignedString($this->stream->readBits(8)),
 		];
 		if($this->stream->readBoolean()) {
-			$ret["toonHandle"] = $this->stream->readAlignedBytes($this->stream->readBits(7));
+			$ret["toonHandle"] = $this->stream->readAlignedString($this->stream->readBits(7));
 		}
 		if($this->stream->readBoolean()) {
-			$ret["clanTag"] = $this->stream->readAlignedBytes($this->stream->readBits(8));
+			$ret["clanTag"] = $this->stream->readAlignedString($this->stream->readBits(8));
 		}
 		if($this->replay->baseBuild >= 27950 && $this->stream->readBoolean()) {
 			$ret["clanLogo"] = $this->parseCacheHandle();
@@ -1596,8 +1596,8 @@ class GameEventsDecoder extends DecoderBase {
 		return [
 			"catalog" => $this->stream->readUint8(),
 			"entry" => $this->stream->readUint16(),
-			"field" => $this->stream->readAlignedBytes($this->readUint8()),
-			"value" => $this->stream->readAlignedBytes($this->stream->readUint8())
+			"field" => $this->stream->readAlignedString($this->readUint8()),
+			"value" => $this->stream->readAlignedString($this->stream->readUint8())
 		];
 	}
 
