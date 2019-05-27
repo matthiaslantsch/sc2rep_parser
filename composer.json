@@ -9,13 +9,13 @@
 	"autoload-dev": {
 		"psr-4" : {"holonet\\Sc2repParser\\tests\\" : "tests/"},
 		"files": [
-			"lib/utils/functions.php"
+			"src/utils/functions.php",
+			"lib/php-mpq/mpq.php"
 		]
 	},
 	"require": {
 		"holonet/common": "dev-develop",
-		"holonet/bitstream": "dev-develop",
-		"rogiel/mpq": "^0.2.3"
+		"holonet/bitstream": "dev-develop"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "*"

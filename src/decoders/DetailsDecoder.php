@@ -1,31 +1,37 @@
 <?php
 /**
- * This file is part of the sc2rep replay parser project
+ * This file is part of the holonet sc2 replay parser library
  * (c) Matthias Lantsch
  *
  * class file for the DetailsDecoder decoder class
+ *
+ * @package holonet sc2 replay parser library
+ * @license http://opensource.org/licenses/gpl-license.php  GNU Public License
+ * @author  Matthias Lantsch <matthias.lantsch@bluewin.ch>
  */
 
-namespace HIS5\lib\Sc2repParser\decoders;
+namespace holonet\Sc2repParser\decoders;
 
-use HIS5\lib\Sc2repParser\utils as utils;
+use holonet\Sc2repParser\utils as utils;
 
 /**
- * The DetailsDecoder class is used to decode the replay.details subfile in a replay file
+* The DetailsDecoder class is used to decode the replay.details subfile in a replay file
  *
- * @author  {AUTHOR}
- * @version {VERSION}
- * @package HIS5\lib\Sc2repParser\decoders
+ * @author  matthias.lantsch
+ * @package holonet\Sc2repParser\decoders
  */
-class DetailsDecoder extends BitwiseDecoderBase {
+class DetailsDecoder extends DecoderBase {
 
 	/**
 	 * actually decode the details file
+	 * saves the information in the contained replay object
 	 *
 	 * @access protected
+	 * @return void
 	 */
 	protected function doDecode() {
 		$detailsData = $this->parseSerializedData();
+
 		$details = [
 			"mapName" => $detailsData[1],
 			"difficulty" => $detailsData[2],
@@ -40,7 +46,7 @@ class DetailsDecoder extends BitwiseDecoderBase {
 			"miniSave" => $detailsData[11],
 			"gameSpeed" => $detailsData[12],
 			"defaultDifficulty" => $detailsData[13]
-			//forget the mod paths / campaign index numbers, they don't matter
+			//@TODO forget the mod paths / campaign index numbers, they don't matter
 		];
 
 		foreach ($details["cacheHandles"] as $i => $handle) {
@@ -92,7 +98,7 @@ class DetailsDecoder extends BitwiseDecoderBase {
 	 * helper function indexing a player array with matching keys
 	 *
 	 * @access protected
-	 * @param  array pl | array with the raw player data from the decoding process
+	 * @param  array $pl Array with the raw player data from the decoding process
 	 * @return array with ordered keys indexing what data is what
 	 */
 	private function orderPlayerData($pl) {

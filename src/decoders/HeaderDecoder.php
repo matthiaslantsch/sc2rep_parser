@@ -1,23 +1,26 @@
 <?php
 /**
- * This file is part of the sc2rep replay parser project
+ * This file is part of the holonet sc2 replay parser library
  * (c) Matthias Lantsch
  *
  * class file for the HeaderDecoder decoder class
+ *
+ * @package holonet sc2 replay parser library
+ * @license http://opensource.org/licenses/gpl-license.php  GNU Public License
+ * @author  Matthias Lantsch <matthias.lantsch@bluewin.ch>
  */
 
-namespace HIS5\lib\Sc2repParser\decoders;
+namespace holonet\Sc2repParser\decoders;
 
 /**
  * The HeaderDecoder class is used to decode the header in an mpq replay archive file:
  *  - game version
  *  - game loops counter
  *
- * @author  {AUTHOR}
- * @version {VERSION}
- * @package HIS5\lib\Sc2repParser\decoders
+ * @author  matthias.lantsch
+ * @package holonet\Sc2repParser\decoders
  */
-class HeaderDecoder extends BitwiseDecoderBase {
+class HeaderDecoder extends DecoderBase {
 
 	/**
 	 * actually decode the header
@@ -29,7 +32,7 @@ class HeaderDecoder extends BitwiseDecoderBase {
 	protected function doDecode() {
 		$ret = [];
 
-		$firstByte = $this->readUint8();
+		$firstByte = $this->stream->readUint8();
 		if($firstByte < 10) {
 			$headerData = $this->parseSerializedData($firstByte);
 			$ret["baseBuild"] = $headerData[1][5];
@@ -64,21 +67,21 @@ class HeaderDecoder extends BitwiseDecoderBase {
 	}
 
 	/**
-	 * small helper function used to decode older beta version replays 
+	 * small helper function used to decode older beta version replays
 	 *
 	 * @access protected
 	 * @return array with decoded header data
 	 */
 	private function oldVersionDecode() {
-		$this->readBytes(23); // skip Starcraft II replay 0x1B 0x32 0x01 0x00
+		$this->stream->readBytes(23); // skip Starcraft II replay 0x1B 0x32 0x01 0x00
 
 		//we assume its a replay from before phase 2
-		$verMajor = $this->readUint16(false);
-		$build = $this->readUint32();
-		$ret["baseBuild"] = $this->readUint32();
-		$this->readBytes(2); //skip 0200
+		$verMajor = $this->stream->readUint16(false);
+		$build = $this->stream->readUint32();
+		$ret["baseBuild"] = $this->stream->readUint32();
+		$this->stream->readBytes(2); //skip 0200
 		//apparently saved in seconds back then => times 16
-		$ret["gameloops"] = intval($this->readUint16() / 2) * 16;
+		$ret["gameloops"] = intval($this->stream->readUint16() / 2) * 16;
 		$ret["versionString"] = "0.{$verMajor}.0.{$build}";
 
 		return $ret;

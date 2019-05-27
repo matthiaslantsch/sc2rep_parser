@@ -1,30 +1,37 @@
 <?php
 /**
- * This file is part of the sc2rep replay parser project
+ * This file is part of the holonet sc2 replay parser library
  * (c) Matthias Lantsch
  *
  * class file for the PlayerLoader logic class
+ *
+ * @package holonet sc2 replay parser library
+ * @license http://opensource.org/licenses/gpl-license.php  GNU Public License
+ * @author  Matthias Lantsch <matthias.lantsch@bluewin.ch>
  */
 
-namespace HIS5\lib\Sc2repParser\utils;
+namespace holonet\Sc2repParser\utils;
 
-use HIS5\lib\Sc2repParser\ressources\Replay;
-use HIS5\lib\Sc2repParser\objects as objects;
+use holonet\Sc2repParser\ParserException;
+use holonet\Sc2repParser\resources\Replay;
+use holonet\Sc2repParser\objects\Player;
+use holonet\Sc2repParser\objects\Observer;
 
 /**
- * The PlayerLoader class contains logic to create player objects from the replay's raw data
+* The PlayerLoader class contains logic to create player objects from the replay's raw data
  *
- * @author  {AUTHOR}
- * @version {VERSION}
- * @package HIS5\lib\Sc2repParser\utils
+ * @author  matthias.lantsch
+ * @package holonet\Sc2repParser\utils
  */
 class PlayerLoader {
 
 	/**
 	 * public dispatcher method for a central interface for all versions of the replay file
+	 * will save the player objects directly in the replay object
 	 *
 	 * @access public
-	 * @param  Replay replay | replay object containing the raw data and requesting the players
+	 * @param  Replay $replay Replay object containing the raw data and requesting the players
+	 * @return void
 	 */
 	public static function loadPlayers(Replay $replay) {
 		if($replay->baseBuild < 15097) {
@@ -40,7 +47,7 @@ class PlayerLoader {
 
 		$teams = [];
 		foreach ($replay->entities as $entity) {
-			if(is_a($entity, "HIS5\lib\Sc2repParser\objects\Player")) {
+			if($entity instanceof Player) {
 				$teams[$entity->teamId][] = $entity->playRace[0];
 			}
 		}
@@ -55,7 +62,6 @@ class PlayerLoader {
 		$replay->gametype = implode("v", $gametype);
 		sort($matchup);
 		$replay->matchup = implode("v", $matchup);
-
 	}
 
 	/**
@@ -64,18 +70,19 @@ class PlayerLoader {
 	 *   - replay.info subfile
 	 *
 	 * @access public
-	 * @param  Replay replay | replay object containing the raw data and requesting the players
+	 * @param  Replay $replay Replay object containing the raw data and requesting the players
+	 * @return void
 	 */
 	public static function loadVersion1(Replay $replay) {
 		if(!isset($replay->rawdata["info"])) {
-			throw new parser\ParserException("Cannot load players without raw data", 5);
+			throw new ParserException("Cannot load players without raw data", 5);
 		}
 
 		$infodata = $replay->rawdata["info"];
 		$entities = [];
 		$peoplestring = "";
 		foreach ($infodata["players"] as $pid => $pl) {
-			$player = new objects\Player($pid, $pl["name"]);
+			$player = new Player($pid, $pl["name"]);
 			$player->playRace = delocalizeRace($pl["race"]);
 			//always Medium for real players
 			$player->difficulty = "Medium";
@@ -105,8 +112,8 @@ class PlayerLoader {
 			if($name !== "" && strpos($peoplestring, $name) === false) {
 				$pid++;
 				//it's in the slots, but not the player data => observer
-				$observer = new objects\Observer($pid, $name);
-				$peoplestring .= $player->name.$player->bnetId;
+				$observer = new Observer($pid, $name);
+				$peoplestring .= $observer->name.$observer->bnetId;
 				$entities[$pid] = $observer;
 			}
 		}
@@ -123,11 +130,12 @@ class PlayerLoader {
 	 *   - replay.attributes.events subfile
 	 *
 	 * @access public
-	 * @param  Replay replay | replay object containing the raw data and requesting the players
+	 * @param  Replay $replay Replay object containing the raw data and requesting the players
+	 * @return void
 	 */
 	public static function loadVersion2(Replay $replay) {
 		if(!isset($replay->rawdata["initdata"]) || !isset($replay->rawdata["details"])) {
-			throw new parser\ParserException("Cannot load players without raw data", 5);
+			throw new ParserException("Cannot load players without raw data", 5);
 		}
 
 		$replay->entities = [];
@@ -153,7 +161,7 @@ class PlayerLoader {
 			}
 
 			if(!$isObserver) {
-				$replay->entities[$playerId] = new objects\Player($playerId, $data["name"]);
+				$replay->entities[$playerId] = new Player($playerId, $data["name"]);
 
 				if($detailsData["result"] == 1) {
 					$replay->entities[$playerId]->result = "Win";
@@ -182,7 +190,7 @@ class PlayerLoader {
 				$replay->entities[$playerId]->teamId = $detailsData["teamId"];
 			} else {
 				//observer => has no attribute data and no details data
-				$replay->entities[$playerId] = new objects\Observer($playerId, $data["name"]);
+				$replay->entities[$playerId] = new Observer($playerId, $data["name"]);
 				$replay->entities[$playerId]->realId = $data["name"];
 			}
 
@@ -204,11 +212,12 @@ class PlayerLoader {
 	 *   - replay.attributes.events subfile
 	 *
 	 * @access public
-	 * @param  Replay replay | replay object containing the raw data and requesting the players
+	 * @param  Replay $replay Replay object containing the raw data and requesting the players
+	 * @return void
 	 */
 	public static function loadVersion3(Replay $replay) {
 		if(!isset($replay->rawdata["initdata"]) || !isset($replay->rawdata["details"])) {
-			throw new parser\ParserException("Cannot load players without raw data", 5);
+			throw new ParserException("Cannot load players without raw data", 5);
 		}
 
 		$replay->entities = [];
@@ -237,7 +246,7 @@ class PlayerLoader {
 					$name = $initData["userInitialData"][$userId]["name"];
 				}
 
-				$replay->entities[$playerId] = new objects\Player($playerId, $name);
+				$replay->entities[$playerId] = new Player($playerId, $name);
 
 				if($detailsData["result"] == 1) {
 					$replay->entities[$playerId]->result = "Win";
@@ -265,7 +274,7 @@ class PlayerLoader {
 				$detailsIndex++;
 			} else {
 				//observer => has no attribute data and no details data
-				$replay->entities[$playerId] = new objects\Observer($playerId, $initData["userInitialData"][$userId]["name"]);
+				$replay->entities[$playerId] = new Observer($playerId, $initData["userInitialData"][$userId]["name"]);
 
 				//observers have no details data, so this fallback is necessary
 				if(!isset($slotData["toonHandle"])) {

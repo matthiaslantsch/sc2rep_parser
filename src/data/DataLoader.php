@@ -1,19 +1,22 @@
 <?php
 /**
- * This file is part of the sc2rep replay parser project
- * (c) Matthias Lantsch
- *
- * class file for the DataLoader wrapper class
+* This file is part of the holonet sc2 replay parser library
+* (c) Matthias Lantsch
+*
+* class file for the DataLoader wrapper class
+*
+* @package holonet sc2 replay parser library
+* @license http://opensource.org/licenses/gpl-license.php  GNU Public License
+* @author  Matthias Lantsch <matthias.lantsch@bluewin.ch>
  */
 
-namespace HIS5\lib\Sc2repParser\data;
+namespace holonet\Sc2repParser\data;
 
 /**
  * The DataLoader class is used as a wrapper around the numerous json data files in the same directory
  *
- * @author  {AUTHOR}
- * @version {VERSION}
- * @package HIS5\lib\Sc2repParser\data
+ * @author  matthias.lantsch
+ * @package holonet\Sc2repParser\data
  */
 class DataLoader {
 
@@ -22,8 +25,8 @@ class DataLoader {
 	 * usually contains a base json with changes per version to overwrite
 	 *
 	 * @access public
-	 * @param  string dataset | the name of the data set to load
-	 * @param  integer baseBuild | the base build to load the data for
+	 * @param  string $dataset The name of the data set to load
+	 * @param  integer $baseBuild The base build to load the data for
 	 * @return array with data from the requested data set
 	 */
 	public static function loadDataset($dataset, $baseBuild) {
@@ -50,7 +53,7 @@ class DataLoader {
 	 * read a specified json file and return it's contents as an array
 	 *
 	 * @access public
-	 * @param  string file | the name of the file to load
+	 * @param  string file The name of the file to load
 	 * @return array with data from the requested data file
 	 */
 	private static function loadFile($file) {

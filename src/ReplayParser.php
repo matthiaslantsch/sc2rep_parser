@@ -1,12 +1,21 @@
 <?php
 /**
- * This file is part of the sc2rep replay parser project
+ * This file is part of the holonet sc2 replay parser library
  * (c) Matthias Lantsch
  *
- * class file for the ReplayParser class
+ * Class file for the ReplayParser class
+ *
+ * @package holonet sc2 replay parser library
+ * @license http://opensource.org/licenses/gpl-license.php  GNU Public License
+ * @author  Matthias Lantsch <matthias.lantsch@bluewin.ch>
  */
 
-namespace HIS5\lib\Sc2repParser;
+namespace holonet\Sc2repParser;
+
+use MPQArchive;
+use holonet\bitstream\StringStream;
+use holonet\Sc2repParser\utils\BlockStream;
+use holonet\Sc2repParser\resources\Replay;
 
 /**
  * The ReplayParser class is used as a center piece for the replay parsing process
@@ -16,25 +25,24 @@ namespace HIS5\lib\Sc2repParser;
  *   - events decoding (in decode()) => decodes the additional event files in the replay to create raw event objects
  *   - game engine simulation (in simulate()) => simulates the events in order and calls plugins to extract additional data
  *
- * @author  {AUTHOR}
- * @version {VERSION}
- * @package HIS5\lib\Sc2repParser
+ * @author  matthias.lantsch
+ * @package holonet\Sc2repParser
  */
 class ReplayParser {
 
 	/**
 	 * property containing the mpq archive library object
 	 *
-	 * @access 	private
-	 * @var 	MPQFile object | object of the opened mpq archive
+	 * @access private
+	 * @var    MPQArchive $archive Object of the opened mpq archive
 	 */
 	private $archive;
 
 	/**
 	 * property containing the Replay object
 	 *
-	 * @access 	public
-	 * @var 	Replay object | object containing the parsed data
+	 * @access public
+	 * @var    Replay $replay Object containing the parsed data
 	 */
 	public $replay;
 
@@ -43,14 +51,15 @@ class ReplayParser {
 	 * will always do the header decoding part (decode the replay header)
 	 *
 	 * @access public
-	 * @param  string path | path to the replay to be parsed
+	 * @param  string $path Path to the replay to be parsed
+	 * @return void
 	 */
-	public function __construct($path) {
+	public function __construct(string $path) {
 		if(!file_exists($path) || !is_readable($path)) {
 			throw new ParserException("The replay file '{$path}' could not be found/read", 10);
 		}
 
-		$this->archive = new \MPQArchive($path);
+		$this->archive = new MPQArchive($path);
 
 		//decode the header file
 		$this->decodeHeader();
@@ -62,22 +71,28 @@ class ReplayParser {
 	 *  - game loop counter
 	 *
 	 * @access private
+	 * @return void
 	 */
 	private function decodeHeader() {
-		$header = new utils\StringStream($this->archive->userData);
+		$header = new StringStream($this->archive->userData);
 		$decoder = new decoders\HeaderDecoder($header);
 		$headerData = $decoder->decode(null); //null since we do not have a replay object yet
-		$this->replay = new ressources\Replay($headerData["baseBuild"], $headerData["versionString"], $headerData["gameloops"], $headerData["expansion"]);
+		$this->replay = new Replay(
+			$headerData["baseBuild"],
+			$headerData["versionString"],
+			$headerData["gameloops"],
+			$headerData["expansion"]
+		);
 	}
 
 	/**
 	 * static interface method to identify a replay, will decode init data and replay details
 	 *
 	 * @access public
-	 * @param  string path | the path to the replay to identify
+	 * @param  string $path The path to the replay to identify
 	 * @return array with identify data
 	 */
-	public static function identify($path) {
+	public static function identify(string $path) {
 		$me = new static($path);
 		return $me->doIdentify();
 	}
@@ -86,8 +101,8 @@ class ReplayParser {
 	 * static interface method to parse a replay, will identify it and then parse the game event files
 	 *
 	 * @access public
-	 * @param  string path | the path to the replay to parse
-	 * @return replay object resulting from the decoded replay file
+	 * @param  string $path The path to the replay to parse
+	 * @return Replay object resulting from the decoded replay file
 	 */
 	public static function decode($path) {
 		$me = new static($path);
@@ -117,10 +132,13 @@ class ReplayParser {
 
 			$identifyString = $this->replay->region.$this->replay->peoplestring;
 
+			//well allow 100 seconds of time in between to make sure we get replays of the same match
+			$timestampSubString = isset($this->replay->startTimestamp) ? substr($this->replay->startTimestamp, 0, 8) : "";
+
 			if($this->replay->baseBuild < 16195) {
-				$this->replay->identifier = "BETA".(isset($this->replay->startTimestamp) ? $this->replay->startTimestamp : '').":".md5($identifyString);
+				$this->replay->identifier = "BETA{$timestampSubString}:".md5($identifyString);
 			} else {
-				$this->replay->identifier = $this->replay->startTimestamp.":".md5($identifyString);
+				$this->replay->identifier = "{$timestampSubString}:".md5($identifyString);
 			}
 
 			$this->replay->loadLevel = 2;
@@ -140,7 +158,7 @@ class ReplayParser {
 	 * will decode init data and replay details and all event files
 	 *
 	 * @access public
-	 * @return replay object resulting from the decoded replay file
+	 * @return Replay object resulting from the decoded replay file
 	 */
 	public function doDecode() {
 		$this->doIdentify();
@@ -158,13 +176,14 @@ class ReplayParser {
 	 * dispatcher method calling a decoder on a certain replay subfile
 	 *
 	 * @access public
-	 * @param  string file | the name of the replay sub file that should be decoded
-	 * @param  string decoder | the name of the decoder class to be used to decode the data
+	 * @param  string $file The name of the replay sub file that should be decoded
+	 * @param  string $decoder The name of the decoder class to be used to decode the data
+	 * @return void
 	 */
-	public function decodeFile($file, $decoder) {
+	public function decodeFile(string $file, string $decoder) {
 		if(!in_array($file, array_keys($this->replay->rawdata))) {
 			$data = $this->archive->readFile($file);
-			$stream = new utils\StringStream($data);
+			$stream = new StringStream($data);
 			//instantiate the decoder class
 			$decoder = new $decoder($stream);
 			//do the decoding
@@ -177,8 +196,8 @@ class ReplayParser {
 	 * neccessary because two computers recording the same match will never have the exact same timestamp on it
 	 *
 	 * @access public
-	 * @param  string hashOne | the replay hash of the first replay
-	 * @param  string hashTwo | the replay hash of the second replay
+	 * @param  string $hashOne The replay hash of the first replay
+	 * @param  string $hashTwo The replay hash of the second replay
 	 * @return boolean determing wheter the two replays are from the same match
 	 */
 	public static function compare($hashOne, $hashTwo) {
@@ -199,7 +218,6 @@ class ReplayParser {
 		} else {
 			return false;
 		}
-
 	}
 
 }

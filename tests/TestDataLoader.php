@@ -1,31 +1,33 @@
 <?php
 /**
- * This file is part of the hdev activerecord library
+ * This file is part of the holonet sc2 replay parser library
  * (c) Matthias Lantsch
  *
  * class file for the TestDataLoader csv loader class
+ *
+ * @package holonet sc2 replay parser library
+ * @license http://opensource.org/licenses/gpl-license.php  GNU Public License
+ * @author  Matthias Lantsch <matthias.lantsch@bluewin.ch>
  */
 
-namespace HIS5\lib\Sc2repParser\tests;
+namespace holonet\Sc2repParser\tests;
 
-use HIS5\lib\common as co;
-use HIS5\lib\Sc2repParser as parser;
+use RuntimeException;
 
 /**
  * The TestDataLoader loads csv data from the corresponding directory
  * data for the corresponding decoder classes will be saved in csv files and then lodaded through this class
- * 
- * @author  {AUTHOR}
- * @version {VERSION}
- * @package HIS5\lib\Sc2repParser\tests
+ *
+ * @author  matthias.lantsch
+ * @package holonet\Sc2repParser\tests
  */
 class TestDataLoader {
 
 	/**
 	 * property containing base name for the test replay (usually the version string)
 	 *
-	 * @access  private
-	 * @var     string basename | base name for the test replay file (usually the version string)
+	 * @access private
+	 * @var    string $basename Base name for the test replay file (usually the version string)
 	 */
 	private $basename;
 
@@ -33,9 +35,10 @@ class TestDataLoader {
 	 * constructor method for the test data loader
 	 *
 	 * @access public
-	 * @param  string basename | the base name identifier for the test replay file (usually the version string)
+	 * @param  string $basename The base name identifier for the test replay file (usually the version string)
+	 * @return void
 	 */
-	public function __construct($basename) {
+	public function __construct(string $basename) {
 		$this->basename = $basename;
 	}
 
@@ -43,12 +46,13 @@ class TestDataLoader {
 	 * actual dataset loader method
 	 *
 	 * @access public
-	 * @param  string dataset | the name of the test dataset requested
+	 * @param  string $dataset The name of the test dataset requested
+	 * @return void
 	 */
 	public function load($dataset) {
 		$filename = __DIR__.DIRECTORY_SEPARATOR."test_replays".DIRECTORY_SEPARATOR.$this->basename.DIRECTORY_SEPARATOR.$dataset.".json";
 		if(!file_exists($filename)) {
-			throw new \Exception("Error loading test data set $dataset from file $filename", 10);
+			throw new RuntimeException("Error loading test data set $dataset from file $filename", 10);
 		}
 
 		$data = file_get_contents($filename);

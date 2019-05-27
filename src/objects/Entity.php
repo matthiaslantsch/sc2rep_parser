@@ -1,110 +1,111 @@
 <?php
 /**
- * This file is part of the hdev activerecord library
+ * This file is part of the holonet sc2 replay parser library
  * (c) Matthias Lantsch
  *
  * class file for the abstract Entity base class
+ *
+ * @package holonet sc2 replay parser library
+ * @license http://opensource.org/licenses/gpl-license.php  GNU Public License
+ * @author  Matthias Lantsch <matthias.lantsch@bluewin.ch>
  */
 
-namespace HIS5\lib\Sc2repParser\objects;
-
-use HIS5\lib\Sc2repParser\utils as utils;
+namespace holonet\Sc2repParser\objects;
 
 /**
  * the abstract Entity base class is the base class for any user in the replay
  * meaning it can be any of: observer, referee, player, computer
- * 
- * @author  {AUTHOR}
- * @version {VERSION}
- * @package HIS5\lib\Sc2repParser\objects
+ *
+ * @author  matthias.lantsch
+ * @package holonet\Sc2repParser\objects
  */
 class Entity {
 
 	/**
 	 * property containing the player id of this entity
 	 *
-	 * @access  public
-	 * @var     integer playerId | integer containing the player id of this entity
+	 * @access public
+	 * @var    integer $playerId Integer containing the player id of this entity
 	 */
 	public $playerId;
 
 	/**
 	 * property containing the amount of handicap this entity has set
 	 *
-	 * @access  public
-	 * @var     integer handicap | integer indicating how much handicap this entity has, ranges from 50-100
+	 * @access public
+	 * @var    integer $handicap Integer indicating how much handicap this entity has, ranges from 50-100
 	 */
 	public $handicap;
 
 	/**
 	 * property containing the teamId for the team the entity is on (null for observers)
 	 *
-	 * @access  public
-	 * @var     integer teamId | the id of the team the entity is on (null for observers)
+	 * @access public
+	 * @var    integer $teamId The id of the team the entity is on (null for observers)
 	 */
 	public $teamId;
 
 	/**
 	 * property containing the battle.net region the entity is registered to
 	 *
-	 * @access  public
-	 * @var     string region | battle.net region identifier
+	 * @access public
+	 * @var    string $region Battle.net region identifier
 	 */
 	public $region;
 
 	/**
 	 * property containing the battle.net subregion the entity is registered to
 	 *
-	 * @access  public
-	 * @var     string subregion | battle.net subregion identifier
+	 * @access public
+	 * @var    string $subregion Battle.net subregion identifier
 	 */
 	public $subregion;
 
 	/**
 	 * property containing the battle.net toon id the entity is registered to
 	 *
-	 * @access  public
-	 * @var     string bnetId | battle.net id identifier
+	 * @access public
+	 * @var    string $bnetId Battle.net id identifier
 	 */
 	public $bnetId;
 
 	/**
 	 * property containing the clan tag for this entity at the time of the game
 	 *
-	 * @access  public
-	 * @var     string clanTag | clan tag for this entity
+	 * @access public
+	 * @var    string $clanTag Clan tag for this entity
 	 */
 	public $clanTag;
 
 	/**
 	 * property containing the battle.net name for this entity at the time of the game
 	 *
-	 * @access  public
-	 * @var     string name | battle.net name for this entity
+	 * @access public
+	 * @var    string $name Battle.net name for this entity
 	 */
 	public $name;
 
 	/**
 	 * property containing the player id of the archon team leader
 	 *
-	 * @access  public
-	 * @var     integer archonLeaderId | player id of the archon team leader
+	 * @access public
+	 * @var    integer $archonLeaderId Player id of the archon team leader
 	 */
 	public $archonLeaderId;
 
 	/**
 	 * property containing the players combined level with all races
 	 *
-	 * @access  public
-	 * @var     integer combinedRaceLevels | player's combined level across all races
+	 * @access public
+	 * @var    integer $combinedRaceLevels Player's combined level across all races
 	 */
 	public $combinedRaceLevels;
 
 	/**
 	 * property containing the players highest league that he archieved this season
 	 *
-	 * @access  public
-	 * @var     string highestLeague | player's highest league archieved this season
+	 * @access public
+	 * @var    string $highestLeague Player's highest league archieved this season
 	 */
 	public $highestLeague;
 
@@ -112,10 +113,11 @@ class Entity {
 	 * constructor method for the entity object
 	 *
 	 * @access public
-	 * @param  integer pid | player id for this entity
-	 * @param  string name | the name for this entity
+	 * @param  integer $pid Player id for this entity
+	 * @param  string $name The name for this entity
+	 * @return void
 	 */
-	public function __construct($pid, $name) {
+	public function __construct(int $pid, string $name) {
 		$this->playerId = $pid;
 		$this->name = $name;
 	}

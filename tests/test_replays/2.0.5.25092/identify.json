@@ -1,7 +1,7 @@
 {
-    "gameloops": 15780, 
-    "mapHash": "6019911ed7b772a7fb817f07d206d810ec6222495721cd6914822604293f8baf", 
-    "mapUrl": "http://CN.depot.battle.net:1119/6019911ed7b772a7fb817f07d206d810ec6222495721cd6914822604293f8baf.s2ma", 
-    "version": "2.0.5.25092", 
-    "repHash": "1362580755:99ee0a1ec0fac53bf280b66ce2466e96"
+    "gameloops": 15780,
+    "mapHash": "6019911ed7b772a7fb817f07d206d810ec6222495721cd6914822604293f8baf",
+    "mapUrl": "http://CN.depot.battle.net:1119/6019911ed7b772a7fb817f07d206d810ec6222495721cd6914822604293f8baf.s2ma",
+    "version": "2.0.5.25092",
+    "repHash": "13625807:99ee0a1ec0fac53bf280b66ce2466e96"
 }

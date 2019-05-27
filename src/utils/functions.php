@@ -3,16 +3,20 @@
  * This file is part of the sc2rep replay parser project
  * (c) Matthias Lantsch
  *
- * file for small convenience utility functions
+ * file for convenience functions
+ *
+ * @package holonet sc2 replay parser library
+ * @license http://opensource.org/licenses/gpl-license.php  GNU Public License
+ * @author  Matthias Lantsch <matthias.lantsch@bluewin.ch>
  */
 
-namespace HIS5\lib\Sc2repParser\utils;
+namespace holonet\Sc2repParser\utils;
 
 /**
  * lookup from region id to get a region string (e.g. NA)
  *
- * @param  integer regionId | the id of the region to look up
- * @return short string representing the region (e.g. NA)
+ * @param  integer $regionId The id of the region to look up
+ * @return string short string representing the region (e.g. NA)
  */
 function gatewayLookup($regionId) {
 	switch ($regionId) {
@@ -34,8 +38,8 @@ function gatewayLookup($regionId) {
 /**
  * lookup from league number to real league name (e.g. 1 => Bronze)
  *
- * @param  integer league | the number of the league to look up
- * @return short string representing the league (e.g. Silver)
+ * @param  integer $league The number of the league to look up
+ * @return string representing the league (e.g. Silver)
  */
 function leagueLookup($league) {
 	switch ($league) {
@@ -62,7 +66,7 @@ function leagueLookup($league) {
  * lookup for known localized race names, hardcoded in here
  * if no translation is avaible, we will return the original name
  *
- * @param  string localizedRace | the race name in another language, hopefully there is a hardcode for it
+ * @param  string $localizedRace The race name in another language, hopefully there is a hardcode for it
  * @return string with the delocalized race (if possible)
  */
 function delocalizeRace($localizedRace) {
@@ -120,11 +124,11 @@ function delocalizeRace($localizedRace) {
 /**
  * method calculating the real second count out of a ingame engine loop counter
  *
- * @param  integer loopCount | the number of loops passed
- * @param  string gameSpeed | a string despicting the game speed of the replay
+ * @param  integer $loopCount The number of loops passed
+ * @param  string $gameSpeed A string despicting the game speed of the replay
  * @return integer how many real life seconds have passed
  */
-function loopsToRealTime($loopCount, $gameSpeed) {
+function loopsToRealTime(int $loopCount, string $gameSpeed) {
 	$GAMESPEEDFACTOR = [
 		"Slower" => 0.6,
 		"Slow" => 0.8,
@@ -139,7 +143,7 @@ function loopsToRealTime($loopCount, $gameSpeed) {
 /**
  * method used to create a MM:SS time string out of seconds number
  *
- * @param  integer seconds | the number of seconds passed
+ * @param  integer $seconds The number of seconds passed
  * @return string how many minutes and seconds have passed
  */
 function createTimeString($seconds) {
@@ -163,7 +167,7 @@ function createTimeString($seconds) {
  * e.g. 1 => 01, 10 => 10, 4 => 04
  *
  * @access public
- * @param  integer number | the number to format
+ * @param  integer number The number to format
  * @return string a two digit number
  */
 function twoDigitNumber($number) {
@@ -172,26 +176,4 @@ function twoDigitNumber($number) {
 	} else {
 		return $number;
 	}
-}
-
-/**
- * method used to bit shift a gmp number to the left
- *
- * @param  integer x | the qmp number to be shifted
- * @return integer n | the number of bits to shift the number to the left
- * @return qmp number shifted n digits to the left
- */
-function gmp_shiftl($x, $n) {
-	return(gmp_mul($x,gmp_pow(2,$n)));
-}
-
-/**
- * method used to bit shift a gmp number to the right
- *
- * @param  integer x | the qmp number to be shifted
- * @return integer n | the number of bits to shift the number to the right
- * @return qmp number shifted n digits to the right
- */
-function gmp_shiftr($x,$n) {
-	return(gmp_div($x,gmp_pow(2,$n)));
 }

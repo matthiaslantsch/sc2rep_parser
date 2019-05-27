@@ -1,25 +1,24 @@
 <?php
 /**
- * This file is part of the sc2rep replay parser project
+ * This file is part of the holonet sc2 replay parser library
  * (c) Matthias Lantsch
  *
  * class file for the GameEventsDecoder decoder class
+ *
+ * @package holonet sc2 replay parser library
+ * @license http://opensource.org/licenses/gpl-license.php  GNU Public License
+ * @author  Matthias Lantsch <matthias.lantsch@bluewin.ch>
  */
 
-namespace HIS5\lib\Sc2repParser\decoders;
-
-use HIS5\lib\Sc2repParser\data\DataLoader;
-use HIS5\lib\Sc2repParser\events as events;
-use HIS5\lib\Sc2repParser\ParserException;
+namespace holonet\Sc2repParser\decoders;
 
 /**
  * The GameEventsDecoder class is used to decode the replay.game.events file contained in the replay archive
  *
- * @author  {AUTHOR}
- * @version {VERSION}
- * @package HIS5\lib\Sc2repParser\decoders
+ * @author  matthias.lantsch
+ * @package holonet\Sc2repParser\decoders
  */
-class GameEventsDecoder extends BitwiseDecoderBase {
+class GameEventsDecoder extends DecoderBase {
 
 	/**
 	 * update the event lookup array to the game version the replay was recorded in
@@ -221,18 +220,20 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 
 	/**
 	 * decode the replay.game.events file contained in the replay
+	 * saves the data directly into the replay object
 	 *
 	 * @access protected
+	 * @return void
 	 */
 	protected function doDecode() {
 		$eventLookup = $this->constructVersionedLookup();
 		$loopCount = 0;
 		$gameEvents = [];
 
-		while(!$this->eof()) {
+		while(!$this->stream->eof()) {
 			$loopCount += $this->readLoopCount();
-			$playerId = $this->readBits(5);
-			$eventType = $this->readBits(7);
+			$playerId = $this->stream->readBits(5);
+			$eventType = $this->stream->readBits(7);
 
 			if(isset($eventLookup[$eventType])) {
 				//echo "$loopCount - {$eventLookup[$eventType]}({$eventType})\n";
@@ -247,7 +248,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 			$event["eventtype"] = $eventLookup[$eventType];
 			$gameEvents[] = $event;
 
-			$this->align();
+			$this->stream->align();
 		}
 		$this->replay->rawdata["replay.game.events"] = $gameEvents;
 	}
@@ -259,7 +260,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseUnknownEvent() {
-		return ["unknown" => $this->readBytes(2)];
+		return ["unknown" => $this->stream->readBytes(2)];
 	}
 
 	/**
@@ -272,45 +273,45 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 		$options = [];
 
 		if($this->replay->baseBuild >= 22612) {
-			$options["gameFullyDownloaded"] = $this->readBoolean();
+			$options["gameFullyDownloaded"] = $this->stream->readBoolean();
 		}
 
-		$options["developmentCheatsEnabled"] = $this->readBoolean();
+		$options["developmentCheatsEnabled"] = $this->stream->readBoolean();
 
 		if($this->replay->baseBuild >= 34784) {
-			$options["testCheatsEnabled"] = $this->readBoolean();
+			$options["testCheatsEnabled"] = $this->stream->readBoolean();
 		}
 
-		$options["multiplayerCheatsEnabled"] = $this->readBoolean();
-		$options["syncChecksumEnabled"] = $this->readBoolean();
-		$options["isMapToMapTransition"] = $this->readBoolean();
+		$options["multiplayerCheatsEnabled"] = $this->stream->readBoolean();
+		$options["syncChecksumEnabled"] = $this->stream->readBoolean();
+		$options["isMapToMapTransition"] = $this->stream->readBoolean();
 
 		if($this->replay->baseBuild > 23260 && $this->replay->baseBuild < 38215) {
-			$options["startingRally"] = $this->readBoolean();
+			$options["startingRally"] = $this->stream->readBoolean();
 		}
 
 		if($this->replay->baseBuild >= 22612 && $this->replay->baseBuild < 23260) {
-			$options["useAiBeacons"] = $this->readBoolean();
+			$options["useAiBeacons"] = $this->stream->readBoolean();
 		}
 
 		if($this->replay->baseBuild >= 26490) {
-			$options["debugPauseEnabled"] = $this->readBoolean();
+			$options["debugPauseEnabled"] = $this->stream->readBoolean();
 		}
 
 		if($this->replay->baseBuild >= 34784) {
-			$options["useGalaxyAssets"] = $this->readBoolean();
-			$options["platformMac"] = $this->readBoolean();
-			$options["cameraFollow"] = $this->readBoolean();
+			$options["useGalaxyAssets"] = $this->stream->readBoolean();
+			$options["platformMac"] = $this->stream->readBoolean();
+			$options["cameraFollow"] = $this->stream->readBoolean();
 		}
 
 		if($this->replay->baseBuild > 23260) {
-			$options["baseBuildNumber"] = $this->readUint32();
+			$options["baseBuildNumber"] = $this->stream->readUint32();
 		}
 
 		if($this->replay->baseBuild >= 34784) {
-			$options["buildNumber"] = $this->readUint32();
-			$options["versionFlags"] = $this->readUint32();
-			$options["hotkeyProfile"] = $this->readAlignedBytes($this->readBits(9));
+			$options["buildNumber"] = $this->stream->readUint32();
+			$options["versionFlags"] = $this->stream->readUint32();
+			$options["hotkeyProfile"] = $this->stream->readAlignedBytes($this->stream->readBits(9));
 		}
 
 		return ["options" => $options];
@@ -324,7 +325,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function parseBankFileEvent() {
 		return [
-			"name" => $this->readAlignedBytes($this->readBits(7))
+			"name" => $this->stream->readAlignedBytes($this->stream->readBits(7))
 		];
 	}
 
@@ -335,7 +336,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseLagMessageEvent() {
-		return ["lagPlayerId" => $this->readBits(4)];
+		return ["lagPlayerId" => $this->stream->readBits(4)];
 	}
 
 	/**
@@ -345,7 +346,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseBankSectionEvent() {
-		$read = ["name" => $this->readAlignedBytes($this->readBits(6))];
+		$read = ["name" => $this->stream->readAlignedBytes($this->stream->readBits(6))];
 	}
 
 	/**
@@ -356,9 +357,9 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function parseBankKeyEvent() {
 		return [
-			"name" => $this->readAlignedBytes($this->readBits(6)),
-			"type" => $this->readUint32(),
-			"data" => $this->readAlignedBytes($this->readBits(7))
+			"name" => $this->stream->readAlignedBytes($this->stream->readBits(6)),
+			"type" => $this->stream->readUint32(),
+			"data" => $this->stream->readAlignedBytes($this->stream->readBits(7))
 		];
 	}
 
@@ -370,9 +371,9 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function parseBankValueEvent() {
 		return [
-			"type" => $this->readUint32(),
-			"name" => $this->readAlignedBytes($this->readBits(6)),
-			"data" => $this->readAlignedBytes($this->readBits(12))
+			"type" => $this->stream->readUint32(),
+			"name" => $this->stream->readAlignedBytes($this->stream->readBits(6)),
+			"data" => $this->stream->readAlignedBytes($this->stream->readBits(12))
 		];
 	}
 
@@ -383,14 +384,14 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseBankSignatureEvent() {
-		$numSignatures = $this->readBits($this->replay->baseBuild >= 17326 ? 5 : 4);
+		$numSignatures = $this->stream->readBits($this->replay->baseBuild >= 17326 ? 5 : 4);
 		$read = ["signatures" => []];
 		while ($numSignatures--) {
-			$read["signatures"][] = $this->readUint8();
+			$read["signatures"][] = $this->stream->readUint8();
 		}
 
 		if($this->replay->baseBuild >= 24247) {
-			$read["toonHandle"] = $this->readAlignedBytes($this->readBits(7));
+			$read["toonHandle"] = $this->stream->readAlignedBytes($this->stream->readBits(7));
 		}
 
 		return $read;
@@ -404,10 +405,10 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function parseCameraSaveEvent() {
 		return [
-			"number" => $this->readBits(3),
+			"number" => $this->stream->readBits(3),
 			"location" => [
-				"x" => $this->readUint16(),
-				"y" => $this->readUint16()
+				"x" => $this->stream->readUint16(),
+				"y" => $this->stream->readUint16()
 			]
 		];
 	}
@@ -420,11 +421,11 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function parseSaveGameEvent() {
 		return [
-			"fileName" => $this->readAlignedBytes($this->readBits(11)),
-			"automatic" => $this->readBoolean(),
-			"overwrite" => $this->readBoolean(),
-			"name" => $this->readAlignedBytes($this->readUint8()),
-			"description" => $this->readAlignedBytes($this->readBits(10))
+			"fileName" => $this->stream->readAlignedBytes($this->stream->readBits(11)),
+			"automatic" => $this->stream->readBoolean(),
+			"overwrite" => $this->stream->readBoolean(),
+			"name" => $this->stream->readAlignedBytes($this->stream->readUint8()),
+			"description" => $this->stream->readAlignedBytes($this->stream->readBits(10))
 		];
 	}
 
@@ -435,7 +436,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseCommandManagerResetEvent() {
-		return ["sequence" => $this->readUint32()];
+		return ["sequence" => $this->stream->readUint32()];
 	}
 
 	/**
@@ -447,12 +448,12 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	private function parseGameCheatEvent() {
 		return [
 			"point" => [
-				"x" => $this->readUint32() - 2147483648,
-				"y" => $this->readUint32() - 2147483648
+				"x" => $this->stream->readUint32() - 2147483648,
+				"y" => $this->stream->readUint32() - 2147483648
 			],
-			"time" => $this->readUint32() - 2147483648,
-			"verb" => $this->readAlignedBytes($this->readBits(10)),
-			"arguments" => $this->readAlignedBytes($this->readBits(10))
+			"time" => $this->stream->readUint32() - 2147483648,
+			"verb" => $this->stream->readAlignedBytes($this->stream->readBits(10)),
+			"arguments" => $this->stream->readAlignedBytes($this->stream->readBits(10))
 		];
 	}
 
@@ -477,20 +478,20 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 		} else {
 			$flagsBitLength = 25;
 		}
-		$ret["flags"] = $this->readBits($flagsBitLength);
+		$ret["flags"] = $this->stream->readBits($flagsBitLength);
 
-		if($this->replay->baseBuild < 16561 || $this->readBoolean()) {
+		if($this->replay->baseBuild < 16561 || $this->stream->readBoolean()) {
 			$ret["ability"] = [
-				"abilityLink" => $this->readUint16(),
-				"commandIndex" => $this->readBits($this->replay->baseBuild >= 16561 ? 5 : 8),
-				"commandData" => ($this->replay->baseBuild < 16561 || $this->readBoolean() ? $this->readUint8() : null)
+				"abilityLink" => $this->stream->readUint16(),
+				"commandIndex" => $this->stream->readBits($this->replay->baseBuild >= 16561 ? 5 : 8),
+				"commandData" => ($this->replay->baseBuild < 16561 || $this->stream->readBoolean() ? $this->stream->readUint8() : null)
 			];
 		}
 
 		if($this->replay->baseBuild < 16561) {
 			$bitsKind = 2;
 		} else {
-			$bitsKind = $this->readBits(2);
+			$bitsKind = $this->stream->readBits(2);
 		}
 
 		switch ($bitsKind) {
@@ -500,54 +501,54 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 			case 1:
 				$ret["cmdType"] = "TargetPointCommandEvent";
 				$ret["location"] = [
-					"x" => $this->readBits(20),
-					"y" => $this->readBits(20),
-					"z" => $this->readUint32() - 2147483648
+					"x" => $this->stream->readBits(20),
+					"y" => $this->stream->readBits(20),
+					"z" => $this->stream->readUint32() - 2147483648
 				];
 				break;
 			case 2:
 				$ret["cmdType"] = "TargetUnitCommandEvent";
 				if($this->replay->baseBuild >= 34784) {
-					$ret["targetFlags"] = $this->readUint16();
+					$ret["targetFlags"] = $this->stream->readUint16();
 				} else {
-					$ret["targetFlags"] = $this->readUint8();
+					$ret["targetFlags"] = $this->stream->readUint8();
 				}
 
-				$ret["targetTimer"] = $this->readUint8();
+				$ret["targetTimer"] = $this->stream->readUint8();
 
 				if($this->replay->baseBuild < 16561) {
 					//this was in front of the other data in those old versions
-					$ret["otherUnitId"] = $this->readUint32();
+					$ret["otherUnitId"] = $this->stream->readUint32();
 				}
 
-				$ret["targetUnitId"] = $this->readUint32();
-				$ret["targetUnitLink"] = $this->readUint16();
+				$ret["targetUnitId"] = $this->stream->readUint32();
+				$ret["targetUnitLink"] = $this->stream->readUint16();
 
-				if($this->replay->baseBuild >= 19595 && $this->readBoolean()) {
-					$ret["controlPlayerId"] = $this->readBits(4);
+				if($this->replay->baseBuild >= 19595 && $this->stream->readBoolean()) {
+					$ret["controlPlayerId"] = $this->stream->readBits(4);
 				}
 
-				if($this->readBoolean()) {
-					$ret["upkeepPlayerId"] = $this->readBits(4);
+				if($this->stream->readBoolean()) {
+					$ret["upkeepPlayerId"] = $this->stream->readBits(4);
 				}
 
 				if($this->replay->baseBuild < 16561) {
 					$ret["location"] = [
-						"x" => $this->readUint32() - 2147483648,
-						"y" => $this->readUint32() - 2147483648,
-						"z" => $this->readUint32() - 2147483648
+						"x" => $this->stream->readUint32() - 2147483648,
+						"y" => $this->stream->readUint32() - 2147483648,
+						"z" => $this->stream->readUint32() - 2147483648
 					];
 				} else {
 					$ret["location"] = [
-						"x" => $this->readBits(20),
-						"y" => $this->readBits(20),
-						"z" => $this->readUint32() - 2147483648
+						"x" => $this->stream->readBits(20),
+						"y" => $this->stream->readBits(20),
+						"z" => $this->stream->readUint32() - 2147483648
 					];
 				}
 				break;
 			case 3:
 				$ret["cmdType"] = "DataCommandEvent";
-				$ret["data"] = $this->readUint32();
+				$ret["data"] = $this->stream->readUint32();
 				break;
 			default:
 				die("Unknown bit kind command event {$bitsKind}");
@@ -555,16 +556,16 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 		}
 
 		if($this->replay->baseBuild >= 34784) {
-			$ret["sequence"] = $this->readUint32() + 1;
+			$ret["sequence"] = $this->stream->readUint32() + 1;
 		}
 
-		if($this->replay->baseBuild >= 16561 && $this->readBoolean()) {
+		if($this->replay->baseBuild >= 16561 && $this->stream->readBoolean()) {
 			//this was after the other data in the newer versions
-			$ret["otherUnitId"] = $this->readUint32();
+			$ret["otherUnitId"] = $this->stream->readUint32();
 		}
 
-		if($this->replay->baseBuild >= 34784 && $this->readBoolean()) {
-			$ret["unitGroup"] = $this->readUint32();
+		if($this->replay->baseBuild >= 34784 && $this->stream->readBoolean()) {
+			$ret["unitGroup"] = $this->stream->readUint32();
 		}
 		return $ret;
 	}
@@ -576,26 +577,26 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseSelectionDeltaEvent() {
-		$ret["controlGroupIndex"] = $this->readBits(4);
-		$ret["subGroupIndex"] = $this->readBits($this->replay->baseBuild >= 22612 ? 9 : 8);
+		$ret["controlGroupIndex"] = $this->stream->readBits(4);
+		$ret["subGroupIndex"] = $this->stream->readBits($this->replay->baseBuild >= 22612 ? 9 : 8);
 		$ret["removeMask"] = $this->readRemoveBitmask(true);
 
-		$numAddSubGroupEntries = $this->readBits($this->replay->baseBuild >= 22612 ? 9 : 8);
+		$numAddSubGroupEntries = $this->stream->readBits($this->replay->baseBuild >= 22612 ? 9 : 8);
 		$ret["addSubGroups"] = [];
 		while($numAddSubGroupEntries--) {
-			$subGroupentry = ["unitLink" => $this->readUint16()];
+			$subGroupentry = ["unitLink" => $this->stream->readUint16()];
 			if($this->replay->baseBuild > 23260) {
-				$subGroupentry["subGroupPriority"] = $this->readUint8();
+				$subGroupentry["subGroupPriority"] = $this->stream->readUint8();
 			}
-			$subGroupentry["intraSubGroupPriority"] = $this->readUint8();
-			$subGroupentry["count"] = $this->readBits($this->replay->baseBuild >= 22612 ? 9 : 8);
+			$subGroupentry["intraSubGroupPriority"] = $this->stream->readUint8();
+			$subGroupentry["count"] = $this->stream->readBits($this->replay->baseBuild >= 22612 ? 9 : 8);
 			$ret["addSubGroups"][] = $subGroupentry;
 		}
 
-		$numAddUnitTags = $this->readBits($this->replay->baseBuild >= 22612 ? 9 : 8);
+		$numAddUnitTags = $this->stream->readBits($this->replay->baseBuild >= 22612 ? 9 : 8);
 		$ret["addUnitTags"] = [];
 		while($numAddUnitTags--) {
-			$ret["addUnitTags"][] = $this->readUint32();
+			$ret["addUnitTags"][] = $this->stream->readUint32();
 		}
 
 		return $ret;
@@ -614,8 +615,8 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 		}
 
 		return [
-			"controlGroupIndex" => $this->readBits(4),
-			"updateType" => $this->readBits($this->replay->baseBuild >= 36442 ? 3 : 2),
+			"controlGroupIndex" => $this->stream->readBits(4),
+			"updateType" => $this->stream->readBits($this->replay->baseBuild >= 36442 ? 3 : 2),
 			"removeMask" => $this->readRemoveBitmask()
 		];
 	}
@@ -628,14 +629,14 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function parseSelectionSyncCheckEvent() {
 		return [
-			"controlGroupIndex" => $this->readBits(4),
+			"controlGroupIndex" => $this->stream->readBits(4),
 			"selectionSyncData" => [
-				"count" => $this->readBits($this->replay->baseBuild >= 22612 ? 9 : 8),
-				"subGroupCount" => $this->readBits($this->replay->baseBuild >= 22612 ? 9 : 8),
-				"activeSubgroupIndex" => $this->readBits($this->replay->baseBuild >= 22612 ? 9 : 8),
-				"unitTagsChecksum" => $this->readUint32(),
-				"subGroupIndicesChecksum" => $this->readUint32(),
-				"subGroupCHecksum" => $this->readUint32()
+				"count" => $this->stream->readBits($this->replay->baseBuild >= 22612 ? 9 : 8),
+				"subGroupCount" => $this->stream->readBits($this->replay->baseBuild >= 22612 ? 9 : 8),
+				"activeSubgroupIndex" => $this->stream->readBits($this->replay->baseBuild >= 22612 ? 9 : 8),
+				"unitTagsChecksum" => $this->stream->readUint32(),
+				"subGroupIndicesChecksum" => $this->stream->readUint32(),
+				"subGroupCHecksum" => $this->stream->readUint32()
 			]
 		];
 	}
@@ -648,7 +649,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function parseResourceTradeEvent() {
 		return [
-			"recipientId" => $this->readBits(4),
+			"recipientId" => $this->stream->readBits(4),
 			"resources" => $this->readResourceCounts()
 		];
 	}
@@ -661,7 +662,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseTriggerChatMessageEvent() {
-		return ["message" => $this->readAlignedBytes($this->readBits(10))];
+		return ["message" => $this->stream->readAlignedBytes($this->stream->readBits(10))];
 	}
 
 	/**
@@ -672,34 +673,34 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function parseAICommunicateEvent() {
 		$ret = [
-			"beacon" => $this->readUint8() - 128,
-			"ally" => $this->readUint8() - 128,
-			"flags" => $this->readUint8() - 128
+			"beacon" => $this->stream->readUint8() - 128,
+			"ally" => $this->stream->readUint8() - 128,
+			"flags" => $this->stream->readUint8() - 128
 		];
 
 		if($this->replay->baseBuild >= 22612) {
-			$ret["build"] = $this->readUint8() - 128;
+			$ret["build"] = $this->stream->readUint8() - 128;
 		}
 
-		$ret["targetUnitId"] = $this->readUint32();
-		$ret["targetUnitLink"] = $this->readUint16();
+		$ret["targetUnitId"] = $this->stream->readUint32();
+		$ret["targetUnitLink"] = $this->stream->readUint16();
 
-		if($this->replay->baseBuild < 22612 && $this->readBoolean()) {
-			$ret["targetUpkeepPlayerId"] = $this->readBits(4);
+		if($this->replay->baseBuild < 22612 && $this->stream->readBoolean()) {
+			$ret["targetUpkeepPlayerId"] = $this->stream->readBits(4);
 		} else {
-			$ret["targetUpkeepPlayerId"] = $this->readUint8() - 128;
+			$ret["targetUpkeepPlayerId"] = $this->stream->readUint8() - 128;
 		}
 
-		if($this->replay->baseBuild >= 19595 && $this->replay->baseBuild < 22612 && $this->readBoolean()) {
-			$ret["targetControlPlayerId"] = $this->readBits(4);
+		if($this->replay->baseBuild >= 19595 && $this->replay->baseBuild < 22612 && $this->stream->readBoolean()) {
+			$ret["targetControlPlayerId"] = $this->stream->readBits(4);
 		} else {
-			$ret["targetControlPlayerId"] = $this->readUint8() - 128;
+			$ret["targetControlPlayerId"] = $this->stream->readUint8() - 128;
 		}
 
 		$ret["location"] = [
-			"x" => $this->readUint32() - 2147483648,
-			"y" => $this->readUint32() - 2147483648,
-			"z" => $this->readUint32() - 2147483648
+			"x" => $this->stream->readUint32() - 2147483648,
+			"y" => $this->stream->readUint32() - 2147483648,
+			"z" => $this->stream->readUint32() - 2147483648
 		];
 		return $ret;
 	}
@@ -711,7 +712,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseSetAbsoluteGameSpeedEvent() {
-		return ["speed" => $this->readBits(3)];
+		return ["speed" => $this->stream->readBits(3)];
 	}
 
 	/**
@@ -721,7 +722,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseAddAbsoluteGameSpeedEvent() {
-		return ["speedDelta" => $this->readUint8() - 128];
+		return ["speedDelta" => $this->stream->readUint8() - 128];
 	}
 
 	/**
@@ -733,36 +734,36 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	private function parseTriggerPingEvent() {
 		$read = [
 			"point" => [
-				"x" => $this->readUint32() - 2147483648,
-				"y" => $this->read_uint32() - 2147483648
+				"x" => $this->stream->readUint32() - 2147483648,
+				"y" => $this->stream->readUint32() - 2147483648
 			],
-			"unitId" => $this->readUint32()
+			"unitId" => $this->stream->readUint32()
 		];
 
 		if($this->replay->baseBuild >= 38215) {
-			$read["unitLink"] = $this->readUint16();
-			if($this->readBoolean()) {
-				$read["unitControlPlayerId"] = $this->readBits(4);
+			$read["unitLink"] = $this->stream->readUint16();
+			if($this->stream->readBoolean()) {
+				$read["unitControlPlayerId"] = $this->stream->readBits(4);
 			}
-			if($this->readBoolean()) {
-				$read["unitUpkeepPlayerId"] = $this->readBits(4);
+			if($this->stream->readBoolean()) {
+				$read["unitUpkeepPlayerId"] = $this->stream->readBits(4);
 			}
 
 			$read["unitPosition"] = [
-				"x" => $this->readBits(20),
-				"y" => $this->readBits(20),
-				"z" => $this->readUint32() - 2147483648
+				"x" => $this->stream->readBits(20),
+				"y" => $this->stream->readBits(20),
+				"z" => $this->stream->readUint32() - 2147483648
 			];
 
 			if($this->replay->baseBuild >= 38996) {
-				$read["unitUnderConstruction"] = $this->readBoolean();
+				$read["unitUnderConstruction"] = $this->stream->readBoolean();
 			}
 		}
 
-		$read["pingedMinimap"] = $this->readBoolean();
+		$read["pingedMinimap"] = $this->stream->readBoolean();
 
 		if($this->replay->baseBuild >= 34784) {
-			$read["option"] = $this->readUint32() - 2147483648;
+			$read["option"] = $this->stream->readUint32() - 2147483648;
 		}
 		return $read;
 	}
@@ -775,8 +776,8 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function parseBroadcastCheatEvent() {
 		return [
-			"verb" => $this->readAlignedBytes($this->readBits(10)),
-			"arguments" => $this->readAlignedBytes($this->readBits(10))
+			"verb" => $this->stream->readAlignedBytes($this->stream->readBits(10)),
+			"arguments" => $this->stream->readAlignedBytes($this->stream->readBits(10))
 		];
 	}
 
@@ -788,8 +789,8 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function parseAllianceEvent() {
 		return [
-			"alliance" => $this->readUint32(),
-			"control" => $this->readUint32()
+			"alliance" => $this->stream->readUint32(),
+			"control" => $this->stream->readUint32()
 		];
 	}
 
@@ -800,7 +801,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseUnitClickEvent() {
-		return ["unitId" => $this->readUint32()];
+		return ["unitId" => $this->stream->readUint32()];
 	}
 
 	/**
@@ -811,8 +812,8 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function parseUnitHighlightEvent() {
 		return [
-			"unitTag" => $this->readUint32(),
-			"flags" => $this->readUint8()
+			"unitTag" => $this->stream->readUint32(),
+			"flags" => $this->stream->readUint8()
 		];
 	}
 
@@ -824,8 +825,8 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function parseTriggerReplySelectedEvent() {
 		return [
-			"conversationId" => $this->readUint32() - 2147483648,
-			"replyId" => $this->readUint32() - 2147483648
+			"conversationId" => $this->stream->readUint32() - 2147483648,
+			"replyId" => $this->stream->readUint32() - 2147483648
 		];
 	}
 
@@ -837,29 +838,29 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function parseHijackReplayGameEvent() {
 		$ret["userInfos"] = [];
-		$numUserInfos = $this->readBits(5);
+		$numUserInfos = $this->stream->readBits(5);
 		while ($numUserInfos--) {
 			$userInfo = [
-				"gameUserId" => $this->readBits(4),
-				"observe" => $this->readBits(2),
-				"name" => $this->readAlignedBytes($this->readUint8()),
+				"gameUserId" => $this->stream->readBits(4),
+				"observe" => $this->stream->readBits(2),
+				"name" => $this->stream->readAlignedBytes($this->stream->readUint8()),
 			];
 
-			if($this->readBoolean()) {
-				$userInfo["toonHandle"] = $this->readAlignedBytes($this->readBits(7));
+			if($this->stream->readBoolean()) {
+				$userInfo["toonHandle"] = $this->stream->readAlignedBytes($this->stream->readBits(7));
 			}
 
-			if($this->readBoolean()) {
-				$userInfo["clanTag"] = $this->readAlignedBytes($this->readUint8());
+			if($this->stream->readBoolean()) {
+				$userInfo["clanTag"] = $this->stream->readAlignedBytes($this->stream->readUint8());
 			}
 
-			if($this->replay->baseBuild >= 27950 && $this->readBoolean()) {
+			if($this->replay->baseBuild >= 27950 && $this->stream->readBoolean()) {
 				$userInfo["clanLogo"] = $this->readCacheHandle();
 
 			}
 			$ret["userInfos"][] = $userInfo;
 		}
-		$ret["method"] = $this->readBits(1);
+		$ret["method"] = $this->stream->readBits(1);
 
 		return $ret;
 	}
@@ -872,8 +873,8 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function parseTriggerSoundLengthQueryEvent() {
 		return [
-			"soundHash" => $this->readUint32(),
-			"length" => $this->readUint32()
+			"soundHash" => $this->stream->readUint32(),
+			"length" => $this->stream->readUint32()
 		];
 	}
 
@@ -884,7 +885,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseTriggerSoundOffsetEvent() {
-		return ["sound" => $this->readUint32()];
+		return ["sound" => $this->stream->readUint32()];
 	}
 
 	/**
@@ -894,7 +895,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseTriggerTransmissionCompleteEvent() {
-		return ["transmissionId" => $this->readUint32() - 2147483648];
+		return ["transmissionId" => $this->stream->readUint32() - 2147483648];
 	}
 
 	/**
@@ -904,7 +905,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseTriggerTransmissionOffsetEvent() {
-		return ["transmissionId" => $this->readUint32() - 2147483648];
+		return ["transmissionId" => $this->stream->readUint32() - 2147483648];
 	}
 
 	/**
@@ -915,37 +916,37 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function parseCameraUpdateEvent() {
 		$ret = [];
-		if($this->replay->baseBuild <= 23260 || $this->readBoolean()) {
+		if($this->replay->baseBuild <= 23260 || $this->stream->readBoolean()) {
 			$ret["location"] = [
-				"x" => $this->readUint16(),
-				"y" => $this->readUint16()
+				"x" => $this->stream->readUint16(),
+				"y" => $this->stream->readUint16()
 			];
 		}
 
 		if($this->replay->baseBuild <= 15623) {
 			//unknown values, skip 16 more bytes and return
-			$this->readAlignedBytes(16);
+			$this->stream->readAlignedBytes(16);
 			return $ret;
 		}
 
-		if($this->readBoolean()) {
-			$ret["distance"] = $this->readUint16();
+		if($this->stream->readBoolean()) {
+			$ret["distance"] = $this->stream->readUint16();
 		}
 
-		if($this->readBoolean()) {
-			$ret["pitch"] = $this->readUint16();
+		if($this->stream->readBoolean()) {
+			$ret["pitch"] = $this->stream->readUint16();
 		}
 
-		if($this->readBoolean()) {
-			$ret["yaw"] = $this->readUint16();
+		if($this->stream->readBoolean()) {
+			$ret["yaw"] = $this->stream->readUint16();
 		}
 
-		if($this->replay->baseBuild >= 27950 && $this->readBoolean()) {
-			$ret["reason"] = $this->readUint8() - 128;
+		if($this->replay->baseBuild >= 27950 && $this->stream->readBoolean()) {
+			$ret["reason"] = $this->stream->readUint8() - 128;
 		}
 
 		if($this->replay->baseBuild >= 34784) {
-			$ret["follow"] = $this->readBoolean();
+			$ret["follow"] = $this->stream->readBoolean();
 		}
 
 		return $ret;
@@ -958,7 +959,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseTriggerPurchaseMadeEvent() {
-		return ["purchaseItemId" => $this->readUint32() - 2147483648];
+		return ["purchaseItemId" => $this->stream->readUint32() - 2147483648];
 	}
 
 	/**
@@ -968,7 +969,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseTriggerPlanetMissionLaunchedEvent() {
-		return ["difficultyLevel" => $this->readUint32() - 2147483648];
+		return ["difficultyLevel" => $this->stream->readUint32() - 2147483648];
 	}
 
 	/**
@@ -979,30 +980,30 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function parseTriggerDialogControlEvent() {
 		$read = [
-			"controlId" => $this->readUint32() - 2147483648,
-			"eventType" => $this->readUint32() - 2147483648
+			"controlId" => $this->stream->readUint32() - 2147483648,
+			"eventType" => $this->stream->readUint32() - 2147483648
 		];
 
-		$eventDataType = $this->readBits(3);
+		$eventDataType = $this->stream->readBits(3);
 		switch ($eventDataType) {
 			case 0:
 				$read["eventData"] = ["None" => null];
 				break;
 			case 1:
-				$read["eventData"] = ["Checked" => $this->readBoolean()];
+				$read["eventData"] = ["Checked" => $this->stream->readBoolean()];
 				break;
 			case 2:
-				$read["eventData"] = ["ValueChanged" => $this->readUint32()];
+				$read["eventData"] = ["ValueChanged" => $this->stream->readUint32()];
 				break;
 			case 3:
-				$read["eventData"] = ["SelectionChanged" => $this->readUint32() - 2147483648];
+				$read["eventData"] = ["SelectionChanged" => $this->stream->readUint32() - 2147483648];
 				break;
 			case 4:
-				$read["eventData"] = ["TextChanged" => $this->readAlignedBytes($this->readBits(11))];
+				$read["eventData"] = ["TextChanged" => $this->stream->readAlignedBytes($this->stream->readBits(11))];
 				break;
 			case 5:
 				if($this->replay->baseBuild > 23260) {
-					$read["eventData"] = ["MouseButton" => $this->readUint32()];
+					$read["eventData"] = ["MouseButton" => $this->stream->readUint32()];
 				}
 				break;
 		}
@@ -1018,14 +1019,14 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	private function parseTriggerSoundLengthSyncEvent() {
 		$read = ["syncInfo" => []];
 
-		$numSoundHash = $this->readBits(($this->replay->baseBuild >= 23260 ? 7 : 8));
+		$numSoundHash = $this->stream->readBits(($this->replay->baseBuild >= 23260 ? 7 : 8));
 		while ($numSoundHash--) {
-			$read["syncInfo"]["soundHash"][] = $this->readUint32();
+			$read["syncInfo"]["soundHash"][] = $this->stream->readUint32();
 		}
 
-		$numLengths = $this->readBits(($this->replay->baseBuild >= 23260 ? 7 : 8));
+		$numLengths = $this->stream->readBits(($this->replay->baseBuild >= 23260 ? 7 : 8));
 		while ($numLengths--) {
-			$read["syncInfo"]["length"][] = $this->readUint32();
+			$read["syncInfo"]["length"][] = $this->stream->readUint32();
 		}
 		return $read;
 	}
@@ -1037,7 +1038,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseTriggerConversationSkippedEvent() {
-		return ["skipType" => $this->readBits(1)];
+		return ["skipType" => $this->stream->readBits(1)];
 	}
 
 	/**
@@ -1048,34 +1049,34 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function parseTriggerMouseClickedEvent() {
 		$read = [
-			"button" => $this->readUint32(),
-			"down" => $this->readBoolean()
+			"button" => $this->stream->readUint32(),
+			"down" => $this->stream->readBoolean()
 		];
 
 		if($this->replay->baseBuild < 17326) {
 			$read["positionUI"] = [
-				"x" => $this->readUint32(),
-				"y" => $this->readUint32()
+				"x" => $this->stream->readUint32(),
+				"y" => $this->stream->readUint32()
 			];
 			$read["positionWorld"] = [
-				"x" => $this->readUint32() - 2147483648,
-				"y" => $this->readUint32() - 2147483648,
-				"z" => $this->readUint32() - 2147483648
+				"x" => $this->stream->readUint32() - 2147483648,
+				"y" => $this->stream->readUint32() - 2147483648,
+				"z" => $this->stream->readUint32() - 2147483648
 			];
 		} else {
 			$read["positionUI"] = [
-				"x" => $this->readBits(11),
-				"y" => $this->readBits(11)
+				"x" => $this->stream->readBits(11),
+				"y" => $this->stream->readBits(11)
 			];
 			$read["positionWorld"] = [
-				"x" => $this->readBits(20),
-				"y" => $this->readBits(20),
-				"z" => $this->readUint32() - 2147483648
+				"x" => $this->stream->readBits(20),
+				"y" => $this->stream->readBits(20),
+				"z" => $this->stream->readUint32() - 2147483648
 			];
 		}
 
 		if($this->replay->baseBuild >= 26490) {
-			$read["flags"] = $this->readUint8() - 128;
+			$read["flags"] = $this->stream->readUint8() - 128;
 		}
 		return $read;
 	}
@@ -1089,18 +1090,18 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	private function parseTriggerMouseMovedEvent() {
 		$read = [
 			"positionUI" => [
-				"x" => $this->readBits(11),
-				"y" => $this->readBits(11)
+				"x" => $this->stream->readBits(11),
+				"y" => $this->stream->readBits(11)
 			],
 			"positionWorld" => [
-				"x" => $this->readBits(20),
-				"y" => $this->readBits(20),
-				"z" => $this->readUint32() - 2147483648
+				"x" => $this->stream->readBits(20),
+				"y" => $this->stream->readBits(20),
+				"z" => $this->stream->readUint32() - 2147483648
 			]
 		];
 
 		if($this->replay->baseBuild >= 26490) {
-			$read["flags"] = $this->readUint8() - 128;
+			$read["flags"] = $this->stream->readUint8() - 128;
 		}
 		return $read;
 	}
@@ -1112,7 +1113,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseAchievementAwardedEvent() {
-		return ["achievementLink" => $this->readUint16()];
+		return ["achievementLink" => $this->stream->readUint16()];
 	}
 
 	/**
@@ -1123,8 +1124,8 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function parseTriggerHotkeyPressedEvent() {
 		return [
-			"hotkey" => $this->readUint32(),
-			"down" => $this->readBoolean()
+			"hotkey" => $this->stream->readUint32(),
+			"down" => $this->stream->readBoolean()
 		];
 	}
 
@@ -1136,9 +1137,9 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function parseTriggerTargetModeUpdateEvent() {
 		return [
-			"abilityLink" => $this->readUint16(),
-			"abilityCommandIndex" => $this->readBits(5),
-			"state" => $this->readUint8() - 128
+			"abilityLink" => $this->stream->readUint16(),
+			"abilityCommandIndex" => $this->stream->readBits(5),
+			"state" => $this->stream->readUint8() - 128
 		];
 	}
 
@@ -1149,7 +1150,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseTriggerSoundtrackDoneEvent() {
-		return ["soundtrack" => $this->readUint32()];
+		return ["soundtrack" => $this->stream->readUint32()];
 	}
 
 	/**
@@ -1159,7 +1160,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseTriggerPlanetMissionSelectedEvent() {
-		return ["planetId" => $this->readUint32() - 2147483648];
+		return ["planetId" => $this->stream->readUint32() - 2147483648];
 	}
 
 	/**
@@ -1170,8 +1171,8 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function parseTriggerKeyPressedEvent() {
 		return [
-			"key" => $this->readUint8() - 128,
-			"flags" => $this->readUint8() - 128
+			"key" => $this->stream->readUint8() - 128,
+			"flags" => $this->stream->readUint8() - 128
 		];
 	}
 
@@ -1182,7 +1183,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseTriggerMovieFunctionEvent() {
-		return ["functionName" => $this->readAlignedBytes($this->readBits(7))];
+		return ["functionName" => $this->stream->readAlignedBytes($this->stream->readBits(7))];
 	}
 
 	/**
@@ -1202,7 +1203,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseResourceRequestCancelEvent() {
-		return ["requestId" => $this->readUint32() - 2147483648];
+		return ["requestId" => $this->stream->readUint32() - 2147483648];
 	}
 
 	/**
@@ -1212,7 +1213,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseResourceRequestFulfillEvent() {
-		return ["requestId" => $this->readUint32() - 2147483648];
+		return ["requestId" => $this->stream->readUint32() - 2147483648];
 	}
 
 	/**
@@ -1222,7 +1223,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseTriggerMercenaryPanelSelectionChangedEvent() {
-		return ["itemId" => $this->readUint32() - 2147483648];
+		return ["itemId" => $this->stream->readUint32() - 2147483648];
 	}
 
 	/**
@@ -1232,7 +1233,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parsePurchasePanelSelectedPurchaseItemChangedEvent() {
-		return ["itemId" => $this->readUint32() - 2147483648];
+		return ["itemId" => $this->stream->readUint32() - 2147483648];
 	}
 
 	/**
@@ -1242,7 +1243,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseTriggerResearchPanelSelectionChangedEvent() {
-		return ["itemId" => $this->readUint32() - 2147483648];
+		return ["itemId" => $this->stream->readUint32() - 2147483648];
 	}
 
 	/**
@@ -1252,14 +1253,14 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseTriggerCommandErrorEvent() {
-		$read = ["error" =>  $this->readUint32() - 2147483648];
-		if($this->readBoolean()) {
+		$read = ["error" =>  $this->stream->readUint32() - 2147483648];
+		if($this->stream->readBoolean()) {
 			$read["ability"] = [
-				"abilityLink" => $this->readUint16(),
-				"abilityCommandIndex" => $this->readBits(5)
+				"abilityLink" => $this->stream->readUint16(),
+				"abilityCommandIndex" => $this->stream->readBits(5)
 			];
-			if($this->readBoolean()) {
-				$read["ability"]["abilityCommandData"] = $this->readUint8();
+			if($this->stream->readBoolean()) {
+				$read["ability"]["abilityCommandData"] = $this->stream->readUint8();
 			}
 		}
 		return $read;
@@ -1273,8 +1274,8 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function parseTriggerBattleReportPanelPlayMissionEvent() {
 		return [
-			"battleReportId" => $this->readUint32() - 2147483648,
-			"difficultyLevel" => $this->readUint32() - 2147483648
+			"battleReportId" => $this->stream->readUint32() - 2147483648,
+			"difficultyLevel" => $this->stream->readUint32() - 2147483648
 		];
 	}
 
@@ -1285,7 +1286,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseTriggerBattleReportPanelPlaySceneEvent() {
-		return ["battleReportId" => $this->readUint32() - 2147483648];
+		return ["battleReportId" => $this->stream->readUint32() - 2147483648];
 	}
 
 	/**
@@ -1295,7 +1296,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseTriggerBattleReportPanelSelectionChangedEvent() {
-		return ["battleReportId" => $this->readUint32() - 2147483648];
+		return ["battleReportId" => $this->stream->readUint32() - 2147483648];
 	}
 
 	/**
@@ -1305,7 +1306,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseTriggerVictoryPanelPlayMissionAgainEvent() {
-		return ["difficultyLevel" => $this->readUint32() - 2147483648];
+		return ["difficultyLevel" => $this->stream->readUint32() - 2147483648];
 	}
 
 	/**
@@ -1316,9 +1317,9 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function parseDecrementGameTimeRemainingEvent() {
 		if($this->replay->baseBuild >= 16561 && $this->replay->baseBuild < 41743) {
-			return ["decrementMs" => $this->readBits(19)];
+			return ["decrementMs" => $this->stream->readBits(19)];
 		} else {
-			return ["decrementMs" => $this->readUint32()];
+			return ["decrementMs" => $this->stream->readUint32()];
 		}
 	}
 
@@ -1329,7 +1330,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseTriggerPortraitLoadedEvent() {
-		return ["portraitId" => $this->readUint32() - 2147483648];
+		return ["portraitId" => $this->stream->readUint32() - 2147483648];
 	}
 
 	/**
@@ -1339,7 +1340,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseTriggerCustomDialogDismissedEvent() {
-		return ["result" => $this->readUint32() - 2147483648];
+		return ["result" => $this->stream->readUint32() - 2147483648];
 	}
 
 	/**
@@ -1349,7 +1350,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseTriggerGameMenuItemSelectedEvent() {
-		return ["gameMenuItemIndex" => $this->readUint32() - 2147483648];
+		return ["gameMenuItemIndex" => $this->stream->readUint32() - 2147483648];
 	}
 
 	/**
@@ -1360,8 +1361,8 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function parseTriggerMouseWheelEvent() {
 		return [
-			"wheelSpin" => $this->readUint16() - 32768,
-			"flags" => $this->readUint8() - 128
+			"wheelSpin" => $this->stream->readUint16() - 32768,
+			"flags" => $this->stream->readUint8() - 128
 		];
 	}
 
@@ -1372,7 +1373,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseTriggerPurchasePanelSelectedPurchaseCategoryChangedEvent() {
-		return ["categoryId" => $this->readUint32() - 2147483648];
+		return ["categoryId" => $this->stream->readUint32() - 2147483648];
 	}
 
 	/**
@@ -1382,7 +1383,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseTriggerButtonPressedEvent() {
-		return ["button" => $this->readUint16()];
+		return ["button" => $this->stream->readUint16()];
 	}
 
 	/**
@@ -1393,8 +1394,8 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function parseTriggerCutsceneBookmarkFiredEvent() {
 		return [
-			"cutsceneId" => $this->readUint32() - 2147483648,
-			"bookmarkName" => $this->readAlignedBytes($this->readBits(7))
+			"cutsceneId" => $this->stream->readUint32() - 2147483648,
+			"bookmarkName" => $this->stream->readAlignedBytes($this->stream->readBits(7))
 		];
 	}
 
@@ -1405,7 +1406,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseTriggerCutsceneEndSceneFiredEvent() {
-		return ["cutsceneId" => $this->readUint32() - 2147483648];
+		return ["cutsceneId" => $this->stream->readUint32() - 2147483648];
 	}
 
 	/**
@@ -1416,9 +1417,9 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function parseTriggerCutsceneConversationLineEvent() {
 		return [
-			"cutsceneId" => $this->readUint32() - 2147483648,
-			"conversationLine" => $this->readAlignedBytes($this->readBits(7)),
-			"altConversationLine" => $this->readAlignedBytes($this->readBits(7))
+			"cutsceneId" => $this->stream->readUint32() - 2147483648,
+			"conversationLine" => $this->stream->readAlignedBytes($this->stream->readBits(7)),
+			"altConversationLine" => $this->stream->readAlignedBytes($this->stream->readBits(7))
 		];
 	}
 
@@ -1430,8 +1431,8 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function parseTriggerCutsceneConversationLineMissingEvent() {
 		return [
-			"cutsceneId" => $this->readUint32() - 2147483648,
-			"conversationLine" => $this->readAlignedBytes($this->readBits(7))
+			"cutsceneId" => $this->stream->readUint32() - 2147483648,
+			"conversationLine" => $this->stream->readAlignedBytes($this->stream->readBits(7))
 		];
 	}
 
@@ -1445,7 +1446,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 		if($this->replay->baseBuild < 34784) {
 			return [];
 		} else {
-			return ["leaveReason" => $this->readBits(4)];
+			return ["leaveReason" => $this->stream->readBits(4)];
 		}
 	}
 
@@ -1457,22 +1458,22 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function parseGameUserJoinEvent() {
 		$ret = [
-			"observe" => $this->readBits(2),
-			"name" => $this->readAlignedBytes($this->readBits(8)),
+			"observe" => $this->stream->readBits(2),
+			"name" => $this->stream->readAlignedBytes($this->stream->readBits(8)),
 		];
-		if($this->readBoolean()) {
-			$ret["toonHandle"] = $this->readAlignedBytes($this->readBits(7));
+		if($this->stream->readBoolean()) {
+			$ret["toonHandle"] = $this->stream->readAlignedBytes($this->stream->readBits(7));
 		}
-		if($this->readBoolean()) {
-			$ret["clanTag"] = $this->readAlignedBytes($this->readBits(8));
+		if($this->stream->readBoolean()) {
+			$ret["clanTag"] = $this->stream->readAlignedBytes($this->stream->readBits(8));
 		}
-		if($this->replay->baseBuild >= 27950 && $this->readBoolean()) {
+		if($this->replay->baseBuild >= 27950 && $this->stream->readBoolean()) {
 			$ret["clanLogo"] = $this->parseCacheHandle();
 		}
 		if($this->replay->baseBuild >= 34784) {
-			$ret["hijack"] = $this->readBoolean();
-			if($this->readBoolean()) {
-				$ret["hijackCloneGameUserId"] = $this->readBits(4);
+			$ret["hijack"] = $this->stream->readBoolean();
+			if($this->stream->readBoolean()) {
+				$ret["hijackCloneGameUserId"] = $this->stream->readBits(4);
 			}
 		}
 		return $ret;
@@ -1485,9 +1486,9 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseCommandManagerStateEvent() {
-		$read = ["state" => $this->readBits(2)];
-		if($this->readBoolean()) {
-			$read["sequence"] = $this->readUint32() + 1;
+		$read = ["state" => $this->stream->readBits(2)];
+		if($this->stream->readBoolean()) {
+			$read["sequence"] = $this->stream->readUint32() + 1;
 		}
 		return $read;
 	}
@@ -1499,7 +1500,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseTriggerCameraMoveEvent() {
-		return ["reason" => $this->readUint8() - 128];
+		return ["reason" => $this->stream->readUint8() - 128];
 	}
 
 	/**
@@ -1511,9 +1512,9 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	private function parseCmdUpdateTargetPointEvent() {
 		return [
 			"location" => [
-				"x" => $this->readBits(20),
-				"y" => $this->readBits(20),
-				"z" => $this->readUint32() - 2147483648
+				"x" => $this->stream->readBits(20),
+				"y" => $this->stream->readBits(20),
+				"z" => $this->stream->readUint32() - 2147483648
 			]
 		];
 	}
@@ -1526,24 +1527,24 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function parseCmdUpdateTargetUnitEvent() {
 		$read = [
-			"targetUnitFlags" => $this->readUint16(),
-			"timer" => $this->readUint8(),
-			"tag" => $this->readUint32(),
-			"snapshotUnitLink" => $this->readUint16()
+			"targetUnitFlags" => $this->stream->readUint16(),
+			"timer" => $this->stream->readUint8(),
+			"tag" => $this->stream->readUint32(),
+			"snapshotUnitLink" => $this->stream->readUint16()
 		];
 
-		if($this->readBoolean()) {
-			$read["snapshotControlPlayerId"] = $this->readBits(4);
+		if($this->stream->readBoolean()) {
+			$read["snapshotControlPlayerId"] = $this->stream->readBits(4);
 		}
 
-		if($this->readBoolean()) {
-			$read["snapshotUpkeepPlayerId"] = $this->readBits(4);
+		if($this->stream->readBoolean()) {
+			$read["snapshotUpkeepPlayerId"] = $this->stream->readBits(4);
 		}
 
 		$read["snapshotLocation"] = [
-			"x" => $this->readBits(20),
-			"y" => $this->readBits(20),
-			"z" => $this->readUint32() - 2147483648
+			"x" => $this->stream->readBits(20),
+			"y" => $this->stream->readBits(20),
+			"z" => $this->stream->readUint32() - 2147483648
 		];
 		return $read;
 	}
@@ -1556,9 +1557,9 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function parseTriggerAnimLengthQueryByNameEvent() {
 		return [
-			"queryId" => $this->readUint16(),
-			"lengthMs" => $this->readUint32(),
-			"finishGameLoop" => $this->readUint32()
+			"queryId" => $this->stream->readUint16(),
+			"lengthMs" => $this->stream->readUint32(),
+			"finishGameLoop" => $this->stream->readUint32()
 		];
 	}
 
@@ -1570,8 +1571,8 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function parseTriggerAnimLengthQueryByPropsEvent() {
 		return [
-			"queryId" => $this->readUint16(),
-			"lengthMs" => $this->readUint32()
+			"queryId" => $this->stream->readUint16(),
+			"lengthMs" => $this->stream->readUint32()
 		];
 	}
 
@@ -1582,7 +1583,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseTriggerAnimOffsetEvent() {
-		return ["animWaitQueryId" => $this->readUint16()];
+		return ["animWaitQueryId" => $this->stream->readUint16()];
 	}
 
 	/**
@@ -1593,10 +1594,10 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function parseCatalogModifyEvent() {
 		return [
-			"catalog" => $this->readUint8(),
-			"entry" => $this->readUint16(),
-			"field" => $this->readAlignedBytes($this->read_uint8()),
-			"value" => $this->readAlignedBytes($this->readUint8())
+			"catalog" => $this->stream->readUint8(),
+			"entry" => $this->stream->readUint16(),
+			"field" => $this->stream->readAlignedBytes($this->readUint8()),
+			"value" => $this->stream->readAlignedBytes($this->stream->readUint8())
 		];
 	}
 
@@ -1607,7 +1608,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseHeroTalentTreeSelectedEvent() {
-		return ["index" => $this->readUint32()];
+		return ["index" => $this->stream->readUint32()];
 	}
 
 	/**
@@ -1617,7 +1618,7 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * @return array with parsed event data
 	 */
 	private function parseHeroTalentTreeSelectionPanelToggledEvent() {
-		return ["shown" => $this->readBoolean()];
+		return ["shown" => $this->stream->readBoolean()];
 	}
 
 	/**
@@ -1844,12 +1845,12 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 * helper function to read a removal bit mask (used by selection and control group event parsers)
 	 *
 	 * @access private
-	 * @param  boolean forceMask | boolean allowing selectiondeltaevents to be treated like newer versions
+	 * @param  boolean $forceMask Boolean allowing selectiondeltaevents to be treated like newer versions
 	 * @return array with the removal mask read from the stream
 	 */
 	private function readRemoveBitmask($forceMask = false) {
 		if($this->replay->baseBuild >= 16561) {
-			$removeMask = $this->readBits(2);
+			$removeMask = $this->stream->readBits(2);
 		} else {
 			$removeMask = 1;
 		}
@@ -1859,29 +1860,32 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 				$removeMask = ["None" => null];
 				break;
 			case 1:
-				if($this->replay->baseBuild >= 16561 || $forceMask || $this->readBoolean()) {
-					$numBits = $this->readBits($this->replay->baseBuild >= 22612 ? 9 : 8);
-					$removeMask = ["Mask" => $this->readBits($numBits)];
+				if($this->replay->baseBuild >= 16561 || $forceMask || $this->stream->readBoolean()) {
+					$numBits = $this->stream->readBits($this->replay->baseBuild >= 22612 ? 9 : 8);
+					$removeMask = ["Mask" => $this->stream->readBits($numBits)];
+					if($removeMask["Mask"] === "") {
+						$removeMask["Mask"] = 0;
+					}
 				} else {
 					$removeMask = ["None" => null];
 				}
 				break;
 			case 2:
 				$removeMask = ["OneIndices" => []];
-				$numUnitTag = $this->readBits($this->replay->baseBuild >= 22612 ? 9 : 8);
+				$numUnitTag = $this->stream->readBits($this->replay->baseBuild >= 22612 ? 9 : 8);
 				while($numUnitTag--) {
-					$removeMask["OneIndices"][] = $this->readBits($this->replay->baseBuild >= 22612 ? 9 : 8);
+					$removeMask["OneIndices"][] = $this->stream->readBits($this->replay->baseBuild >= 22612 ? 9 : 8);
 				}
 				break;
 			case 3:
 				$removeMask = ["ZeroIndices" => []];
-				$numUnitTag = $this->readBits($this->replay->baseBuild >= 22612 ? 9 : 8);
+				$numUnitTag = $this->stream->readBits($this->replay->baseBuild >= 22612 ? 9 : 8);
 				while($numUnitTag--) {
-					$removeMask["ZeroIndices"][] = $this->readBits($this->replay->baseBuild >= 22612 ? 9 : 8);
+					$removeMask["ZeroIndices"][] = $this->stream->readBits($this->replay->baseBuild >= 22612 ? 9 : 8);
 				}
 				break;
 			default:
-				die(var_dump("Strange selection delta mask id"));
+				throw new ParserException("Strange selection delta mask id", 100);
 				break;
 		}
 		return $removeMask;
@@ -1895,11 +1899,11 @@ class GameEventsDecoder extends BitwiseDecoderBase {
 	 */
 	private function readResourceCounts() {
 		$resourceNames = ["Minerals", "Vespene", "Terrazine", "Custom"];
-		$numResources = $this->readBits(3);
+		$numResources = $this->stream->readBits(3);
 		for ($i=0; $i < $numResources; $i++) {
-			$resCount = $this->readUint32() - 2147483648;
+			$resCount = $this->stream->readUint32() - 2147483648;
 			if(!isset($resourceNames[$i])) {
-				die(var_dump("Unknown resource: {$resCount}"));
+				throw new ParserException("Unknown resource: '{$resCount}'", 200);
 			}
 			$resources[$resourceNames[$i]] = $resCount;
 		}

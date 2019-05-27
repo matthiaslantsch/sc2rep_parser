@@ -19,7 +19,7 @@ use PHPUnit\Framework\TestCase;
  * @version {VERSION}
  * @package HIS5\lib\Sc2repParser\tests
  */
-class BitwiseDecoderBaseTest extends TestCase {
+//class BitwiseDecoderBaseTest extends TestCase {
 /*
 */
 	/**
