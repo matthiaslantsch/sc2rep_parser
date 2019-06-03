@@ -100,9 +100,9 @@ class TypeInfo {
 				if($tag >= 0) {
 					$index = $this->getIndexes($key, $this->types[$linkId]);
 					if(is_string($index)) {
-						$structItems[] = $index;
+						$structItems[$tag] = array("index" => $index);
 					}  else {
-						$structItems[$key] = $index;
+						$structItems[$tag] = array("key" => $key, "index" => $index);
 					}
 					$tagged = true;
 				} else {
@@ -110,7 +110,17 @@ class TypeInfo {
 				}
 			}
 			if($tagged) {
-				return new BinSerialisedData($structItems);
+				//sort them by tag!!
+				ksort($structItems);
+				$saveItems = array();
+				foreach ($structItems as $tag => $item) {
+					if(isset($item["key"])) {
+						$saveItems[$item["key"]] = $item["index"];
+					} else {
+						$saveItems[] = $item["index"];
+					}
+				}
+				return new BinSerialisedData($saveItems);
 			} else {
 				return new BinStruct($structItems);
 			}
