@@ -12,6 +12,9 @@
 
 namespace holonet\Sc2repParser\decoders;
 
+use holonet\Sc2repParser\format\VersionBase;
+use holonet\bitstream\format\BinaryFormatParser;
+
 /**
  * The HeaderDecoder class is used to decode the header in an mpq replay archive file:
  *  - game version
@@ -24,67 +27,50 @@ class HeaderDecoder extends DecoderBase {
 
 	/**
 	 * actually decode the header
-	 * usually decoded data is directly saved, exception here since the replay object doesn't exist yet
+	 * usually decoded data is directly saved, not here since the replay object doesn't exist yet
 	 *
 	 * @access protected
 	 * @return array with decoded header data
 	 */
 	protected function doDecode() {
-		$ret = [];
+		$ret = array();
 
-		$firstByte = $this->stream->readUint8();
-		if($firstByte < 10) {
-			$headerData = $this->parseSerializedData($firstByte);
-			$ret["baseBuild"] = $headerData[1][5];
-			$ret["versionString"] = sprintf(
+		//try to decode with the new packed header format
+		$formatTree = VersionBase::getFileFormat("header");
+		$parser = new BinaryFormatParser($this->stream, $formatTree);
+		$data = $parser->parse();
+
+		if(isset($data["signature"])) {
+			$data["versionString"] = sprintf(
 				"%d.%d.%d.%d", //major.minor.fix.build
-				$headerData[1][1], //major version number
-				$headerData[1][2],//minor version number
-				$headerData[1][3],//fix version number
-				$headerData[1][4] //the build
+				$data["version"]["major"], //major version number
+				$data["version"]["minor"],//minor version number
+				$data["version"]["revision"],//fix version number
+				$data["version"]["build"] //the build
 			);
-			$ret["gameloops"] = $headerData[3];
 		} else {
-			//fallback because old beta replay version
-			$ret = $this->oldVersionDecode();
+			//must be an older replay, try again with the old parser
+			$this->stream->rewind();
+			$formatTree = VersionBase::getFileFormat("oldheader");
+			$parser = new BinaryFormatParser($this->stream, $formatTree);
+			$data = $parser->parse();
 		}
 
-		if($ret["baseBuild"] < 16195) {
-			$ret["expansion"] = "WoL Beta";
-		} elseif($ret["baseBuild"] <= 25092) {
-			$ret["expansion"] = "WoL";
-		} elseif($ret["baseBuild"] <= 25180) {
-			$ret["expansion"] = "HotS Beta";
-		} elseif($ret["baseBuild"] <= 38749) {
-			$ret["expansion"] = "HotS";
-		} elseif($ret["baseBuild"] <= 38996) {
-			$ret["expansion"] = "LotV Beta";
+		if($data["version"]["baseBuild"] < 16195) {
+			$data["expansion"] = "WoL Beta";
+		} elseif($data["version"]["baseBuild"] <= 25092) {
+			$data["expansion"] = "WoL";
+		} elseif($data["version"]["baseBuild"] <= 25180) {
+			$data["expansion"] = "HotS Beta";
+		} elseif($data["version"]["baseBuild"] <= 38749) {
+			$data["expansion"] = "HotS";
+		} elseif($data["version"]["baseBuild"] <= 38996) {
+			$data["expansion"] = "LotV Beta";
 		} else {
-			$ret["expansion"] = "LotV";
+			$data["expansion"] = "LotV";
 		}
 
-		return $ret;
-	}
-
-	/**
-	 * small helper function used to decode older beta version replays
-	 *
-	 * @access protected
-	 * @return array with decoded header data
-	 */
-	private function oldVersionDecode() {
-		$this->stream->readBytes(23); // skip Starcraft II replay 0x1B 0x32 0x01 0x00
-
-		//we assume its a replay from before phase 2
-		$verMajor = $this->stream->readUint16(false);
-		$build = $this->stream->readUint32();
-		$ret["baseBuild"] = $this->stream->readUint32();
-		$this->stream->readBytes(2); //skip 0200
-		//apparently saved in seconds back then => times 16
-		$ret["gameloops"] = intval($this->stream->readUint16() / 2) * 16;
-		$ret["versionString"] = "0.{$verMajor}.0.{$build}";
-
-		return $ret;
+		return $data;
 	}
 
 }

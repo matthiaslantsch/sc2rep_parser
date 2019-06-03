@@ -30,51 +30,7 @@ class MessageEventsDecoder extends DecoderBase {
 	 * @return void
 	 */
 	protected function doDecode() {
-		$loopCount = 0;
-		$messages = [];
-
-		while(!$this->stream->eof()) {
-			$loopCount += $this->readLoopCount();
-
-			$messageEvent = [
-				"gameloop" => $loopCount,
-				"playerId" => $this->stream->readBits(5)
-			];
-
-			$flag = $this->stream->readBits(4);
-
-			switch ($flag) {
-				case 0: //chat message
-					$messageEvent["eventtype"] = "ChatMessage";
-					$messageEvent["recipient"] = $this->stream->readBits($this->replay->baseBuild >= 21955 ? 3 : 2);
-					$messageEvent["msg"] = $this->stream->readAlignedString($this->stream->readBits(11));
-					break;
-				case 1: //player ping
-					$messageEvent["eventtype"] = "PingMessage";
-					$messageEvent["recipient"] = $this->stream->readBits($this->replay->baseBuild >= 21955 ? 3 : 2);
-					$x = $this->stream->readUint32() - 2147483648;
-					$y = $this->stream->readUint32() - 2147483648;
-					$messageEvent["location"] = ["x" => $x, "y" => $y];
-					break;
-				case 2: //loading progress
-					$messageEvent["eventtype"] = "LoadingProgressMessage";
-					$messageEvent["progress"] = $this->stream->readUint32() - 2147483648;
-					break;
-				case 3: //server ping
-					$messageEvent["eventtype"] = "ServerPingMessage";
-					break;
-				case 4: //reconnect
-					$messageEvent["eventtype"] = "ReconnectNotifyMessage";
-					$messageEvent["status"] = $this->stream->readBits(2);
-					break;
-				default:
-					throw new ParserException("Unknown message event type: {$flag} in version {$this->replay->baseBuild}", 100);
-			}
-
-			$messages[] = $messageEvent;
-			$this->stream->align();
-		}
-		$this->replay->rawdata["replay.message.events"] = $messages;
+		$this->replay->rawdata["message.events"] = $this->binaryFormatParse("messageevents");
 	}
 
 }

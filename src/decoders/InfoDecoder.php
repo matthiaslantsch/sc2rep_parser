@@ -30,121 +30,18 @@ class InfoDecoder extends DecoderBase {
 	 * @return void
 	 */
 	protected function doDecode() {
-		$numSlots = $this->stream->readUint8();
-		while ($numSlots--) {
-			$ret["slots"][] = $this->decodePlayerSlot();
-		}
+		$data = $this->binaryFormatParse("info");
 
-		$ret["randomValue"] = $this->stream->readUint32();
+		$this->replay->rawdata["info"] = $data;
 
-		$ret["gameCacheName"] = $this->stream->readAlignedString(
-			$this->stream->readUint8()
-		);
-
-		//we assume the same flags existed back then
-		$ret["teamsLocked"] = $this->stream->readBoolean();
-		$ret["teamsTogether"] = $this->stream->readBoolean();
-		//archon mode??
-		$ret["advancedSharedControl"] = $this->stream->readBoolean();
-		$ret["randomRaces"] = $this->stream->readBoolean();
-		$ret["battlenet"] = $this->stream->readBoolean();
-		$ret["amm"] = $this->stream->readBoolean();
-		if($ret["amm"]) {
-			$this->replay->category = "Ladder";
-		}
-
-		//unknown byte (0x00)
-		$this->stream->readAlignedString(1);
-		$gamespeedInt = $this->stream->readUint8();
-		$speekLookup = array(0 => "Slower", 1 => "Slow", 2 => "Normal", 3 => "Fast", 4 => "Faster");
-		$this->replay->gamespeed = $speekLookup[$gamespeedInt];
-
-		//11 unknown bytes
-		$this->stream->readAlignedString(11);
-
-		$ret["map"] = ["filename" => $this->stream->readAlignedString($this->stream->readUint8())];
-
-		//686 unknown bytes
-		$this->stream->readAlignedString(686);
-
-		for ($i=0; $i < 5; $i++) {
-			$ret["cacheHandles"][] = $this->parseCacheHandle();
-		}
-
-		//skip all unknown bytes until we find 2 0x00 in a row
-		$one = $this->stream->readByte(true);
-		$two = $this->stream->readByte(true);
-		while (!(ord($one) == 0 && ord($two) == 0)) {
-			$two = $one;
-			$one = $this->stream->readByte(true);
-		}
-		//skip over the other three null bytes
-		$this->stream->readAlignedString(3);
-
-		//skip the map name length bytes, as for maps with multiple words, there's multiple bytes => unreliable
-		do {
-			$skippedByte = $this->stream->readByte(true);
-		} while (ord($skippedByte) < 30);
-
-		//now we have the first character of the map name in skippedByte
-		$mapName = $skippedByte;
-		while (ord($newByte = $this->stream->readByte(true)) != 0x0) {
-			$mapName .= $newByte;
-		}
-
-		$ret["map"]["name"] = $mapName;
-
-		$numPlayers = $this->stream->readUint8();
-		$colorKeys = ["a", "r", "g", "b"];
-		while($numPlayers--) {
-			$pl = [
-				"name" => $this->stream->readAlignedString(
-					$this->stream->readUint8()
-				),
-				"race" => $this->stream->readAlignedString(
-					$this->stream->readUint8()
-				)
-			];
-			$color = explode(",", $this->stream->readAlignedString(
-				$this->stream->readUint8()
-			));
-
-			if($pl["name"] === "") {
-				//empty slot
-				continue;
-			}
-
-			if(count($color) == 4) {
-				$pl["color"] = array_combine($colorKeys, $color);
-			}
-
-			$ret["players"][] = $pl;
-		}
-
-		$this->replay->rawdata["info"] = $ret;
-
-		$mapCache = end($ret["cacheHandles"]);
+		$mapCache = end($data["cacheHandles"]);
 		$this->replay->mapHash = $mapCache["hash"];
 		$this->replay->mapUrl = $mapCache["url"];
 		$this->replay->region = $mapCache["region"];
-		$this->replay->mapName = $ret["map"]["name"];
+		$this->replay->mapName = $data["map"]["name"];
 
 		$this->replay->reallength = utils\loopsToRealTime($this->replay->gameloops, $this->replay->gamespeed);
 		$this->replay->gamelength = utils\createTimeString($this->replay->reallength);
-	}
-
-	/**
-	 * small decoder function decoding a player block
-	 *
-	 * @access protected
-	 * @return string with the read player slot
-	 */
-	private function decodePlayerSlot() {
-		$nameLen = $this->stream->readUint8();
-		$ret = $this->stream->readAlignedString($nameLen);
-		//padding
-		$this->stream->readBytes(5);
-		return $ret;
 	}
 
 }

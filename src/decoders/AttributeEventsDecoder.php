@@ -32,29 +32,22 @@ class AttributeEventsDecoder extends DecoderBase {
 	protected function doDecode() {
 		$attributeLookup = DataLoader::loadDataset("attributes", $this->replay->baseBuild);
 
-		//skip start bytes
-		$this->stream->readBytes($this->replay->baseBuild >= 17326 ? 5 : 4);
+		$rawattrs = $this->binaryFormatParse("attributeevents");
 
-		$numAttributes = $this->stream->readUint32(false);
-		$attributes = [];
-		while ($numAttributes--) {
-			$attr = [];
-			$attr["header"] = $this->stream->readUint32(false);
-			$attr["attrId"] = $this->stream->readUint32(false);
-			$attr["playerId"] = $this->stream->readUint8();
-			$val = trim(strrev($this->stream->readAlignedString(4)));
-
+		$attributes = array();
+		foreach ($rawattrs["attributes"] as $attr) {
+			$attr["value"] = trim(strrev($attr["value"]));
 			if(isset($attributeLookup[$attr["attrId"]])) {
 				$lookup = $attributeLookup[$attr["attrId"]];
 				$attr["name"] = $lookup[0];
-				$attr["value"] = $lookup[1][$val];
+				$attr["value"] = $lookup[1][$attr["value"]];
 			} else {
 				continue;
 				throw new ParserException("Unknown attribute id '{$attr["attrId"]}'", 100);
 			}
 
 			//save it in our temporary array
-			$attributes[$attr["playerId"]][$attr["name"]] = $attr["value"];
+			$attributes[$attr["scope"]][$attr["name"]] = $attr["value"];
 		}
 
 		$this->replay->attributes = $attributes;
@@ -64,7 +57,6 @@ class AttributeEventsDecoder extends DecoderBase {
 		if(!isset($attributes[16]["Game Privacy"])) {
 			$attributes[16]["Game Privacy"] = "Normal";
 		}
-
 		$this->replay->privacy = $attributes[16]["Game Privacy"];
 	}
 
