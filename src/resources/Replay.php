@@ -12,6 +12,7 @@
 
 namespace holonet\Sc2repParser\resources;
 
+use holonet\Sc2repParser\format\Version;
 use holonet\Sc2repParser\ParserException;
 
 /**
@@ -101,27 +102,46 @@ class Replay {
 		if($this->loadLevel < 3) {
 			//not all event files have been parsed yet
 			//check if the requested type has been parsed
-			if(!isset($this->rawdata["replay.{$type}.events"])) {
+			if(!isset($this->rawdata["{$type}.events"])) {
 				throw new ParserException("Cannot list events without parsing event files first (load level 3 => decode)", 100);
 			}
 		}
 
 		switch ($type) {
 			case "message":
-				$events = $this->rawdata["replay.message.events"];
+				$events = $this->rawdata["message.events"];
 				break;
 			case "game":
-				$events = $this->rawdata["replay.game.events"];
+				$events = $this->rawdata["game.events"];
 				break;
 			default:
 				throw new ParserException("Cannot list events for unknown event type: '{$type}'", 100);
 		}
 
-		$ret = [];
+		$ret = array();
 		foreach ($events as $ev) {
 			$ret[$ev["gameloop"]][] = $ev;
 		}
 		return $ret;
 	}
+
+
+	/**
+	 * getter method for the version class
+	 * returns either the matching version or the last older one that exists
+	 * so we can still attempt to parse unsupported replays with older versions
+	 *
+	 * @access public
+	 * @return string with the version class for the given version
+	 */
+	public function versionClass() {
+		$actualClass = "holonet\\Sc2repParser\\format\\Version{$this->baseBuild}";
+		if(class_exists($actualClass)) {
+			return $actualClass;
+		}
+
+		return Version::previous($this->baseBuild);
+	}
+
 
 }

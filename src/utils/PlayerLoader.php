@@ -180,8 +180,8 @@ class PlayerLoader {
 				$replay->entities[$playerId]->playRace = delocalizeRace($detailsData["race"]);
 				$replay->entities[$playerId]->color = $detailsData["color"];
 
-				$replay->entities[$playerId]->region = gatewayLookup($detailsData["bnet"]["region"]);
-				$replay->entities[$playerId]->realId = $detailsData["bnet"]["name"];
+				$replay->entities[$playerId]->region = gatewayLookup($detailsData["toon"]["region"]);
+				$replay->entities[$playerId]->realId = $detailsData["toon"]["name"];
 
 				$replay->entities[$playerId]->isComputer = ($detailsData["control"] != 2);
 
@@ -228,7 +228,6 @@ class PlayerLoader {
 		$details = $replay->rawdata["details"];
 		// Assume that the first X map slots starting at 1 are player slots
 		// so that we can assign player ids without the map
-		var_dump($replay->rawdata["initdata"]);
 		foreach ($initData["lobbyState"]["slots"] as $slotId => $slotData) {
 			if($slotData["control"] != 2 && $slotData["control"] != 3) {
 				//empty slot
@@ -266,9 +265,9 @@ class PlayerLoader {
 				$replay->entities[$playerId]->playRace = delocalizeRace($detailsData["race"]);
 				$replay->entities[$playerId]->color = $detailsData["color"];
 
-				$replay->entities[$playerId]->region = gatewayLookup($detailsData["bnet"]["region"]);
-				$replay->entities[$playerId]->subregion = $detailsData["bnet"]["subregion"];
-				$replay->entities[$playerId]->bnetId = $detailsData["bnet"]["uid"];
+				$replay->entities[$playerId]->region = gatewayLookup($detailsData["toon"]["region"]);
+				$replay->entities[$playerId]->subregion = $detailsData["toon"]["realm"];
+				$replay->entities[$playerId]->bnetId = $detailsData["toon"]["id"];
 
 				$replay->entities[$playerId]->isComputer = ($slotData["control"] != 2);
 

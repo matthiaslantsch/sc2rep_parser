@@ -78,9 +78,9 @@ class ReplayParser {
 		$decoder = new decoders\HeaderDecoder($header);
 		$headerData = $decoder->decode(null); //null since we do not have a replay object yet
 		$this->replay = new Replay(
-			$headerData["baseBuild"],
+			$headerData["version"]["baseBuild"],
 			$headerData["versionString"],
-			$headerData["gameloops"],
+			$headerData["elapsedGameLoops"],
 			$headerData["expansion"]
 		);
 	}
@@ -120,7 +120,7 @@ class ReplayParser {
 		if($this->replay->loadLevel < 2) {
 			if($this->replay->baseBuild < 15097) {
 				//replay version 1
-				$this->decodeFile("replay.info", decoders\InfoDecoder::class);
+				$this->versionedFormatDecode("replay.info");
 			} else {
 				//replay version 2
 				$this->decodeFile("replay.initdata", decoders\InitdataDecoder::class);
@@ -189,6 +189,20 @@ class ReplayParser {
 			//do the decoding
 			$decoder->decode($this->replay);
 		}
+	}
+
+	/**
+	 * dispatcher method using a the right version of a format file to parse a certain replay subfile
+	 *
+	 * @access public
+	 * @param  string $file The name of the replay sub file that should be decoded
+	 * @return void
+	 */
+	public function versionedFormatDecode(string $file) {
+		$stream = new StringStream($this->archive->readFile($file));
+		$formatTree = require_once "format/{$this->replay->baseBuild}/{$file}.bformat.php";
+		$parser = new BinaryFormatParser($stream, $formatTree);
+		$data = $parser->parse();
 	}
 
 	/**
